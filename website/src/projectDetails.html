@@ -1,0 +1,9 @@
+<template>
+    <require from="helpers/MarkdownValueConverter"></require>
+
+    <section class="au-animate">
+        <h1>${project.title}</h1>
+        
+        <div innerHTML.bind="project.description | markdown"></div>
+    </section>
+</template>

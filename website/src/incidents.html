@@ -1,0 +1,12 @@
+<template>
+  <section class="au-animate">
+      <h2>${heading}</h2>
+      <ul class="list-unstyled">
+          <li repeat.for="incident of incidents">${incident.title}
+            <ul class="list-unstyled" style="margin-left: 10px">
+                <li repeat.for="subincident of incident.children">${subincident.title}</li>
+            </ul>      
+          </li>
+      </ul>
+  </section>
+</template>

@@ -1,0 +1,27 @@
+<template>
+  <require from="blur-image"></require>
+  <require from="helpers/MarkdownValueConverter"></require>
+  <require from="helpers/TrimValueConverter"></require>
+
+  <section class="au-animate">
+      <h2>${heading}</h2>
+      <div class="row au-stagger">
+        <div class="col-sm-6 col-md-3 card-container au-animate" repeat.for="project of projects">
+            <div class="card">
+                <canvas class="header-bg" width="250" height="70" blur-image.bind="image"></canvas>
+                <div class="avatar">
+                    <img src.bind="project.mainImageUrl" crossorigin ref="image"/>
+                </div>
+                <div class="content">
+                    <p>
+                        <a class="btn btn-default" route-href="route: project; 
+                                                               params.bind: {id:project.index}">${project.title}</a>
+                    </p>
+                    <div innerHTML.bind="project.description | trim: 30 |markdown"></div>
+
+                </div>
+            </div>
+        </div>
+      </div>
+  </section>
+</template>

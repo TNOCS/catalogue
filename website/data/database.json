@@ -1,0 +1,227 @@
+{
+    "title": "FRITS",
+    "welcomeText": "Welcome to the First Incident Responder Technology Scan (FRITS)",
+    "description": "Provide a description please",
+    "tasks": [{
+        "id": "prep",
+        "title": "Preparatory tasks",
+        "description": "",
+        "children": [{
+            "id": "prep.a",
+            "title": "Policy making/Capacity building",
+            "description": ""
+        }, {
+            "id": "prep.b",
+            "title": "Doctrine/Procedure development",
+            "description": ""
+        }, {
+            "id": "prep.c",
+            "title": "Procure | Maintain | Warehousing",
+            "description": ""
+        }, {
+            "id": "prep.d",
+            "title": "Community Awareness Raising",
+            "description": ""
+        }, {
+            "id": "prep.e",
+            "title": "Training & Exercises",
+            "description": ""
+        }, {
+            "id": "prep.f",
+            "title": "Evaluation",
+            "description": ""
+        }, {
+            "id": "prep.g",
+            "title": "Prepare civil/military co-operation",
+            "description": ""
+        }]
+    }, {
+        "id": "sup",
+        "title": "Supporting tasks",
+        "description": "",
+        "children": [{
+            "id": "sup.I",
+            "title": "Co-ordination, Command & Control",
+            "description": ""
+        }, {
+            "id": "sup.II",
+            "title": "Situation assessment",
+            "description": ""
+        }, {
+            "id": "sup.III",
+            "title": "Information management & Distribution",
+            "description": ""
+        }, {
+            "id": "sup.IV",
+            "title": "Monitoring / Information gathering",
+            "description": ""
+        }, {
+            "id": "sup.V",
+            "title": "Supply of basic services to enable CM",
+            "description": ""
+        }, {
+            "id": "sup.VI",
+            "title": "Logistics",
+            "description": ""
+        }]
+    }, {
+        "id": "op",
+        "title": "Operational tasks",
+        "description": "",
+        "children": [{
+            "id": "op.A",
+            "title": "Crisis mitigation on-site"
+        }, {
+            "id": "op.B",
+            "title": "Search and rescue"
+        }, {
+            "id": "op.C",
+            "title": "Security / Law enforcement"
+        }, {
+            "id": "op.D",
+            "title": "Evacuation & Shelter"
+        }, {
+            "id": "op.E",
+            "title": "Inform and Involve the public"
+        }, {
+            "id": "op.F",
+            "title": "Health service"
+        }, {
+            "id": "op.G",
+            "title": "Clear crisis area"
+        }, {
+            "id": "op.H",
+            "title": "Supply and/or restauration of basic infrastructure"
+        }, {
+            "id": "op.J",
+            "title": "Other"
+        }]
+    }],
+    "incidents": [{
+        "id": "nat",
+        "title": "Natural disasters",
+        "children": [{
+            "id": "nat.1",
+            "title": "Geophysical events",
+            "description": "Earthquake, Tsunami, Volcanic eruption, Mass movement"
+        }, {
+            "id": "nat.2",
+            "title": "Meteorological events",
+            "description": "Storm, Extreme temperature, Drought, Wildfire, Extreme rainfall"
+        }, {
+            "id": "nat.3",
+            "title": "Hydrological events",
+            "description": "Flood"
+        }, {
+            "id": "nat.4",
+            "title": "Biological events",
+            "description": "Epidemic, Insect infestation, Animal disease"
+        }, {
+            "id": "nat.5",
+            "title": "Outer space events",
+            "description": "Meteorites, Geomagnetic storms"
+        }]
+    }, {
+        "id": "out",
+        "title": "Outside EU events that require external intervention",
+        "children": [{
+            "id": "out.1",
+            "title": "Humanitarian Aid outside EU"
+        }, {
+            "id": "out.2",
+            "title": "Outbreak of civil war"
+        }, {
+            "id": "out.3",
+            "title": "Civil disturbance"
+        }, {
+            "id": "out.4",
+            "title": "Large-scale disaster in a CSDP mission area"
+        }, {
+            "id": "out.5",
+            "title": "Large-scale movement of people"
+        }]
+    }, {
+        "id": "man",
+        "title": "Man-made incidents",
+        "children": [{
+            "id": "man.1",
+            "title": "Industrial accidents",
+            "description": "Biological incident (biotech & genetic engineering industry), Incident with combustible and/or explosive materials, Incident with toxic materials, Nuclear incident, Poisoning;"
+        }, {
+            "id": "man.2",
+            "title": "Transport accidents",
+            "description": "Air crash, Accident on water, Railway accident, Road accident"
+        }, {
+            "id": "man.3",
+            "title": "Critical Infrastructure failures",
+            "description": "Major failures in supplying Drinking water, Food, Sanitation, Energy, Telecom/ICT, Transport facilities (roads, airfields, harbours, railways, pipelines);"
+        }, {
+            "id": "man.4",
+            "title": "Miscellaneous",
+            "description": "Underground incident, Large building fire, Collapse of buildings."
+        }]
+    }, {
+        "id": "cyb",
+        "title": "Terrorism & Crime",
+        "children": [{
+            "id": "cyb.1",
+            "title": "CBRN terrorist action (attack and/or threat);"
+        }, {
+            "id": "cyb.2",
+            "title": "E-terrorist action (attack and/or threat with explosives);"
+        }, {
+            "id": "cyb.3",
+            "title": "Cyber attack"
+        }, {
+            "id": "cyb.4",
+            "title": "Organised crime"
+        }, {
+            "id": "cyb.5",
+            "title": "Cybercrime"
+        }]
+    }, {
+        "id": "oth",
+        "title": "Other crisis events",
+        "children": [{
+            "id": "oth.1",
+            "title": "Incident with many EU citizens outside EU"
+        }, {
+            "id": "oth.2",
+            "title": "Large-scale influx of refugees into EU"
+        }, {
+            "id": "oth.3",
+            "title": "Economic failure (/financial crisis)"
+        }, {
+            "id": "oth.4",
+            "title": "War"
+        }]
+    }],
+    "gaps": [{
+        "id": "gap.1",
+        "title": "Limitations in early warning capabilities"
+    }, {
+        "id": "gap.2",
+        "title": "Problems in operating at incidents with hazardous materials"
+    }, {
+        "id": "gap.3",
+        "title": "Shortcoming in coordination of navigation of different manned systems at incident site"
+    }, {
+        "id": "gap.4",
+        "title": "Limitations in crisis communication - evolved management of information to the media and the public"
+    }],
+    "projects": [{
+        "id": "1",
+        "shortTitle": "T1",
+        "title": "Jessica",
+        "url": "www.google.nl",
+        "mainImageUrl": "http://a5.files.fashionista.com/image/upload/c_fit,cs_srgb,w_620/MTMyOTIxMjIxNTIzMjM4ODgy.png",
+        "description": "My description"
+    }, {
+        "id": "2",
+        "shortTitle": "T2",
+        "title": "Alba",
+        "url": "www.google.nl",
+        "mainImageUrl": "http://a5.files.fashionista.com/image/upload/c_fit,cs_srgb,w_620/MTMyOTIxMjIxNTIzMjM4ODgy.png",
+        "description": "My ** description ** for Jessica Alba"
+    }]
+}

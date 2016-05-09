@@ -1,0 +1,12 @@
+<template>
+  <section class="au-animate">
+      <h2>${heading}</h2>
+      <ul class="list-unstyled">
+          <li repeat.for="task of tasks">${task.title}
+            <ul class="list-unstyled" style="margin-left: 10px">
+                <li repeat.for="subtask of task.children">${subtask.title}</li>
+            </ul>      
+          </li>
+      </ul>
+  </section>
+</template>
