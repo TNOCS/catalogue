@@ -2,11 +2,14 @@
   <section class="au-animate">
       <h2>${heading}</h2>
       <ul class="list-unstyled">
-          <li repeat.for="task of tasks">${task.title}
+          <li repeat.for="task of tasks" style="margin-bottom: 10px;"><strong>${task.title}</strong>
             <ul class="list-unstyled" style="margin-left: 10px">
                 <li repeat.for="subtask of task.children">${subtask.title}
                     <ul class="list-unstyled" style="margin-left: 20px">
-                        <li repeat.for="relation of subtask.relations">Gap: ${relation.title}</li>
+                        <li repeat.for="project of subtask.projects">PROJECT: ${project.title}</li>
+                    </ul>                          
+                    <ul class="list-unstyled" style="margin-left: 20px">
+                        <li repeat.for="relation of subtask.relations">GAP: ${relation.title}</li>
                     </ul>                          
                 </li>
             </ul>      

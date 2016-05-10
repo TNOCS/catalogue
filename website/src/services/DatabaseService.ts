@@ -3,6 +3,7 @@ import {HttpClient} from 'aurelia-fetch-client';
 import 'fetch';
 
 import {IDatabase} from "../models/database";
+import {IProject} from "../models/project";
 import {ICharacteristic} from "../models/characteristic";
 
 @autoinject
@@ -55,10 +56,10 @@ export class DatabaseService {
             let index = 0;
             db.projects.forEach(p => {
                 p.index = index++;
-                this.updateProjectCharacteristics(p.tasks,     this.tasks);
-                this.updateProjectCharacteristics(p.incidents, this.incidents);
-                this.updateProjectCharacteristics(p.gaps,      this.gaps);
-                this.updateProjectCharacteristics(p.ciSectors, this.ciSectors);
+                this.updateProjectCharacteristics(p, p.tasks,     this.tasks);
+                this.updateProjectCharacteristics(p, p.incidents, this.incidents);
+                this.updateProjectCharacteristics(p, p.gaps,      this.gaps);
+                this.updateProjectCharacteristics(p, p.ciSectors, this.ciSectors);
             });
         });
     }
@@ -98,7 +99,7 @@ export class DatabaseService {
      * Assume that the IDs are given and correct, but that the text (title/description) may have changed.
      * Also, for each match, e.g. of a task, update the tasks store so we know that which projects refer to which tasks.
      */    
-    private updateProjectCharacteristics(projectCharacteristics: ICharacteristic[], characteristics: { [key: string]: ICharacteristic}) {
+    private updateProjectCharacteristics(project: IProject, projectCharacteristics: ICharacteristic[], characteristics: { [key: string]: ICharacteristic}) {
         if (!projectCharacteristics) return;
         let pruneIndexes: number[] = [];
         let index = -1;
@@ -111,6 +112,9 @@ export class DatabaseService {
             let characteristic = characteristics[c.id];
             c.title = characteristic.title;
             c.description = characteristic.description;
+            // Finally, update the characteristics with a reference to this project
+            if (!characteristic.projects) characteristic.projects = [];
+            characteristic.projects.push(project);
         });
         // Make sure the taskIds and tasks are in sync, and are valid / exist
         for (let i = pruneIndexes.length - 1; i >= 0; i--) {
