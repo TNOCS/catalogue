@@ -4,7 +4,11 @@
       <ul class="list-unstyled">
           <li repeat.for="task of tasks">${task.title}
             <ul class="list-unstyled" style="margin-left: 10px">
-                <li repeat.for="subtask of task.children">${subtask.title}</li>
+                <li repeat.for="subtask of task.children">${subtask.title}
+                    <ul class="list-unstyled" style="margin-left: 20px">
+                        <li repeat.for="relation of subtask.relations">Gap: ${relation.title}</li>
+                    </ul>                          
+                </li>
             </ul>      
           </li>
       </ul>

@@ -12,8 +12,6 @@ export class Projects {
 
     activate() {
         return this.databaseService.database.then(db => {
-            let index = 0;
-            db.projects.forEach(p => p.index = index++);
             this.projects = db.projects;
         });
     }
