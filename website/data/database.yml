@@ -4,72 +4,129 @@ description: Provide a description please
 gapLevels:
   - 
     id: g0
+    rating: 
+      value: 0
+      max: 3
     title: Not at all 
     description: The solution or development does not contribute to strengthen the response or to improve collaboration.
   - 
     id: g1
+    rating: 
+      value: 1
+      max: 3
     title: To a limited extent 
     description: The solution or development strengthens the response or improves the collaboration to a limited extent.
   - 
     id: g2
+    rating: 
+      value: 2
+      max: 3
     title: To a considerable extent 
     description: The solution or development strengthens the response or improves the collaboration to a considerable extent.
   - 
     id: g3
+    rating: 
+      value: 3
+      max: 3
     title: Fully
     description: The solution or development strengthens the response or improves the collaboration fully.
 usabilityLevels:
   - 
     id: u0
+    rating: 
+      value: 0
+      max: 3
     title: Not at all 
   - 
     id: u1
+    rating: 
+      value: 1
+      max: 3
     title: To a limited extent 
   - 
     id: u2
+    rating: 
+      value: 2
+      max: 3
     title: To a considerable extent 
   - 
     id: u3
+    rating: 
+      value: 3
+      max: 3
     title: Fully
 maturityLevels:
   -	
     id: m1
+    rating: 
+      value: 1
+      max: 5
     title: Vision and agenda formulated. 
   -	
     id: m2
+    rating: 
+      value: 2
+      max: 5
     title: Concept and specifications formulated. 
   -	
     id: m3
+    rating: 
+      value: 3
+      max: 5
     title: Prove of concept/ Limited trials  
   -	
     id: m4
+    rating: 
+      value: 4
+      max: 5
     title: Extensive trials, not operational
   -	
     id: m5
+    rating: 
+      value: 5
+      max: 5
     title: Tested in legacy environment/ Operational 
 validationLevels:
   -	
     id: v1
+    rating: 
+      value: 1
+      max: 6
     title: Limited information (desk research only)  
   -	
     id: v2
+    rating: 
+      value: 2
+      max: 6
     title: Multiple sources (desk research only)
   -	
     id: v3
+    rating: 
+      value: 3
+      max: 6
     title: Validated with owner 
   -	
     id: v4
+    rating: 
+      value: 4
+      max: 6
     title: Validated with end-user
   -	
     id: v5
+    rating: 
+      value: 5
+      max: 6
     title: Validated with both end-user and owner
   -	
     id: v6
+    rating: 
+      value: 6
+      max: 6
     title: Fully validated
 ciSectors:
   -	
     id: c1
-    title: Education en R&amp;D
+    title: Education and R&amp;D
   -	
     id: c2
     title: Energy 
@@ -141,7 +198,7 @@ tasks:
     children: 
       - 
         id: sup.I
-        title: Co-ordination, Command & Control
+        title: Co-ordination, Command &amp; Control
         description: 
       - 
         id: sup.II
@@ -149,7 +206,7 @@ tasks:
         description: 
       - 
         id: sup.III
-        title: Information management & Distribution
+        title: Information management &amp; Distribution
         description: 
       - 
         id: sup.IV
@@ -450,7 +507,7 @@ projects:
       - "http://www.alert4all.eu"
       - "http://cordis.europa.eu/project/rcn/98427_en.html"
     currentUse: X
-    criticalSectors:
+    ciSectors:
     logo: img/logo_alert4all.png
     description: |
       A4A aims to improve crucial communication of information to the population (Early warning systems) through alert message dissemination using different communication systems, from cell phone messages and radio transmissions to Wi-Fi broadcasts and broadband Internet though a pan-European agency.
@@ -528,8 +585,7 @@ projects:
             platform only provides a tutorial for the use of this system and that the mentioned goals can only be achieved in the long term.
             For these reasons the project is rated at [1/3].       
     usabilityLevel: 
-      score:
-        id: u1
+      id: u1
       remarks: |
         The system has been demonstrated in an operational environment. Results of this demonstration show that, potentially, the system could 
         be very user friendly. The actual usability (affordability, openness of the solution etc.) of A4A is not clear, because a pan-European 
@@ -545,7 +601,7 @@ projects:
       sponsors: FP7 – Security
       projectType: CP
       coordinator: DEUTSCHES ZENTRUM FÜR LUFT - UND RAUMFAHRT EV (Germany)
-      participants:
+      participants: |
         - DEUTSCHES ROTES KREUZ EV (Germany)
         - AVANTI COMMUNICATIONS LTD (United Kingdom)
         - BAPCO LBG (United Kingdom)
@@ -557,15 +613,143 @@ projects:
         - Bundesamt für Bevölkerungsschutz und Katastrophenhilfe (Germany)
         - EUTELSAT S.A. (France)
         - INSTITUT FÜR RUNDFUNKTECHNIK GMBH (Germany)
-    analyst:
+    analysts:
       -
         name: Jorn Boers
         organisation: TNO
         reviewed: 2016-02-09
-        validation: 2 - Multiple sources (desk research only)
+        validationLevel: 
+          id: v2
         remarks: 
   - 
-    id: 2
+    id: AFTER
+    shortTitle: AFTER
+    title: A Framework for electrical power sysTems vulnerability identification,dEfense and Restoration
+    intendedUsers: Transmission System Operators (TSOs), CI operators 
+    references: 
+      - "http://www.after-project.eu/"
+      - "http://cordis.europa.eu/project/rcn/100196_en.html"
+    incidents:
+      - 
+        id: man.3
+      - 
+        id: cyb.3
+    currentUse: X
+    ciSectors:
+      - 
+        id: c2
+      - 
+        id: c7
+      - 
+        id: c9
+    logo: img/logo_after.png
+    description: |
+      AFTER project addressed the challenges posed by the need for vulnerability evaluation and contingency planning of the energy grids and energy plants considering also the relevant ICT systems used in protection and control. The project emphasis was on cascading events that can cause catastrophic outages of the electric power systems.
+      ![A4A](img/after.png)
+
+      Specifically the following objectives were pursued:
+
+      1. Define and develop the architecture of a framework for risk and vulnerability assessment for integrated power and ICT systems.
+      2. Develop methodologies for dealing with risk and vulnerability in integrated power and ICT systems. 
+      3. Develop tools and techniques for dealing with risk and vulnerability in integrated power and ICT systems:
+         - Develop prototype tools to support global risk assessment incorporating hazard, vulnerability and impact analysis
+         - Develop techniques to support the defence of critical infrastructures against unwanted (included cascading)events
+         - Develop a decision support system for intelligent automatic restoration, e.g. after wide spread blackouts.
+      4. Develop the concepts and techniques for physical security:
+         - Develop sensing, monitoring and software agent technologies for security monitoring and early warning.     
+    maturityLevel: 
+      id: m0
+    tasks:
+      - 
+        id: op.E
+      - 
+        id: sup.II
+      - 
+        id: prep.a
+    gaps:
+      - 
+        id: gap.1
+        score:
+          id: g2
+        remarks: |
+          As mentioned in the description: one of the objectives of AFTER (objective nr. 4) is to develop a set of tools designed for sensing and monitoring and to develop software agent technologies for security monitoring and early warning. A physical security management tool is devoted to detect and to provide early warning of physical intrusions into energy system facilities including power plants and substations. The system tracks potential intruders via advanced algorithms to manage cameras: any alarm is processed and associated with a list of possible intrusion hypotheses on the basis of an encoded set of rules. Power flow analyses estimate the impact of any attack scenario on the grid and suggest operational practices to limit the impact itself. A drill at CEPS premises provided raw data to validate the tool performance. 
+
+          The tool provides early warning capabilities with respect to detecting physical intrusions in energy system facilities. Early warning capabilities with respect to detecting and warning about non- physical (cyber-) attacks is not mentioned in the project description. 
+      - 
+        id: gap.10
+        score:
+          id: g2      
+        remarks: |
+          As mentioned before, AFTER provides a set of tools and algorithms to analyse threats and estimate the direct impact of any attack scenario on the grid and suggest operational practices to limit the impact itself.      - 
+        id: gap.11
+        score:
+          id: g3
+        remarks: |
+          The main objective of AFTER is to minimise or prevent cascading effects resulting failures in power/ ICT grids. Using the tools provided by AFTER TSOs will be able to predict and minimise the cascading effects of grid failures caused by man- made or natural incidents. AFTER also provides tools to restart the affected grid as soon as possible. The following tools or algorithms are developed:   
+          - An adaptive multi-agent-based load shedding algorithm is proposed to mitigate power system blackouts using various types of IED (Intelligent Electronic Device ), improving the frequency response with respect to conventional schemes. 
+          - The defence support tool integrates a dynamic security assessment tool with a Case Based Reasoning (CBR) algorithm: after the analysis of many network scenarios, and large set of contingencies (assessing possibly needed remedial measures), the CBR is able to find an appropriate measure for critical contingency in an electrical network to avoid black out. 
+          - The restoration support tool, based on Generic Restoration Milestones (GRMs), has the following features: 
+            - overall objective is to minimize the system restoration time; 
+            - optimization techniques compute solutions for different restoration tasks; 
+            - adaptive construction of restoration strategies. 
+      - 
+        id: gap.21
+        score:
+          id: g3
+        remarks: |
+          AFTER provides a global risk assessment tool which assesses risks and hazards with respect to ICT and power grids. The first and second objectives of AFTER (project description)  are about this subject. 
+          Further description of these objectives: 
+          1. Define and develop the architecture of a framework for risk and vulnerability assessment for integrated power and ICT systems:
+             - Identify the boundaries of the integrated power and ICT system to be considered
+             - Identify and classify hazards, threats and the systems vulnerabilities
+             - Define relevant indicators for selected vulnerabilities.
+
+          2. Develop methodologies for dealing with risk and vulnerability in integrated power and ICT systems:
+             - Establish methods for describing vulnerability and criticality of various parts of the system, taking various types of barriers/ protection into account
+             - Establish methods for impact (consequence) analysis, including the impact of cascading events
+             - Provide an approach for risk estimation and assessment, suggest ways to quantify risk and to establish acceptance criteria
+             - Establish main elements and algorithms of defence plans
+             - Establish main elements and algorithms of restoration plans.
+
+          The lack of harmonisation in risk assessment with respect to ICT and power grid risks is solved if these objectives are achieved. 
+    usabilityLevel: 
+      id: u2
+      remarks: |
+        The tools provided by AFTER make it easier for TSOs to predict, minimise and/or prevent certain cascading effects caused by failures in ICT or power grids. The Global Risk Assessment Tool has a prototype video (AFTER-webpage). The prototype seems to be very user friendly for TSOs. It should be noted that there is no information about the costs of these tools. It is necessary to improve the collaboration between TSOs and first responders for the project to be useful. The current usage of the project is unclear.        administration:
+    administration:
+      duration:
+        start: 2011-09-01
+        end: 2014-12-31
+        status: project closed
+      developers: AFTER consortium 
+      owners: AFTER consortium 
+      sponsors: FP7 – Security
+      projectType: CP
+      coordinator: RICERCA SUL SISTEMA ENERGETICO - RSE SPA (Italy)
+      participants: |
+        -	AGENZIA NAZIONALE PER LE NUOVE TECNOLOGIE,L'ENERGIA E LO SVILUPPO ECONOMICO SOSTENIBILE (Italy)
+        -	SINTEF ENERGI AS (Norway)
+        -	STIFTELSEN SINTEF (Norway)
+        -	UNIVERSITA DEGLI STUDI DI GENOVA (Italy)
+        -	UNIVERSITY COLLEGE DUBLIN, NATIONAL UNIVERSITY OF IRELAND, DUBLIN  (Ireland)
+        -	City University (United Kingdom) 
+        -	ALSTOM POWER SYSTEMS SA (France)
+        -	SIEMENS AG (Germany)
+        -	COMMISSION OF THE EUROPEAN COMMUNITIES - DIRECTORATE GENERAL JOINT RESEARCH CENTRE – JRC (Belgium)
+        -	ELIA SYSTEM OPERATOR (Belgium)
+        -	TERNA - RETE ELETTRICA NAZIONALE SPA (Italy)
+        -	CEPS AS (Czech Republic)
+        -	ALSTOM GRID SAS (France)        
+    analysts:
+      -
+        name: Jorn Boers
+        organisation: TNO
+        reviewed: 2016-03-14
+        validationLevel: 
+          id: v1
+        remarks: 
+  - 
+    id: 3
     shortTitle: T2
     title: Alba
     url: www.google.nl

@@ -2,399 +2,607 @@
     "title": "FRITS",
     "welcomeText": "Welcome to the First Incident Responder Technology Scan (FRITS)",
     "description": "Provide a description please",
-    "gapLevels": [{
-        "id": "g0",
-        "title": "Not at all",
-        "description": "The solution or development does not contribute to strengthen the response or to improve collaboration."
-    }, {
-        "id": "g1",
-        "title": "To a limited extent",
-        "description": "The solution or development strengthens the response or improves the collaboration to a limited extent."
-    }, {
-        "id": "g2",
-        "title": "To a considerable extent",
-        "description": "The solution or development strengthens the response or improves the collaboration to a considerable extent."
-    }, {
-        "id": "g3",
-        "title": "Fully",
-        "description": "The solution or development strengthens the response or improves the collaboration fully."
-    }],
-    "usabilityLevels": [{
-        "id": "u0",
-        "title": "Not at all"
-    }, {
-        "id": "u1",
-        "title": "To a limited extent"
-    }, {
-        "id": "u2",
-        "title": "To a considerable extent"
-    }, {
-        "id": "u3",
-        "title": "Fully"
-    }],
-    "maturityLevels": [{
-        "id": "m1",
-        "title": "Vision and agenda formulated."
-    }, {
-        "id": "m2",
-        "title": "Concept and specifications formulated."
-    }, {
-        "id": "m3",
-        "title": "Prove of concept/ Limited trials"
-    }, {
-        "id": "m4",
-        "title": "Extensive trials, not operational"
-    }, {
-        "id": "m5",
-        "title": "Tested in legacy environment/ Operational"
-    }],
-    "validationLevels": [{
-        "id": "v1",
-        "title": "Limited information (desk research only)"
-    }, {
-        "id": "v2",
-        "title": "Multiple sources (desk research only)"
-    }, {
-        "id": "v3",
-        "title": "Validated with owner"
-    }, {
-        "id": "v4",
-        "title": "Validated with end-user"
-    }, {
-        "id": "v5",
-        "title": "Validated with both end-user and owner"
-    }, {
-        "id": "v6",
-        "title": "Fully validated"
-    }],
-    "ciSectors": [{
-        "id": "c1",
-        "title": "Education en R&amp;D"
-    }, {
-        "id": "c2",
-        "title": "Energy"
-    }, {
-        "id": "c3",
-        "title": "Financial"
-    }, {
-        "id": "c4",
-        "title": "Food"
-    }, {
-        "id": "c5",
-        "title": "Government"
-    }, {
-        "id": "c6",
-        "title": "Health"
-    }, {
-        "id": "c7",
-        "title": "ICT/Telecom"
-    }, {
-        "id": "c8",
-        "title": "Industry"
-    }, {
-        "id": "c9",
-        "title": "Internet"
-    }, {
-        "id": "c10",
-        "title": "Transport"
-    }, {
-        "id": "c11",
-        "title": "Water"
-    }],
-    "tasks": [{
-        "id": "prep",
-        "title": "Preparatory tasks",
-        "description": null,
-        "children": [{
-            "id": "prep.a",
-            "title": "Policy making/Capacity building",
-            "description": null
-        }, {
-            "id": "prep.b",
-            "title": "Doctrine/Procedure development",
-            "description": null
-        }, {
-            "id": "prep.c",
-            "title": "Procure | Maintain | Warehousing",
-            "description": null
-        }, {
-            "id": "prep.d",
-            "title": "Community Awareness Raising",
-            "description": null
-        }, {
-            "id": "prep.e",
-            "title": "Training & Exercises",
-            "description": null
-        }, {
-            "id": "prep.f",
-            "title": "Evaluation",
-            "description": null
-        }, {
-            "id": "prep.g",
-            "title": "Prepare civil/military co-operation",
-            "description": null
-        }]
-    }, {
-        "id": "sup",
-        "title": "Supporting tasks",
-        "description": null,
-        "children": [{
-            "id": "sup.I",
-            "title": "Co-ordination, Command & Control",
-            "description": null
-        }, {
-            "id": "sup.II",
-            "title": "Situation assessment",
-            "description": null
-        }, {
-            "id": "sup.III",
-            "title": "Information management & Distribution",
-            "description": null
-        }, {
-            "id": "sup.IV",
-            "title": "Monitoring / Information gathering",
-            "description": null
-        }, {
-            "id": "sup.V",
-            "title": "Supply of basic services to enable CM",
-            "description": null
-        }, {
-            "id": "sup.VI",
-            "title": "Logistics",
-            "description": null
-        }]
-    }, {
-        "id": "op",
-        "title": "Operational tasks",
-        "description": null,
-        "children": [{
-            "id": "op.A",
-            "title": "Crisis mitigation on-site"
-        }, {
-            "id": "op.B",
-            "title": "Search and rescue"
-        }, {
-            "id": "op.C",
-            "title": "Security / Law enforcement"
-        }, {
-            "id": "op.D",
-            "title": "Evacuation &amp; Shelter"
-        }, {
-            "id": "op.E",
-            "title": "Inform and Involve the public"
-        }, {
-            "id": "op.F",
-            "title": "Health service"
-        }, {
-            "id": "op.G",
-            "title": "Clear crisis area"
-        }, {
-            "id": "op.H",
-            "title": "Supply and/or restauration of basic infrastructure"
-        }, {
-            "id": "op.J",
-            "title": "Other"
-        }]
-    }],
-    "incidents": [{
-        "id": "nat",
-        "title": "Natural disasters",
-        "children": [{
-            "id": "nat.1",
-            "title": "Geophysical events",
-            "description": "Earthquake, Tsunami, Volcanic eruption, Mass movement"
-        }, {
-            "id": "nat.2",
-            "title": "Meteorological events",
-            "description": "Storm, Extreme temperature, Drought, Wildfire, Extreme rainfall"
-        }, {
-            "id": "nat.3",
-            "title": "Hydrological events",
-            "description": "Flood"
-        }, {
-            "id": "nat.4",
-            "title": "Biological events",
-            "description": "Epidemic, Insect infestation, Animal disease"
-        }, {
-            "id": "nat.5",
-            "title": "Outer space events",
-            "description": "Meteorites, Geomagnetic storms"
-        }]
-    }, {
-        "id": "out",
-        "title": "Outside EU events that require external intervention",
-        "children": [{
-            "id": "out.1",
-            "title": "Humanitarian Aid outside EU"
-        }, {
-            "id": "out.2",
-            "title": "Outbreak of civil war"
-        }, {
-            "id": "out.3",
-            "title": "Civil disturbance"
-        }, {
-            "id": "out.4",
-            "title": "Large-scale disaster in a CSDP mission area"
-        }, {
-            "id": "out.5",
-            "title": "Large-scale movement of people"
-        }]
-    }, {
-        "id": "man",
-        "title": "Man-made incidents",
-        "children": [{
-            "id": "man.1",
-            "title": "Industrial accidents",
-            "description": "Biological incident (biotech & genetic engineering industry), Incident with combustible and/or explosive materials, Incident with toxic materials, Nuclear incident, Poisoning;"
-        }, {
-            "id": "man.2",
-            "title": "Transport accidents",
-            "description": "Air crash, Accident on water, Railway accident, Road accident"
-        }, {
-            "id": "man.3",
-            "title": "Critical Infrastructure failures",
-            "description": "Major failures in supplying Drinking water, Food, Sanitation, Energy, Telecom/ICT, Transport facilities (roads, airfields, harbours, railways, pipelines);"
-        }, {
-            "id": "man.4",
-            "title": "Miscellaneous",
-            "description": "Underground incident, Large building fire, Collapse of buildings."
-        }]
-    }, {
-        "id": "cyb",
-        "title": "Terrorism & Crime",
-        "children": [{
-            "id": "cyb.1",
-            "title": "CBRN terrorist action (attack and/or threat);"
-        }, {
-            "id": "cyb.2",
-            "title": "E-terrorist action (attack and/or threat with explosives);"
-        }, {
-            "id": "cyb.3",
-            "title": "Cyber attack"
-        }, {
-            "id": "cyb.4",
-            "title": "Organised crime"
-        }, {
-            "id": "cyb.5",
-            "title": "Cybercrime"
-        }]
-    }, {
-        "id": "oth",
-        "title": "Other crisis events",
-        "children": [{
-            "id": "oth.1",
-            "title": "Incident with many EU citizens outside EU"
-        }, {
-            "id": "oth.2",
-            "title": "Large-scale influx of refugees into EU"
-        }, {
-            "id": "oth.3",
-            "title": "Economic failure (/financial crisis)"
-        }, {
-            "id": "oth.4",
-            "title": "War"
-        }, {
-            "id": "oth.5",
-            "title": "General"
-        }]
-    }],
-    "gaps": [{
-        "id": "gap.1",
-        "title": "Limitations in early warning capabilities"
-    }, {
-        "id": "gap.2",
-        "title": "Problems in operating at incidents with hazardous materials"
-    }, {
-        "id": "gap.3",
-        "title": "Shortcoming in coordination of navigation of different manned systems at incident site"
-    }, {
-        "id": "gap.4",
-        "title": "Limitations in crisis communication - evolved management of information to the media and the public"
-    }, {
-        "id": "gap.5",
-        "title": "Need for (inter-)national shared victirm identification system"
-    }, {
-        "id": "gap.6",
-        "title": "Lack of tools for tasking and resource management"
-    }, {
-        "id": "gap.7",
-        "title": "Shortcomings in volunteer management"
-    }, {
-        "id": "gap.8",
-        "title": "Lack of decision support tools"
-    }, {
-        "id": "gap.9",
-        "title": "Shortcomings in collaboration between multiple levels of command"
-    }, {
-        "id": "gap.10",
-        "title": "Lack of understanding certain crisii dynamics (including direct impact)"
-    }, {
-        "id": "gap.11",
-        "title": "Lack of understanding cascading effects"
-    }, {
-        "id": "gap.12",
-        "title": "Lack of understanding the relief effort as a whole"
-    }, {
-        "id": "gap.13",
-        "title": "Lack of understanding volunteer initiatives"
-    }, {
-        "id": "gap.14",
-        "title": "Limitations in inter-agency information sharing. Barriers in exchanging information / interoperability"
-    }, {
-        "id": "gap.15",
-        "title": "Limitations in retention and warehousing of information"
-    }, {
-        "id": "gap.16",
-        "title": "Need for improvement in acquisition of information from external sources"
-    }, {
-        "id": "gap.17",
-        "title": "Lack of efficient ways to gather data from responders"
-    }, {
-        "id": "gap.18",
-        "title": "Insufficient assessment of demand and needs"
-    }, {
-        "id": "gap.19",
-        "title": "Shortcomings in responder communication in remote areas"
-    }, {
-        "id": "gap.20",
-        "title": "Shortcomings in the energy supply in support of response in remote/destroyed areas"
-    }, {
-        "id": "gap.21",
-        "title": "Lack of harmonisation in risk assessment"
-    }, {
-        "id": "gap.22",
-        "title": "A systematic and coherent way of describing capabilities, assets and capacities is missing"
-    }, {
-        "id": "gap.23",
-        "title": "Shortcomings in risk communication. Raise citizens preparedness"
-    }, {
-        "id": "gap.24",
-        "title": "Shortcomings in co-operation with third parties"
-    }, {
-        "id": "gap.25",
-        "title": "Lack of agreed interaction procedures with military organisations"
-    }, {
-        "id": "gap.26",
-        "title": "Need for increased involvement of hospitals in disaster management planning"
-    }, {
-        "id": "gap.27",
-        "title": "Strategic evaluation and performance assessment is missing"
-    }, {
-        "id": "gap.28",
-        "title": "Limitations in sharing and implementing best practices"
-    }, {
-        "id": "gap.29",
-        "title": "Need for joint and harmonised training"
-    }, {
-        "id": "gap.30",
-        "title": "Need for effective exercises"
-    }, {
-        "id": "gap.31",
-        "title": "Lack of certification and vetting of skills and competencies"
-    }, {
-        "id": "gap.32",
-        "title": "Lack of harmonised language and terminology"
-    }],
+    "gapLevels": [
+        {
+            "id": "g0",
+            "rating": {
+                "value": 0,
+                "max": 3
+            },
+            "title": "Not at all",
+            "description": "The solution or development does not contribute to strengthen the response or to improve collaboration."
+        },
+        {
+            "id": "g1",
+            "rating": {
+                "value": 1,
+                "max": 3
+            },
+            "title": "To a limited extent",
+            "description": "The solution or development strengthens the response or improves the collaboration to a limited extent."
+        },
+        {
+            "id": "g2",
+            "rating": {
+                "value": 2,
+                "max": 3
+            },
+            "title": "To a considerable extent",
+            "description": "The solution or development strengthens the response or improves the collaboration to a considerable extent."
+        },
+        {
+            "id": "g3",
+            "rating": {
+                "value": 3,
+                "max": 3
+            },
+            "title": "Fully",
+            "description": "The solution or development strengthens the response or improves the collaboration fully."
+        }
+    ],
+    "usabilityLevels": [
+        {
+            "id": "u0",
+            "rating": {
+                "value": 0,
+                "max": 3
+            },
+            "title": "Not at all"
+        },
+        {
+            "id": "u1",
+            "rating": {
+                "value": 1,
+                "max": 3
+            },
+            "title": "To a limited extent"
+        },
+        {
+            "id": "u2",
+            "rating": {
+                "value": 2,
+                "max": 3
+            },
+            "title": "To a considerable extent"
+        },
+        {
+            "id": "u3",
+            "rating": {
+                "value": 3,
+                "max": 3
+            },
+            "title": "Fully"
+        }
+    ],
+    "maturityLevels": [
+        {
+            "id": "m1",
+            "rating": {
+                "value": 1,
+                "max": 5
+            },
+            "title": "Vision and agenda formulated."
+        },
+        {
+            "id": "m2",
+            "rating": {
+                "value": 2,
+                "max": 5
+            },
+            "title": "Concept and specifications formulated."
+        },
+        {
+            "id": "m3",
+            "rating": {
+                "value": 3,
+                "max": 5
+            },
+            "title": "Prove of concept/ Limited trials"
+        },
+        {
+            "id": "m4",
+            "rating": {
+                "value": 4,
+                "max": 5
+            },
+            "title": "Extensive trials, not operational"
+        },
+        {
+            "id": "m5",
+            "rating": {
+                "value": 5,
+                "max": 5
+            },
+            "title": "Tested in legacy environment/ Operational"
+        }
+    ],
+    "validationLevels": [
+        {
+            "id": "v1",
+            "rating": {
+                "value": 1,
+                "max": 6
+            },
+            "title": "Limited information (desk research only)"
+        },
+        {
+            "id": "v2",
+            "rating": {
+                "value": 2,
+                "max": 6
+            },
+            "title": "Multiple sources (desk research only)"
+        },
+        {
+            "id": "v3",
+            "rating": {
+                "value": 3,
+                "max": 6
+            },
+            "title": "Validated with owner"
+        },
+        {
+            "id": "v4",
+            "rating": {
+                "value": 4,
+                "max": 6
+            },
+            "title": "Validated with end-user"
+        },
+        {
+            "id": "v5",
+            "rating": {
+                "value": 5,
+                "max": 6
+            },
+            "title": "Validated with both end-user and owner"
+        },
+        {
+            "id": "v6",
+            "rating": {
+                "value": 6,
+                "max": 6
+            },
+            "title": "Fully validated"
+        }
+    ],
+    "ciSectors": [
+        {
+            "id": "c1",
+            "title": "Education and R&amp;D"
+        },
+        {
+            "id": "c2",
+            "title": "Energy"
+        },
+        {
+            "id": "c3",
+            "title": "Financial"
+        },
+        {
+            "id": "c4",
+            "title": "Food"
+        },
+        {
+            "id": "c5",
+            "title": "Government"
+        },
+        {
+            "id": "c6",
+            "title": "Health"
+        },
+        {
+            "id": "c7",
+            "title": "ICT/Telecom"
+        },
+        {
+            "id": "c8",
+            "title": "Industry"
+        },
+        {
+            "id": "c9",
+            "title": "Internet"
+        },
+        {
+            "id": "c10",
+            "title": "Transport"
+        },
+        {
+            "id": "c11",
+            "title": "Water"
+        }
+    ],
+    "tasks": [
+        {
+            "id": "prep",
+            "title": "Preparatory tasks",
+            "description": null,
+            "children": [
+                {
+                    "id": "prep.a",
+                    "title": "Policy making/Capacity building",
+                    "description": null
+                },
+                {
+                    "id": "prep.b",
+                    "title": "Doctrine/Procedure development",
+                    "description": null
+                },
+                {
+                    "id": "prep.c",
+                    "title": "Procure | Maintain | Warehousing",
+                    "description": null
+                },
+                {
+                    "id": "prep.d",
+                    "title": "Community Awareness Raising",
+                    "description": null
+                },
+                {
+                    "id": "prep.e",
+                    "title": "Training & Exercises",
+                    "description": null
+                },
+                {
+                    "id": "prep.f",
+                    "title": "Evaluation",
+                    "description": null
+                },
+                {
+                    "id": "prep.g",
+                    "title": "Prepare civil/military co-operation",
+                    "description": null
+                }
+            ]
+        },
+        {
+            "id": "sup",
+            "title": "Supporting tasks",
+            "description": null,
+            "children": [
+                {
+                    "id": "sup.I",
+                    "title": "Co-ordination, Command &amp; Control",
+                    "description": null
+                },
+                {
+                    "id": "sup.II",
+                    "title": "Situation assessment",
+                    "description": null
+                },
+                {
+                    "id": "sup.III",
+                    "title": "Information management &amp; Distribution",
+                    "description": null
+                },
+                {
+                    "id": "sup.IV",
+                    "title": "Monitoring / Information gathering",
+                    "description": null
+                },
+                {
+                    "id": "sup.V",
+                    "title": "Supply of basic services to enable CM",
+                    "description": null
+                },
+                {
+                    "id": "sup.VI",
+                    "title": "Logistics",
+                    "description": null
+                }
+            ]
+        },
+        {
+            "id": "op",
+            "title": "Operational tasks",
+            "description": null,
+            "children": [
+                {
+                    "id": "op.A",
+                    "title": "Crisis mitigation on-site"
+                },
+                {
+                    "id": "op.B",
+                    "title": "Search and rescue"
+                },
+                {
+                    "id": "op.C",
+                    "title": "Security / Law enforcement"
+                },
+                {
+                    "id": "op.D",
+                    "title": "Evacuation &amp; Shelter"
+                },
+                {
+                    "id": "op.E",
+                    "title": "Inform and Involve the public"
+                },
+                {
+                    "id": "op.F",
+                    "title": "Health service"
+                },
+                {
+                    "id": "op.G",
+                    "title": "Clear crisis area"
+                },
+                {
+                    "id": "op.H",
+                    "title": "Supply and/or restauration of basic infrastructure"
+                },
+                {
+                    "id": "op.J",
+                    "title": "Other"
+                }
+            ]
+        }
+    ],
+    "incidents": [
+        {
+            "id": "nat",
+            "title": "Natural disasters",
+            "children": [
+                {
+                    "id": "nat.1",
+                    "title": "Geophysical events",
+                    "description": "Earthquake, Tsunami, Volcanic eruption, Mass movement"
+                },
+                {
+                    "id": "nat.2",
+                    "title": "Meteorological events",
+                    "description": "Storm, Extreme temperature, Drought, Wildfire, Extreme rainfall"
+                },
+                {
+                    "id": "nat.3",
+                    "title": "Hydrological events",
+                    "description": "Flood"
+                },
+                {
+                    "id": "nat.4",
+                    "title": "Biological events",
+                    "description": "Epidemic, Insect infestation, Animal disease"
+                },
+                {
+                    "id": "nat.5",
+                    "title": "Outer space events",
+                    "description": "Meteorites, Geomagnetic storms"
+                }
+            ]
+        },
+        {
+            "id": "out",
+            "title": "Outside EU events that require external intervention",
+            "children": [
+                {
+                    "id": "out.1",
+                    "title": "Humanitarian Aid outside EU"
+                },
+                {
+                    "id": "out.2",
+                    "title": "Outbreak of civil war"
+                },
+                {
+                    "id": "out.3",
+                    "title": "Civil disturbance"
+                },
+                {
+                    "id": "out.4",
+                    "title": "Large-scale disaster in a CSDP mission area"
+                },
+                {
+                    "id": "out.5",
+                    "title": "Large-scale movement of people"
+                }
+            ]
+        },
+        {
+            "id": "man",
+            "title": "Man-made incidents",
+            "children": [
+                {
+                    "id": "man.1",
+                    "title": "Industrial accidents",
+                    "description": "Biological incident (biotech & genetic engineering industry), Incident with combustible and/or explosive materials, Incident with toxic materials, Nuclear incident, Poisoning;"
+                },
+                {
+                    "id": "man.2",
+                    "title": "Transport accidents",
+                    "description": "Air crash, Accident on water, Railway accident, Road accident"
+                },
+                {
+                    "id": "man.3",
+                    "title": "Critical Infrastructure failures",
+                    "description": "Major failures in supplying Drinking water, Food, Sanitation, Energy, Telecom/ICT, Transport facilities (roads, airfields, harbours, railways, pipelines);"
+                },
+                {
+                    "id": "man.4",
+                    "title": "Miscellaneous",
+                    "description": "Underground incident, Large building fire, Collapse of buildings."
+                }
+            ]
+        },
+        {
+            "id": "cyb",
+            "title": "Terrorism & Crime",
+            "children": [
+                {
+                    "id": "cyb.1",
+                    "title": "CBRN terrorist action (attack and/or threat);"
+                },
+                {
+                    "id": "cyb.2",
+                    "title": "E-terrorist action (attack and/or threat with explosives);"
+                },
+                {
+                    "id": "cyb.3",
+                    "title": "Cyber attack"
+                },
+                {
+                    "id": "cyb.4",
+                    "title": "Organised crime"
+                },
+                {
+                    "id": "cyb.5",
+                    "title": "Cybercrime"
+                }
+            ]
+        },
+        {
+            "id": "oth",
+            "title": "Other crisis events",
+            "children": [
+                {
+                    "id": "oth.1",
+                    "title": "Incident with many EU citizens outside EU"
+                },
+                {
+                    "id": "oth.2",
+                    "title": "Large-scale influx of refugees into EU"
+                },
+                {
+                    "id": "oth.3",
+                    "title": "Economic failure (/financial crisis)"
+                },
+                {
+                    "id": "oth.4",
+                    "title": "War"
+                },
+                {
+                    "id": "oth.5",
+                    "title": "General"
+                }
+            ]
+        }
+    ],
+    "gaps": [
+        {
+            "id": "gap.1",
+            "title": "Limitations in early warning capabilities"
+        },
+        {
+            "id": "gap.2",
+            "title": "Problems in operating at incidents with hazardous materials"
+        },
+        {
+            "id": "gap.3",
+            "title": "Shortcoming in coordination of navigation of different manned systems at incident site"
+        },
+        {
+            "id": "gap.4",
+            "title": "Limitations in crisis communication - evolved management of information to the media and the public"
+        },
+        {
+            "id": "gap.5",
+            "title": "Need for (inter-)national shared victirm identification system"
+        },
+        {
+            "id": "gap.6",
+            "title": "Lack of tools for tasking and resource management"
+        },
+        {
+            "id": "gap.7",
+            "title": "Shortcomings in volunteer management"
+        },
+        {
+            "id": "gap.8",
+            "title": "Lack of decision support tools"
+        },
+        {
+            "id": "gap.9",
+            "title": "Shortcomings in collaboration between multiple levels of command"
+        },
+        {
+            "id": "gap.10",
+            "title": "Lack of understanding certain crisii dynamics (including direct impact)"
+        },
+        {
+            "id": "gap.11",
+            "title": "Lack of understanding cascading effects"
+        },
+        {
+            "id": "gap.12",
+            "title": "Lack of understanding the relief effort as a whole"
+        },
+        {
+            "id": "gap.13",
+            "title": "Lack of understanding volunteer initiatives"
+        },
+        {
+            "id": "gap.14",
+            "title": "Limitations in inter-agency information sharing. Barriers in exchanging information / interoperability"
+        },
+        {
+            "id": "gap.15",
+            "title": "Limitations in retention and warehousing of information"
+        },
+        {
+            "id": "gap.16",
+            "title": "Need for improvement in acquisition of information from external sources"
+        },
+        {
+            "id": "gap.17",
+            "title": "Lack of efficient ways to gather data from responders"
+        },
+        {
+            "id": "gap.18",
+            "title": "Insufficient assessment of demand and needs"
+        },
+        {
+            "id": "gap.19",
+            "title": "Shortcomings in responder communication in remote areas"
+        },
+        {
+            "id": "gap.20",
+            "title": "Shortcomings in the energy supply in support of response in remote/destroyed areas"
+        },
+        {
+            "id": "gap.21",
+            "title": "Lack of harmonisation in risk assessment"
+        },
+        {
+            "id": "gap.22",
+            "title": "A systematic and coherent way of describing capabilities, assets and capacities is missing"
+        },
+        {
+            "id": "gap.23",
+            "title": "Shortcomings in risk communication. Raise citizens preparedness"
+        },
+        {
+            "id": "gap.24",
+            "title": "Shortcomings in co-operation with third parties"
+        },
+        {
+            "id": "gap.25",
+            "title": "Lack of agreed interaction procedures with military organisations"
+        },
+        {
+            "id": "gap.26",
+            "title": "Need for increased involvement of hospitals in disaster management planning"
+        },
+        {
+            "id": "gap.27",
+            "title": "Strategic evaluation and performance assessment is missing"
+        },
+        {
+            "id": "gap.28",
+            "title": "Limitations in sharing and implementing best practices"
+        },
+        {
+            "id": "gap.29",
+            "title": "Need for joint and harmonised training"
+        },
+        {
+            "id": "gap.30",
+            "title": "Need for effective exercises"
+        },
+        {
+            "id": "gap.31",
+            "title": "Lack of certification and vetting of skills and competencies"
+        },
+        {
+            "id": "gap.32",
+            "title": "Lack of harmonised language and terminology"
+        }
+    ],
     "task2gaps": {
         "op.A": [
             "gap.2",
@@ -456,109 +664,212 @@
             "gap.32"
         ]
     },
-    "projects": [{
-        "id": "A4A",
-        "shortTitle": "A4A",
-        "title": "Alert for All",
-        "intendedUsers": "Public (key enablers to improve the effectiveness of alert and communications towards the population)",
-        "references": [
-            "http://www.alert4all.eu",
-            "http://cordis.europa.eu/project/rcn/98427_en.html"
-        ],
-        "currentUse": "X",
-        "criticalSectors": null,
-        "logo": "img/logo_alert4all.png",
-        "description": "A4A aims to improve crucial communication of information to the population (Early warning systems) through alert message dissemination using different communication systems, from cell phone messages and radio transmissions to Wi-Fi broadcasts and broadband Internet though a pan-European agency.\n\n![A4A](img/alert4all.png)\n\nThe ‘Alert and communications framework’ aims to:\n- Endorse cooperation and information exchange among involved authorities by means of common interfaces;\n- Provide decision support by means of alert impact awareness tools: \n  - (i) an alert impact what-if simulation tool that can be applied for planning purposes; \n  - (ii) real-time screening of new media posts, providing knowledge on citizens&quot; perception to authorities;\n- Foster cost-effective alert message dissemination over a variety of communication systems, including satellite links, by means of novel communication protocols that promote the use of harmonised best practices.\n",
-        "maturityLevel": {
-            "id": "m1"
-        },
-        "tasks": [{
-            "id": "op.E"
-        }, {
-            "id": "sup.II"
-        }, {
-            "id": "sup.IV"
-        }, {
-            "id": "prep.e"
-        }],
-        "incidents": [{
-            "id": "oth.5"
-        }],
-        "gaps": [{
-            "id": "gap.1",
-            "score": {
-                "id": "g2"
+    "projects": [
+        {
+            "id": "A4A",
+            "shortTitle": "A4A",
+            "title": "Alert for All",
+            "intendedUsers": "Public (key enablers to improve the effectiveness of alert and communications towards the population)",
+            "references": [
+                "http://www.alert4all.eu",
+                "http://cordis.europa.eu/project/rcn/98427_en.html"
+            ],
+            "currentUse": "X",
+            "ciSectors": null,
+            "logo": "img/logo_alert4all.png",
+            "description": "A4A aims to improve crucial communication of information to the population (Early warning systems) through alert message dissemination using different communication systems, from cell phone messages and radio transmissions to Wi-Fi broadcasts and broadband Internet though a pan-European agency.\n\n![A4A](img/alert4all.png)\n\nThe ‘Alert and communications framework’ aims to:\n- Endorse cooperation and information exchange among involved authorities by means of common interfaces;\n- Provide decision support by means of alert impact awareness tools: \n  - (i) an alert impact what-if simulation tool that can be applied for planning purposes; \n  - (ii) real-time screening of new media posts, providing knowledge on citizens&quot; perception to authorities;\n- Foster cost-effective alert message dissemination over a variety of communication systems, including satellite links, by means of novel communication protocols that promote the use of harmonised best practices.\n",
+            "maturityLevel": {
+                "id": "m1"
             },
-            "remarks": "The main objective of A4A is to improve early warning capabilities across Europe. It aims at laying the foundations for a \npan-European alerting system. Using this system authorities will be able to warn the population during large scale crises. \nAs soon as the thread is recognised, civil protection officials can describe the situation by selecting key words in the \nsystem. A4A then automatically composes a coded alert message from these key words in any language. A4A has a great potential\nto solve this gap, it should be noted however, that the described goals can only be achieved in the long term. Therefore this \nproject is rated [2/3].\n"
-        }, {
-            "id": "gap.4",
-            "score": {
-                "id": "g2"
+            "tasks": [
+                {
+                    "id": "op.E"
+                },
+                {
+                    "id": "sup.II"
+                },
+                {
+                    "id": "sup.IV"
+                },
+                {
+                    "id": "prep.e"
+                }
+            ],
+            "incidents": [
+                {
+                    "id": "oth.5"
+                }
+            ],
+            "gaps": [
+                {
+                    "id": "gap.1",
+                    "score": {
+                        "id": "g2"
+                    },
+                    "remarks": "The main objective of A4A is to improve early warning capabilities across Europe. It aims at laying the foundations for a \npan-European alerting system. Using this system authorities will be able to warn the population during large scale crises. \nAs soon as the thread is recognised, civil protection officials can describe the situation by selecting key words in the \nsystem. A4A then automatically composes a coded alert message from these key words in any language. A4A has a great potential\nto solve this gap, it should be noted however, that the described goals can only be achieved in the long term. Therefore this \nproject is rated [2/3].\n"
+                },
+                {
+                    "id": "gap.4",
+                    "score": {
+                        "id": "g2"
+                    },
+                    "remarks": "A4A aims at laying the foundations for a pan-European alerting system. Using this system authorities can quickly and efficiently\ncompose  and disseminate messages to the public. The alert message dissemination uses many communication technologies that are\ntriggered centrally by a satellite communication system called: ‘Global Alerting Gateway’. This ensures the alert message reaches\nthe maximum number of people at risk. A4A has a great potential to solve this gap, it should be noted however, that the described\ngoals can only be achieved in the long term. Therefore this project is rated at [2/3].\n"
+                },
+                {
+                    "id": "gap.14",
+                    "score": {
+                        "id": "g1"
+                    },
+                    "remarks": "The system not only aims to warn the population, but also aims to disseminate information between agencies using A4A. A4A only \nfocusses on exchanging information during crises, and as mentioned earlier the stated goals are only possible in the long term. \nFor these reasons the project is rated at [1/3].\n"
+                },
+                {
+                    "id": "gap.16",
+                    "score": {
+                        "id": "g1"
+                    },
+                    "remarks": "A4A provides a solution to monitor how the public reacts to an alarm. A4A systems’ “screening new media tool’” gathers and analyses, \nin real time, opinions about the emergency expressed by the affected public. This allows civil protection officials to make educated \ndecisions based on the growing context of the situation. Potentially this system will be able to solve this gap when social media is \nthe ‘external source’. It should be noted however, that the described goals can only be achieved in the long term. Therefore this \nproject is rated [2/3].\n"
+                },
+                {
+                    "id": "gap.29",
+                    "score": {
+                        "id": "g1"
+                    },
+                    "remarks": "A4A will offer an e-learning platform.  Using the ‘training mode’ in the A4A system civil protection officials will be able to \npractise the use of all systems’ functionalities. This platform ensures harmonisation of training the use of this alert system. \nEvery civil protection official will be trained in the same way and in their own language. It should be noted however, that the \nplatform only provides a tutorial for the use of this system and that the mentioned goals can only be achieved in the long term.\nFor these reasons the project is rated at [1/3].       \n"
+                }
+            ],
+            "usabilityLevel": {
+                "id": "u1",
+                "remarks": "The system has been demonstrated in an operational environment. Results of this demonstration show that, potentially, the system could \nbe very user friendly. The actual usability (affordability, openness of the solution etc.) of A4A is not clear, because a pan-European \nservice (European Warning and Informing Agency) has not been established yet. As mentioned before, the possibilities of using this \nsystem will only be available in the long term. \n"
             },
-            "remarks": "A4A aims at laying the foundations for a pan-European alerting system. Using this system authorities can quickly and efficiently\ncompose  and disseminate messages to the public. The alert message dissemination uses many communication technologies that are\ntriggered centrally by a satellite communication system called: ‘Global Alerting Gateway’. This ensures the alert message reaches\nthe maximum number of people at risk. A4A has a great potential to solve this gap, it should be noted however, that the described\ngoals can only be achieved in the long term. Therefore this project is rated at [2/3].\n"
-        }, {
-            "id": "gap.14",
-            "score": {
-                "id": "g1"
+            "administration": {
+                "duration": {
+                    "start": "2011-03-16T00:00:00.000Z",
+                    "end": "2013-12-15T00:00:00.000Z",
+                    "status": "project closed"
+                },
+                "developers": "A4A consortium",
+                "owners": "A4A consortium",
+                "sponsors": "FP7 – Security",
+                "projectType": "CP",
+                "coordinator": "DEUTSCHES ZENTRUM FÜR LUFT - UND RAUMFAHRT EV (Germany)",
+                "participants": "- DEUTSCHES ROTES KREUZ EV (Germany)\n- AVANTI COMMUNICATIONS LTD (United Kingdom)\n- BAPCO LBG (United Kingdom)\n- TECNOSYLVA SL (Spain)\n- EDISOFT-EMPRESA DE SERVICOS E DESENVOLVIMENTO DE SOFTWARE SA (Portugal)\n- FUNDACION TECNALIA RESEARCH &amp; INNOVATION (Spain)\n- UNIVERSITÄT STUTTGART (Germany)\n- TOTALFORSVARETS FORSKNINGSINSTITUT (Sweden)\n- Bundesamt für Bevölkerungsschutz und Katastrophenhilfe (Germany)\n- EUTELSAT S.A. (France)\n- INSTITUT FÜR RUNDFUNKTECHNIK GMBH (Germany)\n"
             },
-            "remarks": "The system not only aims to warn the population, but also aims to disseminate information between agencies using A4A. A4A only \nfocusses on exchanging information during crises, and as mentioned earlier the stated goals are only possible in the long term. \nFor these reasons the project is rated at [1/3].\n"
-        }, {
-            "id": "gap.16",
-            "score": {
-                "id": "g1"
-            },
-            "remarks": "A4A provides a solution to monitor how the public reacts to an alarm. A4A systems’ “screening new media tool’” gathers and analyses, \nin real time, opinions about the emergency expressed by the affected public. This allows civil protection officials to make educated \ndecisions based on the growing context of the situation. Potentially this system will be able to solve this gap when social media is \nthe ‘external source’. It should be noted however, that the described goals can only be achieved in the long term. Therefore this \nproject is rated [2/3].\n"
-        }, {
-            "id": "gap.29",
-            "score": {
-                "id": "g1"
-            },
-            "remarks": "A4A will offer an e-learning platform.  Using the ‘training mode’ in the A4A system civil protection officials will be able to \npractise the use of all systems’ functionalities. This platform ensures harmonisation of training the use of this alert system. \nEvery civil protection official will be trained in the same way and in their own language. It should be noted however, that the \nplatform only provides a tutorial for the use of this system and that the mentioned goals can only be achieved in the long term.\nFor these reasons the project is rated at [1/3].       \n"
-        }],
-        "usabilityLevel": {
-            "score": {
-                "id": "u1"
-            },
-            "remarks": "The system has been demonstrated in an operational environment. Results of this demonstration show that, potentially, the system could \nbe very user friendly. The actual usability (affordability, openness of the solution etc.) of A4A is not clear, because a pan-European \nservice (European Warning and Informing Agency) has not been established yet. As mentioned before, the possibilities of using this \nsystem will only be available in the long term. \n"
-        },
-        "administration": {
-            "duration": {
-                "start": "2011-03-16T00:00:00.000Z",
-                "end": "2013-12-15T00:00:00.000Z",
-                "status": "project closed"
-            },
-            "developers": "A4A consortium",
-            "owners": "A4A consortium",
-            "sponsors": "FP7 – Security",
-            "projectType": "CP",
-            "coordinator": "DEUTSCHES ZENTRUM FÜR LUFT - UND RAUMFAHRT EV (Germany)",
-            "participants": [
-                "DEUTSCHES ROTES KREUZ EV (Germany)",
-                "AVANTI COMMUNICATIONS LTD (United Kingdom)",
-                "BAPCO LBG (United Kingdom)",
-                "TECNOSYLVA SL (Spain)",
-                "EDISOFT-EMPRESA DE SERVICOS E DESENVOLVIMENTO DE SOFTWARE SA (Portugal)",
-                "FUNDACION TECNALIA RESEARCH &amp; INNOVATION (Spain)",
-                "UNIVERSITÄT STUTTGART (Germany)",
-                "TOTALFORSVARETS FORSKNINGSINSTITUT (Sweden)",
-                "Bundesamt für Bevölkerungsschutz und Katastrophenhilfe (Germany)",
-                "EUTELSAT S.A. (France)",
-                "INSTITUT FÜR RUNDFUNKTECHNIK GMBH (Germany)"
+            "analysts": [
+                {
+                    "name": "Jorn Boers",
+                    "organisation": "TNO",
+                    "reviewed": "2016-02-09T00:00:00.000Z",
+                    "validationLevel": {
+                        "id": "v2"
+                    },
+                    "remarks": null
+                }
             ]
         },
-        "analyst": [{
-            "name": "Jorn Boers",
-            "organisation": "TNO",
-            "reviewed": "2016-02-09T00:00:00.000Z",
-            "validation": "2 - Multiple sources (desk research only)",
-            "remarks": null
-        }]
-    }, {
-        "id": 2,
-        "shortTitle": "T2",
-        "title": "Alba",
-        "url": "www.google.nl",
-        "logo": "http://a5.files.fashionista.com/image/upload/c_fit,cs_srgb,w_620/MTMyOTIxMjIxNTIzMjM4ODgy.png",
-        "description": "My ** description ** for Jessica Alba"
-    }]
+        {
+            "id": "AFTER",
+            "shortTitle": "AFTER",
+            "title": "A Framework for electrical power sysTems vulnerability identification,dEfense and Restoration",
+            "intendedUsers": "Transmission System Operators (TSOs), CI operators",
+            "references": [
+                "http://www.after-project.eu/",
+                "http://cordis.europa.eu/project/rcn/100196_en.html"
+            ],
+            "incidents": [
+                {
+                    "id": "man.3"
+                },
+                {
+                    "id": "cyb.3"
+                }
+            ],
+            "currentUse": "X",
+            "ciSectors": [
+                {
+                    "id": "c2"
+                },
+                {
+                    "id": "c7"
+                },
+                {
+                    "id": "c9"
+                }
+            ],
+            "logo": "img/logo_after.png",
+            "description": "AFTER project addressed the challenges posed by the need for vulnerability evaluation and contingency planning of the energy grids and energy plants considering also the relevant ICT systems used in protection and control. The project emphasis was on cascading events that can cause catastrophic outages of the electric power systems.\n![A4A](img/after.png)\n\nSpecifically the following objectives were pursued:\n\n1. Define and develop the architecture of a framework for risk and vulnerability assessment for integrated power and ICT systems.\n2. Develop methodologies for dealing with risk and vulnerability in integrated power and ICT systems. \n3. Develop tools and techniques for dealing with risk and vulnerability in integrated power and ICT systems:\n   - Develop prototype tools to support global risk assessment incorporating hazard, vulnerability and impact analysis\n   - Develop techniques to support the defence of critical infrastructures against unwanted (included cascading)events\n   - Develop a decision support system for intelligent automatic restoration, e.g. after wide spread blackouts.\n4. Develop the concepts and techniques for physical security:\n   - Develop sensing, monitoring and software agent technologies for security monitoring and early warning.     \n",
+            "maturityLevel": {
+                "id": "m0"
+            },
+            "tasks": [
+                {
+                    "id": "op.E"
+                },
+                {
+                    "id": "sup.II"
+                },
+                {
+                    "id": "prep.a"
+                }
+            ],
+            "gaps": [
+                {
+                    "id": "gap.1",
+                    "score": {
+                        "id": "g2"
+                    },
+                    "remarks": "As mentioned in the description: one of the objectives of AFTER (objective nr. 4) is to develop a set of tools designed for sensing and monitoring and to develop software agent technologies for security monitoring and early warning. A physical security management tool is devoted to detect and to provide early warning of physical intrusions into energy system facilities including power plants and substations. The system tracks potential intruders via advanced algorithms to manage cameras: any alarm is processed and associated with a list of possible intrusion hypotheses on the basis of an encoded set of rules. Power flow analyses estimate the impact of any attack scenario on the grid and suggest operational practices to limit the impact itself. A drill at CEPS premises provided raw data to validate the tool performance. \n\nThe tool provides early warning capabilities with respect to detecting physical intrusions in energy system facilities. Early warning capabilities with respect to detecting and warning about non- physical (cyber-) attacks is not mentioned in the project description. \n"
+                },
+                {
+                    "id": "gap.11",
+                    "score": {
+                        "id": "g3"
+                    },
+                    "remarks": "The main objective of AFTER is to minimise or prevent cascading effects resulting failures in power/ ICT grids. Using the tools provided by AFTER TSOs will be able to predict and minimise the cascading effects of grid failures caused by man- made or natural incidents. AFTER also provides tools to restart the affected grid as soon as possible. The following tools or algorithms are developed:   \n- An adaptive multi-agent-based load shedding algorithm is proposed to mitigate power system blackouts using various types of IED (Intelligent Electronic Device ), improving the frequency response with respect to conventional schemes. \n- The defence support tool integrates a dynamic security assessment tool with a Case Based Reasoning (CBR) algorithm: after the analysis of many network scenarios, and large set of contingencies (assessing possibly needed remedial measures), the CBR is able to find an appropriate measure for critical contingency in an electrical network to avoid black out. \n- The restoration support tool, based on Generic Restoration Milestones (GRMs), has the following features: \n  - overall objective is to minimize the system restoration time; \n  - optimization techniques compute solutions for different restoration tasks; \n  - adaptive construction of restoration strategies. \n"
+                },
+                {
+                    "id": "gap.21",
+                    "score": {
+                        "id": "g3"
+                    },
+                    "remarks": "AFTER provides a global risk assessment tool which assesses risks and hazards with respect to ICT and power grids. The first and second objectives of AFTER (project description)  are about this subject. \nFurther description of these objectives: \n1. Define and develop the architecture of a framework for risk and vulnerability assessment for integrated power and ICT systems:\n   - Identify the boundaries of the integrated power and ICT system to be considered\n   - Identify and classify hazards, threats and the systems vulnerabilities\n   - Define relevant indicators for selected vulnerabilities.\n\n2. Develop methodologies for dealing with risk and vulnerability in integrated power and ICT systems:\n   - Establish methods for describing vulnerability and criticality of various parts of the system, taking various types of barriers/ protection into account\n   - Establish methods for impact (consequence) analysis, including the impact of cascading events\n   - Provide an approach for risk estimation and assessment, suggest ways to quantify risk and to establish acceptance criteria\n   - Establish main elements and algorithms of defence plans\n   - Establish main elements and algorithms of restoration plans.\n\nThe lack of harmonisation in risk assessment with respect to ICT and power grid risks is solved if these objectives are achieved. \n"
+                }
+            ],
+            "usabilityLevel": {
+                "id": "u2",
+                "remarks": "The tools provided by AFTER make it easier for TSOs to predict, minimise and/or prevent certain cascading effects caused by failures in ICT or power grids. The Global Risk Assessment Tool has a prototype video (AFTER-webpage). The prototype seems to be very user friendly for TSOs. It should be noted that there is no information about the costs of these tools. It is necessary to improve the collaboration between TSOs and first responders for the project to be useful. The current usage of the project is unclear.        administration:\n"
+            },
+            "administration": {
+                "duration": {
+                    "start": "2011-09-01T00:00:00.000Z",
+                    "end": "2014-12-31T00:00:00.000Z",
+                    "status": "project closed"
+                },
+                "developers": "AFTER consortium",
+                "owners": "AFTER consortium",
+                "sponsors": "FP7 – Security",
+                "projectType": "CP",
+                "coordinator": "RICERCA SUL SISTEMA ENERGETICO - RSE SPA (Italy)",
+                "participants": "-\tAGENZIA NAZIONALE PER LE NUOVE TECNOLOGIE,L'ENERGIA E LO SVILUPPO ECONOMICO SOSTENIBILE (Italy)\n-\tSINTEF ENERGI AS (Norway)\n-\tSTIFTELSEN SINTEF (Norway)\n-\tUNIVERSITA DEGLI STUDI DI GENOVA (Italy)\n-\tUNIVERSITY COLLEGE DUBLIN, NATIONAL UNIVERSITY OF IRELAND, DUBLIN  (Ireland)\n-\tCity University (United Kingdom) \n-\tALSTOM POWER SYSTEMS SA (France)\n-\tSIEMENS AG (Germany)\n-\tCOMMISSION OF THE EUROPEAN COMMUNITIES - DIRECTORATE GENERAL JOINT RESEARCH CENTRE – JRC (Belgium)\n-\tELIA SYSTEM OPERATOR (Belgium)\n-\tTERNA - RETE ELETTRICA NAZIONALE SPA (Italy)\n-\tCEPS AS (Czech Republic)\n-\tALSTOM GRID SAS (France)        \n"
+            },
+            "analysts": [
+                {
+                    "name": "Jorn Boers",
+                    "organisation": "TNO",
+                    "reviewed": "2016-03-14T00:00:00.000Z",
+                    "validationLevel": {
+                        "id": "v1"
+                    },
+                    "remarks": null
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "shortTitle": "T2",
+            "title": "Alba",
+            "url": "www.google.nl",
+            "logo": "http://a5.files.fashionista.com/image/upload/c_fit,cs_srgb,w_620/MTMyOTIxMjIxNTIzMjM4ODgy.png",
+            "description": "My ** description ** for Jessica Alba"
+        }
+    ]
 }
