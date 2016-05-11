@@ -31,7 +31,7 @@ export interface IProject {
         sponsors?: string;
         projectType?: string;
         coordinator?: string;
-        participants?: string[];        
+        participants?: string;        
     };
     analysts?: {
         name?: string;

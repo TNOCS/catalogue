@@ -1,9 +1,146 @@
 <template>
     <require from="helpers/MarkdownValueConverter"></require>
+    <require from="helpers/FormatDateValueConverter"></require>
+    <require from="./components/characteristic"></require>
 
-    <section class="au-animate">
-        <h1>${project.title}</h1>
+    <section>
+        <div class="au-animate col-md-6">
+            <div class="row">
+                <div class="col-md-8">
+                    <h1>${project.shortTitle}</h1>
+                </div>
+                <div class="col-md-4">
+                    <img src.bind="project.logo" class="img-responsive" crossorigin ref="image">
+                </div>
+            </div>
+            <div class="row">
+                
+            <table class="table table-sm">
+            <thead>
+                <tr>
+                    <th>Start date</th>
+                    <th>End date</th>
+                    <th>Maturity</th>
+                    <th>Usability</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>${project.administration.duration.start | formatDate:"yyyy-MM-dd"}</td>
+                    <td>${project.administration.duration.end | formatDate:"yyyy-MM-dd"} ${project.administration.duration.status}</td>
+                    <td>${project.maturityLevel.title} (${project.maturityLevel.rating.value} of ${project.maturityLevel.rating.max})</td>
+                    <td>${project.usabilityLevel.title || '-'} (${project.usabilityLevel.rating.value} of ${project.usabilityLevel.rating.max})</td>
+                </tr>
+            </tbody>
+            </table>
+
+            </div>
+            <h3>${project.title}</h3>
+            
+            <div innerHTML.bind="project.description | markdown"></div>
+
+            <div class="row">
+                <h3>Tasks</h3>
+                <ul class="list-unstyled" style="margin-left: 20px">
+                    <li repeat.for="task of project.tasks">${task.title}</li>
+                </ul>                          
+            </div>        
+
+            <div class="row">
+                <h3>Incident types</h3>
+                <ul class="list-unstyled" style="margin-left: 20px">
+                    <li repeat.for="i of project.incidents">${i.title}</li>
+                </ul>                          
+            </div>        
+            <div class="row">
+                <h3>Sectors</h3>
+                <ul class="list-unstyled" style="margin-left: 20px">
+                    <li repeat.for="ci of project.ciSectors">${ci.title}</li>
+                </ul>                          
+            </div>
+            
+            <div class="row">            
+                <h3><a click.delegate="showAdmin = !showAdmin" 
+                    data-toggle="tooltip" data-placement="top" title="Tooltip on top"
+                    class="small fa ${showAdmin ? 'fa-chevron-circle-down' : 'fa-chevron-circle-up'}"></a>&nbsp;Project details</h3>
+            </div>
+            <div class="row" show.bind="showAdmin">
+                <table class="table table-striped">
+                    <tr>
+                        <td>Developer(s)</td>
+                        <td>${project.administration.developers}</td>
+                    </tr>
+                    <tr>
+                        <td>Owner(s)</td>
+                        <td>${project.administration.owners}</td>
+                    </tr>
+                    <tr>
+                        <td>Sponser(s)</td>
+                        <td>${project.administration.sponsors}</td>
+                    </tr>
+                    <tr>
+                        <td>Project type</td>
+                        <td>${project.administration.projectType}</td>
+                    </tr>
+                    <tr>
+                        <td>Coordinator</td>
+                        <td>${project.administration.coordinator}</td>
+                    </tr>
+                    <tr>
+                        <td>Participants</td>
+                        <td>
+                            <div innerHTML.bind="project.administration.participants | markdown"></div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            
+            <div class="row">            
+                <h3><a click.delegate="showAnalyst = !showAnalyst" 
+                    data-toggle="tooltip" data-placement="top" title="Tooltip on top"
+                    class="small fa ${showAnalyst ? 'fa-chevron-circle-down' : 'fa-chevron-circle-up'}"></a>&nbsp;Analysts</h3>
+            </div>
+            <div class="row" repeat.for="analyst of project.analysts" show.bind="showAnalyst">
+                <table class="table table-striped" style="margin-bottom: 10px">
+                    <tr>
+                        <td>Name</td>
+                        <td>${analyst.name}</td>
+                    </tr>
+                    <tr>
+                        <td>Organisation</td>
+                        <td>${analyst.organisation}</td>
+                    </tr>
+                    <tr>
+                        <td>Reviewed</td>
+                        <td>${analyst.reviewed | formatDate:"yyyy-MM-dd"}</td>
+                    </tr>
+                    <tr>
+                        <td>Validation level</td>
+                        <td>${analyst.validationLevel.title}</td>
+                    </tr>
+                    <tr>
+                        <td>Remarks</td>
+                        <td>
+                            <div innerHTML.bind="analyst.remarks | markdown"></div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+        </div>
         
-        <div innerHTML.bind="project.description | markdown"></div>
-    </section>
+        <div class="au-animate col-md-offset-1 col-md-5">
+            <div class="row">
+                <h3>Gaps</h3>
+                <characteristic repeat.for="gap of project.gaps" characteristic.bind="gap"></characteristic>
+            </div>        
+
+            <div class="row">
+                <h3>Usability</h3>
+                <characteristic characteristic.bind="project.usabilityLevel"></characteristic>
+            </div>        
+        </div>
+    </section>    
+</template></template>
+</template>
 </template>

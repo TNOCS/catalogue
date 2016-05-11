@@ -12,6 +12,8 @@ export interface IDatabase {
     usabilityLevels: ICharacteristic[];
     /** List of maturity scales */
     maturityLevels: ICharacteristic[];
+    /** List of gap scales */
+    gapLevels: ICharacteristic[];
     /** List of validation scales */
     validationLevels: ICharacteristic[];
     /** List of CI sectors */

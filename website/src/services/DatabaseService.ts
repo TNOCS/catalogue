@@ -15,6 +15,7 @@ export class DatabaseService {
     private gaps:             {[key: string]: ICharacteristic } = {}; 
     private incidents:        {[key: string]: ICharacteristic } = {}; 
     private maturityLevels:   {[key: string]: ICharacteristic } = {}; 
+    private gapLevels:        {[key: string]: ICharacteristic } = {}; 
     private usabilityLevels:  {[key: string]: ICharacteristic } = {}; 
     private validationLevels: {[key: string]: ICharacteristic } = {}; 
     private ciSectors:        {[key: string]: ICharacteristic } = {}; 
@@ -43,6 +44,7 @@ export class DatabaseService {
             db.maturityLevels.forEach(m   => this.maturityLevels[m.id]   = m );
             db.usabilityLevels.forEach(m  => this.usabilityLevels[m.id]  = m );
             db.validationLevels.forEach(m => this.validationLevels[m.id] = m );
+            db.gapLevels.forEach(m        => this.gapLevels[m.id]        = m );
             db.ciSectors.forEach(m        => this.ciSectors[m.id]        = m );
             
             this.parseCharacteristics(db.tasks,     this.tasks);
@@ -58,8 +60,23 @@ export class DatabaseService {
                 p.index = index++;
                 this.updateProjectCharacteristics(p, p.tasks,     this.tasks);
                 this.updateProjectCharacteristics(p, p.incidents, this.incidents);
-                this.updateProjectCharacteristics(p, p.gaps,      this.gaps);
+                this.updateProjectCharacteristics(p, p.gaps,      this.gaps, this.gapLevels);
                 this.updateProjectCharacteristics(p, p.ciSectors, this.ciSectors);
+
+                if (p.maturityLevel && p.maturityLevel.id && this.maturityLevels.hasOwnProperty(p.maturityLevel.id))
+                    p.maturityLevel = this.maturityLevels[p.maturityLevel.id];
+                if (p.usabilityLevel && p.usabilityLevel.id && this.usabilityLevels.hasOwnProperty(p.usabilityLevel.id)) {
+                    let usability = this.usabilityLevels[p.usabilityLevel.id];
+                    p.usabilityLevel.title       = usability.title;
+                    p.usabilityLevel.rating      = usability.rating;
+                    p.usabilityLevel.description = usability.description;
+                }
+                if (p.analysts) {
+                    p.analysts.forEach(a => {
+                        if (a.validationLevel && this.validationLevels.hasOwnProperty(a.validationLevel.id)) 
+                            a.validationLevel = this.validationLevels[a.validationLevel.id];
+                    });
+                }
             });
         });
     }
@@ -99,7 +116,12 @@ export class DatabaseService {
      * Assume that the IDs are given and correct, but that the text (title/description) may have changed.
      * Also, for each match, e.g. of a task, update the tasks store so we know that which projects refer to which tasks.
      */    
-    private updateProjectCharacteristics(project: IProject, projectCharacteristics: ICharacteristic[], characteristics: { [key: string]: ICharacteristic}) {
+    private updateProjectCharacteristics(
+        project: IProject, 
+        projectCharacteristics: ICharacteristic[], 
+        characteristics: { [key: string]: ICharacteristic}, 
+        scores?: { [key: string]: ICharacteristic}
+        ) {
         if (!projectCharacteristics) return;
         let pruneIndexes: number[] = [];
         let index = -1;
@@ -112,6 +134,9 @@ export class DatabaseService {
             let characteristic = characteristics[c.id];
             c.title = characteristic.title;
             c.description = characteristic.description;
+            if (scores && c.score && c.score.id) {
+                if (scores.hasOwnProperty(c.score.id)) c.score = scores[c.score.id];
+            }
             // Finally, update the characteristics with a reference to this project
             if (!characteristic.projects) characteristic.projects = [];
             characteristic.projects.push(project);
