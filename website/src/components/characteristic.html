@@ -1,0 +1,14 @@
+<template>
+    <require from="helpers/MarkdownValueConverter"></require>
+
+    <div class="row">
+        <div class="col-md-10" style="font-weight: bold">
+            <a click.delegate="show = !show" 
+                data-toggle="tooltip" data-placement="top" title="Tooltip on top"
+                class="fa ${show ? 'fa-chevron-circle-down' : 'fa-chevron-circle-up'}"></a>
+               &nbsp;${characteristic.title}
+        </div>
+        <div class="col-md-2 text-right">${characteristic.score.rating.value || characteristic.rating.value} of ${characteristic.score.rating.max || characteristic.rating.max}</div>
+    </div>
+    <div style="margin: 5px 0;" show.bind="show" innerHTML.bind="characteristic.remarks | markdown"></div>
+</template>

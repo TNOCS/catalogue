@@ -17,4 +17,8 @@ export interface ICharacteristic {
     relations?: ICharacteristic[];
     /** Optional relation to projects, e.g. from tasks, incident types or gaps to projects */
     projects?: IProject[];
+    rating?: {
+        value: number;
+        max: number;
+    }
 }
