@@ -126,7 +126,7 @@ validationLevels:
 ciSectors:
   -	
     id: c1
-    title: Education and R&amp;D
+    title: Education and R&D
   -	
     id: c2
     title: Energy 
@@ -198,7 +198,7 @@ tasks:
     children: 
       - 
         id: sup.I
-        title: Co-ordination, Command &amp; Control
+        title: Co-ordination, Command & Control
         description: 
       - 
         id: sup.II
@@ -206,7 +206,7 @@ tasks:
         description: 
       - 
         id: sup.III
-        title: Information management &amp; Distribution
+        title: Information management & Distribution
         description: 
       - 
         id: sup.IV
@@ -236,7 +236,7 @@ tasks:
         title: Security / Law enforcement
       - 
         id: op.D
-        title: Evacuation &amp; Shelter
+        title: Evacuation & Shelter
       - 
         id: op.E
         title: Inform and Involve the public
@@ -384,7 +384,7 @@ gaps:
     title: Shortcomings in collaboration between multiple levels of command
   - 
     id: gap.10
-    title: Lack of understanding certain crisii dynamics (including direct impact)
+    title: Lack of understanding certain crisis dynamics (including direct impact)
   - 
     id: gap.11
     title: Lack of understanding cascading effects
@@ -607,7 +607,7 @@ projects:
         - BAPCO LBG (United Kingdom)
         - TECNOSYLVA SL (Spain)
         - EDISOFT-EMPRESA DE SERVICOS E DESENVOLVIMENTO DE SOFTWARE SA (Portugal)
-        - FUNDACION TECNALIA RESEARCH &amp; INNOVATION (Spain)
+        - FUNDACION TECNALIA RESEARCH & INNOVATION (Spain)
         - UNIVERSITÄT STUTTGART (Germany)
         - TOTALFORSVARETS FORSKNINGSINSTITUT (Sweden)
         - Bundesamt für Bevölkerungsschutz und Katastrophenhilfe (Germany)
@@ -624,7 +624,7 @@ projects:
   - 
     id: AFTER
     shortTitle: AFTER
-    title: A Framework for electrical power sysTems vulnerability identification,dEfense and Restoration
+    title: A Framework for electrical power sysTems vulnerability identification, dEfense and Restoration
     intendedUsers: Transmission System Operators (TSOs), CI operators 
     references: 
       - "http://www.after-project.eu/"

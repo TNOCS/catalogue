@@ -1,15 +1,18 @@
 <template>
   <section class="au-animate">
-      <h2>${heading}</h2>
-      <ul class="list-unstyled">
-          <li repeat.for="gap of gaps">${gap.title}
-            <ul class="list-unstyled" style="margin-left: 10px">
-                <li repeat.for="project of gap.projects">PROJECT: ${project.title}</li>
-            </ul>                                       
-            <ul class="list-unstyled" style="margin-left: 10px">
-                <li repeat.for="relation of gap.relations">TASK: ${relation.title}</li>
-            </ul>      
-          </li>
-      </ul>
+      <div class="col-md-6">
+        <h2>${heading}</h2>
+        <ul class="list-unstyled">
+            <li repeat.for="gap of gaps">${gap.title}
+                <span data-toggle="tooltip" data-placement="left" title="Number of projects addressing this gap." if.bind="gap.projects" class="badge pull-right">${gap.projects.length}</span>
+                <ul class="list-unstyled" style="margin-left: 10px">
+                    <li repeat.for="project of gap.projects">PROJECT: ${project.title}</li>
+                </ul>                                       
+                <ul class="list-unstyled" style="margin-left: 10px">
+                    <li repeat.for="relation of gap.relations">TASK: ${relation.title}</li>
+                </ul>      
+            </li>
+        </ul>
+    </div>
   </section>
 </template>

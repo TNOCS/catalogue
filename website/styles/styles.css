@@ -144,6 +144,19 @@ div.au-stagger {
     border: 2px #FFF solid;
 }
 
+.selectable {
+    cursor: pointer;
+}
+
+.unselectable {
+    color: grey;
+}
+
+.selected {
+    background: blue;
+    color: white;
+}
+
 
 /* animation definitions */
 

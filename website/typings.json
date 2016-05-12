@@ -2,6 +2,7 @@
   "name": "aurelia-skeleton-navigation-typescript",
   "ambientDependencies": {
     "angular-protractor": "github:DefinitelyTyped/DefinitelyTyped/angular-protractor/angular-protractor.d.ts#24e12a7af994afa2226af70fbfae0adc78736a9e",
+    "d3": "registry:dt/d3#0.0.0+20160317120654",
     "es6-promise": "github:DefinitelyTyped/DefinitelyTyped/es6-promise/es6-promise.d.ts#24e12a7af994afa2226af70fbfae0adc78736a9e",
     "jasmine": "github:DefinitelyTyped/DefinitelyTyped/jasmine/jasmine.d.ts#16cfc9e52eec782859fc91b413e9866640651395",
     "marked": "registry:dt/marked#0.0.0+20160325085301",

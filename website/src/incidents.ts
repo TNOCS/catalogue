@@ -11,6 +11,8 @@ export class Tasks {
     }
 
     activate() {
+        (<any>$('[data-toggle="tooltip"]')).tooltip();
+        
         return this.databaseService.database.then(db => {
             this.incidents = db.incidents;
         });

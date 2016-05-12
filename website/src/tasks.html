@@ -1,19 +1,45 @@
 <template>
+  <require from="./components/scatter-plot"></require>
+
   <section class="au-animate">
-      <h2>${heading}</h2>
-      <ul class="list-unstyled">
-          <li repeat.for="task of tasks" style="margin-bottom: 10px;"><strong>${task.title}</strong>
-            <ul class="list-unstyled" style="margin-left: 10px">
-                <li repeat.for="subtask of task.children">${subtask.title}
-                    <ul class="list-unstyled" style="margin-left: 20px">
-                        <li repeat.for="project of subtask.projects">PROJECT: ${project.title}</li>
-                    </ul>                          
-                    <ul class="list-unstyled" style="margin-left: 20px">
-                        <li repeat.for="relation of subtask.relations">GAP: ${relation.title}</li>
-                    </ul>                          
-                </li>
-            </ul>      
-          </li>
-      </ul>
+      <!--Left panel-->
+      <div class="col-md-6">
+        <h2>${heading}</h2>
+        <ul class="list-unstyled">
+            <li repeat.for="task of tasks" style="margin-bottom: 10px;"><strong>${task.title}</strong>
+                <ul class="list-unstyled" style="margin-left: 10px">
+                    <li repeat.for="subtask of task.children">
+                        <div class="${subtask.projects.length > 0 ? 'selectable' : 'unselectable'} ${subtask.isSelected ? 'selected' : ''}" click.delegate="selectTask(subtask)">
+                            <span>${subtask.title}</span> 
+                            <span data-toggle="tooltip" data-placement="left" title="Number of projects suitable for this task." if.bind="subtask.projects" class="badge pull-right">${subtask.projects.length}</span>
+                        </div>
+                        <!--<ul class="list-unstyled" style="margin-left: 20px">
+                            <li repeat.for="project of subtask.projects">PROJECT: ${project.title}</li>
+                        </ul> -->
+                        <ul class="list-unstyled" style="margin-left: 20px">
+                            <li class="${relation.projects.length > 0 ? 'selectable' : 'unselectable'} ${relation.isSelected ? 'selected' : ''}" click.delegate="selectGap(relation)" 
+                                repeat.for="relation of subtask.relations">GAP: ${relation.title}
+                                <span data-toggle="tooltip" data-placement="left" title="Number of projects addressing this gap." if.bind="relation.projects" class="badge pull-right">${relation.projects.length}</span>
+                            </li>
+                        </ul>                          
+                    </li>
+                </ul>      
+            </li>
+        </ul>
+      </div>
+      
+      <!--Right panel-->
+      <div class="col-md-6">
+          <h2>Selected projects</h2>
+          <ul class="list-unstyled">
+              <li repeat.for="project of selectedProjects">
+                <a route-href="route: project; 
+                               params.bind: {id:project.index}">${project.shortTitle}</a>
+                ${project.title}
+              </li>
+          </ul>
+          
+          <scatter-plot gap.bind="selectedGap"></scatter-plot>
+      </div>
   </section>
 </template>

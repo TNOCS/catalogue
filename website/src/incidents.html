@@ -1,12 +1,20 @@
 <template>
   <section class="au-animate">
-      <h2>${heading}</h2>
-      <ul class="list-unstyled">
-          <li repeat.for="incident of incidents">${incident.title}
-            <ul class="list-unstyled" style="margin-left: 10px">
-                <li repeat.for="subincident of incident.children">${subincident.title}</li>
-            </ul>      
-          </li>
-      </ul>
+      <div class="col-md-6">
+        <h2>${heading}</h2>
+        <ul class="list-unstyled">
+            <li repeat.for="incident of incidents"><strong>${incident.title}</strong>
+                <ul class="list-unstyled" style="margin-left: 10px">
+                    <li repeat.for="subincident of incident.children">
+                        ${subincident.title}
+                        <span data-toggle="tooltip" data-placement="left" title="Number of projects addressing this incident type." if.bind="subincident.projects" class="badge pull-right">${subincident.projects.length}</span>
+                        <ul class="list-unstyled" style="margin-left: 20px">
+                            <li repeat.for="project of subincident.projects">PROJECT: ${project.title}</li>
+                        </ul>                          
+                    </li>
+                </ul>      
+            </li>
+        </ul>
+      </div>
   </section>
 </template>

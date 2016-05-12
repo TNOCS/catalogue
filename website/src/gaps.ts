@@ -11,6 +11,8 @@ export class Gaps {
     }
 
     activate() {
+        (<any>$('[data-toggle="tooltip"]')).tooltip();
+        
         return this.databaseService.database.then(db => {
             this.gaps = db.gaps;
         });

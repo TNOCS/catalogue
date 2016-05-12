@@ -21,4 +21,7 @@ export interface ICharacteristic {
         value: number;
         max: number;
     }
+    
+    /** Internal properties */
+    isSelected: boolean;
 }
