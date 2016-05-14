@@ -1,0 +1,1075 @@
+{
+    "title": "FRITS",
+    "welcomeText": "Welcome to the First Incident Responder Technology Scan (FRITS)",
+    "description": "Provide a description please",
+    "gapLevels": [{
+        "id": "g0",
+        "rating": {
+            "value": 0,
+            "max": 3
+        },
+        "title": "Not at all",
+        "description": "The solution or development does not contribute to strengthen the response or to improve collaboration."
+    }, {
+        "id": "g1",
+        "rating": {
+            "value": 1,
+            "max": 3
+        },
+        "title": "To a limited extent",
+        "description": "The solution or development strengthens the response or improves the collaboration to a limited extent."
+    }, {
+        "id": "g2",
+        "rating": {
+            "value": 2,
+            "max": 3
+        },
+        "title": "To a considerable extent",
+        "description": "The solution or development strengthens the response or improves the collaboration to a considerable extent."
+    }, {
+        "id": "g3",
+        "rating": {
+            "value": 3,
+            "max": 3
+        },
+        "title": "Fully",
+        "description": "The solution or development strengthens the response or improves the collaboration fully."
+    }],
+    "usabilityLevels": [{
+        "id": "u0",
+        "rating": {
+            "value": 0,
+            "max": 3
+        },
+        "title": "Not at all"
+    }, {
+        "id": "u1",
+        "rating": {
+            "value": 1,
+            "max": 3
+        },
+        "title": "To a limited extent"
+    }, {
+        "id": "u2",
+        "rating": {
+            "value": 2,
+            "max": 3
+        },
+        "title": "To a considerable extent"
+    }, {
+        "id": "u3",
+        "rating": {
+            "value": 3,
+            "max": 3
+        },
+        "title": "Fully"
+    }],
+    "maturityLevels": [{
+        "id": "m1",
+        "rating": {
+            "value": 1,
+            "max": 5
+        },
+        "title": "Vision and agenda formulated."
+    }, {
+        "id": "m2",
+        "rating": {
+            "value": 2,
+            "max": 5
+        },
+        "title": "Concept and specifications formulated."
+    }, {
+        "id": "m3",
+        "rating": {
+            "value": 3,
+            "max": 5
+        },
+        "title": "Prove of concept/ Limited trials"
+    }, {
+        "id": "m4",
+        "rating": {
+            "value": 4,
+            "max": 5
+        },
+        "title": "Extensive trials, not operational"
+    }, {
+        "id": "m5",
+        "rating": {
+            "value": 5,
+            "max": 5
+        },
+        "title": "Tested in legacy environment/ Operational"
+    }],
+    "validationLevels": [{
+        "id": "v1",
+        "rating": {
+            "value": 1,
+            "max": 6
+        },
+        "title": "Limited information (desk research only)"
+    }, {
+        "id": "v2",
+        "rating": {
+            "value": 2,
+            "max": 6
+        },
+        "title": "Multiple sources (desk research only)"
+    }, {
+        "id": "v3",
+        "rating": {
+            "value": 3,
+            "max": 6
+        },
+        "title": "Validated with owner"
+    }, {
+        "id": "v4",
+        "rating": {
+            "value": 4,
+            "max": 6
+        },
+        "title": "Validated with end-user"
+    }, {
+        "id": "v5",
+        "rating": {
+            "value": 5,
+            "max": 6
+        },
+        "title": "Validated with both end-user and owner"
+    }, {
+        "id": "v6",
+        "rating": {
+            "value": 6,
+            "max": 6
+        },
+        "title": "Fully validated"
+    }],
+    "ciSectors": [{
+        "id": "c1",
+        "title": "Education and R&D"
+    }, {
+        "id": "c2",
+        "title": "Energy"
+    }, {
+        "id": "c3",
+        "title": "Financial"
+    }, {
+        "id": "c4",
+        "title": "Food"
+    }, {
+        "id": "c5",
+        "title": "Government"
+    }, {
+        "id": "c6",
+        "title": "Health"
+    }, {
+        "id": "c7",
+        "title": "ICT/Telecom"
+    }, {
+        "id": "c8",
+        "title": "Industry"
+    }, {
+        "id": "c9",
+        "title": "Internet"
+    }, {
+        "id": "c10",
+        "title": "Transport"
+    }, {
+        "id": "c11",
+        "title": "Water"
+    }],
+    "tasks": [{
+        "id": "prep",
+        "title": "Preparatory tasks",
+        "description": null,
+        "children": [{
+            "id": "prep.a",
+            "title": "Policy making/Capacity building",
+            "description": null
+        }, {
+            "id": "prep.b",
+            "title": "Doctrine/Procedure development",
+            "description": null
+        }, {
+            "id": "prep.c",
+            "title": "Procure | Maintain | Warehousing",
+            "description": null
+        }, {
+            "id": "prep.d",
+            "title": "Community Awareness Raising",
+            "description": null
+        }, {
+            "id": "prep.e",
+            "title": "Training & Exercises",
+            "description": null
+        }, {
+            "id": "prep.f",
+            "title": "Evaluation",
+            "description": null
+        }, {
+            "id": "prep.g",
+            "title": "Prepare civil/military co-operation",
+            "description": null
+        }]
+    }, {
+        "id": "sup",
+        "title": "Supporting tasks",
+        "description": null,
+        "children": [{
+            "id": "sup.I",
+            "title": "Co-ordination, Command & Control",
+            "description": null
+        }, {
+            "id": "sup.II",
+            "title": "Situation assessment",
+            "description": null
+        }, {
+            "id": "sup.III",
+            "title": "Information management & Distribution",
+            "description": null
+        }, {
+            "id": "sup.IV",
+            "title": "Monitoring / Information gathering",
+            "description": null
+        }, {
+            "id": "sup.V",
+            "title": "Supply of basic services to enable CM",
+            "description": null
+        }, {
+            "id": "sup.VI",
+            "title": "Logistics",
+            "description": null
+        }]
+    }, {
+        "id": "op",
+        "title": "Operational tasks",
+        "description": null,
+        "children": [{
+            "id": "op.A",
+            "title": "Crisis mitigation on-site"
+        }, {
+            "id": "op.B",
+            "title": "Search and rescue"
+        }, {
+            "id": "op.C",
+            "title": "Security / Law enforcement"
+        }, {
+            "id": "op.D",
+            "title": "Evacuation & Shelter"
+        }, {
+            "id": "op.E",
+            "title": "Inform and Involve the public"
+        }, {
+            "id": "op.F",
+            "title": "Health service"
+        }, {
+            "id": "op.G",
+            "title": "Clear crisis area"
+        }, {
+            "id": "op.H",
+            "title": "Supply and/or restauration of basic infrastructure"
+        }, {
+            "id": "op.J",
+            "title": "Other"
+        }]
+    }],
+    "incidents": [{
+        "id": "nat",
+        "title": "Natural disasters",
+        "children": [{
+            "id": "nat.1",
+            "title": "Geophysical events",
+            "description": "Earthquake, Tsunami, Volcanic eruption, Mass movement"
+        }, {
+            "id": "nat.2",
+            "title": "Meteorological events",
+            "description": "Storm, Extreme temperature, Drought, Wildfire, Extreme rainfall"
+        }, {
+            "id": "nat.3",
+            "title": "Hydrological events",
+            "description": "Flood"
+        }, {
+            "id": "nat.4",
+            "title": "Biological events",
+            "description": "Epidemic, Insect infestation, Animal disease"
+        }, {
+            "id": "nat.5",
+            "title": "Outer space events",
+            "description": "Meteorites, Geomagnetic storms"
+        }]
+    }, {
+        "id": "out",
+        "title": "Outside EU events that require external intervention",
+        "children": [{
+            "id": "out.1",
+            "title": "Humanitarian Aid outside EU"
+        }, {
+            "id": "out.2",
+            "title": "Outbreak of civil war"
+        }, {
+            "id": "out.3",
+            "title": "Civil disturbance"
+        }, {
+            "id": "out.4",
+            "title": "Large-scale disaster in a CSDP mission area"
+        }, {
+            "id": "out.5",
+            "title": "Large-scale movement of people"
+        }]
+    }, {
+        "id": "man",
+        "title": "Man-made incidents",
+        "children": [{
+            "id": "man.1",
+            "title": "Industrial accidents",
+            "description": "Biological incident (biotech & genetic engineering industry), Incident with combustible and/or explosive materials, Incident with toxic materials, Nuclear incident, Poisoning;"
+        }, {
+            "id": "man.2",
+            "title": "Transport accidents",
+            "description": "Air crash, Accident on water, Railway accident, Road accident"
+        }, {
+            "id": "man.3",
+            "title": "Critical Infrastructure failures",
+            "description": "Major failures in supplying Drinking water, Food, Sanitation, Energy, Telecom/ICT, Transport facilities (roads, airfields, harbours, railways, pipelines);"
+        }, {
+            "id": "man.4",
+            "title": "Miscellaneous",
+            "description": "Underground incident, Large building fire, Collapse of buildings."
+        }]
+    }, {
+        "id": "cyb",
+        "title": "Terrorism & Crime",
+        "children": [{
+            "id": "cyb.1",
+            "title": "CBRN terrorist action (attack and/or threat);"
+        }, {
+            "id": "cyb.2",
+            "title": "E-terrorist action (attack and/or threat with explosives);"
+        }, {
+            "id": "cyb.3",
+            "title": "Cyber attack"
+        }, {
+            "id": "cyb.4",
+            "title": "Organised crime"
+        }, {
+            "id": "cyb.5",
+            "title": "Cybercrime"
+        }]
+    }, {
+        "id": "oth",
+        "title": "Other crisis events",
+        "children": [{
+            "id": "oth.1",
+            "title": "Incident with many EU citizens outside EU"
+        }, {
+            "id": "oth.2",
+            "title": "Large-scale influx of refugees into EU"
+        }, {
+            "id": "oth.3",
+            "title": "Economic failure (/financial crisis)"
+        }, {
+            "id": "oth.4",
+            "title": "War"
+        }, {
+            "id": "oth.5",
+            "title": "General"
+        }]
+    }],
+    "gaps": [{
+        "id": "gap.1",
+        "title": "Problems in operating at incidents with hazardous materials"
+    }, {
+        "id": "gap.2",
+        "title": "Shortcoming in coordination of navigation of different manned systems at incident site"
+    }, {
+        "id": "gap.3",
+        "title": "Limitations in crisis communication - evolved management of information to the media and the public"
+    }, {
+        "id": "gap.4",
+        "title": "Need for (inter-)national shared victirm identification system"
+    }, {
+        "id": "gap.5",
+        "title": "Lack of tools for tasking and resource management"
+    }, {
+        "id": "gap.6",
+        "title": "Shortcomings in volunteer management"
+    }, {
+        "id": "gap.7",
+        "title": "Lack of decision support tools"
+    }, {
+        "id": "gap.8",
+        "title": "Shortcomings in collaboration between multiple levels of command"
+    }, {
+        "id": "gap.9",
+        "title": "Lack of understanding certain crisis dynamics (including direct impact)"
+    }, {
+        "id": "gap.10",
+        "title": "Lack of understanding cascading effects"
+    }, {
+        "id": "gap.11",
+        "title": "Lack of understanding the relief effort as a whole"
+    }, {
+        "id": "gap.12",
+        "title": "Lack of understanding volunteer initiatives"
+    }, {
+        "id": "gap.13",
+        "title": "Limitations in inter-agency information sharing. Barriers in exchanging information / interoperability"
+    }, {
+        "id": "gap.14",
+        "title": "Limitations in early warning capabilities"
+    }, {
+        "id": "gap.15",
+        "title": "Limitations in retention and warehousing of information"
+    }, {
+        "id": "gap.16",
+        "title": "Need for improvement in acquisition of information from external sources"
+    }, {
+        "id": "gap.17",
+        "title": "Lack of efficient ways to gather data from responders"
+    }, {
+        "id": "gap.18",
+        "title": "Insufficient assessment of demand and needs"
+    }, {
+        "id": "gap.19",
+        "title": "Shortcomings in responder communication in remote areas"
+    }, {
+        "id": "gap.20",
+        "title": "Shortcomings in the energy supply in support of response in remote/destroyed areas"
+    }, {
+        "id": "gap.21",
+        "title": "Lack of harmonisation in risk assessment"
+    }, {
+        "id": "gap.22",
+        "title": "A systematic and coherent way of describing capabilities, assets and capacities is missing"
+    }, {
+        "id": "gap.23",
+        "title": "Shortcomings in risk communication. Raise citizens preparedness"
+    }, {
+        "id": "gap.24",
+        "title": "Shortcomings in co-operation with third parties"
+    }, {
+        "id": "gap.25",
+        "title": "Lack of agreed interaction procedures with military organisations"
+    }, {
+        "id": "gap.26",
+        "title": "Need for increased involvement of hospitals in disaster management planning"
+    }, {
+        "id": "gap.27",
+        "title": "Strategic evaluation and performance assessment is missing"
+    }, {
+        "id": "gap.28",
+        "title": "Limitations in sharing and implementing best practices"
+    }, {
+        "id": "gap.29",
+        "title": "Need for joint and harmonised training"
+    }, {
+        "id": "gap.30",
+        "title": "Need for effective exercises"
+    }, {
+        "id": "gap.31",
+        "title": "Lack of certification and vetting of skills and competencies"
+    }, {
+        "id": "gap.32",
+        "title": "Lack of harmonised language and terminology"
+    }],
+    "task2gaps": {
+        "op.A": [
+            "gap.1",
+            "gap.2"
+        ],
+        "op.E": [
+            "gap.3"
+        ],
+        "op.F": [
+            "gap.4"
+        ],
+        "sup.I": [
+            "gap.5",
+            "gap.6",
+            "gap.7",
+            "gap.8"
+        ],
+        "sup.II": [
+            "gap.9",
+            "gap.10",
+            "gap.11",
+            "gap.12"
+        ],
+        "sup.III": [
+            "gap.13",
+            "gap.14",
+            "gap.15"
+        ],
+        "sup.VI": [
+            "gap.16",
+            "gap.17"
+        ],
+        "sup.V": [
+            "gap.18",
+            "gap.19",
+            "gap.20"
+        ],
+        "prep.a": [
+            "gap.21",
+            "gap.22"
+        ],
+        "prep.b": [
+            "gap.23"
+        ],
+        "prep.c": [
+            "gap.24",
+            "gap.25",
+            "gap.26"
+        ],
+        "prep.d": [
+            "gap.27",
+            "gap.28"
+        ],
+        "prep.e": [
+            "gap.29",
+            "gap.30"
+        ],
+        "prep.f": [
+            "gap.31",
+            "gap.32"
+        ]
+    },
+    "projects": [{
+        "id": "A4A",
+        "shortTitle": "A4A",
+        "title": "Alert for All",
+        "intendedUsers": "Public (key enablers to improve the effectiveness of alert and communications towards the population)",
+        "references": [
+            "http://www.alert4all.eu",
+            "http://cordis.europa.eu/project/rcn/98427_en.html"
+        ],
+        "currentUse": "X",
+        "ciSectors": null,
+        "logo": "img/logo_alert4all.png",
+        "description": "A4A aims to improve crucial communication of information to the population (Early warning systems) through alert message dissemination using different communication systems, from cell phone messages and radio transmissions to Wi-Fi broadcasts and broadband Internet though a pan-European agency.\n\n![A4A](img/alert4all.png)\n\nThe ‘Alert and communications framework’ aims to:\n- Endorse cooperation and information exchange among involved authorities by means of common interfaces;\n- Provide decision support by means of alert impact awareness tools: \n  - (i) an alert impact what-if simulation tool that can be applied for planning purposes; \n  - (ii) real-time screening of new media posts, providing knowledge on citizens&quot; perception to authorities;\n- Foster cost-effective alert message dissemination over a variety of communication systems, including satellite links, by means of novel communication protocols that promote the use of harmonised best practices.\n",
+        "maturityLevel": {
+            "id": "m1"
+        },
+        "tasks": [{
+            "id": "op.E"
+        }, {
+            "id": "sup.II"
+        }, {
+            "id": "sup.III"
+        }, {
+            "id": "sup.IV"
+        }, {
+            "id": "prep.e"
+        }],
+        "incidents": [{
+            "id": "oth.5"
+        }],
+        "gaps": [{
+            "id": "gap.3",
+            "score": {
+                "id": "g2"
+            },
+            "remarks": "A4A aims at laying the foundations for a pan-European alerting system. Using this system authorities can quickly and efficiently\ncompose  and disseminate messages to the public. The alert message dissemination uses many communication technologies that are\ntriggered centrally by a satellite communication system called: ‘Global Alerting Gateway’. This ensures the alert message reaches\nthe maximum number of people at risk. A4A has a great potential to solve this gap, it should be noted however, that the described\ngoals can only be achieved in the long term. Therefore this project is rated at [2/3].\n"
+        }, {
+            "id": "gap.13",
+            "score": {
+                "id": "g1"
+            },
+            "remarks": "The system not only aims to warn the population, but also aims to disseminate information between agencies using A4A. A4A only \nfocusses on exchanging information during crises, and as mentioned earlier the stated goals are only possible in the long term. \nFor these reasons the project is rated at [1/3].\n"
+        }, {
+            "id": "gap.14",
+            "score": {
+                "id": "g2"
+            },
+            "remarks": "The main objective of A4A is to improve early warning capabilities across Europe. It aims at laying the foundations for a \npan-European alerting system. Using this system authorities will be able to warn the population during large scale crises. \nAs soon as the thread is recognised, civil protection officials can describe the situation by selecting key words in the \nsystem. A4A then automatically composes a coded alert message from these key words in any language. A4A has a great potential\nto solve this gap, it should be noted however, that the described goals can only be achieved in the long term. Therefore this \nproject is rated [2/3].      \n"
+        }, {
+            "id": "gap.16",
+            "score": {
+                "id": "g1"
+            },
+            "remarks": "A4A provides a solution to monitor how the public reacts to an alarm. A4A systems’ “screening new media tool’” gathers and analyses, \nin real time, opinions about the emergency expressed by the affected public. This allows civil protection officials to make educated \ndecisions based on the growing context of the situation. Potentially this system will be able to solve this gap when social media is \nthe ‘external source’. It should be noted however, that the described goals can only be achieved in the long term. Therefore this \nproject is rated [2/3].\n"
+        }, {
+            "id": "gap.29",
+            "score": {
+                "id": "g1"
+            },
+            "remarks": "A4A will offer an e-learning platform.  Using the ‘training mode’ in the A4A system civil protection officials will be able to \npractise the use of all systems’ functionalities. This platform ensures harmonisation of training the use of this alert system. \nEvery civil protection official will be trained in the same way and in their own language. It should be noted however, that the \nplatform only provides a tutorial for the use of this system and that the mentioned goals can only be achieved in the long term.\nFor these reasons the project is rated at [1/3].       \n"
+        }],
+        "usabilityLevel": {
+            "id": "u1",
+            "remarks": "The system has been demonstrated in an operational environment. Results of this demonstration show that, potentially, the system could \nbe very user friendly. The actual usability (affordability, openness of the solution etc.) of A4A is not clear, because a pan-European \nservice (European Warning and Informing Agency) has not been established yet. As mentioned before, the possibilities of using this \nsystem will only be available in the long term. \n"
+        },
+        "administration": {
+            "duration": {
+                "start": "2011-03-16T00:00:00.000Z",
+                "end": "2013-12-15T00:00:00.000Z",
+                "status": "project closed"
+            },
+            "developers": "A4A consortium",
+            "owners": "A4A consortium",
+            "sponsors": "FP7 – Security",
+            "projectType": "CP",
+            "coordinator": "DEUTSCHES ZENTRUM FÜR LUFT - UND RAUMFAHRT EV (Germany)",
+            "participants": "- DEUTSCHES ROTES KREUZ EV (Germany)\n- AVANTI COMMUNICATIONS LTD (United Kingdom)\n- BAPCO LBG (United Kingdom)\n- TECNOSYLVA SL (Spain)\n- EDISOFT-EMPRESA DE SERVICOS E DESENVOLVIMENTO DE SOFTWARE SA (Portugal)\n- FUNDACION TECNALIA RESEARCH & INNOVATION (Spain)\n- UNIVERSITÄT STUTTGART (Germany)\n- TOTALFORSVARETS FORSKNINGSINSTITUT (Sweden)\n- Bundesamt für Bevölkerungsschutz und Katastrophenhilfe (Germany)\n- EUTELSAT S.A. (France)\n- INSTITUT FÜR RUNDFUNKTECHNIK GMBH (Germany)\n"
+        },
+        "analysts": [{
+            "name": "Jorn Boers",
+            "organisation": "TNO",
+            "reviewed": "2016-02-09T00:00:00.000Z",
+            "validationLevel": {
+                "id": "v2"
+            },
+            "remarks": null
+        }]
+    }, {
+        "id": "AFTER",
+        "shortTitle": "AFTER",
+        "title": "A Framework for electrical power sysTems vulnerability identification, dEfense and Restoration",
+        "intendedUsers": "Transmission System Operators (TSOs), CI operators",
+        "references": [
+            "http://www.after-project.eu/",
+            "http://cordis.europa.eu/project/rcn/100196_en.html"
+        ],
+        "incidents": [{
+            "id": "man.3"
+        }, {
+            "id": "cyb.3"
+        }],
+        "currentUse": "X",
+        "ciSectors": [{
+            "id": "c2"
+        }, {
+            "id": "c7"
+        }, {
+            "id": "c9"
+        }],
+        "logo": "img/logo_after.png",
+        "description": "AFTER project addressed the challenges posed by the need for vulnerability evaluation and contingency planning of the energy grids and energy plants considering also the relevant ICT systems used in protection and control. The project emphasis was on cascading events that can cause catastrophic outages of the electric power systems.\n![A4A](img/after.png)\n\nSpecifically the following objectives were pursued:\n\n1. Define and develop the architecture of a framework for risk and vulnerability assessment for integrated power and ICT systems.\n2. Develop methodologies for dealing with risk and vulnerability in integrated power and ICT systems. \n3. Develop tools and techniques for dealing with risk and vulnerability in integrated power and ICT systems:\n   - Develop prototype tools to support global risk assessment incorporating hazard, vulnerability and impact analysis\n   - Develop techniques to support the defence of critical infrastructures against unwanted (included cascading)events\n   - Develop a decision support system for intelligent automatic restoration, e.g. after wide spread blackouts.\n4. Develop the concepts and techniques for physical security:\n   - Develop sensing, monitoring and software agent technologies for security monitoring and early warning.     \n",
+        "maturityLevel": {
+            "id": "m0"
+        },
+        "tasks": [{
+            "id": "op.E"
+        }, {
+            "id": "sup.II"
+        }, {
+            "id": "sup.III"
+        }, {
+            "id": "prep.a"
+        }],
+        "gaps": [{
+            "id": "gap.11",
+            "score": {
+                "id": "g3"
+            },
+            "remarks": "The main objective of AFTER is to minimise or prevent cascading effects resulting failures in power/ ICT grids. Using the tools provided by AFTER TSOs will be able to predict and minimise the cascading effects of grid failures caused by man- made or natural incidents. AFTER also provides tools to restart the affected grid as soon as possible. The following tools or algorithms are developed:   \n- An adaptive multi-agent-based load shedding algorithm is proposed to mitigate power system blackouts using various types of IED (Intelligent Electronic Device ), improving the frequency response with respect to conventional schemes. \n- The defence support tool integrates a dynamic security assessment tool with a Case Based Reasoning (CBR) algorithm: after the analysis of many network scenarios, and large set of contingencies (assessing possibly needed remedial measures), the CBR is able to find an appropriate measure for critical contingency in an electrical network to avoid black out. \n- The restoration support tool, based on Generic Restoration Milestones (GRMs), has the following features: \n  - overall objective is to minimize the system restoration time; \n  - optimization techniques compute solutions for different restoration tasks; \n  - adaptive construction of restoration strategies. \n"
+        }, {
+            "id": "gap.14",
+            "score": {
+                "id": "g2"
+            },
+            "remarks": "As mentioned in the description: one of the objectives of AFTER (objective nr. 4) is to develop a set of tools designed for sensing and monitoring and to develop software agent technologies for security monitoring and early warning. A physical security management tool is devoted to detect and to provide early warning of physical intrusions into energy system facilities including power plants and substations. The system tracks potential intruders via advanced algorithms to manage cameras: any alarm is processed and associated with a list of possible intrusion hypotheses on the basis of an encoded set of rules. Power flow analyses estimate the impact of any attack scenario on the grid and suggest operational practices to limit the impact itself. A drill at CEPS premises provided raw data to validate the tool performance. \n\nThe tool provides early warning capabilities with respect to detecting physical intrusions in energy system facilities. Early warning capabilities with respect to detecting and warning about non- physical (cyber-) attacks is not mentioned in the project description.       \n"
+        }, {
+            "id": "gap.21",
+            "score": {
+                "id": "g3"
+            },
+            "remarks": "AFTER provides a global risk assessment tool which assesses risks and hazards with respect to ICT and power grids. The first and second objectives of AFTER (project description)  are about this subject. \nFurther description of these objectives: \n1. Define and develop the architecture of a framework for risk and vulnerability assessment for integrated power and ICT systems:\n   - Identify the boundaries of the integrated power and ICT system to be considered\n   - Identify and classify hazards, threats and the systems vulnerabilities\n   - Define relevant indicators for selected vulnerabilities.\n\n2. Develop methodologies for dealing with risk and vulnerability in integrated power and ICT systems:\n   - Establish methods for describing vulnerability and criticality of various parts of the system, taking various types of barriers/ protection into account\n   - Establish methods for impact (consequence) analysis, including the impact of cascading events\n   - Provide an approach for risk estimation and assessment, suggest ways to quantify risk and to establish acceptance criteria\n   - Establish main elements and algorithms of defence plans\n   - Establish main elements and algorithms of restoration plans.\n\nThe lack of harmonisation in risk assessment with respect to ICT and power grid risks is solved if these objectives are achieved. \n"
+        }],
+        "usabilityLevel": {
+            "id": "u2",
+            "remarks": "The tools provided by AFTER make it easier for TSOs to predict, minimise and/or prevent certain cascading effects caused by failures in ICT or power grids. The Global Risk Assessment Tool has a prototype video (AFTER-webpage). The prototype seems to be very user friendly for TSOs. It should be noted that there is no information about the costs of these tools. It is necessary to improve the collaboration between TSOs and first responders for the project to be useful. The current usage of the project is unclear.        administration:\n"
+        },
+        "administration": {
+            "duration": {
+                "start": "2011-09-01T00:00:00.000Z",
+                "end": "2014-12-31T00:00:00.000Z",
+                "status": "project closed"
+            },
+            "developers": "AFTER consortium",
+            "owners": "AFTER consortium",
+            "sponsors": "FP7 – Security",
+            "projectType": "CP",
+            "coordinator": "RICERCA SUL SISTEMA ENERGETICO - RSE SPA (Italy)",
+            "participants": "-\tAGENZIA NAZIONALE PER LE NUOVE TECNOLOGIE,L'ENERGIA E LO SVILUPPO ECONOMICO SOSTENIBILE (Italy)\n-\tSINTEF ENERGI AS (Norway)\n-\tSTIFTELSEN SINTEF (Norway)\n-\tUNIVERSITA DEGLI STUDI DI GENOVA (Italy)\n-\tUNIVERSITY COLLEGE DUBLIN, NATIONAL UNIVERSITY OF IRELAND, DUBLIN  (Ireland)\n-\tCity University (United Kingdom) \n-\tALSTOM POWER SYSTEMS SA (France)\n-\tSIEMENS AG (Germany)\n-\tCOMMISSION OF THE EUROPEAN COMMUNITIES - DIRECTORATE GENERAL JOINT RESEARCH CENTRE – JRC (Belgium)\n-\tELIA SYSTEM OPERATOR (Belgium)\n-\tTERNA - RETE ELETTRICA NAZIONALE SPA (Italy)\n-\tCEPS AS (Czech Republic)\n-\tALSTOM GRID SAS (France)        \n"
+        },
+        "analysts": [{
+            "name": "Jorn Boers",
+            "organisation": "TNO",
+            "reviewed": "2016-03-14T00:00:00.000Z",
+            "validationLevel": {
+                "id": "v1"
+            },
+            "remarks": null
+        }]
+    }, {
+        "id": "BGAN",
+        "shortTitle": "BGAN",
+        "title": "Broadband Global Area Network",
+        "intendedUsers": "First responders in remote areas",
+        "references": [
+            "http://www.inmarsat.com/service/bgan/",
+            "http://www.bgansatellite.com/industry-solutions",
+            "https://www.groundcontrol.com/bgan/Emergency_BGAN.pdf"
+        ],
+        "currentUse": "X",
+        "ciSectors": null,
+        "logo": "img/logo_bgan.png",
+        "description": "BGAN systems are broadband satellite communication devices for first responders. Inmarsat’s Broadband Global Area Network service is transforming emergency and disaster response operations with a compelling combination: voice and high-speed data (incl. audio-visual data), completely independent of terrestrial networks, using small and portable terminals. BGAN terminals can be used indoors and outdoors, being robust enough to withstand challenging environments and extreme temperature. Vehicular BGAN terminals comprise a tracking antenna for mounting on the vehicle roof and an interior unit.  \n",
+        "maturityLevel": {
+            "id": "m5"
+        },
+        "tasks": [{
+            "id": "sup.III"
+        }, {
+            "id": "sup.IV"
+        }, {
+            "id": "sup.V"
+        }],
+        "gaps": [{
+            "id": "gap.13",
+            "score": {
+                "id": "g1"
+            },
+            "remarks": "BGAN is able to support inter-agency information sharing by ensuring interoperability for first responders with different communications devices. Using BGAN devices, first responders can send and receive audio and video data with each other and with command and control teams. Doing so will improve information sharing between various first responder agencies. BGAN only works if there is a direct path-of-view to the satellite which makes it  unusable underground. Also, the system only works for the agencies in possession of BGAN devices. These reasons show that the system solves gap 13 to an considerable extent [2/3].   \n"
+        }, {
+            "id": "gap.17",
+            "score": {
+                "id": "g2"
+            },
+            "remarks": "To provide information first responders can communicate by voice and data with their C2 centre even under adverse weather conditions. Yet, it requires an unobstructed view to the satellite to operate.  BGAN only works if there is a direct path-of-view to the satellite which makes it  unusable underground.  These reasons show that the system solves gap 13 to an considerable extent [2/3].\n"
+        }, {
+            "id": "gap.19",
+            "score": {
+                "id": "g2"
+            },
+            "remarks": "Responder communications in remote areas is enabled by portable devices that can reach any place and  are robust enough to withstand challenging environments and extreme temperature.  This because a clear view to the satellite is required to establish communication.  These reasons show that the system solves gap 13 to an considerable extent [2/3]. \n"
+        }],
+        "usabilityLevel": {
+            "id": "u2",
+            "remarks": "This solution is quite versatile since the available terminals range from laptop-size to vehicle-mounted antennae. The smallest units require a minimal amount of training, whereas the larger ones require higher skills. BGAN provides a wireless network that services other devices in the local area. This network virtually covers the whole globe, with the exception of the poles. However BGAN devices need to have a direct path-of-view to the satellite which makes it unusable underground. Additionally it can operate under any weather condition. It is important to note, however, the high cost due to data access, compared with other solutions. The considerations to take into account before purchasing can be found in (on page 69): http://www.firstresponder.gov/TechnologyDocuments/A%20Review%20of%20Satellite%20Communications%201-15-14.pdf.       \n"
+        },
+        "administration": {
+            "duration": {
+                "start": null,
+                "end": null,
+                "status": "project closed"
+            },
+            "developers": "Inmarsat",
+            "owners": "Inmarsat",
+            "sponsors": null,
+            "projectType": "Legacy",
+            "coordinator": null,
+            "participants": null
+        },
+        "analysts": [{
+            "name": "Jorn Boers",
+            "organisation": "TNO",
+            "reviewed": "2016-02-09T00:00:00.000Z",
+            "validationLevel": {
+                "id": "v1"
+            },
+            "remarks": null
+        }]
+    }, {
+        "id": "BIO-PROTECT",
+        "shortTitle": "BIO-PROTECT",
+        "title": "Ionisation-based detector of airborne bio-agents, viruses and toxins for fast-alert and identification",
+        "intendedUsers": "First Responders",
+        "references": [
+            "http://fp7-bioprotect.eu/"
+        ],
+        "incidents": [{
+            "id": "nat.4"
+        }, {
+            "id": "man.1"
+        }, {
+            "id": "cyb.1"
+        }],
+        "currentUse": "X",
+        "ciSectors": null,
+        "logo": null,
+        "description": "The malevolent use of Anthrax spores on civilians in late 2001 has shown the necessity to protect European citizens from criminal use of biological agents and viruses. Although these attacks had been punctual and crude, more sophisticated attacks on dozens or hundreds of injured or killed people are conceivable. \n\nWhen launching such an attack its success depends on concentrating a sufficient amount of pathogens in a defined area. Hence safeguarding a certain area regarding biological agents demands the detection of pathogenous bacteria, spores and viruses in various matrices (e.g. Anthrax in flour or sugar) or suspicious aerosols. This can only be accomplished by triggering a short-term alarm and its validation as well as the identification of the type of threat. \n\nSince most of the bio sensors available are laboratory bound or require special equipment which needs training as well as experience, new systems are needed. The concept of BIO-PROTECT is the development of a fast-alert, easy-to-use device to be applied for detection and identification of airborne bacteria, spores, viruses and toxins. Its technology is based on bioaerosol detection by fluorescence, scattering and background aerosol measurement followed by ionization of air flow and analysis of the spectrum of relative speed of passage, which, in turns, enables identification of harmful biological agents. This device may also be used for controlling potential accidental release of bio-agents from biotechnology laboratories.\n",
+        "maturityLevel": {
+            "id": "m4"
+        },
+        "tasks": [{
+            "id": "op.A."
+        }, {
+            "id": "sup.IV"
+        }],
+        "gaps": [{
+            "id": "gap.1",
+            "score": {
+                "id": "g3"
+            },
+            "remarks": "The device developed by BIO- PROTECT is used for the detection of pathogenous bacteria, spores and viruses in various matrices (e.g. Anthrax in flour or sugar) or suspicious aerosols. Detection of these materials is essential for operating at incidents with hazardous materials. In case of certain biological events (epidemics), industrial accidents or terrorist actions the spread of airborne biological agents  could be a serious threat to society. Detection of these biological agents is a necessity. Using this devise is necessary for solving this gap with respect to operating at incidents with hazardous biological materials.          \n"
+        }, {
+            "id": "gap.16",
+            "score": {
+                "id": "g3"
+            },
+            "remarks": "The device developed by BIO-protect can be an important source of information. The device (using sensors) in this instance is the ‘external source’ for detecting certain hazardous biological materials (information). The device is used for detecting the materials, but can also analyse and identify certain pathogens, making it an essential device.     \n"
+        }],
+        "usabilityLevel": {
+            "id": "u2",
+            "remarks": "One of the objectives of the BIO-PROTECT project was developing an easy to use device for detecting airborne biological agents. Most of available bio sensors are laboratory bound or require special equipment which needs training as well as experience. The BIO-PROTECTOR device is easy to use and it does not require excessive training or experience. The device weighs approximately fifty kilograms and can be transported using vehicles, or using transportation on foot (see picture above). It should be noted that there was no information about the affordability of the device. \n"
+        },
+        "administration": {
+            "duration": {
+                "start": "2010-06-01T00:00:00.000Z",
+                "end": "2014-01-31T00:00:00.000Z",
+                "status": "project closed"
+            },
+            "developers": "Bio-Protect Consortium",
+            "owners": "Bio-Protect Consortium",
+            "sponsors": "FP7 – Security",
+            "projectType": "CP",
+            "coordinator": "LGI CONSULTING SARL (France)",
+            "participants": "-\tZURAVLIOVO IMONE AVSISTA (Lithuania)\n-\tC-TECH INNOVATION LIMITED (United Kingdom)\n-\tENVIRONICS OY (Finland)\n-\tCOMMISSARIAT A L ENERGIE ATOMIQUE ET AUX ENERGIES ALTERNATIVES (France)\n-\tIUT Institut für Umwelttechnologien GmbH (Germany)\n-\tROBERT KOCH-INSTITUT (Germany)\n-\tAALBORG UNIVERSITET (Denmark)\n-\tEnvironics-IUT GmbH (Germany)\n"
+        },
+        "analysts": [{
+            "name": "Jorn Boers",
+            "organisation": "TNO",
+            "reviewed": "2016-03-16T00:00:00.000Z",
+            "validationLevel": {
+                "id": "v1"
+            },
+            "remarks": null
+        }]
+    }, {
+        "id": "BRIDGE",
+        "shortTitle": "BRIDGE",
+        "title": "Bridging resources and agencies in large-scale emergency management",
+        "intendedUsers": "First responders",
+        "references": [
+            "http://www.bridgeproject.eu/en/"
+        ],
+        "currentUse": "X",
+        "ciSectors": null,
+        "logo": null,
+        "description": "BRIDGE will build a system to support interoperability – both technical and social – in large-scale emergency management. The system will serve as a bridge between multiple First Responder organisations in Europe, contributing to an effective and efficient response to natural catastrophes, technological disasters, and large-scale terrorist attacks.\n\nThe ultimate goal of BRIDGE is to increase the safety of citizens by developing technical and organisational solutions that significantly improve crisis and emergency management in EU Member States. A BRIDGE platform provides technical support for multi-agency collaboration in large-scale emergency relief efforts. The key to this is to ensure interoperability, harmonisation and cooperation among stakeholders on the technical and organisational level.\n\nThe vision of the BRIDGE project is to \n-\tFacilitate cross-border and cross-agency collaboration; \n-\tAllow the creation of a common, comprehensive, and reliable operational picture of the incident site; \n-\tEnable integration of resources and technologies into workflow management; \n-\tEnable active ad-hoc participation of third parties.\n\nBRIDGE uses the middleware concept. This means that a single software layer lies between different tools and applications (developed by BRIDGE or other projects). It provides certain standard of development within the middleware and the developers have control on which applications are and are not integrated. The following BRIDGE Concept Cases have been validated in BRIDGE ValEDation Days in September and November 2014:\n\n-\tAdvanced Situation Awareness (Situation Awareness using UAV and software);\n-\tDynamic Tagging (Situation awareness using a tagging system for marking and monitoring significant locations of the disaster location) ;\n-\tFRITS (First Responders Integrated Training System);\n-\tInformation Intelligence (data gathering);\n-\tMaster (assists in keeping a common operational picture among central actors during an incident.);\n-\tRobust and Resilient Communication main functionalities: \n1.\tWireless Mesh routers that form an ad-hoc network (called the BRIDGE Mesh) to provide a networking infrastructure for other systems on the scene (e.g., eTriage)\n2.\tThe HelpBeacons application that allows people to call for help using an Android smart phone.\n3.\tThe HelpBeacons Seeker application that is used by first responders to collect SOS messages.\n-\tSWARM (Situation aWAre Resource Management)\n\nFor more information about the above mentioned tools visit: http://www.bridgeproject.eu/en/bridge-results/concept-cases\n",
+        "maturityLevel": {
+            "id": "m4"
+        },
+        "tasks": [{
+            "id": "sup.I"
+        }, {
+            "id": "sup.II"
+        }, {
+            "id": "sup.III"
+        }, {
+            "id": "sup.IV"
+        }, {
+            "id": "prep.a"
+        }, {
+            "id": "prep.f"
+        }],
+        "incidents": null,
+        "gaps": [{
+            "id": "gap.5",
+            "score": {
+                "id": "g3"
+            },
+            "remarks": "SWARM is one of the tools provided by BRIDGE  focussed on resource management. BRIDGE SWARM (Situation aWAre Resource Management) combines resource management (resource identification, involvement, task assignment, status reporting) with technology for achieving situation awareness, in order to:\n\n1. Provide first responders with a continuous overview of the resources in their immediate surroundings (including human resources);\n2. Communicate the state and context of human resources (e.g. their condition and health, environmental conditions like temperature, background noise, etc.);\n3. Provide better context-aware predictions of activities of resources, e.g. estimated times of arrival for moving resources.\n"
+        }, {
+            "id": "gap.11",
+            "score": {
+                "id": "g3"
+            },
+            "remarks": "A BRIDGE platform provides technical support for multi-agency collaboration in large-scale emergency relief efforts. The technical platform will deliver advanced human-computer interaction techniques for effortless exploration of high-quality information enhanced organizational workflows & communication processes. One of the systems provided by BRDIGE is ‘Master’. The Master system provides functionality to present and act on three types of information, which are accessible through the BRIDGE system:\n- Information about the incident, e.g., incident location and number and triage status of victims;\n- Information about the response, e.g., number and position of police, fire and health vehicles;\n- Information from external services, e.g., weather.\n\nUsing the mentioned techniques and other tools provided by the BRIDGE project will fully solve the lack of understanding the relief effort as e whole.\n"
+        }, {
+            "id": "gap.13",
+            "score": {
+                "id": "g2"
+            },
+            "remarks": "BRIDGE will support inter-agency information sharing in complex situations (cross-border, cross-agency, on large scale). The technical platform will deliver: \n-\tMethods and tools that support run-time intra- & inter-agency collaboration;\n-\tA middleware allowing data, system & network interoperability;\n\nOne of these tools is the Federated Control Room Support (FCRS). FCRS’s main tasks are: \n-\tTeam formation (formation of cross-agency/ cross border teams that will work together on specific processes). \n-\tTeam process monitoring (FCRS allows commanders to monitor simple and more complex processes). \n-\tTeam communications (FCRS allows participants to easily communicate within the teams via multiple modes of communication). \nThese tasks will be integrated in a software tool, making it easier to establish ad-hoc cross agency/ cross border teams and ensure interoperability between them.  These tools will support and improve inter-agency information sharing and inter-agency collaboration. Doing so will solve interoperability issues.  These reasons show that the project fully solves gap 13.\n"
+        }, {
+            "id": "gap.16",
+            "score": {
+                "id": "g3"
+            },
+            "remarks": "BRIDGE provides a number of tools and systems which together can greatly improve acquisition of information. As mentioned before, an important aspect of the Master system is the acquisition of information. Other tools provided by BRIDGE are also set to solve this problem are: \n-\tBRIDGE Advanced Situation Awareness (ASA) assists first responders on scene in increasing situational awareness by supplying real-time visual and other information on the extent of the disaster and its consequences;\n-\tDynamic Tagging, situation awareness using a tagging system for marking and monitoring significant locations of the disaster location) ; Bridge Dynamic Tagging System assists first responders in marking and monitoring significant locations of the disaster site and in creating real-time situation awareness. It aims to ease the annotation of the field with digital information targeting at an improved spatial reference system and shared mental model for fire fighters. Such an annotated disaster site enriches the process of spatial sense making performed by first responders in the field.\n"
+        }, {
+            "id": "gap.24",
+            "score": {
+                "id": "g2"
+            },
+            "remarks": "One of the goals of the BRIDGE project is to enable active ad-hoc participation of third parties. Thus improving the co-operation with third parties. The FCRS can also be used to solve gap 24 (see description under gap 13).        \n"
+        }],
+        "usabilityLevel": {
+            "id": "u2",
+            "remarks": "BRIDGE innovations were demonstrated in the framework of a simulated technological disaster scenario, involving a powerful explosion and subsequent fire at a chemical facility. The scenario was developed based on the actual industrial accident, which happened in Toulouse, France, in September 2001, causing 30 fatalities and over 3000 injuries among the personnel onsite and general public outside of the facility. This scenario was chosen to demonstrate how the system of systems developed in BRIDGE could be used after such a disaster and improve emergency response during its most challenging early stage (i.e., the first - 'golden' - hour).  All eight concept cases, plus the BRIDGE middleware, were shown at different timeslots of the BRIDGE Golden Hour, demonstrating both, the advantages of the new technologies and early stage prototypes in different phases of emergency response and their interaction and interoperability as an integrated solution. The demo was followed by the final review meeting, which was completed with a positive evaluation of the project results by the reviewers.  \n"
+        },
+        "administration": {
+            "duration": {
+                "start": "2011-04-01T00:00:00.000Z",
+                "end": "2015-06-30T00:00:00.000Z",
+                "status": "project closed"
+            },
+            "developers": "BRIDGE consortium",
+            "owners": "BRIDGE consortium",
+            "sponsors": "FP7 – Security",
+            "projectType": "CP",
+            "coordinator": "STIFTELSEN SINTEF (Norway)",
+            "participants": "-\tALMENDE B.V. (Netherlands)\n-\tCNET SVENSKA AB (Sweden)\n-\tFRAUNHOFER GESELLSCHAFT ZUR FORDERUNG DER ANGEWANDTEN FORSCHUNG EV (Germany)\n-\tLANCASTER UNIVERSITY (United Kingdom)\n-\tCrisis Training AS (Norway)\n-\tSAAB Training Systems (Sweden)\n-\tTHALES NEDERLAND BV (Netherlands)\n-\tUNIVERSITAET KLAGENFURT (Austria)\n-\tPARIS-LODRON-UNIVERSITÄT SALZBURG (Austria)\n-\tVSH HAGERBACH TEST GALLERY LTD (Switzerland)\n-\tTECHNISCHE UNIVERSITEIT DELFT (Netherlands)\n-\tSTOCKHOLMS UNIVERSITET (Sweden)\n-\tHELSE STAVANGER HF (Norway)\n-\tSAAB AKTIEBOLAG (Sweden)\n"
+        },
+        "analysts": [{
+            "name": "Jorn Boers",
+            "organisation": "TNO",
+            "reviewed": "2016-06-30T00:00:00.000Z",
+            "validationLevel": {
+                "id": "v1"
+            },
+            "remarks": null
+        }]
+    }, {
+        "id": "DARIUS",
+        "shortTitle": "DARIUS",
+        "title": "Civil protection, USAR",
+        "intendedUsers": "Public (key enablers to improve the effectiveness of alert and communications towards the population)",
+        "references": [
+            "www.darius-fp7.eu"
+        ],
+        "currentUse": "X",
+        "ciSectors": null,
+        "logo": null,
+        "description": "The use of unmanned systems in SAR operations to enhance First Responder capabilities to intervene in hazardous areas. The main objective of DARIUS is to reach effective levels of interoperability so these systems can be shared between several organisations. This objective will be achieved in designing a Generic Ground Station with associated proposed standards, a full integration in the command and control cycle and a consistent communication network. In addition, DARIUS will adapt the existing unmanned systems and their payloads (air, ground and maritime) to the specificities of the Search and Rescue missions. DARIUS solutions will be evaluated in real conditions through three scenarios (urban, forest fires and maritime SAR).\n",
+        "maturityLevel": {
+            "id": "m4"
+        },
+        "tasks": [{
+            "id": "op.B"
+        }, {
+            "id": "sup.II"
+        }, {
+            "id": "sup.III"
+        }, {
+            "id": "sup.IV"
+        }, {
+            "id": "sup.V"
+        }],
+        "incidents": null,
+        "gaps": [{
+            "id": "gap.2",
+            "score": {
+                "id": "g3"
+            },
+            "remarks": "The main objective of DARIUS is improving the navigation of unmanned systems. If DARIUS is used it will fully solve gap 2. \n"
+        }, {
+            "id": "gap.9",
+            "score": {
+                "id": "g2"
+            },
+            "remarks": "Unmanned systems can enhance the situation awareness with a flexibility that the manned systems do not have due to the intrinsic limitations of the crews. By gathering data in hazardous circumstances, unmanned systems can improve the situation awareness. Using this data, response authorities will be able to better understand the specific crisis dynamics.  \n"
+        }, {
+            "id": "gap.13",
+            "score": {
+                "id": "g2"
+            },
+            "remarks": "An objective if this project is to enhance the interoperability performances at procedural and technical levels. Since systems are costly and rare, their optimal use will be when they are shared between several agencies and provide information and services to all FRs deployed on the field. This needed interoperability cannot exist without the integration of unmanned systems in the overall command and control cycle (planning, tasking and current operations monitoring). The objective induced by the interoperability objective is therefore to reach an integration level in the C2/C4I and Information systems which will enable:\n-\tThe integration of the unmanned systems at the same level as the other available assets and forces;\n-\tEasy and seamless reconfigurations and transfer of control/responsibility between the various participating units on the field and a complete and rapid share of the information.\n\nDARIUS will fully solve gap 13 with respect to the use of unmanned systems. Therefore the project is rated at [3/3].  \n"
+        }, {
+            "id": "gap.16",
+            "score": {
+                "id": "g3"
+            },
+            "remarks": "Unmanned systems can enhance the situation awareness with a flexibility that manned systems do not have due to the intrinsic limitations of the crews. By gathering data in hazardous circumstances, unmanned systems will improve the acquisition of information form external sources. DARIUS can fully solve gap 16 with respect to using unmanned systems to gather information [3/3].       \n"
+        }],
+        "usabilityLevel": {
+            "id": "u2",
+            "remarks": "Positive usability aspects are the user friendliness, the openness of the solution, the scalability of the solution, measurement of deployability (installation and preparation time, dependency on special equipment, dependency on infrastructures such as power and communications, and dependency on experts or special staff for installation and exploitation) and the measurement of transportability of the hardware solution, and the possibility of hardware solutions to operate autonomously. A negative usability aspects is the high costs. The citizen safety market is very fragmented and each agency has a very limited budget. Another negative usability aspect is the fact that first responders will be legally responsible for their actions, but are reluctant to transfer some of their responsibilities to machines. Vice versa, victims will be more comfortable with people rather than machines. Certain industrial and legal issues also play a role. \n"
+        },
+        "administration": {
+            "duration": {
+                "start": "2012-03-01T00:00:00.000Z",
+                "end": "2015-02-28T00:00:00.000Z",
+                "status": "project closed"
+            },
+            "developers": "DARIUS consortium",
+            "owners": "DARIUS consortium",
+            "sponsors": "FP7 – Security",
+            "projectType": "CP-IP",
+            "coordinator": "BAE Systems (Operations) Ltd (United Kingdom)",
+            "participants": "-\tCASSIDIAN SAS (France)\n-\tDFRC AG (Switzerland)\n-\tSKYTEK LTD (Ireland)\n-\tTELINT RTD Consultancy Services LTD (United Kingdom)\n-\tFUTURE INTELLIGENCE EREVNA TILEPIKINONIAKON KE PLIROFORIAKON SYSTIMATON EPE (Greece)\n-\tOFFICE NATIONAL D'ETUDES ET DE RECHERCHES AEROSPATIALES (France)\n-\tSTIFTELSEN SINTEF (Norway)\n-\tECA SA (France)\n-\tNATIONAL TECHNICAL UNIVERSITY OF ATHENS – NTUA (Greece)\n-\tCENTER FOR SECURITY STUDIES (Greece)\n-\tECOMED bvba (Belgium)\n-\tCORK INSTITUTE OF TECHNOLOGY (Ireland)\n-\tENTENTE POUR LA FORÊT MÉDITERRANÉENNE (France)\n"
+        },
+        "analysts": [{
+            "name": "Jorn Boers",
+            "organisation": "TNO",
+            "reviewed": "2016-03-09T00:00:00.000Z",
+            "validationLevel": {
+                "id": "v1"
+            },
+            "remarks": null
+        }]
+    }, {
+        "id": "DESTRIERO",
+        "shortTitle": "DESTRIERO",
+        "title": "A DEcision Support Tool for Reconstruction and recovery and for the IntEroperability of international Relief units in case Of complex crises situations, including CBRN contamination risks",
+        "intendedUsers": "Civil protection agencies",
+        "references": [
+            "http://www.destriero-fp7.eu/ ",
+            "http://www.destriero-fp7.eu/wp-content/uploads/2014/02/DestrieroLeaflet.pdf"
+        ],
+        "incidents": null,
+        "currentUse": "X",
+        "ciSectors": null,
+        "logo": null,
+        "description": "Today more people than ever are threatened by disasters, with no regards if natural or man-made. Furthermore, CBRN  contamination risks can occur as a consequence of these events. Regions affected are wider and wider and reconstruction and recovery operations are longer-lasting, costly and complex, especially when decontamination is necessary. \n\nDESTRIERO aims at developing a next generation post-crisis needs assessment tool for reconstruction and recovery planning, including structural damage assessment through advanced remote sensing enriched by in-field data collection by mobile devices (buildings, bridges, dams) and related data integration and analysis, based on international standards, novel (automated) data and information interoperability across organisations and systems, in combination with an advanced multi-criteria decision analysis tool and methodology for multi-stakeholder information analyses, priority setting, decision making and recovery planning. Earth observation images will contribute to fast damage assessment and monitoring of the areas, together with data acquired by relief units on the field using novel smart-phone apps. Identified needs will be recorded, stored and made available to all organisations involved.\n\nDESTRIERO has four objectives: \n1.\tFaster and better damage assessment for planning and monitoring of progress of recovery.\n2.\tFacilitate fast and intuitive access for distributed users to visualise the dynamic “common operational picture”, during the planning and reconstruction period.\n3.\tBetter collaborative decision making during the planning and reconstruction phase Support standardisation of assessment data, interoperability between different information systems from stakeholders and capabilities to compare damage and recovery requirements towards prioritisation and joint decision making.\n4.\tImprove management information in relation to PDNA and RRP DESTRIERO will provide a single access point and on-line library with PDNA and RRP Frameworks, high level overviews of planned and running recovery projects including multi-donor funding information and the possibility to trace related surveillance data for progress monitoring.\n",
+        "maturityLevel": {
+            "id": "m4"
+        },
+        "tasks": [{
+                "id": "sup.I"
+            }, {
+                "id": "sup.II"
+            }, {
+                "id": "sup.V"
+            },
+            null
+        ],
+        "gaps": [{
+            "id": "gap.7",
+            "score": {
+                "id": "g3"
+            },
+            "remarks": "Another functionality of the DESTRIERO system is to support prioritisation and joint decision making with a novel tool, based on recently developed decision support methodology and prototype software. Using the real time information and data collection combined with the prioritisation and decision making tool should help extensively in the decision making process during the reconstruction and recovery phase in case of complex crises. \n"
+        }, {
+            "id": "gap.10",
+            "score": {
+                "id": "g2"
+            },
+            "remarks": "Natural or man-made disasters have a major impact on the living conditions, economic performance and environmental status of affected countries or regions. Consequences may be long term and can significantly deteriorate quality of life, social structures and the environment. Preventing these cascading effects trough adequate decision making during the recovery phase is the main objective of the DESTRIERO system. The combination of the four functionalities of this system (explained under gap 2, 8 and 14) will help solve this gap to a considerable extent. It is not clear if the system takes all the important long term consequences of certain decisions into account. \n\nThe tool provides early warning capabilities with respect to detecting physical intrusions in energy system facilities. Early warning capabilities with respect to detecting and warning about non- physical (cyber-) attacks is not mentioned in the project description.       \n"
+        }, {
+            "id": "gap.13",
+            "score": {
+                "id": "g3"
+            },
+            "remarks": "The DESTRIERO system is set to boost information sharing between relief organisations and their information systems for coordinated damage and needs assessment as well as reconstruction and recovery operations. The system also provides centralised management information, high level overview of running recovery projects with finance from multiple donors, recovery progress information, including linkages to official procedures and on-line platforms from international donor and coordinating organisations. These two functionalities of the DESTRIERO system will greatly improve interoperability and information sharing with respect to reconstruction and recovery in complex crises. \n"
+        }],
+        "usabilityLevel": {
+            "id": "u3",
+            "remarks": "DESTRIERO has collaborated with other projects like COBACORE and RECONASS. The projects share information to maximize impact of relevant research outcomes on the provision of novel tools for disaster management. This increases the openness and the scalability of the solution. The tool developed by DESTRIERO looks very user friendly at this point. The project is still in development, but DESTRIERO provided a set of screenshots with useful information of the developed tool (http://www.destriero-fp7.eu/wp-content/uploads/2016/02/HMI-screenshots.pdf). DESTRIERO plans to show a demo to end-users in a few months. The usability scoring 3 out of 3 is provisional.    \n"
+        },
+        "administration": {
+            "duration": {
+                "start": "2013-09-01T00:00:00.000Z",
+                "end": "2016-08-31T00:00:00.000Z",
+                "status": "ongoing project"
+            },
+            "developers": "DESTIERO consortium",
+            "owners": "DESTIERO consortium",
+            "sponsors": "FP7 – Security",
+            "projectType": "CP-FP",
+            "coordinator": "E-GEOS SPA (Italy)",
+            "participants": "-\tSESM SOLUZIONI EVOLUTE PER LA SISTEMISTICA E I MODELLI S.C.A.R.L. (Italy)\n-\tCONSORZIO INTERUNIVERSITARIO NAZIONALE PER L'INFORMATICA (Italy)\n-\tTHALES SA (France)\n-\tTHALES PROGRAMAS DE ELECTRONICA Y COMUNICACIONES SA (Spain)\n-\tUNIVERSITAT POLITECNICA DE VALENCIA (Spain)\n-\tFRAUNHOFER-GESELLSCHAFT ZUR FOERDERUNG DER ANGEWANDTEN FORSCHUNG E.V (Germany)\n-\tASOCIACION DE EMPRESAS TECNOLOGICAS INNOVALIA (Spain)\n-\tSELEX ES SPA (Italy)\n-\tITTI Sp.zo.o. (Poland)\n-\tSAADIAN TECHNOLOGIES LIMITED (Ireland)\n-\tFUNDACAO DE ASSISTENCIA MEDICA INTERNACIONAL (Portugal)\n-\tPolice Service of Northern Ireland (United Kingdom)\n-\tSzkola Glowna Sluzby Pozarniczej (Poland)        \n"
+        },
+        "analysts": [{
+            "name": "Jorn Boers",
+            "organisation": "TNO",
+            "reviewed": "2016-04-04T00:00:00.000Z",
+            "validationLevel": {
+                "id": "v1"
+            },
+            "remarks": null
+        }]
+    }]
+}
