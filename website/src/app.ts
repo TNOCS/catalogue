@@ -2,6 +2,7 @@ import {Router, RouterConfiguration} from 'aurelia-router'
 import {computedFrom} from 'aurelia-framework';
 import {autoinject} from 'aurelia-framework';
 import {DatabaseService} from 'services/DatabaseService';
+import {FetchConfig} from 'aurelia-auth';
 
 @autoinject
 export class App {
@@ -9,7 +10,7 @@ export class App {
   router: Router;
   config: RouterConfiguration;
   
-  constructor(private databaseService: DatabaseService) {}
+  constructor(private databaseService: DatabaseService, private fetchConfig: FetchConfig) {}
   
   configureRouter(config: RouterConfiguration, router: Router) {
     this.config = config;
@@ -30,6 +31,7 @@ export class App {
   }
   
   activate() {
+    this.fetchConfig.configure();
     return this.databaseService.database.then(db => {
       this.title = db.title;
       if (this.config) this.config.title = db.title;

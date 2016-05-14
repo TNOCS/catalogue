@@ -3,8 +3,8 @@
     <require from="./helpers/FormatDateValueConverter"></require>
     <require from="./components/characteristic"></require>
 
-    <section>
-        <div class="au-animate col-md-6">
+    <section style="overflow: none">
+        <div class="au-animate left">
             <div class="row">
                 <div class="col-md-8">
                     <h1>${project.shortTitle}</h1>
@@ -129,7 +129,7 @@
 
         </div>
         
-        <div class="au-animate col-md-offset-1 col-md-5">
+        <div class="au-animate right">
             <div class="row">
                 <h3>Gaps</h3>
                 <characteristic repeat.for="gap of project.gaps" characteristic.bind="gap"></characteristic>

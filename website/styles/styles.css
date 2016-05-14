@@ -157,6 +157,29 @@ div.au-stagger {
     color: white;
 }
 
+@media (min-width: 768px) {
+    /* Two column layout, separate scrolling: http://www.bootply.com/5l9bZ7ZOt6*/
+    .left {
+        position: absolute;
+        height: 100%;
+        width: 49%;
+        overflow-y: auto;
+        overflow-x: hidden;
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+    .right {
+        position: absolute;
+        height: 100%;
+        width: 49%;
+        overflow-y: auto;
+        overflow-x: hidden;
+        right: 0;
+        padding-right: 30px;
+        padding-left: 15px;
+    }
+}
+
 
 /* animation definitions */
 

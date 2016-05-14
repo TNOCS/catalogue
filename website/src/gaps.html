@@ -1,10 +1,15 @@
 <template>
+  <require from="./components/scatter-plot"></require>
+
   <section class="au-animate">
-      <div class="col-md-6">
+     <div class="left">
         <h2>${heading}</h2>
         <ul class="list-unstyled">
-            <li repeat.for="gap of gaps">${gap.title}
-                <span data-toggle="tooltip" data-placement="left" title="Number of projects addressing this gap." if.bind="gap.projects" class="badge pull-right">${gap.projects.length}</span>
+            <li repeat.for="gap of gaps" 
+                class="${gap.projects.length > 0 ? 'selectable' : 'unselectable'} ${gap.isSelected ? 'selected' : ''}" 
+                click.delegate="selectGap(gap)">${gap.title}
+                <span data-toggle="tooltip" data-placement="left" title="Number of projects addressing this gap." 
+                    if.bind="gap.projects" class="badge pull-right">${gap.projects.length}</span>
                 <ul class="list-unstyled" style="margin-left: 10px">
                     <li repeat.for="project of gap.projects">PROJECT: ${project.title}</li>
                 </ul>                                       
@@ -13,6 +18,18 @@
                 </ul>      
             </li>
         </ul>
+    </div>
+    <div class="right">
+        <h2>Selected projects</h2>
+        <ul class="list-unstyled">
+            <li repeat.for="project of selectedProjects">
+            <a route-href="route: project; 
+                            params.bind: {id:project.index}">${project.shortTitle}</a>
+            ${project.title}
+            </li>
+        </ul>
+        
+        <scatter-plot gap.bind="selectedGap"></scatter-plot>        
     </div>
   </section>
 </template>

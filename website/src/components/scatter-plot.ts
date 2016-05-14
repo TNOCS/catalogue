@@ -36,7 +36,6 @@ export class ScatterPlotCustomElement {
     /** Will be automatically invoked when the bound project property is changed. */
     gapChanged(gap: ICharacteristic, oldValue: ICharacteristic) {
         // console.log('GAP changed: ' + gap.title);
-
         if (!gap.projects || gap.projects.length === 0) return;
         let data: IDataFormat[] = [];
 
@@ -55,7 +54,11 @@ export class ScatterPlotCustomElement {
             });
         });
 
-        this.render(data);
+        if (!this.margin) {
+            setTimeout(() => this.render(data), 100);
+        } else {
+            this.render(data);
+        }
     }
 
     private render(data: IDataFormat[]) {
