@@ -357,46 +357,46 @@ incidents:
 gaps: 
   - 
     id: gap.1
-    title: Limitations in early warning capabilities
-  - 
-    id: gap.2
     title: Problems in operating at incidents with hazardous materials
   - 
-    id: gap.3
+    id: gap.2
     title: Shortcoming in coordination of navigation of different manned systems at incident site
   - 
-    id: gap.4
+    id: gap.3
     title: Limitations in crisis communication - evolved management of information to the media and the public
   - 
-    id: gap.5
+    id: gap.4
     title: Need for (inter-)national shared victirm identification system
   - 
-    id: gap.6
+    id: gap.5
     title: Lack of tools for tasking and resource management
   - 
-    id: gap.7
+    id: gap.6
     title: Shortcomings in volunteer management
   - 
-    id: gap.8
+    id: gap.7
     title: Lack of decision support tools
   - 
-    id: gap.9
+    id: gap.8
     title: Shortcomings in collaboration between multiple levels of command
   - 
-    id: gap.10
+    id: gap.9
     title: Lack of understanding certain crisis dynamics (including direct impact)
   - 
-    id: gap.11
+    id: gap.10
     title: Lack of understanding cascading effects
   - 
-    id: gap.12
+    id: gap.11
     title: Lack of understanding the relief effort as a whole
   - 
-    id: gap.13
+    id: gap.12
     title: Lack of understanding volunteer initiatives
   - 
-    id: gap.14
+    id: gap.13
     title: Limitations in inter-agency information sharing. Barriers in exchanging information / interoperability 
+  -
+    id: gap.14
+    title: Limitations in early warning capabilities
   - 
     id: gap.15
     title: Limitations in retention and warehousing of information
@@ -451,25 +451,27 @@ gaps:
   - 
     id: gap.32
     title: Lack of harmonised language and terminology
+
 task2gaps:
   op.A: 
+    - gap.1
     - gap.2
-    - gap.3
   op.E:
-    - gap.4
+    - gap.3
   op.F:
-    - gap.5
+    - gap.4
   sup.I:
+    - gap.5
     - gap.6
     - gap.7
     - gap.8
-    - gap.9
   sup.II:
+    - gap.9
     - gap.10
     - gap.11
     - gap.12
-    - gap.13
   sup.III:
+    - gap.13
     - gap.14
     - gap.15
   sup.VI:
@@ -528,6 +530,8 @@ projects:
       - 
         id: sup.II
       - 
+        id: sup.III  
+      - 
         id: sup.IV
       - 
         id: prep.e
@@ -536,18 +540,7 @@ projects:
         id: oth.5
     gaps:
       - 
-        id: gap.1
-        score:
-          id: g2
-        remarks: |
-            The main objective of A4A is to improve early warning capabilities across Europe. It aims at laying the foundations for a 
-            pan-European alerting system. Using this system authorities will be able to warn the population during large scale crises. 
-            As soon as the thread is recognised, civil protection officials can describe the situation by selecting key words in the 
-            system. A4A then automatically composes a coded alert message from these key words in any language. A4A has a great potential
-            to solve this gap, it should be noted however, that the described goals can only be achieved in the long term. Therefore this 
-            project is rated [2/3].
-      - 
-        id: gap.4
+        id: gap.3
         score:
           id: g2        
         remarks: |
@@ -557,13 +550,24 @@ projects:
             the maximum number of people at risk. A4A has a great potential to solve this gap, it should be noted however, that the described
             goals can only be achieved in the long term. Therefore this project is rated at [2/3].
       - 
-        id: gap.14
+        id: gap.13
         score:
           id: g1
         remarks: |
             The system not only aims to warn the population, but also aims to disseminate information between agencies using A4A. A4A only 
             focusses on exchanging information during crises, and as mentioned earlier the stated goals are only possible in the long term. 
             For these reasons the project is rated at [1/3].
+      - 
+        id: gap.14
+        score:
+          id: g2
+        remarks: |
+            The main objective of A4A is to improve early warning capabilities across Europe. It aims at laying the foundations for a 
+            pan-European alerting system. Using this system authorities will be able to warn the population during large scale crises. 
+            As soon as the thread is recognised, civil protection officials can describe the situation by selecting key words in the 
+            system. A4A then automatically composes a coded alert message from these key words in any language. A4A has a great potential
+            to solve this gap, it should be noted however, that the described goals can only be achieved in the long term. Therefore this 
+            project is rated [2/3].      
       - 
         id: gap.16
         score:
@@ -665,16 +669,10 @@ projects:
       - 
         id: sup.II
       - 
+        id: sup.III        
+      - 
         id: prep.a
     gaps:
-      - 
-        id: gap.1
-        score:
-          id: g2
-        remarks: |
-          As mentioned in the description: one of the objectives of AFTER (objective nr. 4) is to develop a set of tools designed for sensing and monitoring and to develop software agent technologies for security monitoring and early warning. A physical security management tool is devoted to detect and to provide early warning of physical intrusions into energy system facilities including power plants and substations. The system tracks potential intruders via advanced algorithms to manage cameras: any alarm is processed and associated with a list of possible intrusion hypotheses on the basis of an encoded set of rules. Power flow analyses estimate the impact of any attack scenario on the grid and suggest operational practices to limit the impact itself. A drill at CEPS premises provided raw data to validate the tool performance. 
-
-          The tool provides early warning capabilities with respect to detecting physical intrusions in energy system facilities. Early warning capabilities with respect to detecting and warning about non- physical (cyber-) attacks is not mentioned in the project description. 
       - 
         id: gap.10
         score:
@@ -692,6 +690,14 @@ projects:
             - overall objective is to minimize the system restoration time; 
             - optimization techniques compute solutions for different restoration tasks; 
             - adaptive construction of restoration strategies. 
+      -
+        id: gap.14
+        score:
+          id: g2
+        remarks: |
+          As mentioned in the description: one of the objectives of AFTER (objective nr. 4) is to develop a set of tools designed for sensing and monitoring and to develop software agent technologies for security monitoring and early warning. A physical security management tool is devoted to detect and to provide early warning of physical intrusions into energy system facilities including power plants and substations. The system tracks potential intruders via advanced algorithms to manage cameras: any alarm is processed and associated with a list of possible intrusion hypotheses on the basis of an encoded set of rules. Power flow analyses estimate the impact of any attack scenario on the grid and suggest operational practices to limit the impact itself. A drill at CEPS premises provided raw data to validate the tool performance. 
+
+          The tool provides early warning capabilities with respect to detecting physical intrusions in energy system facilities. Early warning capabilities with respect to detecting and warning about non- physical (cyber-) attacks is not mentioned in the project description.       
       - 
         id: gap.21
         score:
@@ -749,9 +755,469 @@ projects:
           id: v1
         remarks: 
   - 
-    id: 3
-    shortTitle: T2
-    title: Alba
-    url: www.google.nl
-    logo: http://a5.files.fashionista.com/image/upload/c_fit,cs_srgb,w_620/MTMyOTIxMjIxNTIzMjM4ODgy.png
-    description: My ** description ** for Jessica Alba
+    id: BGAN
+    shortTitle: BGAN
+    title: Broadband Global Area Network
+    intendedUsers: First responders in remote areas
+    references: 
+      - "http://www.inmarsat.com/service/bgan/"
+      - "http://www.bgansatellite.com/industry-solutions"
+      - "https://www.groundcontrol.com/bgan/Emergency_BGAN.pdf"
+    currentUse: X
+    ciSectors:
+    logo: img/logo_bgan.png
+    description: |
+      BGAN systems are broadband satellite communication devices for first responders. Inmarsat’s Broadband Global Area Network service is transforming emergency and disaster response operations with a compelling combination: voice and high-speed data (incl. audio-visual data), completely independent of terrestrial networks, using small and portable terminals. BGAN terminals can be used indoors and outdoors, being robust enough to withstand challenging environments and extreme temperature. Vehicular BGAN terminals comprise a tracking antenna for mounting on the vehicle roof and an interior unit.  
+    maturityLevel: 
+      id: m5
+    tasks:
+      - 
+        id: sup.III
+      - 
+        id: sup.IV
+      - 
+        id: sup.V
+    gaps:
+      - 
+        id: gap.13
+        score:
+          id: g1
+        remarks: |
+          BGAN is able to support inter-agency information sharing by ensuring interoperability for first responders with different communications devices. Using BGAN devices, first responders can send and receive audio and video data with each other and with command and control teams. Doing so will improve information sharing between various first responder agencies. BGAN only works if there is a direct path-of-view to the satellite which makes it  unusable underground. Also, the system only works for the agencies in possession of BGAN devices. These reasons show that the system solves gap 13 to an considerable extent [2/3].   
+      - 
+        id: gap.17
+        score:
+          id: g2      
+        remarks: |
+          To provide information first responders can communicate by voice and data with their C2 centre even under adverse weather conditions. Yet, it requires an unobstructed view to the satellite to operate.  BGAN only works if there is a direct path-of-view to the satellite which makes it  unusable underground.  These reasons show that the system solves gap 13 to an considerable extent [2/3].
+      -    
+        id: gap.19
+        score:
+          id: g2
+        remarks: |
+          Responder communications in remote areas is enabled by portable devices that can reach any place and  are robust enough to withstand challenging environments and extreme temperature.  This because a clear view to the satellite is required to establish communication.  These reasons show that the system solves gap 13 to an considerable extent [2/3]. 
+    usabilityLevel: 
+      id: u2
+      remarks: |
+        This solution is quite versatile since the available terminals range from laptop-size to vehicle-mounted antennae. The smallest units require a minimal amount of training, whereas the larger ones require higher skills. BGAN provides a wireless network that services other devices in the local area. This network virtually covers the whole globe, with the exception of the poles. However BGAN devices need to have a direct path-of-view to the satellite which makes it unusable underground. Additionally it can operate under any weather condition. It is important to note, however, the high cost due to data access, compared with other solutions. The considerations to take into account before purchasing can be found in (on page 69): http://www.firstresponder.gov/TechnologyDocuments/A%20Review%20of%20Satellite%20Communications%201-15-14.pdf.       
+    administration:
+      duration:
+        start:
+        end: 
+        status: project closed
+      developers: Inmarsat
+      owners: Inmarsat
+      sponsors: 
+      projectType: Legacy
+      coordinator: 
+      participants:
+          
+    analysts:
+      -
+        name: Jorn Boers
+        organisation: TNO
+        reviewed: 2016-02-09
+        validationLevel: 
+          id: v1
+        remarks: 
+  -
+    id: BIO-PROTECT
+    shortTitle: BIO-PROTECT
+    title: Ionisation-based detector of airborne bio-agents, viruses and toxins for fast-alert and identification
+    intendedUsers: First Responders 
+    references: 
+      - "http://fp7-bioprotect.eu/"
+    incidents:
+      - 
+        id: nat.4
+      -
+        id: man.1
+      - 
+        id: cyb.1
+    currentUse: X
+    ciSectors:
+    logo: img/logo_bioprotect.png
+    description: |
+      The malevolent use of Anthrax spores on civilians in late 2001 has shown the necessity to protect European citizens from criminal use of biological agents and viruses. Although these attacks had been punctual and crude, more sophisticated attacks on dozens or hundreds of injured or killed people are conceivable. 
+
+      When launching such an attack its success depends on concentrating a sufficient amount of pathogens in a defined area. Hence safeguarding a certain area regarding biological agents demands the detection of pathogenous bacteria, spores and viruses in various matrices (e.g. Anthrax in flour or sugar) or suspicious aerosols. This can only be accomplished by triggering a short-term alarm and its validation as well as the identification of the type of threat. 
+
+      Since most of the bio sensors available are laboratory bound or require special equipment which needs training as well as experience, new systems are needed. The concept of BIO-PROTECT is the development of a fast-alert, easy-to-use device to be applied for detection and identification of airborne bacteria, spores, viruses and toxins. Its technology is based on bioaerosol detection by fluorescence, scattering and background aerosol measurement followed by ionization of air flow and analysis of the spectrum of relative speed of passage, which, in turns, enables identification of harmful biological agents. This device may also be used for controlling potential accidental release of bio-agents from biotechnology laboratories.
+    maturityLevel: 
+      id: m4
+    tasks:
+      - 
+        id: op.A.
+      - 
+        id: sup.IV
+    gaps:
+      - 
+        id: gap.1
+        score:
+          id: g3     
+        remarks: |
+          The device developed by BIO- PROTECT is used for the detection of pathogenous bacteria, spores and viruses in various matrices (e.g. Anthrax in flour or sugar) or suspicious aerosols. Detection of these materials is essential for operating at incidents with hazardous materials. In case of certain biological events (epidemics), industrial accidents or terrorist actions the spread of airborne biological agents  could be a serious threat to society. Detection of these biological agents is a necessity. Using this devise is necessary for solving this gap with respect to operating at incidents with hazardous biological materials.          
+      - 
+        id: gap.16
+        score:
+          id: g3
+        remarks: |
+          The device developed by BIO-protect can be an important source of information. The device (using sensors) in this instance is the ‘external source’ for detecting certain hazardous biological materials (information). The device is used for detecting the materials, but can also analyse and identify certain pathogens, making it an essential device.     
+    usabilityLevel: 
+      id: u2
+      remarks: |
+        One of the objectives of the BIO-PROTECT project was developing an easy to use device for detecting airborne biological agents. Most of available bio sensors are laboratory bound or require special equipment which needs training as well as experience. The BIO-PROTECTOR device is easy to use and it does not require excessive training or experience. The device weighs approximately fifty kilograms and can be transported using vehicles, or using transportation on foot (see picture above). It should be noted that there was no information about the affordability of the device. 
+    administration:
+      duration:
+        start: 2010-06-01 
+        end: 2014-01-31
+        status: project closed
+      developers: Bio-Protect Consortium
+      owners: Bio-Protect Consortium 
+      sponsors: FP7 – Security
+      projectType: CP
+      coordinator: LGI CONSULTING SARL (France)
+      participants: |
+        -	ZURAVLIOVO IMONE AVSISTA (Lithuania)
+        -	C-TECH INNOVATION LIMITED (United Kingdom)
+        -	ENVIRONICS OY (Finland)
+        -	COMMISSARIAT A L ENERGIE ATOMIQUE ET AUX ENERGIES ALTERNATIVES (France)
+        -	IUT Institut für Umwelttechnologien GmbH (Germany)
+        -	ROBERT KOCH-INSTITUT (Germany)
+        -	AALBORG UNIVERSITET (Denmark)
+        -	Environics-IUT GmbH (Germany)
+    analysts:
+      -
+        name: Jorn Boers
+        organisation: TNO
+        reviewed: 2016-03-16
+        validationLevel: 
+          id: v1
+        remarks: 
+  - 
+    id: BRIDGE
+    shortTitle: BRIDGE
+    title: Bridging resources and agencies in large-scale emergency management
+    intendedUsers: First responders
+    references: 
+      - "http://www.bridgeproject.eu/en/"
+    currentUse: X
+    ciSectors:
+    logo: img/logo_bridge.png
+    description: |
+      BRIDGE will build a system to support interoperability – both technical and social – in large-scale emergency management. The system will serve as a bridge between multiple First Responder organisations in Europe, contributing to an effective and efficient response to natural catastrophes, technological disasters, and large-scale terrorist attacks.
+
+      ![BRIDGE1](img/bridge1.png)
+      ![BRIDGE2](img/bridge2.png)
+      
+      The ultimate goal of BRIDGE is to increase the safety of citizens by developing technical and organisational solutions that significantly improve crisis and emergency management in EU Member States. A BRIDGE platform provides technical support for multi-agency collaboration in large-scale emergency relief efforts. The key to this is to ensure interoperability, harmonisation and cooperation among stakeholders on the technical and organisational level.
+
+      The vision of the BRIDGE project is to 
+      -	Facilitate cross-border and cross-agency collaboration; 
+      -	Allow the creation of a common, comprehensive, and reliable operational picture of the incident site; 
+      -	Enable integration of resources and technologies into workflow management; 
+      -	Enable active ad-hoc participation of third parties.
+
+      BRIDGE uses the middleware concept. This means that a single software layer lies between different tools and applications (developed by BRIDGE or other projects). It provides certain standard of development within the middleware and the developers have control on which applications are and are not integrated. The following BRIDGE Concept Cases have been validated in BRIDGE ValEDation Days in September and November 2014:
+
+      -	Advanced Situation Awareness (Situation Awareness using UAV and software);
+      -	Dynamic Tagging (Situation awareness using a tagging system for marking and monitoring significant locations of the disaster location) ;
+      -	FRITS (First Responders Integrated Training System);
+      -	Information Intelligence (data gathering);
+      -	Master (assists in keeping a common operational picture among central actors during an incident.);
+      -	Robust and Resilient Communication main functionalities: 
+      1.	Wireless Mesh routers that form an ad-hoc network (called the BRIDGE Mesh) to provide a networking infrastructure for other systems on the scene (e.g., eTriage)
+      2.	The HelpBeacons application that allows people to call for help using an Android smart phone.
+      3.	The HelpBeacons Seeker application that is used by first responders to collect SOS messages.
+      -	SWARM (Situation aWAre Resource Management)
+
+      For more information about the above mentioned tools visit: http://www.bridgeproject.eu/en/bridge-results/concept-cases
+
+    maturityLevel: 
+      id: m4
+    tasks:
+      - 
+        id: sup.I
+      - 
+        id: sup.II
+      - 
+        id: sup.III  
+      - 
+        id: sup.IV
+      - 
+        id: prep.a
+      - 
+        id: prep.f
+    incidents:
+    gaps:
+      - 
+        id: gap.5
+        score:
+          id: g3        
+        remarks: |
+            SWARM is one of the tools provided by BRIDGE  focussed on resource management. BRIDGE SWARM (Situation aWAre Resource Management) combines resource management (resource identification, involvement, task assignment, status reporting) with technology for achieving situation awareness, in order to:
+
+            1. Provide first responders with a continuous overview of the resources in their immediate surroundings (including human resources);
+            2. Communicate the state and context of human resources (e.g. their condition and health, environmental conditions like temperature, background noise, etc.);
+            3. Provide better context-aware predictions of activities of resources, e.g. estimated times of arrival for moving resources.
+      - 
+        id: gap.11
+        score:
+          id: g3
+        remarks: |
+            A BRIDGE platform provides technical support for multi-agency collaboration in large-scale emergency relief efforts. The technical platform will deliver advanced human-computer interaction techniques for effortless exploration of high-quality information enhanced organizational workflows & communication processes. One of the systems provided by BRDIGE is ‘Master’. The Master system provides functionality to present and act on three types of information, which are accessible through the BRIDGE system:
+            - Information about the incident, e.g., incident location and number and triage status of victims;
+            - Information about the response, e.g., number and position of police, fire and health vehicles;
+            - Information from external services, e.g., weather.
+
+            Using the mentioned techniques and other tools provided by the BRIDGE project will fully solve the lack of understanding the relief effort as e whole.
+      - 
+        id: gap.13
+        score:
+          id: g2
+        remarks: |
+            BRIDGE will support inter-agency information sharing in complex situations (cross-border, cross-agency, on large scale). The technical platform will deliver: 
+            -	Methods and tools that support run-time intra- & inter-agency collaboration;
+            -	A middleware allowing data, system & network interoperability;
+
+            One of these tools is the Federated Control Room Support (FCRS). FCRS’s main tasks are: 
+            -	Team formation (formation of cross-agency/ cross border teams that will work together on specific processes). 
+            -	Team process monitoring (FCRS allows commanders to monitor simple and more complex processes). 
+            -	Team communications (FCRS allows participants to easily communicate within the teams via multiple modes of communication). 
+            These tasks will be integrated in a software tool, making it easier to establish ad-hoc cross agency/ cross border teams and ensure interoperability between them.  These tools will support and improve inter-agency information sharing and inter-agency collaboration. Doing so will solve interoperability issues.  These reasons show that the project fully solves gap 13.
+      - 
+        id: gap.16
+        score:
+          id: g3
+        remarks: |
+            BRIDGE provides a number of tools and systems which together can greatly improve acquisition of information. As mentioned before, an important aspect of the Master system is the acquisition of information. Other tools provided by BRIDGE are also set to solve this problem are: 
+            -	BRIDGE Advanced Situation Awareness (ASA) assists first responders on scene in increasing situational awareness by supplying real-time visual and other information on the extent of the disaster and its consequences;
+            -	Dynamic Tagging, situation awareness using a tagging system for marking and monitoring significant locations of the disaster location) ; Bridge Dynamic Tagging System assists first responders in marking and monitoring significant locations of the disaster site and in creating real-time situation awareness. It aims to ease the annotation of the field with digital information targeting at an improved spatial reference system and shared mental model for fire fighters. Such an annotated disaster site enriches the process of spatial sense making performed by first responders in the field.
+      - 
+        id: gap.24
+        score:
+          id: g2
+        remarks: |
+            One of the goals of the BRIDGE project is to enable active ad-hoc participation of third parties. Thus improving the co-operation with third parties. The FCRS can also be used to solve gap 24 (see description under gap 13).        
+    usabilityLevel: 
+      id: u2
+      remarks: |
+        BRIDGE innovations were demonstrated in the framework of a simulated technological disaster scenario, involving a powerful explosion and subsequent fire at a chemical facility. The scenario was developed based on the actual industrial accident, which happened in Toulouse, France, in September 2001, causing 30 fatalities and over 3000 injuries among the personnel onsite and general public outside of the facility. This scenario was chosen to demonstrate how the system of systems developed in BRIDGE could be used after such a disaster and improve emergency response during its most challenging early stage (i.e., the first - 'golden' - hour).  All eight concept cases, plus the BRIDGE middleware, were shown at different timeslots of the BRIDGE Golden Hour, demonstrating both, the advantages of the new technologies and early stage prototypes in different phases of emergency response and their interaction and interoperability as an integrated solution. The demo was followed by the final review meeting, which was completed with a positive evaluation of the project results by the reviewers.          
+    administration:
+      duration: 
+        start: 2011-04-01 
+        end: 2015-06-30
+        status: project closed
+      developers: BRIDGE consortium 
+      owners: BRIDGE consortium 
+      sponsors: FP7 – Security
+      projectType: CP
+      coordinator: STIFTELSEN SINTEF (Norway)
+      participants: |
+        -	ALMENDE B.V. (Netherlands)
+        -	CNET SVENSKA AB (Sweden)
+        -	FRAUNHOFER GESELLSCHAFT ZUR FORDERUNG DER ANGEWANDTEN FORSCHUNG EV (Germany)
+        -	LANCASTER UNIVERSITY (United Kingdom)
+        -	Crisis Training AS (Norway)
+        -	SAAB Training Systems (Sweden)
+        -	THALES NEDERLAND BV (Netherlands)
+        -	UNIVERSITAET KLAGENFURT (Austria)
+        -	PARIS-LODRON-UNIVERSITÄT SALZBURG (Austria)
+        -	VSH HAGERBACH TEST GALLERY LTD (Switzerland)
+        -	TECHNISCHE UNIVERSITEIT DELFT (Netherlands)
+        -	STOCKHOLMS UNIVERSITET (Sweden)
+        -	HELSE STAVANGER HF (Norway)
+        -	SAAB AKTIEBOLAG (Sweden)
+    analysts:
+      -
+        name: Jorn Boers
+        organisation: TNO
+        reviewed: 2016-06-30
+        validationLevel: 
+          id: v1
+        remarks:       
+  - 
+    id: DARIUS
+    shortTitle: DARIUS
+    title: Civil protection, USAR
+    intendedUsers: Public (key enablers to improve the effectiveness of alert and communications towards the population)
+    references: 
+      - "www.darius-fp7.eu"
+    currentUse: X
+    ciSectors:
+    logo: img/logo_darius.jpg
+    description: |
+      The use of unmanned systems in SAR operations to enhance First Responder capabilities to intervene in hazardous areas. The main objective of DARIUS is to reach effective levels of interoperability so these systems can be shared between several organisations. This objective will be achieved in designing a Generic Ground Station with associated proposed standards, a full integration in the command and control cycle and a consistent communication network. In addition, DARIUS will adapt the existing unmanned systems and their payloads (air, ground and maritime) to the specificities of the Search and Rescue missions. DARIUS solutions will be evaluated in real conditions through three scenarios (urban, forest fires and maritime SAR).
+      ![Darius](img/darius.jpg)
+    maturityLevel: 
+      id: m4
+    tasks:
+      - 
+        id: op.B
+      - 
+        id: sup.II
+      - 
+        id: sup.III  
+      - 
+        id: sup.IV
+      - 
+        id: sup.V
+    incidents:
+    gaps:
+      - 
+        id: gap.2
+        score:
+          id: g3       
+        remarks: |
+            The main objective of DARIUS is improving the navigation of unmanned systems. If DARIUS is used it will fully solve gap 2. 
+      - 
+        id: gap.9
+        score:
+          id: g2
+        remarks: |
+            Unmanned systems can enhance the situation awareness with a flexibility that the manned systems do not have due to the intrinsic limitations of the crews. By gathering data in hazardous circumstances, unmanned systems can improve the situation awareness. Using this data, response authorities will be able to better understand the specific crisis dynamics.  
+      - 
+        id: gap.13
+        score:
+          id: g2
+        remarks: |
+            An objective if this project is to enhance the interoperability performances at procedural and technical levels. Since systems are costly and rare, their optimal use will be when they are shared between several agencies and provide information and services to all FRs deployed on the field. This needed interoperability cannot exist without the integration of unmanned systems in the overall command and control cycle (planning, tasking and current operations monitoring). The objective induced by the interoperability objective is therefore to reach an integration level in the C2/C4I and Information systems which will enable:
+            -	The integration of the unmanned systems at the same level as the other available assets and forces;
+            -	Easy and seamless reconfigurations and transfer of control/responsibility between the various participating units on the field and a complete and rapid share of the information.
+
+            DARIUS will fully solve gap 13 with respect to the use of unmanned systems. Therefore the project is rated at [3/3].  
+      - 
+        id: gap.16
+        score:
+          id: g3
+        remarks: |
+            Unmanned systems can enhance the situation awareness with a flexibility that manned systems do not have due to the intrinsic limitations of the crews. By gathering data in hazardous circumstances, unmanned systems will improve the acquisition of information form external sources. DARIUS can fully solve gap 16 with respect to using unmanned systems to gather information [3/3].       
+    usabilityLevel: 
+      id: u2
+      remarks: |
+        Positive usability aspects are the user friendliness, the openness of the solution, the scalability of the solution, measurement of deployability (installation and preparation time, dependency on special equipment, dependency on infrastructures such as power and communications, and dependency on experts or special staff for installation and exploitation) and the measurement of transportability of the hardware solution, and the possibility of hardware solutions to operate autonomously. A negative usability aspects is the high costs. The citizen safety market is very fragmented and each agency has a very limited budget. Another negative usability aspect is the fact that first responders will be legally responsible for their actions, but are reluctant to transfer some of their responsibilities to machines. Vice versa, victims will be more comfortable with people rather than machines. Certain industrial and legal issues also play a role. 
+    administration:
+      duration: 
+        start: 2012-03-01 
+        end: 2015-02-28
+        status: project closed
+      developers: DARIUS consortium 
+      owners: DARIUS consortium 
+      sponsors: FP7 – Security
+      projectType: CP-IP
+      coordinator: BAE Systems (Operations) Ltd (United Kingdom)
+      participants: |
+        -	CASSIDIAN SAS (France)
+        -	DFRC AG (Switzerland)
+        -	SKYTEK LTD (Ireland)
+        -	TELINT RTD Consultancy Services LTD (United Kingdom)
+        -	FUTURE INTELLIGENCE EREVNA TILEPIKINONIAKON KE PLIROFORIAKON SYSTIMATON EPE (Greece)
+        -	OFFICE NATIONAL D'ETUDES ET DE RECHERCHES AEROSPATIALES (France)
+        -	STIFTELSEN SINTEF (Norway)
+        -	ECA SA (France)
+        -	NATIONAL TECHNICAL UNIVERSITY OF ATHENS – NTUA (Greece)
+        -	CENTER FOR SECURITY STUDIES (Greece)
+        -	ECOMED bvba (Belgium)
+        -	CORK INSTITUTE OF TECHNOLOGY (Ireland)
+        -	ENTENTE POUR LA FORÊT MÉDITERRANÉENNE (France)
+    analysts:
+      -
+        name: Jorn Boers
+        organisation: TNO
+        reviewed: 2016-03-09
+        validationLevel: 
+          id: v1
+        remarks:    
+  - 
+    id: DESTRIERO
+    shortTitle: DESTRIERO
+    title: A DEcision Support Tool for Reconstruction and recovery and for the IntEroperability of international Relief units in case Of complex crises situations, including CBRN contamination risks
+    intendedUsers: Civil protection agencies
+    references: 
+      - "http://www.destriero-fp7.eu/ "
+      - "http://www.destriero-fp7.eu/wp-content/uploads/2014/02/DestrieroLeaflet.pdf"
+    incidents:
+    currentUse: X
+    ciSectors:
+    logo: img/logo_destriero.png
+    description: |
+      Today more people than ever are threatened by disasters, with no regards if natural or man-made. Furthermore, CBRN  contamination risks can occur as a consequence of these events. Regions affected are wider and wider and reconstruction and recovery operations are longer-lasting, costly and complex, especially when decontamination is necessary. 
+
+      DESTRIERO aims at developing a next generation post-crisis needs assessment tool for reconstruction and recovery planning, including structural damage assessment through advanced remote sensing enriched by in-field data collection by mobile devices (buildings, bridges, dams) and related data integration and analysis, based on international standards, novel (automated) data and information interoperability across organisations and systems, in combination with an advanced multi-criteria decision analysis tool and methodology for multi-stakeholder information analyses, priority setting, decision making and recovery planning. Earth observation images will contribute to fast damage assessment and monitoring of the areas, together with data acquired by relief units on the field using novel smart-phone apps. Identified needs will be recorded, stored and made available to all organisations involved.
+
+      DESTRIERO has four objectives: 
+      1.	Faster and better damage assessment for planning and monitoring of progress of recovery.
+      2.	Facilitate fast and intuitive access for distributed users to visualise the dynamic “common operational picture”, during the planning and reconstruction period.
+      3.	Better collaborative decision making during the planning and reconstruction phase Support standardisation of assessment data, interoperability between different information systems from stakeholders and capabilities to compare damage and recovery requirements towards prioritisation and joint decision making.
+      4.	Improve management information in relation to PDNA and RRP DESTRIERO will provide a single access point and on-line library with PDNA and RRP Frameworks, high level overviews of planned and running recovery projects including multi-donor funding information and the possibility to trace related surveillance data for progress monitoring.
+    maturityLevel: 
+      id: m4
+    tasks:
+      - 
+        id: sup.I
+      - 
+        id: sup.II
+      - 
+        id: sup.V     
+    gaps:
+      - 
+        id: gap.11
+        score:
+          id: g2      
+        remarks: |
+          DESTRIERO will provide a system with four functionalities. One of these is to support continuous damage and contamination assessment, monitoring and updating, through a combination of satellite data and aerial photos enriched by in-field data collection by mobile devices and related data integration and analysis. These aspects are essential for operating/ reconstruction work in contaminated areas. The system provides real time information about certain contamination risks, but it does not completely solve all the problems in operating at incidents with hazardous materials. DISTRIERO will solve gap 2 to a considerable extent.
+        id: gap.7
+        score:
+          id: g3
+        remarks: |
+          Another functionality of the DESTRIERO system is to support prioritisation and joint decision making with a novel tool, based on recently developed decision support methodology and prototype software. Using the real time information and data collection combined with the prioritisation and decision making tool should help extensively in the decision making process during the reconstruction and recovery phase in case of complex crises. 
+      -
+        id: gap.10
+        score:
+          id: g2
+        remarks: |
+          Natural or man-made disasters have a major impact on the living conditions, economic performance and environmental status of affected countries or regions. Consequences may be long term and can significantly deteriorate quality of life, social structures and the environment. Preventing these cascading effects trough adequate decision making during the recovery phase is the main objective of the DESTRIERO system. The combination of the four functionalities of this system (explained under gap 2, 8 and 14) will help solve this gap to a considerable extent. It is not clear if the system takes all the important long term consequences of certain decisions into account. 
+
+          The tool provides early warning capabilities with respect to detecting physical intrusions in energy system facilities. Early warning capabilities with respect to detecting and warning about non- physical (cyber-) attacks is not mentioned in the project description.       
+      - 
+        id: gap.13
+        score:
+          id: g3
+        remarks: |
+          The DESTRIERO system is set to boost information sharing between relief organisations and their information systems for coordinated damage and needs assessment as well as reconstruction and recovery operations. The system also provides centralised management information, high level overview of running recovery projects with finance from multiple donors, recovery progress information, including linkages to official procedures and on-line platforms from international donor and coordinating organisations. These two functionalities of the DESTRIERO system will greatly improve interoperability and information sharing with respect to reconstruction and recovery in complex crises. 
+    usabilityLevel: 
+      id: u3
+      remarks: |
+        DESTRIERO has collaborated with other projects like COBACORE and RECONASS. The projects share information to maximize impact of relevant research outcomes on the provision of novel tools for disaster management. This increases the openness and the scalability of the solution. The tool developed by DESTRIERO looks very user friendly at this point. The project is still in development, but DESTRIERO provided a set of screenshots with useful information of the developed tool (http://www.destriero-fp7.eu/wp-content/uploads/2016/02/HMI-screenshots.pdf). DESTRIERO plans to show a demo to end-users in a few months. The usability scoring 3 out of 3 is provisional.    
+    administration:
+      duration:
+        start: 2013-09-01 
+        end: 2016-08-31
+        status: ongoing project
+      developers: DESTIERO consortium
+      owners: DESTIERO consortium
+      sponsors: FP7 – Security
+      projectType: CP-FP
+      coordinator: E-GEOS SPA (Italy)
+      participants: |
+        -	SESM SOLUZIONI EVOLUTE PER LA SISTEMISTICA E I MODELLI S.C.A.R.L. (Italy)
+        -	CONSORZIO INTERUNIVERSITARIO NAZIONALE PER L'INFORMATICA (Italy)
+        -	THALES SA (France)
+        -	THALES PROGRAMAS DE ELECTRONICA Y COMUNICACIONES SA (Spain)
+        -	UNIVERSITAT POLITECNICA DE VALENCIA (Spain)
+        -	FRAUNHOFER-GESELLSCHAFT ZUR FOERDERUNG DER ANGEWANDTEN FORSCHUNG E.V (Germany)
+        -	ASOCIACION DE EMPRESAS TECNOLOGICAS INNOVALIA (Spain)
+        -	SELEX ES SPA (Italy)
+        -	ITTI Sp.zo.o. (Poland)
+        -	SAADIAN TECHNOLOGIES LIMITED (Ireland)
+        -	FUNDACAO DE ASSISTENCIA MEDICA INTERNACIONAL (Portugal)
+        -	Police Service of Northern Ireland (United Kingdom)
+        -	Szkola Glowna Sluzby Pozarniczej (Poland)        
+    analysts:
+      -
+        name: Jorn Boers
+        organisation: TNO
+        reviewed: 2016-04-04
+        validationLevel: 
+          id: v1
+        remarks:      
