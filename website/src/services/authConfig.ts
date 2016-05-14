@@ -1,26 +1,31 @@
+var baseConfig = {
+    endpoint: 'auth',
+    configureEndpoints: ['auth', 'protected-api']
+};
+
 var configForDevelopment = {
-    httpInterceptor: true,
-    loginOnSignup: true,
-    baseUrl: '/',
-    loginRedirect: '#/',
-    logoutRedirect: '#/',
-    signupRedirect: '#/login',
-    loginUrl: 'http://localhost:3456/api/catalogue/auth/login',
-    signupUrl: 'http://localhost:3456/api/catalogue/auth/signup',
-    profileUrl: 'http://localhost:3456/api/catalogue/auth/me',
-    loginRoute: '/login',
-    signupRoute: '/signup',
-    tokenRoot: false,
-    tokenName: 'token',
-    tokenPrefix: 'aurelia',
-    responseTokenProp: 'access_token',
-    unlinkUrl: '/auth/unlink/',
-    unlinkMethod: 'get',
-    authHeader: 'Authorization',
-    authToken: 'Bearer',
-    withCredentials: true,
-    platform: 'browser',
-    storage: 'localStorage',
+    // httpInterceptor: true,
+    // loginOnSignup: true,
+    // baseUrl: '/',
+    // loginRedirect: '#/',
+    // logoutRedirect: '#/',
+    // signupRedirect: '#/login',
+    // loginUrl: 'http://localhost:3456/api/catalogue/auth/login',
+    // signupUrl: 'http://localhost:3456/api/catalogue/auth/signup',
+    // profileUrl: 'http://localhost:3456/api/catalogue/auth/me',
+    // loginRoute: '/login',
+    // signupRoute: '/signup',
+    // tokenRoot: false,
+    // tokenName: 'token',
+    // tokenPrefix: 'aurelia',
+    // responseTokenProp: 'access_token',
+    // unlinkUrl: '/auth/unlink/',
+    // unlinkMethod: 'get',
+    // authHeader: 'Authorization',
+    // authToken: 'Bearer',
+    // withCredentials: true,
+    // platform: 'browser',
+    // storage: 'localStorage',
     providers: {
         google: {
             clientId: '239531826023-ibk10mb9p7ull54j55a61og5lvnjrff6.apps.googleusercontent.com'
@@ -36,28 +41,6 @@ var configForDevelopment = {
 };
 
 var configForProduction = {
-    httpInterceptor: true,
-    loginOnSignup: true,
-    baseUrl: '/',
-    loginRedirect: '#/',
-    logoutRedirect: '#/',
-    signupRedirect: '#/login',
-    loginUrl: '/auth/login',
-    signupUrl: '/auth/signup',
-    profileUrl: '/auth/me',
-    loginRoute: '/login',
-    signupRoute: '/signup',
-    tokenRoot: false,
-    tokenName: 'token',
-    tokenPrefix: 'aurelia',
-    responseTokenProp: 'access_token',
-    unlinkUrl: '/auth/unlink/',
-    unlinkMethod: 'get',
-    authHeader: 'Authorization',
-    authToken: 'Bearer',
-    withCredentials: true,
-    platform: 'browser',
-    storage: 'localStorage',
     providers: {
         google: {
             clientId: '239531826023-3ludu3934rmcra3oqscc1gid3l9o497i.apps.googleusercontent.com'
@@ -74,11 +57,10 @@ var configForProduction = {
 };
 var config;
 if (window.location.hostname === 'localhost') {
-    config = configForDevelopment;
+    config = Object.assign({}, baseConfig, configForDevelopment);
 }
 else {
-    config = configForProduction;
+    config = Object.assign({}, baseConfig, configForProduction);
 }
-
 
 export default config;
