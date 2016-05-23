@@ -2,7 +2,7 @@
     "version": "1.8.10",
     "compileOnSave": true,
     "compilerOptions": {
-        "rootDir": ".",
+        "rootDir": "src/",
         "sourceMap": true,
         "target": "es5",
         "module": "commonjs",
@@ -13,10 +13,15 @@
         "noLib": false
     },
     "filesGlob": [
-        "./**/*.ts",
-        "./typings/main.d.ts"
+        "./src/**/*.ts",
+        "./test/**/*.ts",
+        "./typings/main.d.ts",
+        "./custom_typings/**/*.d.ts"
     ],
     "exclude": [
         "node_modules"
-    ]
+    ],
+    "atom": {
+        "rewriteTsconfig": false
+    }
 }

@@ -1,0 +1,8 @@
+{
+  "resolution": "main",
+  "tree": {
+    "src": "https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/42fce07b0a337ed4fd272eb83bff68e828c66003/express-jwt/express-jwt.d.ts",
+    "raw": "registry:dt/express-jwt#0.0.0+20160319033732",
+    "typings": "https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/42fce07b0a337ed4fd272eb83bff68e828c66003/express-jwt/express-jwt.d.ts"
+  }
+}

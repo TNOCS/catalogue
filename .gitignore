@@ -33,6 +33,6 @@ node_modules
 .node_repl_history
 
 # REST project
-rest/node_modules
-rest/**/*.js
-rest/**/*.js.map
+json-server-auth/node_modules
+json-server-auth/**/*.js
+json-server-auth/**/*.js.map

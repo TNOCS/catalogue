@@ -1,0 +1,18 @@
+{
+    "loginUrl": "/auth/login",
+    "signupUrl": "/auth/signup",
+    "profileUrl": "/auth/me",
+    "port": 3000,
+    "secret": "Dit is mijn geheim om JSON web tokens aan te maken",
+    "users": {
+        "erik.vullings@gmail.com": {
+            "displayName": "Erik",
+            "password": "test",
+            "role": "admin"
+        },
+        "evi.vullings@gmail.com": {
+            "password": "evi",
+            "role": "analyst"
+        }
+    }
+}
