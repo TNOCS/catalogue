@@ -12,8 +12,8 @@ export class Welcome {
 
   activate() {
     return this.databaseService.database.then(db => {
-      this.heading = db.welcomeText;
-      this.description = db.description;
+      this.heading = db.app.welcomeText;
+      this.description = db.app.description;
     });
   }
 

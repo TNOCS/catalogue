@@ -1,6 +1,7 @@
-title: FRITS
-welcomeText: Welcome to the First Incident Responder Technology Scan (FRITS)
-description: Provide a description please
+app: 
+  title: FRITS
+  welcomeText: Welcome to the First Incident Responder Technology Scan (FRITS)
+  description: Provide a description please
 gapLevels:
   - 
     id: g0

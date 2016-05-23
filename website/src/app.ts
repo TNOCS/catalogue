@@ -22,7 +22,8 @@ export class App {
       { route: 'gaps',               name: 'gaps',           moduleId: 'gaps',           nav: true,  title: 'Gaps' },
       { route: 'projects',           name: 'projects',       moduleId: 'projects',       nav: true,  title: 'Projects' },
       { route: 'project/:id',        name: 'project',        moduleId: 'projectDetails', nav: false, title: 'Project details' },
-      // { route: 'users',              name: 'users',          moduleId: 'users',          nav: true,  title: 'Github Users' },
+      { route: 'login',              name: 'login',          moduleId: './login',        nav: false, title: 'Login' }
+   // { route: 'users',              name: 'users',          moduleId: 'users',          nav: true,  title: 'Github Users' },
       // { route: 'child-router',       name: 'child-router',   moduleId: 'child-router',   nav: true,  title: 'Child Router' }
     ]);
 
@@ -31,8 +32,8 @@ export class App {
   
   activate() {
     return this.databaseService.database.then(db => {
-      this.title = db.title;
-      if (this.config) this.config.title = db.title;
+      this.title = db.app.title;
+      if (this.config) this.config.title = db.app.title;
     });
   }
 }

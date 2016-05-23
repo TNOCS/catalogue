@@ -2,13 +2,15 @@ import {IProject} from 'project';
 import {ICharacteristic} from 'characteristic';
 
 export interface IDatabase {
-    /** Title as shown in the main nav bar */
-    title: string;
-    /** Welcome text as shown on the Welcome page */
-    welcomeText: string;
-    /** Description as shown on the Welcome page */
-    description: string;
-    /** List of usability scales */
+    app: {
+        /** Title as shown in the main nav bar */
+        title: string;
+        /** Welcome text as shown on the Welcome page */
+        welcomeText: string;
+        /** Description as shown on the Welcome page */
+        description: string;
+        /** List of usability scales */
+    },
     usabilityLevels: ICharacteristic[];
     /** List of maturity scales */
     maturityLevels: ICharacteristic[];

@@ -5,11 +5,14 @@ export interface IProject {
     index?: number;
     shortTitle?: string;
     title?: string;
-    url?: string;
+    intendedUsers?: string;
+    references?: string[];
+    currentUse?: string;
     tagline?: string;
     description?: string;
     logo?: string;
-
+    isProject?: boolean;
+    isProduct?: boolean;
     tasks?: ICharacteristic[];
     incidents?: ICharacteristic[];
     gaps?: ICharacteristic[];
