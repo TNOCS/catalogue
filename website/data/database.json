@@ -8,7 +8,7 @@
         "id": "g0",
         "rating": {
             "value": 0,
-            "max": 3
+            "max": 6
         },
         "title": "Not at all",
         "description": "The solution or development does not contribute to strengthen the response or to improve collaboration."
@@ -16,136 +16,219 @@
         "id": "g1",
         "rating": {
             "value": 1,
-            "max": 3
+            "max": 6
         },
-        "title": "To a limited extent",
-        "description": "The solution or development strengthens the response or improves the collaboration to a limited extent."
+        "title": "Very limited",
+        "description": "The solution or development only addresses a few aspects of the gap."
     }, {
         "id": "g2",
         "rating": {
             "value": 2,
-            "max": 3
+            "max": 6
         },
-        "title": "To a considerable extent",
-        "description": "The solution or development strengthens the response or improves the collaboration to a considerable extent."
+        "title": "To a limited extent",
+        "description": "The solution or development addresses most aspects of the gap."
     }, {
         "id": "g3",
         "rating": {
             "value": 3,
-            "max": 3
+            "max": 6
         },
-        "title": "Fully",
-        "description": "The solution or development strengthens the response or improves the collaboration fully."
+        "title": "Fair",
+        "description": "The solution or development solves only one aspect of the gap."
+    }, {
+        "id": "g4",
+        "rating": {
+            "value": 4,
+            "max": 6
+        },
+        "title": "Quite fair",
+        "description": "The solution or development solves several aspects of the gap."
+    }, {
+        "id": "g5",
+        "rating": {
+            "value": 5,
+            "max": 6
+        },
+        "title": "Significant",
+        "description": "The solution or development solves allmost all aspects of the gap."
+    }, {
+        "id": "g6",
+        "rating": {
+            "value": 6,
+            "max": 6
+        },
+        "title": "Completely",
+        "description": "The solution or development solves all the aspects of the gap."
     }],
     "usabilityLevels": [{
         "id": "u0",
         "rating": {
             "value": 0,
-            "max": 3
+            "max": 6
         },
-        "title": "Not at all"
+        "title": "Not at all",
+        "description": "Aspects included are (1) user friendliness, (2) affordable, (3) Open, (4) Deployable, (5) Not limited by legal constraints, (6) Not limited by technological constraints."
     }, {
         "id": "u1",
         "rating": {
             "value": 1,
-            "max": 3
+            "max": 6
         },
-        "title": "To a limited extent"
+        "title": "Very limited",
+        "description": "Only one usability aspect is valid. Aspects included are (1) user friendliness, (2) affordable, (3) Open, (4) Deployable, (5) Not limited by legal constraints, (6) Not limited by technological constraints."
     }, {
         "id": "u2",
         "rating": {
             "value": 2,
-            "max": 3
+            "max": 6
         },
-        "title": "To a considerable extent"
+        "title": "Limited",
+        "description": "Only two usability aspects are valid. Aspects included are (1) user friendliness, (2) affordable, (3) Open, (4) Deployable, (5) Not limited by legal constraints, (6) Not limited by technological constraints."
     }, {
         "id": "u3",
         "rating": {
             "value": 3,
-            "max": 3
+            "max": 6
         },
-        "title": "Fully"
+        "title": "Fair",
+        "description": "Three out of six usability aspects are valid. Aspects included are (1) user friendliness, (2) affordable, (3) Open, (4) Deployable, (5) Not limited by legal constraints, (6) Not limited by technological constraints."
+    }, {
+        "id": "u4",
+        "rating": {
+            "value": 4,
+            "max": 6
+        },
+        "title": "Quite Fair",
+        "description": "Four out of six usability aspects are valid. Aspects included are (1) user friendliness, (2) affordable, (3) Open, (4) Deployable, (5) Not limited by legal constraints, (6) Not limited by technological constraints."
+    }, {
+        "id": "u5",
+        "rating": {
+            "value": 5,
+            "max": 6
+        },
+        "title": "Good",
+        "description": "Five out of six usability aspects are valid. Aspects included are (1) user friendliness, (2) affordable, (3) Open, (4) Deployable, (5) Not limited by legal constraints, (6) Not limited by technological constraints."
+    }, {
+        "id": "u6",
+        "rating": {
+            "value": 6,
+            "max": 6
+        },
+        "title": "Very good",
+        "description": "All usability aspects are valid. Aspects included are (1) user friendliness, (2) affordable, (3) Open, (4) Deployable, (5) Not limited by legal constraints, (6) Not limited by technological constraints."
     }],
     "maturityLevels": [{
+        "id": "m0",
+        "rating": {
+            "value": 0,
+            "max": 6
+        },
+        "title": "First ideas / proposal."
+    }, {
         "id": "m1",
         "rating": {
             "value": 1,
-            "max": 5
+            "max": 6
         },
         "title": "Vision and agenda formulated."
     }, {
         "id": "m2",
         "rating": {
             "value": 2,
-            "max": 5
+            "max": 6
         },
         "title": "Concept and specifications formulated."
     }, {
         "id": "m3",
         "rating": {
             "value": 3,
-            "max": 5
+            "max": 6
         },
-        "title": "Prove of concept/ Limited trials"
+        "title": "Prove of concept/Limited trials"
     }, {
         "id": "m4",
         "rating": {
             "value": 4,
-            "max": 5
+            "max": 6
         },
         "title": "Extensive trials, not operational"
     }, {
         "id": "m5",
         "rating": {
             "value": 5,
-            "max": 5
+            "max": 6
         },
-        "title": "Tested in legacy environment/ Operational"
+        "title": "Tested in operational environment"
+    }, {
+        "id": "m6",
+        "rating": {
+            "value": 6,
+            "max": 6
+        },
+        "title": "Operational"
     }],
     "validationLevels": [{
+        "id": "v0",
+        "rating": {
+            "value": 0,
+            "max": 6
+        },
+        "title": "Hardly",
+        "description": "Based on limited information."
+    }, {
         "id": "v1",
         "rating": {
             "value": 1,
             "max": 6
         },
-        "title": "Limited information (desk research only)"
+        "title": "Quite limited",
+        "description": "Based on public information of developer/supplier."
     }, {
         "id": "v2",
         "rating": {
             "value": 2,
             "max": 6
         },
-        "title": "Multiple sources (desk research only)"
+        "title": "Limited",
+        "description": "Based on several public sources."
     }, {
         "id": "v3",
         "rating": {
             "value": 3,
             "max": 6
         },
-        "title": "Validated with owner"
+        "title": "Fair",
+        "description": "Validated by consulting developer/supplied."
     }, {
         "id": "v4",
         "rating": {
             "value": 4,
             "max": 6
         },
-        "title": "Validated with end-user"
+        "title": "Quite fair",
+        "description": "Validated by consulting end user/practitioner."
     }, {
         "id": "v5",
         "rating": {
             "value": 5,
             "max": 6
         },
-        "title": "Validated with both end-user and owner"
+        "title": "Extensively",
+        "description": "Validated with developer and one practitioner."
     }, {
         "id": "v6",
         "rating": {
             "value": 6,
             "max": 6
         },
-        "title": "Fully validated"
+        "title": "Completely",
+        "description": "Validated with developer and several practitioners."
     }],
     "ciSectors": [{
+        "id": "c0",
+        "title": "Drinking Water"
+    }, {
         "id": "c1",
         "title": "Education and R&D"
     }, {
@@ -177,7 +260,7 @@
         "title": "Transport"
     }, {
         "id": "c11",
-        "title": "Water"
+        "title": "Water management"
     }],
     "tasks": [{
         "id": "prep",
@@ -299,25 +382,6 @@
             "description": "Meteorites, Geomagnetic storms"
         }]
     }, {
-        "id": "out",
-        "title": "Outside EU events that require external intervention",
-        "children": [{
-            "id": "out.1",
-            "title": "Humanitarian Aid outside EU"
-        }, {
-            "id": "out.2",
-            "title": "Outbreak of civil war"
-        }, {
-            "id": "out.3",
-            "title": "Civil disturbance"
-        }, {
-            "id": "out.4",
-            "title": "Large-scale disaster in a CSDP mission area"
-        }, {
-            "id": "out.5",
-            "title": "Large-scale movement of people"
-        }]
-    }, {
         "id": "man",
         "title": "Man-made incidents",
         "children": [{
@@ -355,25 +419,6 @@
         }, {
             "id": "cyb.5",
             "title": "Cybercrime"
-        }]
-    }, {
-        "id": "oth",
-        "title": "Other crisis events",
-        "children": [{
-            "id": "oth.1",
-            "title": "Incident with many EU citizens outside EU"
-        }, {
-            "id": "oth.2",
-            "title": "Large-scale influx of refugees into EU"
-        }, {
-            "id": "oth.3",
-            "title": "Economic failure (/financial crisis)"
-        }, {
-            "id": "oth.4",
-            "title": "War"
-        }, {
-            "id": "oth.5",
-            "title": "General"
         }]
     }],
     "gaps": [{
