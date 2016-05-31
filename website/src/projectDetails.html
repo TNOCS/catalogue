@@ -59,6 +59,20 @@
                 </ul>                          
             </div>
             
+            
+            <div class="row">            
+                <h3><a click.delegate="showRefs = !showRefs" 
+                    data-toggle="tooltip" data-placement="top" title="Tooltip on top"
+                    class="small fa ${showRefs ? 'fa-chevron-circle-down' : 'fa-chevron-circle-up'}"></a>&nbsp;Project references</h3>
+            </div>
+            <div class="row" show.bind="showRefs">
+                <ul class="list-unstyled">
+                    <li repeat.for="ref of project.references">
+                        <a href.bind="ref" target="_blank">${$index + 1}. ${ref}</a>
+                    </li>
+                </ul>
+            </div>            
+            
             <div class="row">            
                 <h3><a click.delegate="showAdmin = !showAdmin" 
                     data-toggle="tooltip" data-placement="top" title="Tooltip on top"
