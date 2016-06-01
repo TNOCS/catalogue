@@ -33,7 +33,7 @@ export class App {
   activate() {
     return this.databaseService.database.then(db => {
       this.title = db.app.title;
-      if (this.config) this.config.title = db.app.title;
+    if (this.config) this.config.title = db.app.title;
     });
   }
 }
