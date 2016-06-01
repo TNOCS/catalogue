@@ -1,5 +1,10 @@
 import {ICharacteristic} from 'characteristic';
 
+export interface IParticipant {
+    title: string;
+    country: string;
+}
+
 export interface IProject {
     id: string;
     index?: number;
@@ -33,8 +38,8 @@ export interface IProject {
         owners?: string;
         sponsors?: string;
         projectType?: string;
-        coordinator?: string;
-        participants?: string;        
+        coordinator?: IParticipant;
+        participants?: IParticipant[];        
     };
     analysts?: {
         name?: string;
