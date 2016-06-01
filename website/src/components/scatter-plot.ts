@@ -113,7 +113,7 @@ export class ScatterPlotCustomElement {
             .attr("x", this.width)
             .attr("y", -6)
             .style("text-anchor", "end")
-            .text("Solvability");
+            .text("Extent to which gaps are solved");
 
         // y-axis
         svg.append("g")
@@ -140,10 +140,14 @@ export class ScatterPlotCustomElement {
                 tooltip.transition()
                     .duration(200)
                     .style("position", "fixed")
-                    .style("left", `${(<any>d3.event).pageX + 16}px`)
+                    .style("background", "#fff")
+                    .style("font-weight", "bold")
+                    .style("padding", "10px")
+                    .style("height", "65px")
+                    .style("left", `${(<any>d3.event).pageX + 35}px`)
                     .style("top", `${(<any>d3.event).pageY - 28}px`)
                     .style("opacity", .9);
-                tooltip.html(`${d.project.shortTitle}<br/> (solvability: ${d.solvability}, usability: ${d.usability}, maturity: ${d.maturity})`);
+                tooltip.html(`PROJECT: ${d.project.shortTitle}<br/>- extent to which gaps are solved: ${d.solvability}<br/>- usability: ${d.usability}<br/>- maturity: ${d.maturity}`);
             })
             .on("mouseout", function (d) {
                 tooltip.transition()
@@ -172,6 +176,27 @@ export class ScatterPlotCustomElement {
             .attr("dy", ".35em")
             .style("text-anchor", "end")
             .text(function (d) { return d; })
+
+        svg.selectAll("rect")
+            .data(data)
+            .on("mouseover", function (d: IDataFormat) {
+                tooltip.transition()
+                    .duration(200)
+                    .style("position", "fixed")
+                    .style("background", "#fff")
+                    .style("font-weight", "bold")
+                    .style("padding", "10px")
+                    .style("height", "65px")
+                    .style("left", `${(<any>d3.event).pageX + 35}px`)
+                    .style("top", `${(<any>d3.event).pageY - 28}px`)
+                    .style("opacity", .9);
+                tooltip.html(`PROJECT: ${d.project.shortTitle}<br/>- extent to which gaps are solved: ${d.solvability}<br/>- usability: ${d.usability}<br/>- maturity: ${d.maturity}`);
+            })
+            .on("mouseout", function (d) {
+                tooltip.transition()
+                    .duration(500)
+                    .style("opacity", 0);
+            });
     }
 
     private initializeChart() {
