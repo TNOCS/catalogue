@@ -1,6 +1,7 @@
 <template>
     <require from="./helpers/MarkdownValueConverter"></require>
     <require from="./helpers/FormatDateValueConverter"></require>
+    <require from="./helpers/ToUppercaseValueConverter"></require>
     <require from="./components/characteristic"></require>
 
     <section style="overflow: none">
@@ -82,29 +83,32 @@
                 <table class="table table-striped">
                     <tr>
                         <td>Developer(s)</td>
-                        <td>${project.administration.developers}</td>
+                        <td colspan="2">${project.administration.developers}</td>
                     </tr>
                     <tr>
                         <td>Owner(s)</td>
-                        <td>${project.administration.owners}</td>
+                        <td colspan="2">${project.administration.owners}</td>
                     </tr>
                     <tr>
                         <td>Sponser(s)</td>
-                        <td>${project.administration.sponsors}</td>
+                        <td colspan="2">${project.administration.sponsors}</td>
                     </tr>
                     <tr>
                         <td>Project type</td>
-                        <td>${project.administration.projectType}</td>
+                        <td colspan="2">${project.administration.projectType}</td>
                     </tr>
                     <tr>
                         <td>Coordinator</td>
-                        <td>${project.administration.coordinator}</td>
+                        <td>${project.administration.coordinator.title | toUppercase}</td> 
+                        <td>${project.administration.coordinator.country}</td>
                     </tr>
                     <tr>
-                        <td>Participants</td>
-                        <td>
-                            <div innerHTML.bind="project.administration.participants | markdown"></div>
-                        </td>
+                        <td colspan="3">Participants</td>
+                    </tr>
+                    <tr repeat.for="p of project.administration.participants">
+                        <td align="right">-</td>
+                        <td>${p.title | toUppercase}</td> 
+                        <td>${p.country}</td>
                     </tr>
                 </table>
             </div>

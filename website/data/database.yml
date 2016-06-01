@@ -641,19 +641,43 @@ projects:
       owners: A4A consortium
       sponsors: FP7 – Security
       projectType: CP
-      coordinator: DEUTSCHES ZENTRUM FÜR LUFT - UND RAUMFAHRT EV (Germany)
-      participants: |
-        - DEUTSCHES ROTES KREUZ EV (Germany)
-        - AVANTI COMMUNICATIONS LTD (United Kingdom)
-        - BAPCO LBG (United Kingdom)
-        - TECNOSYLVA SL (Spain)
-        - EDISOFT-EMPRESA DE SERVICOS E DESENVOLVIMENTO DE SOFTWARE SA (Portugal)
-        - FUNDACION TECNALIA RESEARCH & INNOVATION (Spain)
-        - UNIVERSITÄT STUTTGART (Germany)
-        - TOTALFORSVARETS FORSKNINGSINSTITUT (Sweden)
-        - Bundesamt für Bevölkerungsschutz und Katastrophenhilfe (Germany)
-        - EUTELSAT S.A. (France)
-        - INSTITUT FÜR RUNDFUNKTECHNIK GMBH (Germany)
+      coordinator: 
+        title: DEUTSCHES ZENTRUM FÜR LUFT - UND RAUMFAHRT EV 
+        country: Germany
+      participants:
+        - 
+          title: DEUTSCHES ROTES KREUZ EV
+          country: Germany
+        - 
+          title: AVANTI COMMUNICATIONS LTD
+          country: United Kingdom
+        - 
+          title: BAPCO LBG 
+          country: United Kingdom
+        - 
+          title: TECNOSYLVA SL 
+          country: Spain
+        - 
+          title: EDISOFT-EMPRESA DE SERVICOS E DESENVOLVIMENTO DE SOFTWARE SA 
+          country: Portugal
+        - 
+          title: FUNDACION TECNALIA RESEARCH & INNOVATION 
+          country: Spain
+        - 
+          title: UNIVERSITÄT STUTTGART 
+          country: Germany
+        - 
+          title: TOTALFORSVARETS FORSKNINGSINSTITUT 
+          country: Sweden
+        - 
+          title: Bundesamt für Bevölkerungsschutz und Katastrophenhilfe 
+          country: Germany
+        - 
+          title: EUTELSAT S.A. 
+          country: France
+        - 
+          title: INSTITUT FÜR RUNDFUNKTECHNIK GMBH 
+          country: Germany
     analysts:
       -
         name: Jorn Boers
@@ -768,21 +792,49 @@ projects:
       owners: AFTER consortium 
       sponsors: FP7 – Security
       projectType: CP
-      coordinator: RICERCA SUL SISTEMA ENERGETICO - RSE SPA (Italy)
-      participants: |
-        -	AGENZIA NAZIONALE PER LE NUOVE TECNOLOGIE,L'ENERGIA E LO SVILUPPO ECONOMICO SOSTENIBILE (Italy)
-        -	SINTEF ENERGI AS (Norway)
-        -	STIFTELSEN SINTEF (Norway)
-        -	UNIVERSITA DEGLI STUDI DI GENOVA (Italy)
-        -	UNIVERSITY COLLEGE DUBLIN, NATIONAL UNIVERSITY OF IRELAND, DUBLIN  (Ireland)
-        -	City University (United Kingdom) 
-        -	ALSTOM POWER SYSTEMS SA (France)
-        -	SIEMENS AG (Germany)
-        -	COMMISSION OF THE EUROPEAN COMMUNITIES - DIRECTORATE GENERAL JOINT RESEARCH CENTRE – JRC (Belgium)
-        -	ELIA SYSTEM OPERATOR (Belgium)
-        -	TERNA - RETE ELETTRICA NAZIONALE SPA (Italy)
-        -	CEPS AS (Czech Republic)
-        -	ALSTOM GRID SAS (France)        
+      coordinator: 
+        title: RICERCA SUL SISTEMA ENERGETICO - RSE SPA 
+        country: Italy
+      participants:
+        -	
+          title: AGENZIA NAZIONALE PER LE NUOVE TECNOLOGIE,L'ENERGIA E LO SVILUPPO ECONOMICO SOSTENIBILE
+          country: Italy
+        -	
+          title: SINTEF ENERGI AS 
+          country: Norway
+        -	
+          title: STIFTELSEN SINTEF 
+          country: Norway
+        -	
+          title: UNIVERSITA DEGLI STUDI DI GENOVA 
+          country: Italy
+        -	
+          title: UNIVERSITY COLLEGE DUBLIN, NATIONAL UNIVERSITY OF IRELAND, DUBLIN
+          country: Ireland
+        -	
+          title: City University 
+          country: United Kingdom 
+        -	
+          title: ALSTOM POWER SYSTEMS SA 
+          country: France
+        -	
+          title: SIEMENS AG 
+          country: Germany
+        -	
+          title: COMMISSION OF THE EUROPEAN COMMUNITIES - DIRECTORATE GENERAL JOINT RESEARCH CENTRE – JRC 
+          country: Belgium
+        -	
+          title: ELIA SYSTEM OPERATOR 
+          country: Belgium
+        -	
+          title: TERNA - RETE ELETTRICA NAZIONALE SPA 
+          country: Italy
+        -	
+          title: CEPS AS 
+          country: Czech Republic
+        -	
+          title: ALSTOM GRID SAS 
+          country: France        
     analysts:
       -
         name: Jorn Boers
@@ -913,16 +965,34 @@ projects:
       owners: Bio-Protect Consortium 
       sponsors: FP7 – Security
       projectType: CP
-      coordinator: LGI CONSULTING SARL (France)
-      participants: |
-        -	ZURAVLIOVO IMONE AVSISTA (Lithuania)
-        -	C-TECH INNOVATION LIMITED (United Kingdom)
-        -	ENVIRONICS OY (Finland)
-        -	COMMISSARIAT A L ENERGIE ATOMIQUE ET AUX ENERGIES ALTERNATIVES (France)
-        -	IUT Institut für Umwelttechnologien GmbH (Germany)
-        -	ROBERT KOCH-INSTITUT (Germany)
-        -	AALBORG UNIVERSITET (Denmark)
-        -	Environics-IUT GmbH (Germany)
+      coordinator: 
+        title: LGI CONSULTING SARL 
+        country: France
+      participants:
+        -	
+          title: ZURAVLIOVO IMONE AVSISTA 
+          country: Lithuania
+        -	
+          title: C-TECH INNOVATION LIMITED 
+          country: United Kingdom
+        -	
+          title: ENVIRONICS OY 
+          country: Finland
+        -	
+          title: COMMISSARIAT A L ENERGIE ATOMIQUE ET AUX ENERGIES ALTERNATIVES 
+          country: France
+        -	
+          title: IUT Institut für Umwelttechnologien GmbH 
+          country: Germany
+        -	
+          title: ROBERT KOCH-INSTITUT 
+          country: Germany
+        -	
+          title: AALBORG UNIVERSITET 
+          country: Denmark
+        -	
+          title: Environics-IUT GmbH 
+          country: Germany
     analysts:
       -
         name: Jorn Boers
@@ -1049,22 +1119,52 @@ projects:
       owners: BRIDGE consortium 
       sponsors: FP7 – Security
       projectType: CP
-      coordinator: STIFTELSEN SINTEF (Norway)
-      participants: |
-        -	ALMENDE B.V. (Netherlands)
-        -	CNET SVENSKA AB (Sweden)
-        -	FRAUNHOFER GESELLSCHAFT ZUR FORDERUNG DER ANGEWANDTEN FORSCHUNG EV (Germany)
-        -	LANCASTER UNIVERSITY (United Kingdom)
-        -	Crisis Training AS (Norway)
-        -	SAAB Training Systems (Sweden)
-        -	THALES NEDERLAND BV (Netherlands)
-        -	UNIVERSITAET KLAGENFURT (Austria)
-        -	PARIS-LODRON-UNIVERSITÄT SALZBURG (Austria)
-        -	VSH HAGERBACH TEST GALLERY LTD (Switzerland)
-        -	TECHNISCHE UNIVERSITEIT DELFT (Netherlands)
-        -	STOCKHOLMS UNIVERSITET (Sweden)
-        -	HELSE STAVANGER HF (Norway)
-        -	SAAB AKTIEBOLAG (Sweden)
+      coordinator: 
+          title: STIFTELSEN SINTEF 
+          country: Norway
+      participants:
+        -	
+          title: ALMENDE B.V. 
+          country: Netherlands
+        -	
+          title: CNET SVENSKA AB 
+          country: Sweden
+        -	
+          title: FRAUNHOFER GESELLSCHAFT ZUR FORDERUNG DER ANGEWANDTEN FORSCHUNG EV 
+          country: Germany
+        -	
+          title: LANCASTER UNIVERSITY 
+          country: United Kingdom
+        -	
+          title: Crisis Training AS 
+          country: Norway
+        -	
+          title: SAAB Training Systems 
+          country: Sweden
+        -	
+          title: THALES NEDERLAND BV 
+          country: Netherlands
+        -	
+          title: UNIVERSITAET KLAGENFURT 
+          country: Austria
+        -	
+          title: PARIS-LODRON-UNIVERSITÄT SALZBURG 
+          country: Austria
+        -	
+          title: VSH HAGERBACH TEST GALLERY LTD 
+          country: Switzerland
+        -	
+          title: TECHNISCHE UNIVERSITEIT DELFT 
+          country: Netherlands
+        -	
+          title: STOCKHOLMS UNIVERSITET 
+          country: Sweden
+        -	
+          title: HELSE STAVANGER HF 
+          country: Norway
+        -	
+          title: SAAB AKTIEBOLAG 
+          country: Sweden
     analysts:
       -
         name: Jorn Boers
@@ -1142,21 +1242,49 @@ projects:
       owners: DARIUS consortium 
       sponsors: FP7 – Security
       projectType: CP-IP
-      coordinator: BAE Systems (Operations) Ltd (United Kingdom)
-      participants: |
-        -	CASSIDIAN SAS (France)
-        -	DFRC AG (Switzerland)
-        -	SKYTEK LTD (Ireland)
-        -	TELINT RTD Consultancy Services LTD (United Kingdom)
-        -	FUTURE INTELLIGENCE EREVNA TILEPIKINONIAKON KE PLIROFORIAKON SYSTIMATON EPE (Greece)
-        -	OFFICE NATIONAL D'ETUDES ET DE RECHERCHES AEROSPATIALES (France)
-        -	STIFTELSEN SINTEF (Norway)
-        -	ECA SA (France)
-        -	NATIONAL TECHNICAL UNIVERSITY OF ATHENS – NTUA (Greece)
-        -	CENTER FOR SECURITY STUDIES (Greece)
-        -	ECOMED bvba (Belgium)
-        -	CORK INSTITUTE OF TECHNOLOGY (Ireland)
-        -	ENTENTE POUR LA FORÊT MÉDITERRANÉENNE (France)
+      coordinator: 
+        title: BAE Systems (Operations) Ltd 
+        country: United Kingdom
+      participants:
+        -	
+          title: CASSIDIAN SAS 
+          country: France
+        -	
+          title: DFRC AG 
+          country: Switzerland
+        -	
+          title: SKYTEK LTD 
+          country: Ireland
+        -	
+          title: TELINT RTD Consultancy Services LTD 
+          country: United Kingdom
+        -	
+          title: FUTURE INTELLIGENCE EREVNA TILEPIKINONIAKON KE PLIROFORIAKON SYSTIMATON EPE 
+          country: Greece
+        -	
+          title: OFFICE NATIONAL D'ETUDES ET DE RECHERCHES AEROSPATIALES 
+          country: France
+        -	
+          title: STIFTELSEN SINTEF 
+          country: Norway
+        -	
+          title: ECA SA 
+          country: France
+        -	
+          title: NATIONAL TECHNICAL UNIVERSITY OF ATHENS – NTUA
+          country: Greece
+        -	
+          title: CENTER FOR SECURITY STUDIES
+          country: Greece
+        -	
+          title: ECOMED bvba 
+          country: Belgium
+        -	
+          title: CORK INSTITUTE OF TECHNOLOGY 
+          country: Ireland
+        -	
+          title: ENTENTE POUR LA FORÊT MÉDITERRANÉENNE 
+          country: France
     analysts:
       -
         name: Jorn Boers
@@ -1235,21 +1363,49 @@ projects:
       owners: DESTIERO consortium
       sponsors: FP7 – Security
       projectType: CP-FP
-      coordinator: E-GEOS SPA (Italy)
-      participants: |
-        -	SESM SOLUZIONI EVOLUTE PER LA SISTEMISTICA E I MODELLI S.C.A.R.L. (Italy)
-        -	CONSORZIO INTERUNIVERSITARIO NAZIONALE PER L'INFORMATICA (Italy)
-        -	THALES SA (France)
-        -	THALES PROGRAMAS DE ELECTRONICA Y COMUNICACIONES SA (Spain)
-        -	UNIVERSITAT POLITECNICA DE VALENCIA (Spain)
-        -	FRAUNHOFER-GESELLSCHAFT ZUR FOERDERUNG DER ANGEWANDTEN FORSCHUNG E.V (Germany)
-        -	ASOCIACION DE EMPRESAS TECNOLOGICAS INNOVALIA (Spain)
-        -	SELEX ES SPA (Italy)
-        -	ITTI Sp.zo.o. (Poland)
-        -	SAADIAN TECHNOLOGIES LIMITED (Ireland)
-        -	FUNDACAO DE ASSISTENCIA MEDICA INTERNACIONAL (Portugal)
-        -	Police Service of Northern Ireland (United Kingdom)
-        -	Szkola Glowna Sluzby Pozarniczej (Poland)        
+      coordinator: 
+        title: E-GEOS SPA 
+        country: Italy
+      participants:
+        -	
+          title: SESM SOLUZIONI EVOLUTE PER LA SISTEMISTICA E I MODELLI S.C.A.R.L. 
+          country: Italy
+        -	
+          title: CONSORZIO INTERUNIVERSITARIO NAZIONALE PER L'INFORMATICA 
+          country: Italy
+        -	
+          title: THALES SA 
+          country: France
+        -	
+          title: THALES PROGRAMAS DE ELECTRONICA Y COMUNICACIONES SA 
+          country: Spain
+        -	
+          title: UNIVERSITAT POLITECNICA DE VALENCIA 
+          country: Spain
+        -	
+          title: FRAUNHOFER-GESELLSCHAFT ZUR FOERDERUNG DER ANGEWANDTEN FORSCHUNG E.V 
+          country: Germany
+        -	
+          title: ASOCIACION DE EMPRESAS TECNOLOGICAS INNOVALIA 
+          country: Spain
+        -	
+          title: SELEX ES SPA 
+          country: Italy
+        -	
+          title: ITTI Sp.zo.o. 
+          country: Poland
+        -	
+          title: SAADIAN TECHNOLOGIES LIMITED 
+          country: Ireland
+        -	
+          title: FUNDACAO DE ASSISTENCIA MEDICA INTERNACIONAL 
+          country: Portugal
+        -	
+          title: Police Service of Northern Ireland 
+          country: United Kingdom
+        -	
+          title: Szkola Glowna Sluzby Pozarniczej
+          country: Poland
     analysts:
       -
         name: Jorn Boers
