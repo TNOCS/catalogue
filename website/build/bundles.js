@@ -29,6 +29,7 @@ module.exports = {
                 "aurelia-loader-default",
                 "aurelia-history-browser",
                 "aurelia-logging-console",
+                "fetch",
                 "jquery",
                 "marked",
                 "d3",

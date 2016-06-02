@@ -1,4 +1,5 @@
 import 'bootstrap';
+import 'fetch';
 //import {AuthConfig} from './services/authConfig';
 import {Aurelia} from 'aurelia-framework';
 

@@ -31,15 +31,34 @@ System.config({
     "aurelia-templating-binding": "npm:aurelia-templating-binding@1.0.0-beta.1.2.4",
     "aurelia-templating-resources": "npm:aurelia-templating-resources@1.0.0-beta.1.2.6",
     "aurelia-templating-router": "npm:aurelia-templating-router@1.0.0-beta.1.2.1",
+    "bluebird": "npm:bluebird@3.4.0",
     "bootstrap": "github:twbs/bootstrap@3.3.6",
     "d3": "npm:d3@3.5.17",
-    "fetch": "github:github/fetch@0.11.1",
+    "fetch": "github:github/fetch@1.0.0",
     "font-awesome": "npm:font-awesome@4.6.1",
     "jquery": "npm:jquery@2.2.4",
     "marked": "npm:marked@0.3.5",
     "text": "github:systemjs/plugin-text@0.0.3",
+    "github:jspm/nodelibs-assert@0.1.0": {
+      "assert": "npm:assert@1.4.1"
+    },
+    "github:jspm/nodelibs-buffer@0.1.0": {
+      "buffer": "npm:buffer@3.6.0"
+    },
+    "github:jspm/nodelibs-process@0.1.2": {
+      "process": "npm:process@0.11.3"
+    },
+    "github:jspm/nodelibs-util@0.1.0": {
+      "util": "npm:util@0.10.3"
+    },
     "github:twbs/bootstrap@3.3.6": {
       "jquery": "npm:jquery@2.2.4"
+    },
+    "npm:assert@1.4.1": {
+      "assert": "github:jspm/nodelibs-assert@0.1.0",
+      "buffer": "github:jspm/nodelibs-buffer@0.1.0",
+      "process": "github:jspm/nodelibs-process@0.1.2",
+      "util": "npm:util@0.10.3"
     },
     "npm:aurelia-animator-css@1.0.0-beta.1.2.1": {
       "aurelia-metadata": "npm:aurelia-metadata@1.0.0-beta.1.2.1",
@@ -178,8 +197,29 @@ System.config({
       "aurelia-path": "npm:aurelia-path@1.0.0-beta.1.2.2",
       "aurelia-task-queue": "npm:aurelia-task-queue@1.0.0-beta.1.2.1"
     },
+    "npm:bluebird@3.4.0": {
+      "process": "github:jspm/nodelibs-process@0.1.2"
+    },
+    "npm:buffer@3.6.0": {
+      "base64-js": "npm:base64-js@0.0.8",
+      "child_process": "github:jspm/nodelibs-child_process@0.1.0",
+      "fs": "github:jspm/nodelibs-fs@0.1.2",
+      "ieee754": "npm:ieee754@1.1.6",
+      "isarray": "npm:isarray@1.0.0",
+      "process": "github:jspm/nodelibs-process@0.1.2"
+    },
     "npm:font-awesome@4.6.1": {
       "css": "github:systemjs/plugin-css@0.1.21"
+    },
+    "npm:inherits@2.0.1": {
+      "util": "github:jspm/nodelibs-util@0.1.0"
+    },
+    "npm:process@0.11.3": {
+      "assert": "github:jspm/nodelibs-assert@0.1.0"
+    },
+    "npm:util@0.10.3": {
+      "inherits": "npm:inherits@2.0.1",
+      "process": "github:jspm/nodelibs-process@0.1.2"
     }
   },
   bundles: {
@@ -222,6 +262,8 @@ System.config({
       "welcome.js"
     ],
     "aurelia.js": [
+      "github:github/fetch@1.0.0.js",
+      "github:github/fetch@1.0.0/fetch.js",
       "github:twbs/bootstrap@3.3.6.js",
       "github:twbs/bootstrap@3.3.6/css/bootstrap.css!github:systemjs/plugin-text@0.0.3.js",
       "github:twbs/bootstrap@3.3.6/js/bootstrap.js",
@@ -359,7 +401,8 @@ System.config({
       "aurelia-framework"
     ],
     "main.js": [
-      "bootstrap"
+      "bootstrap",
+      "fetch"
     ],
     "projectDetails.js": [
       "aurelia-framework",
