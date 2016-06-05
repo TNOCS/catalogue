@@ -9,8 +9,15 @@ export interface IDatabase {
         welcomeText: string;
         /** Description as shown on the Welcome page */
         description: string;
-        /** List of usability scales */
+        /** Provide editors with a way to sign up */
+        signup: {
+            /** List of emails of the administrators, comma separated */
+            admins: string;
+            subject: string;
+            body: string;
+        }
     },
+    /** List of usability scales */
     usabilityLevels: ICharacteristic[];
     /** List of maturity scales */
     maturityLevels: ICharacteristic[];

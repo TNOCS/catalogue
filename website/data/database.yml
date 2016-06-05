@@ -2,6 +2,10 @@ app:
   title: FRITS
   welcomeText: Welcome to the First Incident Responder Technology Scan (FRITS)
   description: Provide a description please
+  signup:
+    admins: Dirk.Stolk@TNO.NL,Peter.Petiet@TNO.NL
+    subject: Signup to FRITS
+    body: Please provide me with access to the FRITS database, so I can edit and submit new projects too.
 gapLevels:
   - 
     id: g0

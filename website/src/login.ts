@@ -11,7 +11,7 @@ export class Login {
     password = '';
 
     login() {
-        return this.auth.login(this.email, this.password)
+        return this.auth.login(this.email, this.password, null, '#/projects')
             .then(response => {
                 console.log("success logged " + response);
             })
@@ -20,10 +20,4 @@ export class Login {
             });
     };
 
-    authenticate(name) {
-        return this.auth.authenticate(name)
-            .then(response => {
-                console.log("auth response " + response);
-            });
-    }
 }

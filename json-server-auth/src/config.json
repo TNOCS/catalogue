@@ -4,6 +4,9 @@
     "profileUrl": "/auth/me",
     "port": 3000,
     "secret": "Dit is mijn geheim om JSON web tokens aan te maken",
+    "oauth2secrets": {
+        "google": "V55QHX7lPS_t0PiVLgPz8eCm"
+    },
     "authorizations": {
         "GET": [{
             "routes": ["/"]

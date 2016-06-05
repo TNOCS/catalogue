@@ -9,16 +9,16 @@ var baseConfig = {
     // =====================
 
     // This is the name of the endpoint used for any requests made in relation to authentication (login, logout, etc.). An empty string selects the default endpoint of aurelia-api.
-    endpoint: null,
+    endpoint: 'api',
     // When authenticated, these endpoints will have the token added to the header of any requests (for authorization). Accepts an array of endpoint names. An empty string selects the default endpoint of aurelia-api.
-    configureEndpoints: null,
+    configureEndpoints: ["api"],
 
 
     // SPA related options
     // ===================
 
     // The SPA url to which the user is redirected after a successful login
-    loginRedirect: '#/customer',
+    loginRedirect: '#/projects',
     // The SPA url to which the user is redirected after a successful logout
     logoutRedirect: '#/',
     // The SPA route used when an unauthenticated user tries to access an SPA page that requires authentication
@@ -34,15 +34,15 @@ var baseConfig = {
 
     // The base url used for all authentication related requests, including provider.url below.
     // This appends to the httpClient/endpoint base url, it does not override it.
-    baseUrl: '',
+    baseUrl: '/auth',
     // The API endpoint to which login requests are sent
-    loginUrl: '/auth/login',
+    loginUrl: '/login',
     // The API endpoint to which signup requests are sent
-    signupUrl: '/auth/signup',
+    signupUrl: '/signup',
     // The API endpoint used in profile requests (inc. `find/get` and `update`)
-    profileUrl: '/auth/me',
+    profileUrl: '/me',
     // The API endpoint used with oAuth to unlink authentication
-    unlinkUrl: '/auth/unlink/',
+    unlinkUrl: '/unlink/',
     // The HTTP method used for 'unlink' requests (Options: 'get' or 'post')
     unlinkMethod: 'get',
 
@@ -54,7 +54,7 @@ var baseConfig = {
     authHeader: 'Authorization',
     // The token name used in the header of API requests that require authentication
     authToken: 'Bearer',
-    // The the property from which to get the access token after a successful login or signup
+    // The property from which to get the access token after a successful login or signup
     accessTokenProp: 'access_token',
 
     // If the property defined by `accessTokenProp` is an object:
@@ -70,7 +70,7 @@ var baseConfig = {
     // =====================
 
     // Option to turn refresh tokens On/Off
-    useRefreshToken: false,
+    useRefreshToken: true,
     // The option to enable/disable the automatic refresh of Auth tokens using Refresh Tokens
     autoUpdateToken: true,
     // Oauth Client Id
@@ -306,12 +306,13 @@ var configForProduction = {
         }
     }
 };
-var config;
+
+var authConfig;
 if (window.location.hostname === 'localhost') {
-    config = Object.assign({}, baseConfig, configForDevelopment);
+    authConfig = Object.assign({}, baseConfig, configForDevelopment);
 }
 else {
-    config = Object.assign({}, baseConfig, configForProduction);
+    authConfig = Object.assign({}, baseConfig, configForProduction);
 }
 
 //export default config;
@@ -324,14 +325,15 @@ export function configure(aurelia: Aurelia) {
   aurelia.use
     .plugin('aurelia-api', config => {
       config
-        .registerEndpoint('auth', 'https://localhost:3456/catalogue/auth')
+        .registerEndpoint('api', 'http://localhost:3000')
         .registerEndpoint('protected-api', 'https://myapi.org/protected-api')
-        .registerEndpoint('public-api', 'http://myapi.org/public-api');
+        .registerEndpoint('public-api', 'http://myapi.org/public-api')
+        .setDefaultEndpoint('api');
     })
     //Uncomment the line below to enable animation.
     //.plugin('aurelia-animator-css')
     .plugin('aurelia-authentication', baseConfig => {
-        baseConfig.configure(config);
+        baseConfig.configure(authConfig);
     });    
 
   //Anyone wanting to use HTMLImports to load views, will need to install the following plugin.

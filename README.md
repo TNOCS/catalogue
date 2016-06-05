@@ -4,7 +4,8 @@ Online catalogue for sharing research projects.
 
 # Exporting your application
 
-I've had some difficulty in getting everything ready for deployment. In Aurelia, this is called exporting, and all you need to do is:  
+I've had some difficulty in getting everything ready for deployment. Only later, I've found this [blog post](http://ilikekillnerds.com/2016/02/the-definitive-guide-to-bundling-exporting-in-aurelia/),
+which includes a lot of tips. In Aurelia, this is called exporting, and all you need to do is:  
 
 ```gulp export```
 

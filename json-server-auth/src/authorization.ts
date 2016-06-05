@@ -9,16 +9,19 @@ var config: IConfig = require('./config');
 var jwt = expressjwt({ secret: config.secret });
 
 export interface IUser {
-    email?: string;
+    email?:       string;
     displayName?: string;
-    password: string;
-    role: string;
+    password?:    string;
+    newPassword?: string;
+    role?:        string;
 }
 
 export interface IConfig {
-    loginUrl: string;
+    Url: string;
     signupUrl: string;
     profileUrl: string;
+    loginUrl: string;
+    logoutUrl: string;
     port: number;
     secret: string;
     users: {
@@ -63,27 +66,14 @@ export class AuthenticationService {
                 || !body.password
                 || !config.users.hasOwnProperty(body.email)
                 || config.users[body.email].password !== body.password) {
-                res.sendStatus(403); // equivalent to res.status(403).send('Forbidden')
-                res.end();
+                // Perhaps we just want to refresh our existing token
+                jwt(req, res, () => {
+                    if (!req.user || !req.user.sub) res.sendStatus(403);
+                    else this.sendToken(res, req.user.sub);
+                });
             } else {
                 // Authenticated: generate a JSON web token and return it
-                let user = config.users[body.email];
-                let token = jsonwebtoken.sign({
-                    role: user.role
-                }, config.secret, {
-                        // expressed in seconds or a string describing a time span rauchg/ms. Eg: 60, "2 days", "10h", "7d"
-                        expiresIn: '7 days',
-                        subject: body.email
-                    });
-                // console.log('TOKEN: ' + token);
-                res.json({
-                    token: token,
-                    user: {
-                        displayName: user.displayName,
-                        email: user.email,
-                        role: user.role
-                    }
-                });
+                this.sendToken(res, body.email);
             }
         });
 
@@ -117,15 +107,41 @@ export class AuthenticationService {
             });
         });
 
-        // update password
+        // update password and/or displayName
         server.put(config.profileUrl, jwt, (req: Request, res: Response) => {
             if (!config.users.hasOwnProperty(req.user.sub)) return res.sendStatus(403); // equivalent to res.status(403).send('Forbidden')
-            let body = req.body;
-            if (!body.password || !body.newPassword) return res.sendStatus(403);
+            let body: IUser = req.body;
             let user = config.users[req.user.sub];
-            if (user.password !== body.password) return res.sendStatus(403); // Old passwords do not match
-            user.password = body.newPassword;
+            // Update password?
+            if (body.newPassword && body.password && body.password === user.password) user.password = body.newPassword;
+            if (body.displayName) user.displayName = body.displayName;
             AuthenticationService.saveConfig(res);
+        });
+    }
+
+    private static sendToken(res: Response, sub: string) {
+        let user = config.users[sub];
+        if (!user) {
+            res.sendStatus(403);
+            return;
+        }
+        let token = jsonwebtoken.sign({
+            role: user.role,
+            displayName: user.displayName,
+        }, config.secret, {
+                // expressed in seconds or a string describing a time span rauchg/ms. Eg: 60, "2 days", "10h", "7d"
+                expiresIn: '7 days',
+                subject: sub
+            });
+        console.log('TOKEN: ' + token);
+        res.json({
+            token: token,
+            refresh_token: token,
+            user: {
+                displayName: user.displayName,
+                email: user.email,
+                role: user.role
+            }
         });
     }
 
@@ -133,9 +149,9 @@ export class AuthenticationService {
         fs.writeFile('config.json', JSON.stringify(config, null, 4), (err) => {
             if (err) {
                 console.error(err.message);
-                res.sendStatus(500); // equivalent to res.status(500).send('Internal Server Error')
+                res && res.sendStatus(500); // equivalent to res.status(500).send('Internal Server Error')
             } else {
-                res.sendStatus(200); // equivalent to res.status(200).send('OK')
+                res && res.sendStatus(200); // equivalent to res.status(200).send('OK')
             }
         })
     }
@@ -144,36 +160,6 @@ export class AuthenticationService {
 function isSubPathOf(path: string, req: Request) {
     return req.originalUrl.indexOf(path) >= 0;
 }
-
-
-var authorizations: { [httpMethod: string]: { routes: string[], roles?: string[] }[] } = {
-    GET: [
-        {
-            // any route, no access control
-            routes: ['/']
-        }
-    ],
-    PUT: [
-        {
-            // updating projects is only allowed by analysts and admin users
-            routes: ['/projects'],
-            roles: ['analyst', 'admin']
-        },
-        {
-            routes: [config.signupUrl]
-        }
-    ],
-    POST: [
-        {
-            routes: [config.loginUrl, config.signupUrl]
-        },
-        {
-            // updating projects is only allowed by analysts and admin users
-            routes: ['/projects'],
-            roles: ['analyst', 'admin']
-        },
-    ]
-};
 
 /** 
  * Authorization service: intercept all PUT, POST, GET and DELETE requests. 

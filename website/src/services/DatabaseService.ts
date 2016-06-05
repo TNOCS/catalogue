@@ -29,10 +29,10 @@ export class DatabaseService {
         http.configure(config => {
             config
                 .useStandardConfiguration()
-                .withBaseUrl('data/');
+                .withBaseUrl('http://localhost:3000');
         });
         
-        this.database = this.http.fetch('database.json')
+        this.database = this.http.fetch('/db')
             .then(response => response.json())
             .then(database => this.data = database);
 
