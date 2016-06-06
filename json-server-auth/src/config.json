@@ -2,6 +2,7 @@
     "loginUrl": "/auth/login",
     "signupUrl": "/auth/signup",
     "profileUrl": "/auth/me",
+    "usersUrl": "/users",
     "port": 3000,
     "secret": "Dit is mijn geheim om JSON web tokens aan te maken",
     "oauth2secrets": {
@@ -12,6 +13,21 @@
             {
                 "routes": [
                     "/"
+                ]
+            },
+            {
+                "routes": [
+                    "/users"
+                ]
+            },
+            {
+                "routes": [
+                    "/users"
+                ]
+            },
+            {
+                "routes": [
+                    "/users"
                 ]
             }
         ],
@@ -46,6 +62,18 @@
                 "routes": [
                     "/auth/me"
                 ]
+            },
+            {
+                "routes": [
+                    "/auth/me",
+                    "/users"
+                ]
+            },
+            {
+                "routes": [
+                    "/auth/me",
+                    "/users"
+                ]
             }
         ],
         "POST": [
@@ -61,21 +89,47 @@
             {
                 "routes": [
                     "/auth/login",
-                    "/auth/signup"
+                    "/auth/signup",
+                    "/users"
+                ]
+            },
+            {
+                "routes": [
+                    "/auth/login",
+                    "/auth/signup",
+                    "/users"
+                ]
+            },
+            {
+                "routes": [
+                    "/auth/login",
+                    "/auth/signup",
+                    "/users"
+                ]
+            }
+        ],
+        "DELETE": [
+            {
+                "routes": [
+                    "/users"
+                ]
+            },
+            {
+                "routes": [
+                    "/users"
                 ]
             }
         ]
     },
     "users": {
         "erik.vullings@gmail.com": {
-            "displayName": "Erik ",
-            "password": "test123",
+            "displayName": "Erik",
+            "password": "test",
             "role": "admin"
         },
-        "evi.vullings@gmail.com": {
-            "displayName": "Evi",
-            "password": "test",
-            "role": "user"
+        "rinze.bruining@tno.nl": {
+            "displayName": "Rinze Bruining",
+            "role": "analyst"
         }
     }
 }
