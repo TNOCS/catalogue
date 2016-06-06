@@ -20,14 +20,11 @@
               <td><a click.delegate="edit(user)"   class="btn btn-default"><i class="fa fa-pencil"></i></a></td>
           </tr>
           <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
+              <td colspan="4"></td>
               <td><a click.delegate="newUser(user)"   class="btn btn-default"><i class="fa fa-plus"></i></a></td>
           </tr>
-
       </table>
+      <h3><a if.bind="invite" href="${invite.mailto}">Send email invitation to ${invite.name}.</a></h3>          
 
   </section>
 </template>

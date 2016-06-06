@@ -1,18 +1,23 @@
-import {AuthService}    from 'aurelia-authentication';
-import {inject}         from 'aurelia-framework';
-import {Endpoint, Rest} from 'aurelia-api';
+import {AuthService}                  from 'aurelia-authentication';
+import {inject}                       from 'aurelia-framework';
+import {Endpoint, Rest}               from 'aurelia-api';
 import {DialogService, DialogResult}  from 'aurelia-dialog';
-import {UserEdit}       from './userEdit';
-import {Prompt}         from 'components/Prompt';
-import {IUser}          from 'models/user';
-import {Utils}          from 'helpers/Utils';
+import {DatabaseService}              from 'services/DatabaseService'
+import {UserEdit}                     from './userEdit';
+import {Prompt}                       from 'components/Prompt';
+import {IUser}                        from 'models/user';
+import {Utils}                        from 'helpers/Utils';
 
-@inject(Endpoint.of('api'), Endpoint.of('auth'), DialogService)
+@inject(Endpoint.of('api'), Endpoint.of('auth'), DialogService, DatabaseService)
 export class Users {
   heading = 'Users';
   users = [];
+  invite: {
+    name?: string;
+    mailto?: string;
+  };
 
-  constructor(private api: Rest, private auth: AuthService, private dialogService: DialogService) {}
+  constructor(private api: Rest, private auth: AuthService, private dialogService: DialogService, private db: DatabaseService) {}
 
   activate() {
     return this.api.find('/users')
@@ -40,6 +45,7 @@ export class Users {
   }
 
   newUser() {
+    this.invite = {};
     this.dialogService.open( { viewModel: UserEdit, model: {} } )
       .then((response: DialogResult) => {
         if (!response.wasCancelled) {
@@ -47,7 +53,18 @@ export class Users {
           if (user && user.email && user.displayName && user.role) {
             user.password = Utils.generatePassword(12);
             this.api.create('/users', user)
-              .then(() => this.activate())
+              .then(() => {
+                this.invite.name = user.displayName;
+                let signup = this.db.data.app.signup;
+                let body = signup.body
+                  .replace('\n', '<br/>')   // replace \n as rich text, i.e. an URL encoded <br> tag.
+                  .replace('{{user}}', user.displayName)
+                  .replace('{{email}}', user.email)
+                  .replace('{{role}}', user.role)
+                  .replace('{{password}}', user.password);
+                this.invite.mailto = Utils.createMailToLink(user.email, signup.subject, body);
+                this.activate();
+              })
               .catch(err => 
                 console.log('Error creating new user:' + err)
               );

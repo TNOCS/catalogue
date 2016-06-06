@@ -29,6 +29,31 @@
                 "routes": [
                     "/users"
                 ]
+            },
+            {
+                "routes": [
+                    "/users"
+                ]
+            },
+            {
+                "routes": [
+                    "/users"
+                ]
+            },
+            {
+                "routes": [
+                    "/users"
+                ]
+            },
+            {
+                "routes": [
+                    "/users"
+                ]
+            },
+            {
+                "routes": [
+                    "/users"
+                ]
             }
         ],
         "PUT": [
@@ -74,6 +99,36 @@
                     "/auth/me",
                     "/users"
                 ]
+            },
+            {
+                "routes": [
+                    "/auth/me",
+                    "/users"
+                ]
+            },
+            {
+                "routes": [
+                    "/auth/me",
+                    "/users"
+                ]
+            },
+            {
+                "routes": [
+                    "/auth/me",
+                    "/users"
+                ]
+            },
+            {
+                "routes": [
+                    "/auth/me",
+                    "/users"
+                ]
+            },
+            {
+                "routes": [
+                    "/auth/me",
+                    "/users"
+                ]
             }
         ],
         "POST": [
@@ -84,6 +139,41 @@
                 "roles": [
                     "analyst",
                     "admin"
+                ]
+            },
+            {
+                "routes": [
+                    "/auth/login",
+                    "/auth/signup",
+                    "/users"
+                ]
+            },
+            {
+                "routes": [
+                    "/auth/login",
+                    "/auth/signup",
+                    "/users"
+                ]
+            },
+            {
+                "routes": [
+                    "/auth/login",
+                    "/auth/signup",
+                    "/users"
+                ]
+            },
+            {
+                "routes": [
+                    "/auth/login",
+                    "/auth/signup",
+                    "/users"
+                ]
+            },
+            {
+                "routes": [
+                    "/auth/login",
+                    "/auth/signup",
+                    "/users"
                 ]
             },
             {
@@ -118,18 +208,48 @@
                 "routes": [
                     "/users"
                 ]
+            },
+            {
+                "routes": [
+                    "/users"
+                ]
+            },
+            {
+                "routes": [
+                    "/users"
+                ]
+            },
+            {
+                "routes": [
+                    "/users"
+                ]
+            },
+            {
+                "routes": [
+                    "/users"
+                ]
+            },
+            {
+                "routes": [
+                    "/users"
+                ]
             }
         ]
     },
     "users": {
         "erik.vullings@gmail.com": {
-            "displayName": "Erik",
+            "displayName": "Erik Vullings",
             "password": "test",
             "role": "admin"
         },
         "rinze.bruining@tno.nl": {
             "displayName": "Rinze Bruining",
             "role": "analyst"
+        },
+        "erik.vullings@tno.nl": {
+            "displayName": "Erik V",
+            "password": "IrNzVc3SFzAm",
+            "role": "admin"
         }
     }
 }

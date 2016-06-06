@@ -7,4 +7,9 @@ export class Utils {
         }
         return retVal;
     }
+
+    /** Create a save mail to link */
+    static createMailToLink(to: string, subject: string, body: string) {
+        return `mailto:${to.replace(' ', '')}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    }
 }

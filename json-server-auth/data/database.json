@@ -5,8 +5,8 @@
         "description": "Provide a description please",
         "signup": {
             "admins": "Dirk.Stolk@TNO.NL,Peter.Petiet@TNO.NL",
-            "subject": "Signup to FRITS",
-            "body": "Please provide me with access to the FRITS database, so I can edit and submit new projects too."
+            "subject": "Nieuwe account gegevens voor FRITS",
+            "body": "Beste {{user}},\n\n Welkom als nieuwe {{role}} van FRITS. Login via http:\/\/www.tnopresenter.nl\/FRITS met username {{email}} en wachtwoord {{password}}.\n\nMet vriendelijke groet,\n\n"
         }
     },
     "gapLevels": [{

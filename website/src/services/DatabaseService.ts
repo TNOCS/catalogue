@@ -8,7 +8,7 @@ import {ICharacteristic} from "../models/characteristic";
 
 @autoinject
 export class DatabaseService {
-    private data: IDatabase = <IDatabase>{};
+    data: IDatabase = <IDatabase>{};
     
     // TODO Maybe we can simplify all these lookup tables and lump them all together.
     private tasks:            {[key: string]: ICharacteristic } = {}; 
