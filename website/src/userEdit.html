@@ -1,0 +1,21 @@
+<template>
+  <ai-dialog>
+    <ai-dialog-body>
+      <h2>Email</h2>
+      <input value.bind="user.email" />
+      <h2>Name</h2>
+      <input attach-focus="true" value.bind="user.displayName" />
+      <h2>Role</h2>
+      <!--<input value.bind="user.role" />-->
+
+      <select value.bind="user.role" style="width: 100%">
+        <option repeat.for="role of roles" value.bind="role">${role}</option>
+      </select>
+    </ai-dialog-body>
+
+    <ai-dialog-footer>
+      <button click.trigger="controller.cancel()">Cancel</button>
+      <button click.trigger="controller.ok(user)">Ok</button>
+    </ai-dialog-footer>
+  </ai-dialog>
+</template>

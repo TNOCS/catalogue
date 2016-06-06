@@ -320,6 +320,7 @@ else {
 export function configure(aurelia: Aurelia) {
   aurelia.use
     .standardConfiguration()
+    .plugin('aurelia-dialog')
     .developmentLogging();
 
   aurelia.use

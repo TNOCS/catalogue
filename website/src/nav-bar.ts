@@ -1,6 +1,7 @@
 import {bindable} from 'aurelia-framework';
 import {autoinject} from 'aurelia-framework';
 import {AuthService} from 'aurelia-authentication';
+import {IUser} from './models/user';
 
 @autoinject
 export class NavBar {
@@ -15,4 +16,9 @@ export class NavBar {
   get isAuthenticated() {
     return this.auth.isAuthenticated();
   };
+
+  get isAdmin() {
+    let me: IUser = this.auth.getTokenPayload();
+    return me.role && me.role === 'admin';
+  }
 }

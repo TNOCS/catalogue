@@ -32,6 +32,7 @@
       </ul>
 
       <ul if.bind="isAuthenticated" class="nav navbar-nav navbar-right">
+          <li><a if.bind="isAdmin" href="/#/users">Users</a></li>
           <li><a href="/#/profile">Profile</a></li>
           <li><a href="/#/logout">Logout</a></li>
       </ul>

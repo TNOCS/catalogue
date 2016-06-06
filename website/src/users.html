@@ -2,20 +2,32 @@
   <require from="blur-image"></require>
 
   <section class="au-animate">
-      <!--<h2>${heading}</h2>-->
-      <div class="row au-stagger">
-        <div class="col-sm-6 col-md-3 card-container au-animate" repeat.for="user of users">
-            <div class="card">
-                <canvas class="header-bg" width="250" height="70" blur-image.bind="image"></canvas>
-                <div class="avatar">
-                    <img src.bind="user.avatar_url" crossorigin ref="image"/>
-                </div>
-                <div class="content">
-                    <p class="name">${user.login}</p>
-                    <p><a target="_blank" class="btn btn-default" href.bind="user.html_url">Contact</a></p>
-                </div>
-            </div>
-        </div>
-      </div>
+      <h2>${heading}</h2>
+
+      <table class="table">
+          <tr>
+              <th>Email</th>
+              <th>Name</th>
+              <th>Role</th>
+              <th></th>
+              <th></th>
+          </tr>
+          <tr repeat.for="user of users" style="cursor: pointer">
+              <td>${user.email}</td>
+              <td>${user.displayName}</td>
+              <td>${user.role}</td>
+              <td><a click.delegate="delete(user)" class="btn btn-default"><i class="fa fa-trash"></i></a></td>
+              <td><a click.delegate="edit(user)"   class="btn btn-default"><i class="fa fa-pencil"></i></a></td>
+          </tr>
+          <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td><a click.delegate="newUser(user)"   class="btn btn-default"><i class="fa fa-plus"></i></a></td>
+          </tr>
+
+      </table>
+
   </section>
 </template>

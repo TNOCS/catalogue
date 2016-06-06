@@ -1,4 +1,5 @@
 import * as fs from 'fs';
+import * as path from 'path';
 import {Request, Response, Express, NextFunction} from 'express';
 import * as bodyParser from 'body-parser';
 import * as jsonwebtoken from 'jsonwebtoken';
@@ -17,14 +18,15 @@ export interface IUser {
 }
 
 export interface IConfig {
-    Url: string;
-    signupUrl: string;
+    Url:        string;
+    signupUrl:  string;
     profileUrl: string;
-    loginUrl: string;
-    logoutUrl: string;
-    port: number;
-    secret: string;
-    users: {
+    usersUrl:   string;
+    loginUrl:   string;
+    logoutUrl:  string;
+    port:       number;
+    secret:     string;
+    users:      {
         [email: string]: IUser
     },
     authorizations: {
@@ -47,15 +49,50 @@ export interface IConfig {
 export class AuthenticationService {
     static registerRoutes(server: Express) {
         if (!config.authorizations) config.authorizations = {};
+        // Authorize the users URL
+        if (!config.authorizations.hasOwnProperty('GET')) config.authorizations['GET'] = [];
+        config.authorizations['GET'].push({ routes: [config.usersUrl] });
+        
         // Authorize the authentication URLs: since we authenticate them here, we can let them pass through in the authorize function. 
         if (!config.authorizations.hasOwnProperty('PUT')) config.authorizations['PUT'] = [];
-        config.authorizations['PUT'].push({ routes: [config.profileUrl] });
+        config.authorizations['PUT'].push({ routes: [config.profileUrl, config.usersUrl] });
         if (!config.authorizations.hasOwnProperty('POST')) config.authorizations['POST'] = [];
-        config.authorizations['POST'].push({ routes: [config.loginUrl, config.signupUrl] });
+        config.authorizations['POST'].push({ routes: [config.loginUrl, config.signupUrl, config.usersUrl] });
+        if (!config.authorizations.hasOwnProperty('DELETE')) config.authorizations['DELETE'] = [];
+        config.authorizations['DELETE'].push({ routes: [config.usersUrl] });
 
         // parse body, either in JSON or as application/x-www-form-urlencoded
         server.use(bodyParser.json());
         server.use(bodyParser.urlencoded({ extended: false }))
+
+        // Users: get
+        server.get(config.usersUrl, jwt, (req, res) => {
+            if (!req.user || req.user.role !== 'admin') return res.send(403);
+
+            let users: IUser[] = [];
+            for (var key in config.users) {
+                if (!config.users.hasOwnProperty(key)) continue;
+                let user = config.users[key];
+                users.push(<IUser>{
+                    email: key,
+                    role: user.role,
+                    displayName: user.displayName
+                })
+            }
+            res.json(users)
+        });
+        // Users: update
+        server.put(config.usersUrl + '/:id', jwt, (req, res) => {
+            this.updateUser(req, res);
+        });
+        // Users: create
+        server.post(config.usersUrl, jwt, (req, res) => {
+            this.createUser(req, res);
+        });
+        // Users: delete
+        server.delete(config.usersUrl + '/:id', jwt, (req, res) => {
+            this.deleteUser(req, res);
+        });
 
         // Login
         server.post(config.loginUrl, (req: Request, res: Response) => {
@@ -79,18 +116,17 @@ export class AuthenticationService {
 
         // signup
         server.post(config.signupUrl, jwt, function (req, res) {
-            if (req.user.role !== 'admin') return res.send(401);
-            let body: IUser = req.body;
-            if (!body.email || !body.password || !body.role || !body.displayName) {
-                res.sendStatus(403); // equivalent to res.status(403).send('Forbidden')
-            } else {
-                config.users[body.email] = {
-                    displayName: body.displayName,
-                    password: body.password,
-                    role: body.role
-                };
-                AuthenticationService.saveConfig(res);
-            }
+            this.createUser(req, res);
+            // if (!body.email || !body.password || !body.role || !body.displayName) {
+            //     res.sendStatus(403); // equivalent to res.status(403).send('Forbidden')
+            // } else {
+            //     config.users[body.email] = {
+            //         displayName: body.displayName,
+            //         password: body.password,
+            //         role: body.role
+            //     };
+            //     AuthenticationService.saveConfig(res);
+            // }
         });
 
         // profile
@@ -117,6 +153,50 @@ export class AuthenticationService {
             if (body.displayName) user.displayName = body.displayName;
             AuthenticationService.saveConfig(res);
         });
+    }
+
+    /** Create a new user */
+    private static createUser(req: Request, res: Response) {
+        if (!req.user || req.user.role !== 'admin') return res.send(403);
+        let newUser: IUser = req.body;
+        if (!newUser.email || !newUser.password || !newUser.role || !newUser.displayName) {
+            res.sendStatus(403); // equivalent to res.status(403).send('Forbidden')
+        } else {
+            config.users[newUser.email] = {
+                displayName: newUser.displayName,
+                password:    newUser.password,
+                role:        newUser.role
+            };
+            AuthenticationService.saveConfig(res);
+        }
+    }
+
+    /** Delete an existing user */
+    private static deleteUser(req: Request, res: Response) {
+        if (!req.user || req.user.role !== 'admin') return res.send(403);
+        let id = req.params['id'];
+        if (!id || !config.users.hasOwnProperty(id)) {
+            res.sendStatus(403); // equivalent to res.status(403).send('Forbidden')
+        } else {
+            delete config.users[id];
+            AuthenticationService.saveConfig(res);
+        }
+    }
+
+    /** Update an existing user */
+    private static updateUser(req: Request, res: Response) {
+        if (!req.user || req.user.role !== 'admin') return res.send(403);
+        let id = req.params['id'];
+        let existingUser: IUser = req.body;
+        if (!id || !existingUser.email || !existingUser.role || !existingUser.displayName) {
+            res.sendStatus(403); // equivalent to res.status(403).send('Forbidden')
+        } else {
+            config.users[id] = {
+                displayName: existingUser.displayName,
+                role:        existingUser.role
+            };
+            AuthenticationService.saveConfig(res);
+        }
     }
 
     private static sendToken(res: Response, sub: string) {
@@ -146,7 +226,7 @@ export class AuthenticationService {
     }
 
     private static saveConfig(res: Response) {
-        fs.writeFile('config.json', JSON.stringify(config, null, 4), (err) => {
+        fs.writeFile(path.join(__dirname, 'config.json'), JSON.stringify(config, null, 4), (err) => {
             if (err) {
                 console.error(err.message);
                 res && res.sendStatus(500); // equivalent to res.status(500).send('Internal Server Error')
