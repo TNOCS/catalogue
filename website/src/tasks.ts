@@ -11,7 +11,8 @@ export class Tasks {
     tasks: ICharacteristic[];
     gaps: ICharacteristic[];
 
-    selectedTasks: ICharacteristic[] = [];
+    showGap = false;
+    selectedTask: ICharacteristic;
     selectedGap: ICharacteristic;
     selectedProjects: IProject[] = [];
 
@@ -26,7 +27,7 @@ export class Tasks {
             
             this.tasks.forEach(task => {
                 task.children.forEach(t => {
-                    if (t.isSelected) this.selectedTasks.push(t);
+                    if (t.isSelected) this.selectedTask.push(t);
                 });
             });
             this.gaps.some(g => {
@@ -48,45 +49,52 @@ export class Tasks {
 
     /** You can select multiple tasks? */
     selectTask(task: ICharacteristic) {
-        let isSelected = task.isSelected;
+        if (!task.projects || task.projects.length === 0) return;
+        let isSelected = !task.isSelected;
+        this.showGap = !isSelected;
         this.removeAllSelections();
         if (isSelected) {
-            let index = this.selectedTasks.indexOf(task);
-            this.selectedTasks.splice(index, 1);
-        } else {
             task.isSelected = true;
-            this.selectedGap = null;
-            this.selectedTasks.push(task);
+            this.selectedTask = task;
+        } else {
+            this.selectedTask = null;
         }
+        this.selectedGap = null;
         this.updateProjects();
     }
     
     /** Only allow the user to select a asingle Gap */
     selectGap(gap: ICharacteristic) {
-        let isSelected = gap.isSelected;
+        if (!gap.projects || gap.projects.length === 0) return;
+        let isSelected = !gap.isSelected;
+        this.showGap = isSelected;
         this.removeAllSelections();
         if (isSelected) {
-            this.selectedGap = null;
-        } else {
             gap.isSelected = true;
             this.selectedGap = gap;
-            this.selectedTasks.length = 0;
+        } else {
+            this.selectedGap = null;
         }
+        this.selectedTask = null;
         this.updateProjects();
     }
     
     updateProjects() {
-        this.selectedProjects = [];
-        this.selectedTasks.forEach(t => {
-            if (!t.projects || t.projects.length === 0) return;
-            t.projects.forEach(p => {
-                if (this.selectedProjects.indexOf(p) < 0) this.selectedProjects.push(p);
-            });
-        });
-        if (this.selectedGap && this.selectedGap.projects && this.selectedGap.projects.length > 0) {
-            this.selectedGap.projects.forEach(p => {
-                if (this.selectedProjects.indexOf(p) < 0) this.selectedProjects.push(p);
+        let selectedProjects = [];
+
+        let task = this.selectedTask;
+        if (task && task.projects && task.projects.length > 0) {
+            task.projects.forEach(p => {
+                if (selectedProjects.indexOf(p) < 0) selectedProjects.push(p);
             });
         }
+        let gap  = this.selectedGap;
+        if (gap && gap.projects && gap.projects.length > 0) {
+            gap.projects.forEach(p => {
+                if (selectedProjects.indexOf(p) < 0) selectedProjects.push(p);
+            });
+        }
+        this.selectedProjects.splice(0, this.selectedProjects.length);
+        selectedProjects.forEach(p => this.selectedProjects.push(p));
     }
 }
