@@ -1,5 +1,6 @@
 <template>
   <require from="./components/scatter-plot"></require>
+  <require from="./helpers/MarkdownValueConverter"></require>
 
   <section class="au-animate">
       <!--Left panel-->
@@ -30,16 +31,34 @@
       
       <!--Right panel-->
       <div class="right">
-          <h2>Selected projects</h2>
-          <ul class="list-unstyled">
-              <li repeat.for="project of selectedProjects">
+          <div class="row">            
+              <h3><a click.delegate="showInfo = !showInfo" 
+                  data-toggle="tooltip" data-placement="top" title="Additional information about the selected task or gap"
+                  class="small fa ${showInfo ? 'fa-chevron-circle-down' : 'fa-chevron-circle-up'}"></a>&nbsp;Info about ${showGap ? selectedGap.title : selectedTask.title}</h3>
+          </div>
+          <div class="row" show.bind="showInfo && showGap">
+              <div show.bind="selectedGap.description" innerHTML.bind="selectedGap.description | markdown"></div>
+              <p show.bind="!selectedGap.description">-</p>
+          </div>
+          <div class="row" show.bind="showInfo && !showGap">
+              <div show.bind="selectedTask.description" innerHTML.bind="selectedTask.description | markdown"></div>
+              <p show.bind="!selectedTask.description">-</p>
+          </div>
+
+          <div class="row">            
+            <h3>Analysed projects & products</h3>
+            <ul class="list-unstyled">
+                <li repeat.for="project of selectedProjects">
                 <a route-href="route: project; 
-                               params.bind: {id:project.index}">${project.shortTitle}</a>
+                                params.bind: {id:project.index}">${project.shortTitle}</a>
                 ${project.title}
-              </li>
-          </ul>
-          
-          <scatter-plot show.bind="showGap" gap.bind="selectedGap"></scatter-plot>
+                </li>
+            </ul>
+          </div>
+
+          <div class="row">            
+              <scatter-plot show.bind="showGap" gap.bind="selectedGap"></scatter-plot>
+          </div>
       </div>
   </section>
 </template>

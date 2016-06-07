@@ -27,7 +27,7 @@ export class Tasks {
             
             this.tasks.forEach(task => {
                 task.children.forEach(t => {
-                    if (t.isSelected) this.selectedTask.push(t);
+                    if (t.isSelected) this.selectedTask = t;
                 });
             });
             this.gaps.some(g => {
