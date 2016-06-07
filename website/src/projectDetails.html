@@ -48,13 +48,13 @@
             </div>        
 
             <div class="row">
-                <h3>Incident types</h3>
+                <h3>Incidents</h3>
                 <ul class="list-unstyled" style="margin-left: 20px">
                     <li repeat.for="i of project.incidents">${i.title}</li>
                 </ul>                          
             </div>        
             <div class="row">
-                <h3>Sectors</h3>
+                <h3>Critical Infrastructures</h3>
                 <ul class="list-unstyled" style="margin-left: 20px">
                     <li repeat.for="ci of project.ciSectors">${ci.title}</li>
                 </ul>                          
@@ -64,7 +64,7 @@
             <div class="row">            
                 <h3><a click.delegate="showRefs = !showRefs" 
                     data-toggle="tooltip" data-placement="top" title="Tooltip on top"
-                    class="small fa ${showRefs ? 'fa-chevron-circle-down' : 'fa-chevron-circle-up'}"></a>&nbsp;Project references</h3>
+                    class="small fa ${showRefs ? 'fa-chevron-circle-down' : 'fa-chevron-circle-up'}"></a>&nbsp;Project/product references</h3>
             </div>
             <div class="row" show.bind="showRefs">
                 <ul class="list-unstyled">
@@ -77,7 +77,7 @@
             <div class="row">            
                 <h3><a click.delegate="showAdmin = !showAdmin" 
                     data-toggle="tooltip" data-placement="top" title="Tooltip on top"
-                    class="small fa ${showAdmin ? 'fa-chevron-circle-down' : 'fa-chevron-circle-up'}"></a>&nbsp;Project details</h3>
+                    class="small fa ${showAdmin ? 'fa-chevron-circle-down' : 'fa-chevron-circle-up'}"></a>&nbsp;Project/product details</h3>
             </div>
             <div class="row" show.bind="showAdmin">
                 <table class="table table-striped">
@@ -116,7 +116,7 @@
             <div class="row">            
                 <h3><a click.delegate="showAnalyst = !showAnalyst" 
                     data-toggle="tooltip" data-placement="top" title="Tooltip on top"
-                    class="small fa ${showAnalyst ? 'fa-chevron-circle-down' : 'fa-chevron-circle-up'}"></a>&nbsp;Analysts</h3>
+                    class="small fa ${showAnalyst ? 'fa-chevron-circle-down' : 'fa-chevron-circle-up'}"></a>&nbsp;Analysis details</h3>
             </div>
             <div class="row" repeat.for="analyst of project.analysts" show.bind="showAnalyst">
                 <table class="table table-striped" style="margin-bottom: 10px">
@@ -129,7 +129,7 @@
                         <td>${analyst.organisation}</td>
                     </tr>
                     <tr>
-                        <td>Reviewed</td>
+                        <td>Date</td>
                         <td>${analyst.reviewed | formatDate:"yyyy-MM-dd"}</td>
                     </tr>
                     <tr>
@@ -139,7 +139,8 @@
                     <tr>
                         <td>Remarks</td>
                         <td>
-                            <div innerHTML.bind="analyst.remarks | markdown"></div>
+                            <div show.bind="analyst.remarks" innerHTML.bind="analyst.remarks | markdown"></div>
+                            <div show.bind="!analyst.remarks">-</div>
                         </td>
                     </tr>
                 </table>

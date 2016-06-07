@@ -19,11 +19,11 @@ export class App {
     config.addPipelineStep('authorize', AuthorizeStep); // Add a route filter to the authorize extensibility point.
 
     config.map([
-      { route: ['', 'welcome'],      name: 'welcome',        moduleId: 'welcome',        nav: true,  title: 'Welcome' },
-      { route: 'tasks',              name: 'tasks',          moduleId: 'tasks',          nav: true,  title: 'Tasks' },
+      { route: 'tasks',              name: 'tasks',          moduleId: 'tasks',          nav: true,  title: 'Tasks & Gaps' },
       { route: 'incidents',          name: 'incidents',      moduleId: 'incidents',      nav: true,  title: 'Incidents'},
-      { route: 'gaps',               name: 'gaps',           moduleId: 'gaps',           nav: true,  title: 'Gaps' },
-      { route: 'projects',           name: 'projects',       moduleId: 'projects',       nav: true,  title: 'Projects' },
+      { route: 'ci',                 name: 'ci',             moduleId: 'gaps',           nav: true,  title: 'Critical Infrastructures' },
+      { route: 'projects',           name: 'projects',       moduleId: 'projects',       nav: true,  title: 'Projects & Products' },
+      { route: ['', 'about'],        name: 'about',          moduleId: 'welcome',        nav: true,  title: 'About' },
       { route: 'project/:id',        name: 'project',        moduleId: 'projectDetails', nav: false, title: 'Project details' },
       { route: 'login',              name: 'login',          moduleId: 'login',          nav: false, title: 'Login' },
       { route: 'logout',             name: 'logout',         moduleId: 'logout',         nav: false, title: 'Logout' },

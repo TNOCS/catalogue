@@ -7,7 +7,7 @@ import {DatabaseService} from './services/DatabaseService';
 
 @autoinject
 export class Tasks {
-    heading = 'Tasks';
+    heading = 'Tasks & Gaps';
     tasks: ICharacteristic[];
     gaps: ICharacteristic[];
 
@@ -38,14 +38,24 @@ export class Tasks {
         });
     }
     
+    removeAllSelections() {
+        this.gaps.forEach(g  => g.isSelected = false);
+        this.tasks.forEach(t => {
+             t.isSelected = false;
+             t.children.forEach(task => task.isSelected = false);
+        });
+    }
+
     /** You can select multiple tasks? */
     selectTask(task: ICharacteristic) {
-        if (task.isSelected) {
-            task.isSelected = false;
+        let isSelected = task.isSelected;
+        this.removeAllSelections();
+        if (isSelected) {
             let index = this.selectedTasks.indexOf(task);
             this.selectedTasks.splice(index, 1);
         } else {
             task.isSelected = true;
+            this.selectedGap = null;
             this.selectedTasks.push(task);
         }
         this.updateProjects();
@@ -53,9 +63,15 @@ export class Tasks {
     
     /** Only allow the user to select a asingle Gap */
     selectGap(gap: ICharacteristic) {
-        this.gaps.forEach(g => g.isSelected = false);
-        gap.isSelected = true;
-        this.selectedGap = gap;
+        let isSelected = gap.isSelected;
+        this.removeAllSelections();
+        if (isSelected) {
+            this.selectedGap = null;
+        } else {
+            gap.isSelected = true;
+            this.selectedGap = gap;
+            this.selectedTasks.length = 0;
+        }
         this.updateProjects();
     }
     

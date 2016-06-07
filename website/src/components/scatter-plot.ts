@@ -113,7 +113,7 @@ export class ScatterPlotCustomElement {
             .attr("x", this.width)
             .attr("y", -6)
             .style("text-anchor", "end")
-            .text("Extent to which gaps are solved");
+            .text("Extent to which the gap is solved");
 
         // y-axis
         svg.append("g")

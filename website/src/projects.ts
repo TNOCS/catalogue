@@ -4,7 +4,7 @@ import {DatabaseService} from 'services/DatabaseService';
 
 @autoinject
 export class Projects {
-    heading = 'Projects';
+    heading = 'Projects & Products';
     projects: IProject[] = [];
 
     constructor(private databaseService: DatabaseService) {

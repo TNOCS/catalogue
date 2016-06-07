@@ -11,7 +11,7 @@
                     <li repeat.for="subtask of task.children">
                         <div class="${subtask.projects.length > 0 ? 'selectable' : 'unselectable'} ${subtask.isSelected ? 'selected' : ''}" click.delegate="selectTask(subtask)">
                             <span>${subtask.title}</span> 
-                            <span data-toggle="tooltip" data-placement="left" title="Number of projects suitable for this task." if.bind="subtask.projects" class="badge pull-right">${subtask.projects.length}</span>
+                            <!--<span data-toggle="tooltip" data-placement="left" title="Number of projects suitable for this task." if.bind="subtask.projects" class="badge pull-right">${subtask.projects.length}</span>-->
                         </div>
                         <!--<ul class="list-unstyled" style="margin-left: 20px">
                             <li repeat.for="project of subtask.projects">PROJECT: ${project.title}</li>
