@@ -36,7 +36,7 @@ export class ScatterPlotCustomElement {
     /** Will be automatically invoked when the bound project property is changed. */
     gapChanged(gap: ICharacteristic, oldValue: ICharacteristic) {
         // console.log('GAP changed: ' + gap.title);
-        if (!gap.projects || gap.projects.length === 0) return;
+        if (!gap || !gap.projects || gap.projects.length === 0) return;
         let data: IDataFormat[] = [];
 
         gap.projects.forEach(p => {
