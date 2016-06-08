@@ -150,6 +150,7 @@
         
         <div class="au-animate right">
             <div class="row">
+                <div show.bind="canEdit" class="pull-right" style="margin: 10px;"><a href="#/editproject/${project.index}"><span class="fa fa-2x fa-pencil"></span></a></div>
                 <h3>Gaps</h3>
                 <characteristic repeat.for="gap of project.gaps" characteristic.bind="gap"></characteristic>
             </div>        

@@ -25,6 +25,7 @@ export class App {
       { route: 'projects',           name: 'projects',       moduleId: 'projects',       nav: true,  title: 'Projects & Products' },
       { route: ['', 'about'],        name: 'about',          moduleId: 'welcome',        nav: true,  title: 'About' },
       { route: 'project/:id',        name: 'project',        moduleId: 'projectDetails', nav: false, title: 'Project details' },
+      { route: 'editproject/:id',    name: 'editproject',    moduleId: 'projectEdit',    nav: false, title: 'Edit project', auth: true },
       { route: 'login',              name: 'login',          moduleId: 'login',          nav: false, title: 'Login' },
       { route: 'logout',             name: 'logout',         moduleId: 'logout',         nav: false, title: 'Logout' },
       { route: 'profile',            name: 'profile',        moduleId: 'profile',        nav: false, title: 'Profile'},

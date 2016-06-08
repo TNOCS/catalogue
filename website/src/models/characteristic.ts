@@ -23,5 +23,5 @@ export interface ICharacteristic {
     }
     
     /** Internal properties */
-    isSelected: boolean;
+    isSelected?: boolean;
 }
