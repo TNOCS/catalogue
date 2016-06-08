@@ -84,7 +84,7 @@ export class DatabaseService {
     /** Link tasks to gaps and vice versa */
     private createReferencesBetweenTasksAndGaps(db: IDatabase) {
         for (var taskId in db.task2gaps) {
-            if (!this.tasks.hasOwnProperty(taskId)) return;
+            if (!this.tasks.hasOwnProperty(taskId)) continue;
             let task = this.tasks[taskId];
             task.relations = [];
             let gapIds = db.task2gaps[taskId];
