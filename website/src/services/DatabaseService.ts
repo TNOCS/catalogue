@@ -14,9 +14,9 @@ export class DatabaseService {
     private tasks:            {[key: string]: ICharacteristic } = {}; 
     private gaps:             {[key: string]: ICharacteristic } = {}; 
     private incidents:        {[key: string]: ICharacteristic } = {}; 
-    private maturityLevels:   {[key: string]: ICharacteristic } = {}; 
+    maturityLevels:   {[key: string]: ICharacteristic } = {}; 
     private gapLevels:        {[key: string]: ICharacteristic } = {}; 
-    private usabilityLevels:  {[key: string]: ICharacteristic } = {}; 
+    usabilityLevels:  {[key: string]: ICharacteristic } = {}; 
     private validationLevels: {[key: string]: ICharacteristic } = {}; 
     private ciSectors:        {[key: string]: ICharacteristic } = {}; 
 
@@ -39,7 +39,7 @@ export class DatabaseService {
         this.parseData();
     }
     
-    private parseData() {
+    parseData() {
         this.database.then(db => {
             db.maturityLevels.forEach(m   => this.maturityLevels[m.id]   = m );
             db.usabilityLevels.forEach(m  => this.usabilityLevels[m.id]  = m );

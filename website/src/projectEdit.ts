@@ -7,18 +7,28 @@ import {IDatabase}       from "models/database";
 import {ICharacteristic} from 'models/characteristic';
 import {IProject, IParticipant} from 'models/project';
 
-// TODO add levels
-// TOOD merge tasks/gaps/review (similar to task view)
+// TODO Add/delete analyst
+// TODO Save project to local database
+// TODO Save project to remote database
+// TODO Cancel edit 
+// TODO add new project, 
+// TODO delete project
+
+// Nice to have
+// TODO Set selected incident and ciSectors using checkboxes
 
 @inject(Endpoint.of('api'), Endpoint.of('auth'), DatabaseService)
 export class ProjectEdit {
-    project: IProject;
-    data: IDatabase;
+    orgProject: IProject;
+    project:    IProject;
+    data:       IDatabase;
+    activeTask: ICharacteristic;
+    activeGap:  ICharacteristic;
 
-    tasks:            ICharacteristic[] = [];
-    gaps:             ICharacteristic[] = [];
-    ciSectors:        ICharacteristic[] = [];
-    incidents:        ICharacteristic[] = [];
+    tasks:      ICharacteristic[] = [];
+    gaps:       ICharacteristic[] = [];
+    ciSectors:  ICharacteristic[] = [];
+    incidents:  ICharacteristic[] = [];
 
     constructor(private api: Rest, private auth: AuthService, private db: DatabaseService) {}
 
@@ -26,9 +36,55 @@ export class ProjectEdit {
         return this.db.database.then(db => {
             this.data = db;
             //this.project = db.projects[+params.id];
-            let p = db.projects[+params.id];
+            let p = this.orgProject = db.projects[+params.id];
 
-            this.data.tasks.forEach(task         => task.children.forEach(c     => this.tasks.push(c)));
+            // CLONE the project, so we can cancel any changes.
+            this.data.tasks.forEach(task => {
+                let newTask: ICharacteristic = {
+                    id:          task.id,
+                    title:       task.title,
+                    description: task.description,
+                    children:    []
+                };
+
+                task.children.forEach(subTask => {
+                    let newSubTask: ICharacteristic = {
+                        id:          subTask.id,
+                        title:       subTask.title,
+                        description: subTask.description,
+                        isSelected:  false
+                    };
+                    newSubTask.isSelected = this.containsCharacteristic(p.tasks, newSubTask.id) !== null;
+                    if (subTask.relations) {
+                        newSubTask.relations = [];
+                        subTask.relations.forEach(gap => {
+                            let newGap: ICharacteristic = {
+                                id:          gap.id,
+                                title:       gap.title,
+                                description: gap.description,
+                                isSelected:  false
+                            };
+                            let foundGap = this.containsCharacteristic(p.gaps, gap.id);
+                            if (foundGap) {
+                                newGap.isSelected = true;
+                                newGap.score = {
+                                    id:          foundGap.score.id,
+                                    title:       foundGap.score.title,
+                                    description: foundGap.score.description,
+                                    rating: {
+                                        value: foundGap.score.rating.value,
+                                        max:   foundGap.score.rating.max
+                                    }
+                                };
+                                newGap.remarks = foundGap.remarks;
+                            }
+                            newSubTask.relations.push(newGap);
+                        });
+                    }
+                    newTask.children.push(newSubTask);
+                });
+                this.tasks.push(newTask);
+            });
             this.data.incidents.forEach(incident => incident.children.forEach(c => this.incidents.push(c)));
             this.gaps      = this.data.gaps;
             this.ciSectors = this.data.ciSectors;
@@ -39,8 +95,8 @@ export class ProjectEdit {
                 index:          p.index,
                 shortTitle:     p.shortTitle,
                 title:          p.title,
-                maturityLevel:  { id: p.maturityLevel.id },
-                usabilityLevel: { id: p.usabilityLevel.id },
+                maturityLevel:  this.db.maturityLevels[p.maturityLevel.id],
+                usabilityLevel: this.db.usabilityLevels[p.usabilityLevel.id],
                 intendedUsers:  p.intendedUsers,
                 references:     [],
                 currentUse:     p.currentUse,
@@ -57,10 +113,10 @@ export class ProjectEdit {
                 analysts:       []
             };
             if (p.references) p.references.forEach(r => this.project.references.push(r));
-            this.copyCharacteristics(p.tasks, this.tasks, this.project.tasks);
-            this.copyCharacteristics(p.gaps , this.gaps , this.project.gaps );
-            this.copyCharacteristics(p.incidents , this.incidents , this.project.incidents );
-            this.copyCharacteristics(p.ciSectors , this.ciSectors , this.project.ciSectors );
+            // this.copyCharacteristics(p.tasks, this.tasks, this.project.tasks);
+            // this.copyCharacteristics(p.gaps , this.gaps , this.project.gaps );
+            this.copyCharacteristics(p.incidents, this.incidents , this.project.incidents );
+            this.copyCharacteristics(p.ciSectors, this.ciSectors , this.project.ciSectors );
 
             if (p.administration) {
                 if (p.administration.duration) {
@@ -70,9 +126,10 @@ export class ProjectEdit {
                         status: p.administration.duration.status
                     }
                 }
-                this.project.administration.developers = p.administration.developers;
-                this.project.administration.owners     = p.administration.owners;
-                this.project.administration.sponsors   = p.administration.sponsors;
+                this.project.administration.projectType = p.administration.projectType;
+                this.project.administration.developers  = p.administration.developers;
+                this.project.administration.owners      = p.administration.owners;
+                this.project.administration.sponsors    = p.administration.sponsors;
                 if (p.administration.coordinator) {
                     this.project.administration.coordinator = {
                         country: p.administration.coordinator.country,
@@ -105,6 +162,32 @@ export class ProjectEdit {
         });
     }
 
+    /** 
+     * Checks whether the array of characteristics contains the desired characteristic. 
+     * If true, returns the found characteristic, otherwise returns null.
+     */
+    containsCharacteristic(characteristics: ICharacteristic[], id: string) {
+        if (!characteristics) return null;
+        let isFound: ICharacteristic = null;
+        characteristics.some(c => {
+            if (c.id !== id) return false;
+            isFound = c;
+            return true;
+        });
+        return isFound;
+    }
+
+    selectTask(task: ICharacteristic) {
+        if (!task) return;
+        this.activeTask = task;
+    }
+
+    selectGap(gap: ICharacteristic) {
+        if (!gap) return;
+        // gap.isSelected  = !gap.isSelected;
+        this.activeGap = gap;
+    }
+
     /** Delete an existing participant */
     deleteParticipant(p: IParticipant) {
         if (!p) return;
@@ -126,7 +209,10 @@ export class ProjectEdit {
         let i = this.project.references.indexOf(r);
         if (i >= 0) this.project.references.splice(i, 1);
     }
-
+    /** Update the reference: the regular binding does not work for string arrays */
+    updateReference(index: number, ev) {
+        this.project.references[index] = ev.target.value;
+    }
     /** Add a new reference */
     addReference() {
         this.project.references.push("");
@@ -154,11 +240,66 @@ export class ProjectEdit {
         });
     }
 
-    // get tasks() {
-    //     let t = [];
-    //     this.data.tasks.forEach(task => {
-    //         task.children.forEach(c => t.push(c));
-    //     });
-    //     return t;
-    // }
+    /**
+     * Save the current project to the database, and to the server.
+     */
+    save() {
+        let p1 = this.orgProject;
+        let p2 = this.project;
+
+        p1.id = p2.id;
+        p1.shortTitle = p2.shortTitle;
+        p1.title = p2.title;
+        p1.intendedUsers = p2.intendedUsers;
+        p1.currentUse = p2.currentUse;
+        p1.description = p2.description;
+        p1.logo = p2.logo;
+        p1.isProject = p2.isProject;
+        p1.isProduct = p2.isProduct;
+        p1.usabilityLevel = {
+            id: p2.usabilityLevel.id,
+            remarks: p2.usabilityLevel.remarks
+        };
+        p1.maturityLevel = {
+            id: p2.maturityLevel.id
+        };
+        p1.administration = p2.administration;
+        p1.analysts = p2.analysts;
+        if (p1.references) p1.references.length = 0;
+        else p1.references = [];         
+        if (p1.tasks) p1.tasks.length = 0;
+        else p1.tasks = [];
+        if (p1.ciSectors) p1.ciSectors.length = 0;
+        else p1.ciSectors = [];
+        if (p1.gaps) p1.gaps.length = 0;
+        else p1.gaps = [];
+        if (p1.incidents) p1.incidents.length = 0;
+        else p1.incidents = [];
+        if (p2.references) p2.references.forEach(r => p1.references.push(r));
+        if (p2.incidents) p2.incidents.forEach(i => p1.incidents.push({ id: i.id }));
+        if (p2.ciSectors) p2.ciSectors.forEach(i => p1.ciSectors.push({ id: i.id }));
+        this.tasks.forEach(task => {
+            task.children.forEach(subtask => {
+                if (subtask.isSelected) p1.tasks.push({
+                    id: subtask.id
+                });
+                if (subtask.relations) {
+                    subtask.relations.forEach(gap => {
+                        if (gap.isSelected) p1.gaps.push({
+                            id: gap.id,
+                            score: {
+                                id: gap.score.id,
+                            },
+                            remarks: gap.remarks
+                        })
+                    });
+                }
+            });
+        });
+        this.db.parseData();
+    }
+
+    cancel() {
+
+    }
 }

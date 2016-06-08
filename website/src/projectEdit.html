@@ -1,8 +1,12 @@
 <template>
     <require from="./helpers/MarkdownValueConverter"></require>
 
-    <section>
-        <form role="form" submit.delegate="save()">
+    <div style="margin: 10px">
+        <button click.delegate="save()"   type="submit" class="btn btn-default pull-right" ><i class="fa fa-floppy-o"></i>&nbsp;Save</button>
+        <button click.delegate="cancel()" type="submit" class="btn btn-default pull-right" ><i class="fa fa-close"></i>&nbsp;Cancel</button>
+    </div>
+    <section style="margin-top: 10px;">
+        <form role="form" submit.delegate="save()" style="margin-top: 5px;">
             <div class="form-group">
                 <label for="st">Short title</label>
                 <input type="text" value.bind="project.shortTitle" class="form-control" id="st" placeholder="Short title">
@@ -14,19 +18,19 @@
             <div class="form-group">
                 <label for="name">Maturity level</label>
                 <select value.bind="project.maturityLevel" style="display: inline; width: 20%; margin-top: 10px;" class="form-control">
-                    <option repeat.for="v of data.maturityLevels" value.bind="v.id">${v.title}</option>
+                    <option repeat.for="v of data.maturityLevels" model.bind="v">${v.title}</option>
                 </select>
             </div>
             <div class="form-group">
                 <label for="name">Usability level</label>
-                <select value.bind="a.usabilityLevel" style="display: inline; width: 20%; margin-top: 10px;" class="form-control">
-                    <option repeat.for="v of data.usabilityLevels" value.bind="v.id">${v.title}</option>
+                <select value.bind="project.usabilityLevel" style="display: inline; width: 20%; margin-top: 10px;" class="form-control">
+                    <option repeat.for="v of data.usabilityLevels" model.bind="v">${v.title}</option>
                 </select>
             </div>
             <div class="form-group row">
                 <div class="col-md-6">
                     <label for="logo">Logo</label><br>
-                    <input type="text" value.bind="project.logo" style="display: inline; width: 50%" class="form-control" id="logo" placeholder="http://imgur.com/???.png">
+                    <input type="text" value.bind="project.logo" style="display: inline; width: 100%" class="form-control" id="logo" placeholder="http://imgur.com/???.png">
                 </div>
                 <div class="col-md-6">
                     <img src="${project.logo}" alt="Logo" height="60" style="display: inline-block; height: 60px; vertical-align: bottom">
@@ -45,7 +49,7 @@
                 <label for="ref">References</label>
                 <ul class="list-unstyled">
                     <li repeat.for="r of project.references">
-                        <input type="text" style="display: inline; width: 90%" value.bind="r" placeholder="Reference" class="form-control">
+                        <input type="text" change.delegate="updateReference($index, $event)" style="display: inline; width: 90%" value.bind="r" placeholder="http://..." class="form-control">
                         <button style="display: inline;"><a click.delegate="deleteReference(r)"><i class="fa fa-trash"></i></a></button>          
                     </li>
                     <li class="pull-right"><button><a click.delegate="addReference()"><i class="fa fa-plus"></i></a></button></li>
@@ -54,24 +58,50 @@
             <div class="form-group">
                 <label>
                     Is product?
-                    <input style="display: inline" type="checkbox" value.bind="project.isProduct" class="form-control">
+                    <input style="display: inline" type="checkbox" checked.bind="project.isProduct" class="form-control">
                     Is project?
-                    <input type="checkbox" value.bind="project.isProject" class="form-control">
+                    <input type="checkbox" checked.bind="project.isProject" class="form-control">
                 </label>
             </div>
             <div class="row">
-                <div class="col-md-6 form-group">
-                    <label for="tasks">Tasks</label><br>
-                    <select style="height: 550px; width: 100%;" id="tasks" value.bind="project.tasks" multiple>
-                        <option repeat.for="task of tasks" model.bind="task">${task.title}</option>
-                    </select>
+                <div class="col-md-4 form-group">
+                    <label for="tasks">Tasks & Gaps</label>
+                    <ul class="list-unstyled" id="tasks">
+                        <li repeat.for="task of tasks" style="margin-bottom: 10px;">
+                            <h4>${task.title}</h4>
+                            <ul class="list-unstyled" style="margin-left: 10px">
+                                <li repeat.for="subtask of task.children">
+                                    <div class="${subtask.id === activeTask.id ? 'selected' : ''}">
+                                        <input type="checkbox" checked.bind="subtask.isSelected" />
+                                        <span click.delegate="selectTask(subtask)">&nbsp;${subtask.title}</span> 
+                                    </div>
+                                    <ul class="list-unstyled" style="margin-left: 20px">
+                                        <li class="${gap.id === activeGap.id ? 'selected' : ''}" 
+                                            repeat.for="gap of subtask.relations">
+                                            <input type="checkbox" checked.bind="gap.isSelected" />
+                                            <span click.delegate="selectGap(gap)">&nbsp;GAP: ${gap.title}</span>
+                                        </li>
+                                    </ul>                          
+                                </li>
+                            </ul>      
+                        </li>
+                    </ul>
                 </div>
-                <div class="col-md-6 form-group">
-                    <label for="gaps">Gaps</label><br>
-                    <select style="height: 550px; width: 100%;" id="gaps" value.bind="project.gaps" multiple>
-                        <option repeat.for="gap of gaps" model.bind="gap">${gap.title}</option>
+                <div show.bind="activeGap.id" class="col-md-4 form-group">
+                    <label for="score">Addresses gap: </label><br>
+                    <select style="display: inline; width: 100%;" id="score" value.bind="activeGap.score.id">
+                        <option repeat.for="gap of data.gapLevels" value.bind="gap.id">${gap.title}</option>
                     </select>
+                    <label for="rem">Remarks</label><br>
+                    <textarea id="rem" rows="20" style="display:inline; width:100%" placeholder="Remarks" value.bind="activeGap.remarks"></textarea>
                 </div>
+                <div show.bind="activeGap.id" class="col-md-4 form-group">
+                    <label for="pre">Preview remarks</label><br>
+                    <div id="pre" style="display:inline-block; width:100%; height: 450px; overflow-y: auto; margin-left: 10px"
+                    placeholder="Description" innerHTML.bind="activeGap.remarks | markdown"></div>
+                </div>
+            </div>
+            <div class="row">
                 <div class="col-md-6 form-group">
                     <label for="incidents">Incidents</label><br>
                     <select style="height: 250px; width: 100%;" id="incidents" value.bind="project.incidents" multiple>
@@ -131,10 +161,10 @@
                         <label for="organisation">Organisation</label>
                         <input type="text" value.bind="a.organisation" class="form-control" id="organisation" placeholder="organisation">
                         <label for="name">Reviewed on</label>
-                        <input type="text" value.bind="a.reviewed" class="form-control" id="name" placeholder="YYYY-MM-DD">
+                        <input type="date" value.bind="a.reviewed" class="form-control" id="name" placeholder="YYYY-MM-DD">
                         <label for="name">Validation level</label>
                         <select value.bind="a.validationLevel" style="display: inline; width: 20%; margin-top: 10px;" class="form-control">
-                            <option repeat.for="v of data.validationLevels" value.bind="v.id">${v.title}</option>
+                            <option repeat.for="v of data.validationLevels" model.bind="v">${v.title}</option>
                         </select>
                         <div class="form-group">
                             <label for="remark">Remarks</label><br>
