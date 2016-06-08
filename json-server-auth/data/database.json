@@ -987,7 +987,7 @@
         "analysts": [{
             "name": "Jorn Boers",
             "organisation": "TNO",
-            "reviewed": "2016-03-16T00:00:00.000Z",
+            "reviewed": "2016-03-16",
             "validationLevel": {
                 "id": "v1"
             },
