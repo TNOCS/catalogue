@@ -100,8 +100,11 @@ export class ScatterPlotCustomElement {
             .style("opacity", 0);
 
         // don't want dots overlapping axis, so add in buffer to data domain
-        xScale.domain([d3.min(data, xValue) - 1, d3.max(data, xValue) + 1]);
-        yScale.domain([d3.min(data, yValue) - 1, d3.max(data, yValue) + 1]);
+        // xScale.domain([d3.min(data, xValue) - 1, d3.max(data, xValue) + 1]);
+        // yScale.domain([d3.min(data, yValue) - 1, d3.max(data, yValue) + 1]);
+        // FIX DOMAIN
+        xScale.domain([0, 6]);
+        yScale.domain([0, 6]);
 
         // x-axis
         svg.append("g")
