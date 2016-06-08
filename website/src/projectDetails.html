@@ -4,7 +4,7 @@
     <require from="./helpers/ToUppercaseValueConverter"></require>
     <require from="./components/characteristic"></require>
 
-    <section style="overflow: none">
+    <section style="overflow: none;">
         <div class="au-animate left">
             <div class="row">
                 <div class="col-md-8">
@@ -36,6 +36,10 @@
             </table>
 
             </div>
+
+            <div show.bind="project.isProject">Is project: <i class="fa fa-check"></i></div>
+            <div show.bind="project.isProduct">Is product: <i class="fa fa-check"></i></div>
+
             <h3>${project.title}</h3>
             
             <div innerHTML.bind="project.description | markdown"></div>
