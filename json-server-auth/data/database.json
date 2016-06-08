@@ -273,32 +273,28 @@
         "description": null,
         "children": [{
             "id": "prep.a",
-            "title": "Policy making/Capacity building",
+            "title": "Capacity building",
             "description": "Determine (inter)national disaster management policy (including responsibilities of society itself and of CM authorities), disaster management capacity building based on risks."
         }, {
             "id": "prep.b",
-            "title": "Doctrine/Procedure development",
-            "description": null
+            "title": "Society’s Resilience",
+            "description": "Raise society’s resilience (citizens and industry) by communicating and/or instructing how to be well-prepared for a disaster and how to behave when a disaster event occurs."
         }, {
             "id": "prep.c",
-            "title": "Procure | Maintain | Warehousing",
-            "description": null
+            "title": "Preparation with third parties",
+            "description": "Activities to enable and to streamline cooperation with other organisations involved in disaster management."
         }, {
             "id": "prep.d",
-            "title": "Community Awareness Raising",
-            "description": null
+            "title": "Evaluation",
+            "description": "Evaluation of incidents/disasters and/or exercises to improve disaster management."
         }, {
             "id": "prep.e",
             "title": "Training & Exercises",
-            "description": null
+            "description": "Training of disaster management organisations (multi-level, cross-agency and/or cross-border)."
         }, {
             "id": "prep.f",
-            "title": "Evaluation",
-            "description": null
-        }, {
-            "id": "prep.g",
-            "title": "Prepare civil/military co-operation",
-            "description": null
+            "title": "Harmonisation/ Standardisation",
+            "description": "This category focusses on the harmonisation and standardisation of language, terminology and guidelines procedures between (cross-border) agencies."
         }]
     }, {
         "id": "sup",
@@ -307,59 +303,64 @@
         "children": [{
             "id": "sup.I",
             "title": "Co-ordination, Command & Control",
-            "description": null
+            "description": "Decision-making, planning and tasking activities at the various coordination and command levels that are involved in managing a certain disaster event (including volunteer management and collaboration with third parties while responding to the disaster situation)."
         }, {
             "id": "sup.II",
             "title": "Situation assessment",
-            "description": null
+            "description": "Enrichment of collected data, development of Common Operational Picture, Threat assessment."
         }, {
             "id": "sup.III",
             "title": "Information management & Distribution",
-            "description": null
+            "description": "Storing (log-keeping) and sharing of information such as collected data, assessments made and decisions taken."
         }, {
             "id": "sup.IV",
             "title": "Monitoring / Information gathering",
-            "description": null
+            "description": "Collection of data, surveillance, detection, identification."
         }, {
             "id": "sup.V",
-            "title": "Supply of basic services to enable CM",
-            "description": null
-        }, {
-            "id": "sup.VI",
-            "title": "Logistics",
-            "description": null
+            "title": "Logistics & Supply of basic services to enable crisis mgt. operations",
+            "description": "Transport of personnel and materiel, including supply of relief goods (vaccines, food, tents, etc.)  fuel and spare parts, to support disaster management operations. Communication/ICT, power, security which area basic requirements to perform disaster management on-site or nearby the spot of the incident."
         }]
     }, {
         "id": "op",
         "title": "Operational tasks",
-        "description": null,
+        "description": "The aim of operational tasks is to minimise the effects of a disaster event.",
         "children": [{
             "id": "op.A",
-            "title": "Crisis mitigation on-site"
+            "title": "Crisis mitigation on-site",
+            "description": "On-site mitigation concerns tasks like firefighting, flood control, stop leakage of hazardous materials, containment of hazardous materials (including on-site identification of the incident)."
         }, {
             "id": "op.B",
-            "title": "Search and rescue"
+            "title": "Rescue operations – on-site.",
+            "description": "This concerns tasks such as Search and Rescue (SAR), triage of victims, decontamination of persons, stabilisation (first treatment), transport to safe areas or (field)hospitals and fatality management."
         }, {
             "id": "op.C",
-            "title": "Security / Law enforcement"
+            "title": "Security / Law enforcement",
+            "description": "This concerns tasks such as securing areas/persons, identification of persons, intelligence, forensics, maintain public order, traffic management (both in-going and out-going)."
         }, {
             "id": "op.D",
-            "title": "Evacuation & Shelter"
+            "title": "Evacuation & Shelter",
+            "description": "These tasks concern on the one hand a controlled evacuation of persons (and animals) of a certain area (or building), and on the other hand the provision of shelter to the evacuees, as well as provision of nutrition and sanitation to them, and reunification of evacuees with their relatives."
         }, {
             "id": "op.E",
-            "title": "Inform and Involve the public"
+            "title": "Inform and Involve the public",
+            "description": "This concerns early warning of threatened people and Communication management to the public and the (social) media providing information on a (threatening) disaster event, including realistic guidelines."
         }, {
             "id": "op.F",
-            "title": "Health service"
+            "title": "Health service",
+            "description": "The following tasks consider this category: health service in field hospitals, health service in regular hospitals, quarantine and isolation, mass prophylaxis/vaccination and psychological care."
         }, {
             "id": "op.G",
-            "title": "Clear crisis area"
+            "title": "Clear crisis area",
+            "description": "This category concerns debris clearance, decontamination of contaminated objects (area, infrastructure and vehicles) and water management (Draining and Pumping), destruction of (potentially) infected animals."
         }, {
             "id": "op.H",
-            "title": "Supply and/or restauration of basic infrastructure"
+            "title": "Supply and/or restauration of basic infrastructure",
+            "description": "This category of tasks concerns the supply and/or restoration of basic necessities, such as: Drinking water, food, sanitation, electricity, ICT/Telecom, financial system and governance."
         }, {
             "id": "op.J",
-            "title": "Other"
+            "title": "Other",
+            "description": "Other operational tasks for e.g. reducing the impact of a cyber-attack or a large-scale cyber-criminal act, tackling a financial crisis event, etc."
         }]
     }],
     "incidents": [{
