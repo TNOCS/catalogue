@@ -35,6 +35,11 @@ export class DatabaseService {
 
     parseData() {
         this.database.then(db => {
+            db.ciSectors.forEach(m        => m.projects = null );
+            db.gaps.forEach(m        => m.projects = null );
+            db.incidents.forEach(m        => m.projects = null );
+            db.tasks.forEach(m        => m.projects = null );
+
             db.maturityLevels.forEach(m   => this.maturityLevels[m.id]   = m );
             db.usabilityLevels.forEach(m  => this.usabilityLevels[m.id]  = m );
             db.validationLevels.forEach(m => this.validationLevels[m.id] = m );
@@ -48,8 +53,7 @@ export class DatabaseService {
 
             this.createReferencesBetweenTasksAndGaps(db);
 
-            // Add an index to each project, and complete the project's tasks, gaps and incidents info, 
-            let index = 0;
+            // Complete the project's tasks, gaps and incidents info, 
             db.projects.forEach(p => {
                 this.updateProjectCharacteristics(p, p.tasks,     this.tasks);
                 this.updateProjectCharacteristics(p, p.incidents, this.incidents);
@@ -107,7 +111,7 @@ export class DatabaseService {
     /** 
      * Update the tasks/gaps/incidents etc. characteristics of the project. 
      * Assume that the IDs are given and correct, but that the text (title/description) may have changed.
-     * Also, for each match, e.g. of a task, update the tasks store so we know that which projects refer to which tasks.
+     * Also, for each match, e.g. of a task, update the tasks store so we know which projects refer to which tasks.
      */
     private updateProjectCharacteristics(
         project: IProject,

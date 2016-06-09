@@ -1,0 +1,33 @@
+<template>
+  <require from="./components/scatter-plot"></require>
+
+  <section class="au-animate">
+    <div class="left">
+        <h2>${heading}</h2>
+        <ul class="list-unstyled">
+            <li repeat.for="ci of cis" 
+                class="${ci.projects.length > 0 ? 'selectable' : 'unselectable'} ${ci.isSelected ? 'selected' : ''}" 
+                click.delegate="selectCi(ci)">
+                ${ci.title}
+                <span data-toggle="tooltip" data-placement="left" title="Number of projects addressing this CI type." 
+                if.bind="ci.projects" class="badge pull-right">${ci.projects.length}</span>
+                <ul class="list-unstyled" style="margin-left: 20px">
+                    <li repeat.for="project of ci.projects">PROJECT: ${project.title}</li>
+                </ul>                          
+            </li>
+        </ul>
+    </div>
+    <div class="right">
+        <h2>Selected projects</h2>
+        <ul class="list-unstyled">
+            <li repeat.for="project of selectedProjects">
+                <a route-href="route: project; params.bind: {id:project.id}">${project.shortTitle}</a>
+                ${project.title}
+            </li>
+        </ul>
+        
+        <scatter-plot gap.bind="selectedci"></scatter-plot>        
+    </div>
+      
+  </section>
+</template>

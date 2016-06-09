@@ -4,10 +4,10 @@ import {IProject} from './models/project';
 import {DatabaseService} from 'services/DatabaseService';
 
 @autoinject
-export class Incidents {
-    heading = 'Incidents';
-    incidents: ICharacteristic[] = [];
-    selectedIncident: ICharacteristic;
+export class CriticalInfrastructures {
+    heading = 'Critical Infrastructures';
+    cis: ICharacteristic[] = [];
+    selectedCi: ICharacteristic;
     selectedProjects: IProject[] = [];
 
     constructor(private databaseService: DatabaseService) {}
@@ -16,25 +16,25 @@ export class Incidents {
         (<any>$('[data-toggle="tooltip"]')).tooltip();
         
         return this.databaseService.database.then(db => {
-            this.incidents = db.incidents;
+            this.cis = db.ciSectors;
         });
     }
     
     /** Only allow the user to select a asingle Gap */
-    selectIncident(incident: ICharacteristic) {
-        if (!incident.projects || incident.projects.length === 0) return;
-        this.incidents.forEach(i => {
-            i.children.forEach(sub => sub.isSelected = false);
+    selectCi(ci: ICharacteristic) {
+        if (!ci.projects || ci.projects.length === 0) return;
+        this.cis.forEach(i => {
+            i.isSelected = false;
         });
-        incident.isSelected = true;
-        this.selectedIncident = incident;
+        ci.isSelected = true;
+        this.selectedCi = ci;
         this.updateProjects();
     }
 
     updateProjects() {
         this.selectedProjects = [];
-        if (this.selectedIncident && this.selectedIncident.projects && this.selectedIncident.projects.length > 0) {
-            this.selectedIncident.projects.forEach(p => {
+        if (this.selectedCi && this.selectedCi.projects && this.selectedCi.projects.length > 0) {
+            this.selectedCi.projects.forEach(p => {
                 if (this.selectedProjects.indexOf(p) < 0) this.selectedProjects.push(p);
             });
         }
