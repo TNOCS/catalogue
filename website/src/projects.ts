@@ -47,7 +47,7 @@ export class Projects {
             administration: {
                 duration: {},
                 coordinator: <IParticipant>{},
-                participants: []
+                participants: [<IParticipant>{}]
             },
         };
         this.projects.push(project);

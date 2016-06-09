@@ -1,10 +1,11 @@
-import {Endpoint, Rest}  from 'aurelia-api';
-import {AuthService}     from 'aurelia-authentication';
-import {inject}          from 'aurelia-framework';
-import {DatabaseService} from 'services/DatabaseService';
-import {IUser}           from 'models/user';
-import {IDatabase}       from "models/database";
-import {ICharacteristic} from 'models/characteristic';
+import {Endpoint, Rest}         from 'aurelia-api';
+import {AuthService}            from 'aurelia-authentication';
+import {inject}                 from 'aurelia-framework';
+import {DialogController}       from 'aurelia-dialog';
+import {DatabaseService}        from 'services/DatabaseService';
+import {IUser}                  from 'models/user';
+import {IDatabase}              from "models/database";
+import {ICharacteristic}        from 'models/characteristic';
 import {IProject, IParticipant} from 'models/project';
 
 // TODO Add/delete analyst
