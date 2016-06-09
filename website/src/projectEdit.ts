@@ -19,7 +19,7 @@ import {IProject, IParticipant} from 'models/project';
 // Nice to have
 // TODO Set selected incident and ciSectors using checkboxes
 
-@inject(Endpoint.of('api'), Endpoint.of('auth'), DatabaseService)
+@inject(Endpoint.of('api'), Endpoint.of('auth'), DatabaseService, Router)
 export class ProjectEdit {
     orgProject: IProject;
     project:    IProject;
@@ -37,8 +37,16 @@ export class ProjectEdit {
     activate(params) {
         return this.db.database.then(db => {
             this.data = db;
+
+            let id = params.id;
+            db.projects.some(p => {
+                if (p.id !== id) return false;
+                this.orgProject = p;
+                return true;
+            });
+
             //this.project = db.projects[+params.id];
-            let p = this.orgProject = db.projects[+params.id];
+            let p = this.orgProject;
 
             // CLONE the project, so we can cancel any changes.
             this.data.tasks.forEach(task => {
@@ -316,6 +324,6 @@ export class ProjectEdit {
     }
 
     cancel() {
-        this.router.navigate('#/projects');
+        this.router.navigate('projects');
     }
 }

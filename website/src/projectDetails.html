@@ -157,7 +157,7 @@
             <div class="row">
                 <!--<button show.bind="canEdit" href="#/editproject/${project.index}" style="margin: 10px;" class="btn btn-default pull-right" ><i class="fa fa-pencil"></i>&nbsp;Edit</button>-->
 
-                <div show.bind="canEdit" style="margin: 10px;" class="btn btn-default pull-right" ><a href="#/editproject/${project.index}"><span class="fa fa-pencil">&nbsp;Edit</span></a></div>
+                <div show.bind="canEdit" style="margin: 10px;" class="btn btn-default pull-right" ><a href="#/editproject/${project.id}"><span class="fa fa-pencil">&nbsp;Edit</span></a></div>
                 <div show.bind="canEdit" style="margin: 10px;" class="btn btn-default pull-right" click.delegate="delete()" ><span class="fa fa-trash">&nbsp;Delete</span></div>
                 <h3>Gaps</h3>
                 <characteristic repeat.for="gap of project.gaps" characteristic.bind="gap"></characteristic>

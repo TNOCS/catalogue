@@ -24,7 +24,12 @@ export class ProjectDetails {
         //console.log(`ID: ${JSON.stringify(params, null, 2)}`);
         return this.databaseService.database.then(db => {
             this.db = db;
-            this.project = db.projects[+params.id];
+            let id = params.id;
+            db.projects.some(p => {
+                if (p.id !== id) return false;
+                this.project = p;
+                return true;
+            });
         });
     }
 
