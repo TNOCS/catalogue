@@ -18,9 +18,9 @@
                 <div class="content">
                     <p>
                         <a class="btn btn-default" route-href="route: project; 
-                                                               params.bind: {id:project.index}">${project.shortTitle | trim: 50}</a>
+                                                               params.bind: {id: $index}">${project.shortTitle | trim: 50}</a>
                     </p>
-                    <div innerHTML.bind="project.title | trim: 50 |markdown"></div>
+                    <div innerHTML.bind="project.title | trim: 50 | markdown"></div>
 
                 </div>
             </div>

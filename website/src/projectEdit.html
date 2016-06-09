@@ -9,11 +9,11 @@
         <form role="form" submit.delegate="save()" style="margin-top: 5px;">
             <div class="form-group">
                 <label for="st">Short title*</label>
-                <input type="text" value.bind="project.shortTitle" class="form-control" id="st" placeholder="Short title, is required and must be unique">
+                <input type="text" value.bind="project.shortTitle" class="form-control" id="st" placeholder="Short title, is required">
             </div>
             <div class="form-group">
-                <label for="ti">Title</label>
-                <input type="text" value.bind="project.title" class="form-control" id="ti" placeholder="Title">
+                <label for="ti">Title*</label>
+                <input type="text" value.bind="project.title" class="form-control" id="ti" placeholder="Title, is required">
             </div>
             <div class="form-group">
                 <label for="name">Maturity level</label>

@@ -1,6 +1,7 @@
+import {inject}                 from 'aurelia-framework';
+import {Router}                 from 'aurelia-router'
 import {Endpoint, Rest}         from 'aurelia-api';
 import {AuthService}            from 'aurelia-authentication';
-import {inject}                 from 'aurelia-framework';
 import {DialogController}       from 'aurelia-dialog';
 import {DatabaseService}        from 'services/DatabaseService';
 import {IUser}                  from 'models/user';
@@ -31,7 +32,7 @@ export class ProjectEdit {
     ciSectors:  ICharacteristic[] = [];
     incidents:  ICharacteristic[] = [];
 
-    constructor(private api: Rest, private auth: AuthService, private db: DatabaseService) {}
+    constructor(private api: Rest, private auth: AuthService, private db: DatabaseService, private router: Router) {}
 
     activate(params) {
         return this.db.database.then(db => {
@@ -93,7 +94,6 @@ export class ProjectEdit {
             // clone project, so we can cancel the edit
             this.project = {
                 id:             p.id,
-                index:          p.index,
                 shortTitle:     p.shortTitle,
                 title:          p.title,
                 maturityLevel:  this.db.maturityLevels[p.maturityLevel.id],
@@ -103,7 +103,7 @@ export class ProjectEdit {
                 currentUse:     p.currentUse,
                 tagline:        p.tagline,
                 description:    p.description,
-                logo:           p.logo,
+                logo:           p.logo || 'img/TNO120x120.png',
                 isProduct:      p.isProject,
                 isProject:      p.isProject,
                 tasks:          [],
@@ -114,8 +114,6 @@ export class ProjectEdit {
                 analysts:       []
             };
             if (p.references) p.references.forEach(r => this.project.references.push(r));
-            // this.copyCharacteristics(p.tasks, this.tasks, this.project.tasks);
-            // this.copyCharacteristics(p.gaps , this.gaps , this.project.gaps );
             this.copyCharacteristics(p.incidents, this.incidents , this.project.incidents );
             this.copyCharacteristics(p.ciSectors, this.ciSectors , this.project.ciSectors );
 
@@ -260,7 +258,8 @@ export class ProjectEdit {
         let p1 = this.orgProject;
         let p2 = this.project;
 
-        p1.id = p2.id = p1.shortTitle = p2.shortTitle;
+        p1.id = p2.id;
+        p1.shortTitle = p2.shortTitle;
         p1.title = p2.title;
         p1.intendedUsers = p2.intendedUsers;
         p1.currentUse = p2.currentUse;
@@ -308,10 +307,15 @@ export class ProjectEdit {
                 }
             });
         });
-        this.db.parseData();
+
+        this.api.create(`/projects`, p1)
+            .then(() => {
+                this.db.parseData();
+            })
+            .catch(err => console.error('Error saving project: ' + JSON.stringify(err)));
     }
 
     cancel() {
-
+        this.router.navigate('#/projects');
     }
 }

@@ -31,12 +31,11 @@ export class Projects {
 
     /** Create a new project and start editing it. */
     newProject() {
-        let id = Utils.generatePassword(12);
+        let id = Utils.getGuid();
         let index = this.projects.length;
         let project = <IProject>{
             id:         id,
-            index:      index,
-            shortTitle: id,
+            logo:       'img/TNO120x120.png',
             tasks:      [],
             gaps:       [],
             incidents:  [],

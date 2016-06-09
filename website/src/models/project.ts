@@ -7,7 +7,6 @@ export interface IParticipant {
 
 export interface IProject {
     id:             string;
-    index?:         number;
     shortTitle?:    string;
     title?:         string;
     intendedUsers?: string;

@@ -57,7 +57,6 @@ export class DatabaseService {
             // Add an index to each project, and complete the project's tasks, gaps and incidents info, 
             let index = 0;
             db.projects.forEach(p => {
-                p.index = index++;
                 this.updateProjectCharacteristics(p, p.tasks,     this.tasks);
                 this.updateProjectCharacteristics(p, p.incidents, this.incidents);
                 this.updateProjectCharacteristics(p, p.gaps,      this.gaps, this.gapLevels);

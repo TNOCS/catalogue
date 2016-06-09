@@ -327,8 +327,8 @@ export function configure(aurelia: Aurelia) {
     .plugin('aurelia-api', config => {
       config
         .registerEndpoint('api', 'http://localhost:3000')
-        .registerEndpoint('protected-api', 'https://myapi.org/protected-api')
-        .registerEndpoint('public-api', 'http://myapi.org/public-api')
+        // .registerEndpoint('protected-api', 'https://myapi.org/protected-api')
+        // .registerEndpoint('public-api', 'http://myapi.org/public-api')
         .setDefaultEndpoint('api');
     })
     //Uncomment the line below to enable animation.
