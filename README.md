@@ -30,3 +30,14 @@ The second issue is that the Promise implementation in Edge is very slow. In ord
 implementation of the Promise library. So first install bluebird using `jspm i bluebird`, next insert 
 `<script src="jspm_packages/npm/bluebird@3.4.0/js/browser/bluebird.min.js"></script>` _before_ loading system.js in your `index.html`. Finally, add
 `"jspm_packages/npm/bluebird@3.4.0/js/browser/bluebird.min.js"` to your `export.js` list. This will copy it to the export folder when deploying. 
+
+## Bindings
+
+While creating an edit form, I encountered an issue with the bindings. Although it works just fine to display an array of strings using `repeat.for="str of strings"`, their binding is lost. Editing a string (when using an input text element, for example), will not work. Presumably because the binding system cannot attach a proper observer to a string primitive. In the end, I had to bind the `change.delegate="myFUNC($index, $event)"` in order to extract and set its value. See also [here](http://blog.williamhayes.org/2015/08/dynamic-input-list-in-aurelia.html), even though the PLUNKR isn't working anymore. 
+
+NOTE About logging
+
+```javascript
+import {LogManager} from 'aurelia-framework';
+let logger = LogManager.getLogger('testItems');
+```
