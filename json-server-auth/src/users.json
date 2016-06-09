@@ -14,7 +14,12 @@
                 "routes": [
                     "/"
                 ]
-            }            
+            },
+            {
+                "routes": [
+                    "/users"
+                ]
+            }
         ],
         "PUT": [
             {
@@ -47,6 +52,12 @@
                 "routes": [
                     "/auth/me"
                 ]
+            },
+            {
+                "routes": [
+                    "/auth/me",
+                    "/users"
+                ]
             }
         ],
         "POST": [
@@ -63,6 +74,13 @@
                 "routes": [
                     "/auth/login"
                 ]
+            },
+            {
+                "routes": [
+                    "/auth/login",
+                    "/auth/signup",
+                    "/users"
+                ]
             }
         ],
         "DELETE": [
@@ -73,6 +91,11 @@
                 "roles": [
                     "analyst",
                     "admin"
+                ]
+            },
+            {
+                "routes": [
+                    "/users"
                 ]
             }
         ]
