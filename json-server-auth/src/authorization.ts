@@ -227,7 +227,7 @@ export class AuthenticationService {
     }
 
     private static saveUserConfig(res: Response) {
-        fs.writeFile(path.join(__dirname, 'users.json'), JSON.stringify(config, null, 4), (err) => {
+        fs.writeFile(path.join(__dirname, 'users.json'), JSON.stringify(users, null, 4), (err) => {
             if (err) {
                 console.error(err.message);
                 res && res.sendStatus(500); // equivalent to res.status(500).send('Internal Server Error')

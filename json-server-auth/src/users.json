@@ -1,103 +1,16 @@
 {
-    "loginUrl": "/auth/login",
-    "signupUrl": "/auth/signup",
-    "profileUrl": "/auth/me",
-    "usersUrl": "/users",
-    "port": 3000,
-    "secret": "Dit is mijn geheim om JSON web tokens aan te maken",
-    "oauth2secrets": {
-        "google": "V55QHX7lPS_t0PiVLgPz8eCm"
+    "erik.vullings@gmail.com": {
+        "displayName": "Erik Vullings",
+        "password": "test",
+        "role": "admin"
     },
-    "authorizations": {
-        "GET": [
-            {
-                "routes": [
-                    "/"
-                ]
-            },
-            {
-                "routes": [
-                    "/users"
-                ]
-            }
-        ],
-        "PUT": [
-            {
-                "routes": [
-                    "/projects"
-                ],
-                "roles": [
-                    "analyst",
-                    "admin"
-                ]
-            },
-            {
-                "routes": [
-                    "/app",
-                    "/gapLevels",
-                    "/usabilityLevels",
-                    "/maturityLevels",
-                    "/validationLevels",
-                    "/ciSectors",
-                    "/tasks",
-                    "/incidents",
-                    "/gaps",
-                    "/tasks2gaps"
-                ],
-                "roles": [
-                    "admin"
-                ]
-            },
-            {
-                "routes": [
-                    "/auth/me"
-                ]
-            },
-            {
-                "routes": [
-                    "/auth/me",
-                    "/users"
-                ]
-            }
-        ],
-        "POST": [
-            {
-                "routes": [
-                    "/projects"
-                ],
-                "roles": [
-                    "analyst",
-                    "admin"
-                ]
-            },
-            {
-                "routes": [
-                    "/auth/login"
-                ]
-            },
-            {
-                "routes": [
-                    "/auth/login",
-                    "/auth/signup",
-                    "/users"
-                ]
-            }
-        ],
-        "DELETE": [
-            {
-                "routes": [
-                    "/projects"
-                ],
-                "roles": [
-                    "analyst",
-                    "admin"
-                ]
-            },
-            {
-                "routes": [
-                    "/users"
-                ]
-            }
-        ]
+    "rinze.bruining@tno.nl": {
+        "displayName": "Rinze Bruining",
+        "role": "analyst"
+    },
+    "erik.vullings@tno.nl": {
+        "displayName": "Erik V",
+        "password": "IrNzVc3SFzAm",
+        "role": "admin"
     }
 }
