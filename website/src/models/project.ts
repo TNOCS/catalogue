@@ -1,53 +1,52 @@
 import {ICharacteristic} from 'characteristic';
 
 export interface IParticipant {
-    title: string;
-    country: string;
+    title?:   string;
+    country?: string;
 }
 
 export interface IProject {
-    id: string;
-    index?: number;
-    shortTitle?: string;
-    title?: string;
+    id:             string;
+    index?:         number;
+    shortTitle?:    string;
+    title?:         string;
     intendedUsers?: string;
-    references?: string[];
-    currentUse?: string;
-    tagline?: string;
-    description?: string;
-    logo?: string;
-    isProject?: boolean;
-    isProduct?: boolean;
-    tasks?: ICharacteristic[];
-    incidents?: ICharacteristic[];
-    gaps?: ICharacteristic[];
-    
+    references?:    string[];
+    currentUse?:    string;
+    tagline?:       string;
+    description?:   string;
+    logo?:          string;
+    isProject?:     boolean;
+    isProduct?:     boolean;
+    tasks?:         ICharacteristic[];
+    incidents?:     ICharacteristic[];
+    gaps?:          ICharacteristic[];
+    /** Critical sectors */
+    ciSectors?:     ICharacteristic[];
     /** Id of the usability level/scale */
     usabilityLevel?: ICharacteristic;
     /** Maturity level/scale */
     maturityLevel?: ICharacteristic;
-    /** Critical sectors */
-    ciSectors?: ICharacteristic[];
     administration?: {
         duration?: {
-            start: Date;
-            end?: Date;
-            status: string;
+            start?:  Date;
+            end?:    Date;
+            status?: string;
         };
-        developers?: string;
-        owners?: string;
-        sponsors?: string;
-        projectType?: string;
-        coordinator?: IParticipant;
+        developers?:   string;
+        owners?:       string;
+        sponsors?:     string;
+        projectType?:  string;
+        coordinator?:  IParticipant;
         participants?: IParticipant[];        
     };
     analysts?: {
-        name?: string;
-        organisation?: string;
-        reviewed?: Date;
+        name?:            string;
+        organisation?:    string;
+        reviewed?:        Date;
         /** Validation level/scale */
         validationLevel?: ICharacteristic;
-        remarks?: string;
+        remarks?:         string;
     }[];
 }
 

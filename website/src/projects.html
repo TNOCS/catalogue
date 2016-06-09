@@ -3,14 +3,17 @@
   <require from="helpers/MarkdownValueConverter"></require>
   <require from="helpers/TrimValueConverter"></require>
 
-  <section class="au-animate">
+  <div if.bind="canEdit" style="margin: 10px">
+      <button click.delegate="newProject()" type="submit" class="btn btn-default pull-right" ><i class="fa fa-plus"></i>&nbsp;New</button>
+  </div>
+  <section style="margin-top: 10px;" class="au-animate">
       <h2>${heading}</h2>
       <div class="row au-stagger">
         <div class="col-sm-6 col-md-3 card-container au-animate" repeat.for="project of projects">
             <div class="card">
                 <canvas class="header-bg" width="250" height="70" blur-image.bind="image"></canvas>
                 <div class="avatar">
-                    <img src.bind="project.logo" crossorigin ref="image"/>
+                    <img if.bind="project.logo" src.bind="project.logo" crossorigin ref="image"/>
                 </div>
                 <div class="content">
                     <p>

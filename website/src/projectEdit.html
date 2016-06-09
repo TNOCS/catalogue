@@ -8,8 +8,8 @@
     <section style="margin-top: 10px;">
         <form role="form" submit.delegate="save()" style="margin-top: 5px;">
             <div class="form-group">
-                <label for="st">Short title</label>
-                <input type="text" value.bind="project.shortTitle" class="form-control" id="st" placeholder="Short title">
+                <label for="st">Short title*</label>
+                <input type="text" value.bind="project.shortTitle" class="form-control" id="st" placeholder="Short title, is required and must be unique">
             </div>
             <div class="form-group">
                 <label for="ti">Title</label>
@@ -148,7 +148,7 @@
                         </select>
                         <button style="display: inline;"><a click.delegate="deleteParticipant(p)"><i class="fa fa-trash"></i></a></button>          
                     </li>
-                    <li class="pull-right"><button><a click.delegate="addParticipant()"><i class="fa fa-plus"></i></a></button></li>
+                    <li class="pull-right"><button click.delegate="addParticipant()" class="btn btn-default"><span class="fa fa-plus"> Participant</span></button></li>
                 </ul>
             </div>
             
@@ -173,6 +173,7 @@
                         </div>
                     </div>
                 </li>
+                <li class="pull-right"><button click.delegate="addAnalyst()" class="btn btn-default"><span class="fa fa-plus"> Analyst</span></button></li>
             </ul>
 
             <button type="submit" class="btn btn-default"><i class="fa fa-floppy-o"></i>&nbsp;&nbsp;Save</button>
