@@ -1,8 +1,7 @@
 import {Router, RouterConfiguration} from 'aurelia-router'
-import {computedFrom} from 'aurelia-framework';
-import {autoinject} from 'aurelia-framework';
-import {DatabaseService} from 'services/DatabaseService';
-import {AuthorizeStep} from 'aurelia-authentication';
+import {autoinject, computedFrom}    from 'aurelia-framework';
+import {DatabaseService}             from 'services/DatabaseService';
+import {AuthorizeStep}               from 'aurelia-authentication';
 
 @autoinject
 export class App {
@@ -41,7 +40,7 @@ export class App {
   activate() {
     return this.databaseService.database.then(db => {
       this.title = db.app.title;
-    if (this.config) this.config.title = db.app.title;
+      if (this.config) this.config.title = db.app.title;
     });
   }
 }
