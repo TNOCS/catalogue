@@ -65,27 +65,26 @@
             </div>
             <div class="row">
                 <div class="col-md-4 form-group">
-                    <label for="tasks">Tasks & Gaps</label>
-                    <ul class="list-unstyled" id="tasks">
-                        <li repeat.for="task of tasks" style="margin-bottom: 10px;">
-                            <h4>${task.title}</h4>
-                            <ul class="list-unstyled" style="margin-left: 10px">
-                                <li repeat.for="subtask of task.children">
-                                    <div class="${subtask.id === activeTask.id ? 'selected' : ''}">
-                                        <input type="checkbox" checked.bind="subtask.isSelected" />
-                                        <span click.delegate="selectTask(subtask)">&nbsp;${subtask.title}</span> 
-                                    </div>
-                                    <ul class="list-unstyled" style="margin-left: 20px">
-                                        <li class="${gap.id === activeGap.id ? 'selected' : ''}" 
-                                            repeat.for="gap of subtask.relations">
-                                            <input type="checkbox" checked.bind="gap.isSelected" />
-                                            <span click.delegate="selectGap(gap)">&nbsp;GAP: ${gap.title}</span>
-                                        </li>
-                                    </ul>                          
+                    <label repeat.for="task of tasks">
+                        <input type="radio" name="tsks" value.bind="task" model.bind="task" checked.bind="activeTask" style="margin-left: 10px;" />${task.title} & gaps
+                    </label>
+
+                    <h4>${task.title}</h4>
+                    <ul class="list-unstyled" style="margin-left: 10px">
+                        <li repeat.for="subtask of activeTask.children">
+                            <div class="${subtask.id === activeTask.id ? 'selected' : ''}">
+                                <input type="checkbox" checked.bind="subtask.isSelected" />
+                                <span click.delegate="selectTask(subtask)">&nbsp;${subtask.title}</span> 
+                            </div>
+                            <ul class="list-unstyled" style="margin-left: 20px">
+                                <li class="${gap.id === activeGap.id ? 'selected' : ''}" 
+                                    repeat.for="gap of subtask.relations">
+                                    <input type="checkbox" checked.bind="gap.isSelected" />
+                                    <span click.delegate="selectGap(gap)">&nbsp;GAP: ${gap.title}</span>
                                 </li>
-                            </ul>      
+                            </ul>                          
                         </li>
-                    </ul>
+                    </ul>      
                 </div>
                 <div show.bind="activeGap.id" class="col-md-4 form-group">
                     <label for="score">Addresses gap: </label><br>
@@ -155,6 +154,7 @@
             <h3>Analysis details</h3>
             <ul class="list-unstyled">
                 <li repeat.for="a of project.analysts">
+                    <button click.delegate="deleteAnalyst($index)" class="btn btn-default pull-right"><span class="fa fa-trash"> Analyst</span></button>
                     <div class="form-group">
                         <label for="name">Name</label>
                         <input type="text" value.bind="a.name" class="form-control" id="name" placeholder="name">

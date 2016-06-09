@@ -95,6 +95,7 @@ export class ProjectEdit {
                 });
                 this.tasks.push(newTask);
             });
+            this.activeTask = this.tasks[0];
             this.data.incidents.forEach(incident => incident.children.forEach(c => this.incidents.push(c)));
             this.gaps      = this.data.gaps;
             this.ciSectors = this.data.ciSectors;
@@ -131,7 +132,7 @@ export class ProjectEdit {
                         start: p.administration.duration.start,
                         end: p.administration.duration.end,
                         status: p.administration.duration.status
-                    }
+                    };
                 }
                 this.project.administration.projectType = p.administration.projectType;
                 this.project.administration.developers  = p.administration.developers;
@@ -149,8 +150,8 @@ export class ProjectEdit {
                         this.project.administration.participants.push({
                             country: pc.country,
                             title: pc.title
-                        })
-                    })
+                        });
+                    });
                 }
             }
 
@@ -162,10 +163,9 @@ export class ProjectEdit {
                         reviewed: a.reviewed,
                         validationLevel: { id: a.validationLevel.id },
                         remarks: a.remarks
-                    })
+                    });
                 });
             }
-
         });
     }
 
@@ -185,8 +185,8 @@ export class ProjectEdit {
     }
 
     selectTask(task: ICharacteristic) {
-        if (!task) return;
-        this.activeTask = task;
+        // if (!task) return;
+        // this.activeTask = task;
     }
 
     selectGap(gap: ICharacteristic) {
@@ -205,8 +205,8 @@ export class ProjectEdit {
     /** Add a new participant */
     addParticipant() {
         this.project.administration.participants.push(<IParticipant>{
-            title: "",
-            country: "Unknown"
+            title: '',
+            country: 'Unknown'
         });
     }
 
@@ -222,13 +222,12 @@ export class ProjectEdit {
     }
     /** Add a new reference */
     addReference() {
-        this.project.references.push("");
+        this.project.references.push('');
     }
 
     /** Delete an existing analyst */
-    deleteAnalyst(analyst) {
-        if (!analyst) return;
-        let i = this.project.analysts.indexOf(analyst);
+    deleteAnalyst(i: number) {
+        if (typeof i === 'undefined') return;
         if (i >= 0) this.project.analysts.splice(i, 1);
     }
     /** Add a new analyst */
@@ -239,7 +238,7 @@ export class ProjectEdit {
 
     /** Countries of the world */
     get countries() {
-        const c: string[] = ["Unknown", "Afghanistan","Albania","Algeria","Andorra","Angola","Anguilla","Antigua &amp; Barbuda","Argentina","Armenia","Aruba","Australia","Austria","Azerbaijan","Bahamas","Bahrain","Bangladesh","Barbados","Belarus","Belgium","Belize","Benin","Bermuda","Bhutan","Bolivia","Bosnia &amp; Herzegovina","Botswana","Brazil","British Virgin Islands","Brunei","Bulgaria","Burkina Faso","Burundi","Cambodia","Cameroon","Cape Verde","Cayman Islands","Chad","Chile","China","Colombia","Congo","Cook Islands","Costa Rica","Cote D Ivoire","Croatia","Cruise Ship","Cuba","Cyprus","Czech Republic","Denmark","Djibouti","Dominica","Dominican Republic","Ecuador","Egypt","El Salvador","Equatorial Guinea","Estonia","Ethiopia","Falkland Islands","Faroe Islands","Fiji","Finland","France","French Polynesia","French West Indies","Gabon","Gambia","Georgia","Germany","Ghana","Gibraltar","Greece","Greenland","Grenada","Guam","Guatemala","Guernsey","Guinea","Guinea Bissau","Guyana","Haiti","Honduras","Hong Kong","Hungary","Iceland","India","Indonesia","Iran","Iraq","Ireland","Isle of Man","Israel","Italy","Jamaica","Japan","Jersey","Jordan","Kazakhstan","Kenya","Kuwait","Kyrgyz Republic","Laos","Latvia","Lebanon","Lesotho","Liberia","Libya","Liechtenstein","Lithuania","Luxembourg","Macau","Macedonia","Madagascar","Malawi","Malaysia","Maldives","Mali","Malta","Mauritania","Mauritius","Mexico","Moldova","Monaco","Mongolia","Montenegro","Montserrat","Morocco","Mozambique","Namibia","Nepal","Netherlands","Netherlands Antilles","New Caledonia","New Zealand","Nicaragua","Niger","Nigeria","Norway","Oman","Pakistan","Palestine","Panama","Papua New Guinea","Paraguay","Peru","Philippines","Poland","Portugal","Puerto Rico","Qatar","Reunion","Romania","Russia","Rwanda","Saint Pierre &amp; Miquelon","Samoa","San Marino","Satellite","Saudi Arabia","Senegal","Serbia","Seychelles","Sierra Leone","Singapore","Slovakia","Slovenia","South Africa","South Korea","Spain","Sri Lanka","St Kitts &amp; Nevis","St Lucia","St Vincent","St. Lucia","Sudan","Suriname","Swaziland","Sweden","Switzerland","Syria","Taiwan","Tajikistan","Tanzania","Thailand","Timor L'Este","Togo","Tonga","Trinidad &amp; Tobago","Tunisia","Turkey","Turkmenistan","Turks &amp; Caicos","Uganda","Ukraine","United Arab Emirates","United Kingdom","Uruguay","Uzbekistan","Venezuela","Vietnam","Virgin Islands (US)","Yemen","Zambia","Zimbabwe"];;
+        const c: string[] = ['Unknown', 'Afghanistan','Albania','Algeria','Andorra','Angola','Anguilla','Antigua &amp; Barbuda','Argentina','Armenia','Aruba','Australia','Austria','Azerbaijan','Bahamas','Bahrain','Bangladesh','Barbados','Belarus','Belgium','Belize','Benin','Bermuda','Bhutan','Bolivia','Bosnia &amp; Herzegovina','Botswana','Brazil','British Virgin Islands','Brunei','Bulgaria','Burkina Faso','Burundi','Cambodia','Cameroon','Cape Verde','Cayman Islands','Chad','Chile','China','Colombia','Congo','Cook Islands','Costa Rica','Cote D Ivoire','Croatia','Cruise Ship','Cuba','Cyprus','Czech Republic','Denmark','Djibouti','Dominica','Dominican Republic','Ecuador','Egypt','El Salvador','Equatorial Guinea','Estonia','Ethiopia','Falkland Islands','Faroe Islands','Fiji','Finland','France','French Polynesia','French West Indies','Gabon','Gambia','Georgia','Germany','Ghana','Gibraltar','Greece','Greenland','Grenada','Guam','Guatemala','Guernsey','Guinea','Guinea Bissau','Guyana','Haiti','Honduras','Hong Kong','Hungary','Iceland','India','Indonesia','Iran','Iraq','Ireland','Isle of Man','Israel','Italy','Jamaica','Japan','Jersey','Jordan','Kazakhstan','Kenya','Kuwait','Kyrgyz Republic','Laos','Latvia','Lebanon','Lesotho','Liberia','Libya','Liechtenstein','Lithuania','Luxembourg','Macau','Macedonia','Madagascar','Malawi','Malaysia','Maldives','Mali','Malta','Mauritania','Mauritius','Mexico','Moldova','Monaco','Mongolia','Montenegro','Montserrat','Morocco','Mozambique','Namibia','Nepal','Netherlands','Netherlands Antilles','New Caledonia','New Zealand','Nicaragua','Niger','Nigeria','Norway','Oman','Pakistan','Palestine','Panama','Papua New Guinea','Paraguay','Peru','Philippines','Poland','Portugal','Puerto Rico','Qatar','Reunion','Romania','Russia','Rwanda','Saint Pierre &amp; Miquelon','Samoa','San Marino','Satellite','Saudi Arabia','Senegal','Serbia','Seychelles','Sierra Leone','Singapore','Slovakia','Slovenia','South Africa','South Korea','Spain','Sri Lanka','St Kitts &amp; Nevis','St Lucia','St Vincent','St. Lucia','Sudan','Suriname','Swaziland','Sweden','Switzerland','Syria','Taiwan','Tajikistan','Tanzania','Thailand','Timor L\'Este','Togo','Tonga','Trinidad &amp; Tobago','Tunisia','Turkey','Turkmenistan','Turks &amp; Caicos','Uganda','Ukraine','United Arab Emirates','United Kingdom','Uruguay','Uzbekistan','Venezuela','Vietnam','Virgin Islands (US)','Yemen','Zambia','Zimbabwe'];
         return c;
     }
 
@@ -254,7 +253,7 @@ export class ProjectEdit {
             src2.some(t2 => {
                 if (t1.id !== t2.id) return false;
                 sink.push(t2);
-                return true; 
+                return true;
             });
         });
     }
@@ -284,16 +283,11 @@ export class ProjectEdit {
         };
         p1.administration = p2.administration;
         p1.analysts = p2.analysts;
-        if (p1.references) p1.references.length = 0;
-        else p1.references = [];         
-        if (p1.tasks) p1.tasks.length = 0;
-        else p1.tasks = [];
-        if (p1.ciSectors) p1.ciSectors.length = 0;
-        else p1.ciSectors = [];
-        if (p1.gaps) p1.gaps.length = 0;
-        else p1.gaps = [];
-        if (p1.incidents) p1.incidents.length = 0;
-        else p1.incidents = [];
+        if (p1.references) p1.references.length = 0; else p1.references = [];
+        if (p1.tasks) p1.tasks.length = 0; else p1.tasks = [];
+        if (p1.ciSectors) p1.ciSectors.length = 0; else p1.ciSectors = [];
+        if (p1.gaps) p1.gaps.length = 0; else p1.gaps = [];
+        if (p1.incidents) p1.incidents.length = 0; else p1.incidents = [];
         if (p2.references) p2.references.forEach(r => p1.references.push(r));
         if (p2.incidents) p2.incidents.forEach(i => p1.incidents.push({ id: i.id }));
         if (p2.ciSectors) p2.ciSectors.forEach(i => p1.ciSectors.push({ id: i.id }));
@@ -310,7 +304,7 @@ export class ProjectEdit {
                                 id: gap.score.id,
                             },
                             remarks: gap.remarks
-                        })
+                        });
                     });
                 }
             });
