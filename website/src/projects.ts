@@ -1,11 +1,11 @@
-import {Router}                 from 'aurelia-router'
+import {Router}                 from 'aurelia-router';
 import {autoinject}             from 'aurelia-framework';
 import {AuthService}            from 'aurelia-authentication';
 import {DatabaseService}        from 'services/DatabaseService';
-import {IDatabase}              from "models/database";
+import {IDatabase}              from 'models/database';
 import {IProject, IParticipant} from 'models/project';
 import {IUser}                  from 'models/user';
-import {Utils}                  from 'helpers/utils';
+import {Utils}                  from 'helpers/Utils';
 
 @autoinject
 export class Projects {
