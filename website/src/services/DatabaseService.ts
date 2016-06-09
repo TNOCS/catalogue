@@ -1,44 +1,38 @@
-import {autoinject} from 'aurelia-framework';
-import {HttpClient} from 'aurelia-fetch-client';
-import 'fetch';
-
-import {IDatabase} from "../models/database";
-import {IProject} from "../models/project";
-import {ICharacteristic} from "../models/characteristic";
+import {autoinject}      from 'aurelia-framework';
+import {Rest, Config}    from 'aurelia-api';
+import {IDatabase}       from '../models/database';
+import {IProject}        from '../models/project';
+import {ICharacteristic} from '../models/characteristic';
 
 @autoinject
 export class DatabaseService {
     data: IDatabase = <IDatabase>{};
-    
+    api: Rest;
+
     // TODO Maybe we can simplify all these lookup tables and lump them all together.
-    private tasks:            {[key: string]: ICharacteristic } = {}; 
-    private gaps:             {[key: string]: ICharacteristic } = {}; 
-    private incidents:        {[key: string]: ICharacteristic } = {}; 
-    maturityLevels:   {[key: string]: ICharacteristic } = {}; 
-    private gapLevels:        {[key: string]: ICharacteristic } = {}; 
-    usabilityLevels:  {[key: string]: ICharacteristic } = {}; 
-    private validationLevels: {[key: string]: ICharacteristic } = {}; 
-    private ciSectors:        {[key: string]: ICharacteristic } = {}; 
+    private tasks:            {[key: string]: ICharacteristic } = {};
+    private gaps:             {[key: string]: ICharacteristic } = {};
+    private incidents:        {[key: string]: ICharacteristic } = {};
+    maturityLevels:   {[key: string]: ICharacteristic } = {};
+    private gapLevels:        {[key: string]: ICharacteristic } = {};
+    usabilityLevels:  {[key: string]: ICharacteristic } = {};
+    private validationLevels: {[key: string]: ICharacteristic } = {};
+    private ciSectors:        {[key: string]: ICharacteristic } = {};
 
     /** Cross reference between tasks|gaps etc. and project IDs */
     private crossReferences: { [key: string]: string[] } = {};
 
     public database: Promise<IDatabase>;
 
-    constructor(private http: HttpClient) {
-        http.configure(config => {
-            config
-                .useStandardConfiguration()
-                .withBaseUrl('http://localhost:3000');
-        });
-        
-        this.database = this.http.fetch('/db')
-            .then(response => response.json())
+    constructor(apiConfig: Config) {
+        this.api = apiConfig.getEndpoint('api');
+
+        this.database = this.api.find('/db')
             .then(database => this.data = database);
 
         this.parseData();
     }
-    
+
     parseData() {
         this.database.then(db => {
             db.maturityLevels.forEach(m   => this.maturityLevels[m.id]   = m );
@@ -46,14 +40,14 @@ export class DatabaseService {
             db.validationLevels.forEach(m => this.validationLevels[m.id] = m );
             db.gapLevels.forEach(m        => this.gapLevels[m.id]        = m );
             db.ciSectors.forEach(m        => this.ciSectors[m.id]        = m );
-            
+
             this.parseCharacteristics(db.tasks,     this.tasks);
             this.parseCharacteristics(db.incidents, this.incidents);
             this.parseCharacteristics(db.gaps,      this.gaps, false);
             this.parseCharacteristics(db.ciSectors, this.ciSectors, false);
-            
+
             this.createReferencesBetweenTasksAndGaps(db);
-            
+
             // Add an index to each project, and complete the project's tasks, gaps and incidents info, 
             let index = 0;
             db.projects.forEach(p => {
@@ -72,7 +66,7 @@ export class DatabaseService {
                 }
                 if (p.analysts) {
                     p.analysts.forEach(a => {
-                        if (a.validationLevel && this.validationLevels.hasOwnProperty(a.validationLevel.id)) 
+                        if (a.validationLevel && this.validationLevels.hasOwnProperty(a.validationLevel.id))
                             a.validationLevel = this.validationLevels[a.validationLevel.id];
                     });
                 }
@@ -114,11 +108,11 @@ export class DatabaseService {
      * Update the tasks/gaps/incidents etc. characteristics of the project. 
      * Assume that the IDs are given and correct, but that the text (title/description) may have changed.
      * Also, for each match, e.g. of a task, update the tasks store so we know that which projects refer to which tasks.
-     */    
+     */
     private updateProjectCharacteristics(
-        project: IProject, 
-        projectCharacteristics: ICharacteristic[], 
-        characteristics: { [key: string]: ICharacteristic}, 
+        project: IProject,
+        projectCharacteristics: ICharacteristic[],
+        characteristics: { [key: string]: ICharacteristic},
         scores?: { [key: string]: ICharacteristic}
         ) {
         if (!projectCharacteristics) return;
