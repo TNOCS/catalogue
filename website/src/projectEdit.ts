@@ -1,11 +1,11 @@
 import {inject}                 from 'aurelia-framework';
-import {Router}                 from 'aurelia-router'
+import {Router}                 from 'aurelia-router';
 import {Endpoint, Rest}         from 'aurelia-api';
 import {AuthService}            from 'aurelia-authentication';
 import {DialogController}       from 'aurelia-dialog';
 import {DatabaseService}        from 'services/DatabaseService';
 import {IUser}                  from 'models/user';
-import {IDatabase}              from "models/database";
+import {IDatabase}              from 'models/database';
 import {ICharacteristic}        from 'models/characteristic';
 import {IProject, IParticipant} from 'models/project';
 
@@ -211,9 +211,9 @@ export class ProjectEdit {
     }
 
     /** Delete an existing reference */
-    deleteReference(r: string) {
-        if (!r) return;
-        let i = this.project.references.indexOf(r);
+    deleteReference(i: number) {
+        if (typeof i === 'undefined') return;
+        // let i = this.project.references.indexOf(r);
         if (i >= 0) this.project.references.splice(i, 1);
     }
     /** Update the reference: the regular binding does not work for string arrays */

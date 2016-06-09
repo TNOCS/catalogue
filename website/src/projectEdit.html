@@ -50,7 +50,7 @@
                 <ul class="list-unstyled">
                     <li repeat.for="r of project.references">
                         <input type="text" change.delegate="updateReference($index, $event)" style="display: inline; width: 90%" value.bind="r" placeholder="http://..." class="form-control">
-                        <button style="display: inline;"><a click.delegate="deleteReference(r)"><i class="fa fa-trash"></i></a></button>          
+                        <button style="display: inline;"><a click.delegate="deleteReference($index)"><i class="fa fa-trash"></i></a></button>          
                     </li>
                     <li class="pull-right"><button><a click.delegate="addReference()"><i class="fa fa-plus"></i></a></button></li>
                 </ul>
