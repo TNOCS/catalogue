@@ -1,13 +1,15 @@
-import {autoinject}      from 'aurelia-framework';
-import {Rest, Config}    from 'aurelia-api';
-import {IDatabase}       from '../models/database';
-import {IProject}        from '../models/project';
-import {ICharacteristic} from '../models/characteristic';
+import {autoinject}                 from 'aurelia-framework';
+import {Rest, Config}               from 'aurelia-api';
+import {IDatabase}                  from '../models/database';
+import {IProject}                   from '../models/project';
+import {ICharacteristic}            from '../models/characteristic';
+import {ProjectFilterConfiguration} from '../models/project-filter-configuration';
 
 @autoinject
 export class DatabaseService {
     data: IDatabase = <IDatabase>{};
     api: Rest;
+    projectFilterConfig: ProjectFilterConfiguration = new ProjectFilterConfiguration();
 
     // TODO Maybe we can simplify all these lookup tables and lump them all together.
     private tasks:            {[key: string]: ICharacteristic } = {};
