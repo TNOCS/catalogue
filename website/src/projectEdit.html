@@ -1,31 +1,41 @@
 <template>
     <require from="./helpers/MarkdownValueConverter"></require>
 
-    <div style="margin: 10px">
-        <button click.delegate="save()"   type="submit" class="btn btn-default pull-right" ><i class="fa fa-floppy-o"></i>&nbsp;Save</button>
-        <button click.delegate="cancel()" type="submit" class="btn btn-default pull-right" ><i class="fa fa-close"></i>&nbsp;Cancel</button>
-    </div>
     <section style="margin-top: 10px;">
+        <div class="col-sd-2 col-md-offsetcol-sd-offset-10" style="margin: 10px">
+            <button click.delegate="save()"   type="submit" class="btn btn-default pull-right" ><i class="fa fa-floppy-o"></i>&nbsp;Save</button>
+            <button click.delegate="cancel()" type="submit" class="btn btn-default pull-right" ><i class="fa fa-close"></i>&nbsp;Cancel</button>
+        </div>
         <form role="form" submit.delegate="save()" style="margin-top: 5px;">
-            <div class="form-group">
-                <label for="st">Short title*</label>
-                <input type="text" value.bind="project.shortTitle" class="form-control" id="st" placeholder="Short title, is required">
-            </div>
-            <div class="form-group">
-                <label for="ti">Title*</label>
-                <input type="text" value.bind="project.title" class="form-control" id="ti" placeholder="Title, is required">
-            </div>
-            <div class="form-group">
-                <label for="name">Maturity level</label>
-                <select value.bind="project.maturityLevel" style="display: inline; width: 20%; margin-top: 10px;" class="form-control">
-                    <option repeat.for="v of data.maturityLevels" model.bind="v">${v.title}</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label for="name">Usability level</label>
-                <select value.bind="project.usabilityLevel" style="display: inline; width: 20%; margin-top: 10px;" class="form-control">
-                    <option repeat.for="v of data.usabilityLevels" model.bind="v">${v.title}</option>
-                </select>
+            <div class="form-horizontal">
+                <div class="form-group">
+                    <label for="st" class="col-sm-2 control-label">Short title*</label>
+                    <input type="text" value.bind="project.shortTitle" class="col-sm-6" id="st" placeholder="Short title, is required">
+                </div>
+                <div class="form-group">
+                    <label for="ti" class="col-sm-2 control-label">Title*</label>
+                    <input type="text" value.bind="project.title" class="col-sm-6" id="ti" placeholder="Title, is required">
+                </div>
+                <div class="form-group">
+                    <label for="name" class="col-sm-2 control-label">Maturity level</label>
+                    <select value.bind="project.maturityLevel" style="display: inline; width: 20%; margin-top: 10px;" class="form-control">
+                        <option repeat.for="v of data.maturityLevels" model.bind="v">${v.title}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="name" class="col-sm-2 control-label">Usability level</label>
+                    <select value.bind="project.usabilityLevel" style="display: inline; width: 20%; margin-top: 10px;" class="form-control">
+                        <option repeat.for="v of data.usabilityLevels" model.bind="v">${v.title}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="prod" class="col-sm-2 control-label">Is product?</label>
+                    <input id="prod" class="col-sm-1" style="height:24px;" type="checkbox" checked.bind="project.isProduct" class="checkbox">
+                </div>
+                <div class="form-group">
+                    <label for="proj" class="col-sm-2 control-label">Is project?</label>
+                    <input id="proj" class="col-sm-1" style="height:24px;" type="checkbox" checked.bind="project.isProject" class="checkbox">
+                </div>
             </div>
             <div class="form-group row">
                 <div class="col-md-6">
@@ -54,14 +64,6 @@
                     </li>
                     <li class="pull-right"><button><a click.delegate="addReference()"><i class="fa fa-plus"></i></a></button></li>
                 </ul>
-            </div>
-            <div class="form-group">
-                <label>
-                    Is product?
-                    <input style="display: inline" type="checkbox" checked.bind="project.isProduct" class="form-control">
-                    Is project?
-                    <input type="checkbox" checked.bind="project.isProject" class="form-control">
-                </label>
             </div>
             <div class="row">
                 <div class="col-md-4 form-group">
@@ -101,81 +103,110 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-6 form-group">
-                    <label for="incidents">Incidents</label><br>
-                    <select style="height: 250px; width: 100%;" id="incidents" value.bind="project.incidents" multiple>
-                        <option repeat.for="incident of incidents" model.bind="incident">${incident.title}</option>
-                    </select>
+                <div class="form-group col-sm-6">
+                    <label for="incidents" class="col-sm-12 control-label">Incidents</label><br>
+                    <label class="col-sm-12" repeat.for="incident of incidents">
+                        <input type="checkbox" model.bind="incident" checked.bind="project.incidents" />
+                        ${incident.title}
+                    </label>
                 </div>
                 <div class="col-md-6 form-group">
-                    <label for="ci">Critical Infrastructure</label><br>
-                    <select style="height: 250px; width: 100%;" id="ci" value.bind="project.ciSectors" multiple>
+                    <label for="ci" class="col-sm-12 control-label">Critical Infrastructure</label><br>
+                    <label class="col-sm-12" repeat.for="ci of ciSectors">
+                        <input type="checkbox" model.bind="ci" checked.bind="project.ciSectors" />
+                        ${ci.title}
+                    </label>
+                    <!--<select style="height: 250px; width: 100%;" id="ci" value.bind="project.ciSectors" multiple>
                         <option repeat.for="ci of ciSectors" model.bind="ci">${ci.title}</option>
-                    </select>
+                    </select>-->
                 </div>
             </div>
             <h3>Project/product details</h3>
-            <div class="form-group">
-                <h4>Duration</h4>
-                <label for="start">Start date</label>
-                <input type="date" value.bind="project.administration.duration.start" class="form-control" id="start" placeholder="YYYY-MM-DD">
-                <label for="end">End date</label>
-                <input type="date" value.bind="project.administration.duration.end" class="form-control" id="end" placeholder="YYYY-MM-DD">
-                <label for="status">Status</label>
-                <input type="text" value.bind="project.administration.duration.status" class="form-control" id="status" placeholder="...">
-                <br>                
-                <label for="dev">Developers</label>
-                <input type="text" value.bind="project.administration.developers" class="form-control" id="dev" placeholder="...">                
-                <label for="own">Owners</label>
-                <input type="text" value.bind="project.administration.owners" class="form-control" id="own" placeholder="...">                
-                <label for="spo">Sponsers</label>
-                <input type="text" value.bind="project.administration.sponsors" class="form-control" id="spo" placeholder="...">                
-                <label for="typ">Project type</label>
-                <input type="text" value.bind="project.administration.projectType" class="form-control" id="typ" placeholder="...">                
-                <br>                
-                <h4>Coordinator</h4>
-                <input type="text" style="display: inline; width: 60%" value.bind="project.administration.coordinator.title" class="form-control" id="org" placeholder="organization">                
-                <select value.bind="project.administration.coordinator.country" style="display: inline; width: 20%" class="form-control">
-                    <option repeat.for="c of countries" value.bind="c">${c}</option>
-                </select>
-                <h4>Participants</h4>
+            <div class="form-horizontal">
+                <div class="form-group">
+                    <label for="start" class="col-sm-2 control-label">Start date</label>
+                    <input type="date" value.bind="project.administration.duration.start" class="col-sm-10" id="start" placeholder="YYYY-MM-DD">
+                </div>
+                <div class="form-group">
+                    <label for="end" class="col-sm-2 control-label">End date</label>
+                    <input type="date" value.bind="project.administration.duration.end" class="col-sm-10" id="end" placeholder="YYYY-MM-DD">
+                </div>
+                <div class="form-group">
+                    <label for="status" class="col-sm-2 control-label">Status</label>
+                    <input type="text" value.bind="project.administration.duration.status" class="col-sm-10" id="status" placeholder="...">
+                </div>
+                <div class="form-group">
+                    <label for="dev" class="col-sm-2 control-label">Developers</label>
+                    <input type="text" value.bind="project.administration.developers" class="col-sm-10" id="dev" placeholder="...">                
+                </div>
+                <div class="form-group">
+                    <label for="own" class="col-sm-2 control-label">Owners</label>
+                    <input type="text" value.bind="project.administration.owners" class="col-sm-10" id="own" placeholder="...">                
+                </div>
+                <div class="form-group">
+                    <label for="spo" class="col-sm-2 control-label">Sponsers</label>
+                    <input type="text" value.bind="project.administration.sponsors" class="col-sm-10" id="spo" placeholder="...">                
+                </div>
+                <div class="form-group">
+                    <label for="typ" class="col-sm-2 control-label">Project type</label>
+                    <input type="text" value.bind="project.administration.projectType" class="col-sm-10" id="typ" placeholder="...">                
+                </div>
+                <div class="form-group">
+                    <label for="coor" class="col-sm-2 control-label">Coordinator</label>
+                    <input type="text" class="col-sm-6" value.bind="project.administration.coordinator.title" class="form-control" id="org" placeholder="organization">                
+                    <select value.bind="project.administration.coordinator.country" class="col-sm-4">
+                        <option repeat.for="c of countries" value.bind="c">${c}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="par" class="col-sm-2 control-label">Participants</label>
+                </div>
+                <div class="form-group">
+                    <ul class="list-unstyled">
+                        <li repeat.for="p of project.administration.participants">
+                            <input type="text" class="col-sm-offset-2 col-sm-6" value.bind="p.title" placeholder="organization" class="form-control">
+                            <select value.bind="p.country" class="col-sm-3">
+                                <option repeat.for="c of countries" value.bind="c">${c}</option>
+                            </select>
+                            <button style="display: inline;"><a click.delegate="deleteParticipant(p)"><i class="fa fa-trash"></i></a></button>          
+                        </li>
+                        <li class="pull-right"><button click.delegate="addParticipant()" class="btn btn-default"><span class="fa fa-plus"> Participant</span></button></li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3>Analysis details</h3>
+            <div class="form-horizontal">
                 <ul class="list-unstyled">
-                    <li repeat.for="p of project.administration.participants">
-                        <input type="text" style="display: inline; width: 60%" value.bind="p.title" placeholder="organization" class="form-control">
-                        <select value.bind="p.country" style="display: inline; width: 20%" class="form-control">
-                            <option repeat.for="c of countries" value.bind="c">${c}</option>
-                        </select>
-                        <button style="display: inline;"><a click.delegate="deleteParticipant(p)"><i class="fa fa-trash"></i></a></button>          
+                    <li repeat.for="a of project.analysts">
+                        <div class="form-group">
+                            <label for="name" class="col-sm-2 control-label">Name</label>
+                            <input type="text" value.bind="a.name" class="col-sm-6" id="name" placeholder="name">
+                            <button click.delegate="deleteAnalyst($index)" class="btn btn-default col-sm-offset-1"><span class="fa fa-trash"> Analyst</span></button>
+                        </div>
+                        <div class="form-group">
+                            <label for="organisation" class="col-sm-2 control-label">Organisation</label>
+                            <input type="text" value.bind="a.organisation" class="col-sm-6" id="organisation" placeholder="organisation">
+                        </div>
+                        <div class="form-group">
+                            <label for="name" class="col-sm-2 control-label">Reviewed on</label>
+                            <input type="date" value.bind="a.reviewed" class="col-sm-6" id="name" placeholder="YYYY-MM-DD">
+                        </div>
+                        <div class="form-group">
+                            <label for="name" class="col-sm-2 control-label">Validation level</label>
+                            <select value.bind="a.validationLevel" style="display: inline; width: 20%; margin-top: 10px;" class="col-sm-6">
+                                <option repeat.for="v of data.validationLevels" model.bind="v">${v.title}</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="remark" class="col-sm-2 control-label">Remarks</label><br>
+                            <textarea id="remark" rows="10" class="col-sm-5" placeholder="Remarks" value.bind="a.remarks"></textarea>
+                            <div id="md" class="col-sm-4" style="height: 200px; overflow-y: auto; margin-left: 10px" placeholder="Remarks" innerHTML.bind="a.remarks | markdown"></div>
+                        </div>
                     </li>
-                    <li class="pull-right"><button click.delegate="addParticipant()" class="btn btn-default"><span class="fa fa-plus"> Participant</span></button></li>
+                    <li class="pull-right"><button click.delegate="addAnalyst()" class="btn btn-default"><span class="fa fa-plus"> Analyst</span></button></li>
                 </ul>
             </div>
-            
-            <h3>Analysis details</h3>
-            <ul class="list-unstyled">
-                <li repeat.for="a of project.analysts">
-                    <button click.delegate="deleteAnalyst($index)" class="btn btn-default pull-right"><span class="fa fa-trash"> Analyst</span></button>
-                    <div class="form-group">
-                        <label for="name">Name</label>
-                        <input type="text" value.bind="a.name" class="form-control" id="name" placeholder="name">
-                        <label for="organisation">Organisation</label>
-                        <input type="text" value.bind="a.organisation" class="form-control" id="organisation" placeholder="organisation">
-                        <label for="name">Reviewed on</label>
-                        <input type="date" value.bind="a.reviewed" class="form-control" id="name" placeholder="YYYY-MM-DD">
-                        <label for="name">Validation level</label>
-                        <select value.bind="a.validationLevel" style="display: inline; width: 20%; margin-top: 10px;" class="form-control">
-                            <option repeat.for="v of data.validationLevels" model.bind="v">${v.title}</option>
-                        </select>
-                        <div class="form-group">
-                            <label for="remark">Remarks</label><br>
-                            <textarea id="remark" rows="10" style="display:inline; width:50%" placeholder="Remarks" value.bind="a.remarks"></textarea>
-                            <div id="md" style="display:inline-block; width:45%; height: 200px; overflow-y: auto; margin-left: 10px" placeholder="Remarks" innerHTML.bind="a.remarks | markdown"></div>
-                        </div>
-                    </div>
-                </li>
-                <li class="pull-right"><button click.delegate="addAnalyst()" class="btn btn-default"><span class="fa fa-plus"> Analyst</span></button></li>
-            </ul>
-
             <button type="submit" class="btn btn-default"><i class="fa fa-floppy-o"></i>&nbsp;&nbsp;Save</button>
         </form>
     </section>
