@@ -1,19 +1,24 @@
-import {Router}                 from 'aurelia-router';
-import {autoinject}             from 'aurelia-framework';
-import {AuthService}            from 'aurelia-authentication';
-import {DatabaseService}        from 'services/DatabaseService';
-import {IDatabase}              from 'models/database';
-import {IProject, IParticipant} from 'models/project';
-import {IUser}                  from 'models/user';
-import {Utils}                  from 'helpers/Utils';
+import {Router}                     from 'aurelia-router';
+import {autoinject}                 from 'aurelia-framework';
+import {AuthService}                from 'aurelia-authentication';
+import {DatabaseService}            from 'services/DatabaseService';
+import {IDatabase}                  from 'models/database';
+import {IProject, IParticipant}     from 'models/project';
+import {IUser}                      from 'models/user';
+import {Utils}                      from 'helpers/Utils';
+import {ProjectFilterConfiguration} from 'models/project-filter-configuration';
+
 
 @autoinject
 export class Projects {
     heading = 'Projects & Products';
     projects: IProject[] = [];
-    db: IDatabase;
+    db:       IDatabase;
+    config:   ProjectFilterConfiguration;
 
-    constructor(private router: Router, private databaseService: DatabaseService, private auth: AuthService) {}
+    constructor(private router: Router, private databaseService: DatabaseService, private auth: AuthService) {
+        this.config = databaseService.projectFilterConfig;
+    }
 
     activate() {
         return this.databaseService.database.then(db => {

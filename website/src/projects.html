@@ -2,26 +2,57 @@
   <require from="blur-image"></require>
   <require from="helpers/MarkdownValueConverter"></require>
   <require from="helpers/TrimValueConverter"></require>
+  <require from="helpers/project-filter"></require>
 
-  <div if.bind="canEdit" style="margin: 10px">
-      <button click.delegate="newProject()" type="submit" class="btn btn-default pull-right" ><i class="fa fa-plus"></i>&nbsp;New</button>
-  </div>
-  <section style="margin-top: 10px;" class="au-animate">
-      <h2>${heading}</h2>
-      <div class="row au-stagger">
-        <div class="col-sm-6 col-md-3 card-container au-animate" repeat.for="project of projects">
-            <div class="card">
-                <canvas class="header-bg" width="250" height="70" blur-image.bind="image"></canvas>
-                <div class="avatar">
-                    <img if.bind="project.logo" src.bind="project.logo" crossorigin ref="image"/>
+    <!--<div if.bind="canEdit" style="margin: 20px">
+        <button click.delegate="newProject()" type="submit" class="btn btn-default pull-right" ><i class="fa fa-plus"></i>&nbsp;New</button>
+    </div>-->
+    <div class="col-sm-3 col-md-3 pull-right">
+        <form class="navbar-form" role="search">
+            <div class="input-group">
+                <input type="text" class="form-control" value.bind="config.text & throttle" placeholder="Search" name="srch-term" id="srch-term">
+                <div class="input-group-btn">
+                    <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
                 </div>
-                <div class="content">
-                    <p>
-                        <a class="btn btn-default" route-href="route: project; 
-                                                               params.bind: {id: project.id}">${project.shortTitle | trim: 50}</a>
-                    </p>
-                    <div innerHTML.bind="project.title | trim: 50 | markdown"></div>
+            </div>
+            <button click.delegate="newProject()" type="submit" class="btn btn-default" ><i class="fa fa-plus"></i>&nbsp;New</button>
+        </form>
+    </div>
+  <section style="margin: 30px 0;" class="au-animate">
+      <!--<h2>${heading}</h2>-->
+      <div class="col-md-2" style="margin-top: 20px;">
+          <h4>Filters</h4>
 
+            <div class="checkbox">
+                <input type="checkbox" id="checkbox1" checked.bind="config.isProduct">
+                <label for="checkbox1">
+                    Should be a product
+                </label>
+            </div>
+            <div class="checkbox">
+                <input type="checkbox" id="checkbox2" checked.bind="config.isProject">
+                <label for="checkbox2">
+                    Should be a project
+                </label>
+            </div>
+
+      </div>
+      <div class="col-md-10" style="margin-top: 20px;">
+        <div class="row au-stagger">
+            <div class="col-sm-6 col-md-3 card-container au-animate" 
+                repeat.for="project of projects | projectFilterText: config.text | projectFilterProduct: config.isProduct: config.isProject">
+                <div class="card">
+                    <canvas class="header-bg" width="250" height="70" blur-image.bind="image"></canvas>
+                    <div class="avatar">
+                        <img if.bind="project.logo" src.bind="project.logo" crossorigin ref="image"/>
+                    </div>
+                    <div class="content">
+                        <p>
+                            <a class="btn btn-default" route-href="route: project; 
+                                                                params.bind: {id: project.id}">${project.shortTitle | trim: 50}</a>
+                        </p>
+                        <div innerHTML.bind="project.title | trim: 50 | markdown"></div>
+                    </div>
                 </div>
             </div>
         </div>
