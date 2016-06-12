@@ -1,7 +1,7 @@
-import {Router, RouterConfiguration} from 'aurelia-router'
+import {Router, RouterConfiguration} from 'aurelia-router';
 import {autoinject, computedFrom}    from 'aurelia-framework';
-import {DatabaseService}             from 'services/DatabaseService';
-import {AuthorizeStep}               from 'aurelia-authentication';
+import {DatabaseService}             from './services/DatabaseService';
+import {AuthenticateStep}            from 'aurelia-authentication';
 
 @autoinject
 export class App {
@@ -15,7 +15,7 @@ export class App {
     this.config = config;    
     config.title = this.title || 'Catalogue';
 
-    config.addPipelineStep('authorize', AuthorizeStep); // Add a route filter to the authorize extensibility point.
+    config.addPipelineStep('authorize', AuthenticateStep); // Add a route filter to the authorize extensibility point.
 
     config.map([
       { route: 'tasks',              name: 'tasks',          moduleId: 'tasks',          nav: true,  title: 'Tasks & Gaps' },

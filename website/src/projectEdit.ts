@@ -3,11 +3,11 @@ import {Router}                 from 'aurelia-router';
 import {Endpoint, Rest}         from 'aurelia-api';
 import {AuthService}            from 'aurelia-authentication';
 import {DialogController}       from 'aurelia-dialog';
-import {DatabaseService}        from 'services/DatabaseService';
-import {IUser}                  from 'models/user';
-import {IDatabase}              from 'models/database';
-import {ICharacteristic}        from 'models/characteristic';
-import {IProject, IParticipant} from 'models/project';
+import {DatabaseService}        from './services/DatabaseService';
+import {IUser}                  from './models/user';
+import {IDatabase}              from './models/database';
+import {ICharacteristic}        from './models/characteristic';
+import {IProject, IParticipant} from './models/project';
 
 // TODO Add/delete analyst
 // TODO Save project to local database

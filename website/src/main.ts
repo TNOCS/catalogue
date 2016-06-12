@@ -326,7 +326,8 @@ export function configure(aurelia: Aurelia) {
   aurelia.use
     .plugin('aurelia-api', config => {
       config
-        .registerEndpoint('api', 'http://localhost:3000')
+        .registerEndpoint('api', 'http://134.221.20.241:3000')
+        // .registerEndpoint('api', 'http://localhost:3000')
         // .registerEndpoint('protected-api', 'https://myapi.org/protected-api')
         // .registerEndpoint('public-api', 'http://myapi.org/public-api')
         .setDefaultEndpoint('api');

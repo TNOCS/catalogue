@@ -1,6 +1,6 @@
-import {autoinject}         from 'aurelia-framework'
+import {autoinject}         from 'aurelia-framework';
 import {DialogController}   from 'aurelia-dialog';
-import {IUser}              from 'models/user'
+import {IUser}              from '../models/user';
 
 @autoinject
 export class Prompt {

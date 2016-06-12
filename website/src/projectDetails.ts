@@ -1,11 +1,11 @@
 import {autoinject}      from 'aurelia-framework';
 import {Router}          from 'aurelia-router';
 import {AuthService}     from 'aurelia-authentication';
-import {IProject}        from 'models/project';
-import {IUser}           from 'models/user';
-import {DatabaseService} from 'services/DatabaseService';
-import {IDatabase}       from "models/database";
-import {Prompt}          from 'components/Prompt';
+import {IProject}        from './models/project';
+import {IUser}           from './models/user';
+import {DatabaseService} from './services/DatabaseService';
+import {IDatabase}       from "./models/database";
+import {Prompt}          from './components/Prompt';
 import {Rest, Config}    from 'aurelia-api';
 import {DialogService, DialogResult}  from 'aurelia-dialog';
 

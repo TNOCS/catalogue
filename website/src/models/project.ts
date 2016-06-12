@@ -1,4 +1,4 @@
-import {ICharacteristic} from 'characteristic';
+import {ICharacteristic} from './characteristic';
 
 export interface IParticipant {
     title?:   string;

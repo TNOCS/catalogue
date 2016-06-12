@@ -1,4 +1,4 @@
-import {IProject} from 'project';
+import {IProject} from './project';
 
 export interface ICharacteristic {
     /** ID for referencing: should not be changed, as it may break already assigned relations */

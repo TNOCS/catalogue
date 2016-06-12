@@ -1,5 +1,5 @@
-import {IProject} from 'project';
-import {ICharacteristic} from 'characteristic';
+import {IProject} from './project';
+import {ICharacteristic} from './characteristic';
 
 export interface IDatabase {
     app: {

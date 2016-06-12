@@ -36,11 +36,34 @@
                 </label>
             </div>
 
+            <div class="form-group">
+                <label for="name" class="col-sm-12 control-label">Min. maturity level</label>
+                <select value.bind="config.maturityLevel" class="form-control">
+                    <option repeat.for="v of db.maturityLevels" model.bind="v">${v.title}</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="name" class="col-sm-12 control-label">Min. usability level</label>
+                <select value.bind="config.usabilityLevel" class="form-control">
+                    <option repeat.for="v of db.usabilityLevels" model.bind="v">${v.title}</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="name" class="col-sm-12 control-label">Min. validation level</label>
+                <select value.bind="config.validationLevel" class="form-control">
+                    <option repeat.for="v of db.validationLevels" model.bind="v">${v.title}</option>
+                </select>
+            </div>
+
       </div>
       <div class="col-md-10" style="margin-top: 20px;">
         <div class="row au-stagger">
             <div class="col-sm-6 col-md-3 card-container au-animate" 
-                repeat.for="project of projects | projectFilterText: config.text | projectFilterProduct: config.isProduct: config.isProject">
+                repeat.for="project of projects | projectFilterText: config.text 
+                    | projectFilterProduct: config.isProduct: config.isProject
+                    | projectFilterCharacteristic: 'usability': config.usabilityLevel
+                    | projectFilterCharacteristic: 'maturity': config.maturityLevel
+                    | projectFilterCharacteristic: 'validation': config.validationLevel ">
                 <div class="card">
                     <canvas class="header-bg" width="250" height="70" blur-image.bind="image"></canvas>
                     <div class="avatar">
@@ -51,7 +74,7 @@
                             <a class="btn btn-default" route-href="route: project; 
                                                                 params.bind: {id: project.id}">${project.shortTitle | trim: 50}</a>
                         </p>
-                        <div innerHTML.bind="project.title | trim: 50 | markdown"></div>
+                        <div innerHTML.bind="project.title | trim: 20 | markdown"></div>
                     </div>
                 </div>
             </div>

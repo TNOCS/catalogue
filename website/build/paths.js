@@ -7,7 +7,6 @@ module.exports = {
   source: appRoot + '**/*.ts',
   html: appRoot + '**/*.html',
   css: appRoot + '**/*.css',
-  json: appRoot + '**/*.json',
   style: 'styles/**/*.css',
   output: outputRoot,
   exportSrv: exporSrvtRoot,
@@ -15,8 +14,7 @@ module.exports = {
   e2eSpecsSrc: 'test/e2e/src/**/*.ts',
   e2eSpecsDist: 'test/e2e/dist/',
   dtsSrc: [
-    './typings/browser/**/*.d.ts',
-    './custom_typings/**/*.d.ts',
-    './jspm_packages/**/*.d.ts'
+    './typings/**/*.d.ts',
+    './custom_typings/**/*.d.ts'
   ]
 }

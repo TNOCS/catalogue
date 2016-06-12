@@ -1,7 +1,7 @@
 import {autoinject} from 'aurelia-framework';
-import {ICharacteristic} from 'models/characteristic';
+import {ICharacteristic} from './models/characteristic';
 import {IProject} from './models/project';
-import {DatabaseService} from 'services/DatabaseService';
+import {DatabaseService} from './services/DatabaseService';
 
 @autoinject
 export class CriticalInfrastructures {

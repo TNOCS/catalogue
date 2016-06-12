@@ -2,11 +2,11 @@ import {AuthService}                  from 'aurelia-authentication';
 import {inject}                       from 'aurelia-framework';
 import {Endpoint, Rest}               from 'aurelia-api';
 import {DialogService, DialogResult}  from 'aurelia-dialog';
-import {DatabaseService}              from 'services/DatabaseService'
+import {DatabaseService}              from './services/DatabaseService'
 import {UserEdit}                     from './userEdit';
-import {Prompt}                       from 'components/Prompt';
-import {IUser}                        from 'models/user';
-import {Utils}                        from 'helpers/Utils';
+import {Prompt}                       from './components/Prompt';
+import {IUser}                        from './models/user';
+import {Utils}                        from './helpers/Utils';
 
 @inject(Endpoint.of('api'), Endpoint.of('auth'), DialogService, DatabaseService)
 export class Users {

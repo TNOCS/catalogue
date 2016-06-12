@@ -1,6 +1,6 @@
 import {AuthService} from 'aurelia-authentication';
 import {autoinject} from 'aurelia-framework';
-import {DatabaseService} from 'services/DatabaseService';
+import {DatabaseService} from './services/DatabaseService';
 
 @autoinject
 export class Signup {
