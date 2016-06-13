@@ -57,4 +57,11 @@ export class Projects {
         this.projects.push(project);
         this.router.navigate(`#/editproject/${index}`);
     }
+
+    cisChanged() {
+        console.log('CIs changed');
+        let cis = [];
+        this.config.ciSectors.forEach(ci => cis.push(ci));
+        this.config.ciSectors = cis;
+    }
 }

@@ -1,6 +1,32 @@
 import {IProject}                   from '../models/project';
 import {ICharacteristic}            from '../models/characteristic';
 
+/** Filter projects by looking for projects that support a certain type (incident/task/gap/ci). */
+export class ProjectFilterTypeValueConverter {
+    toView(projects: IProject[], type: 'incidents' | 'ciSectors', t: ICharacteristic[]) {
+        if (!projects || !t || t.length === 0) return projects;
+
+        let ids: string[] = [];
+        t.forEach(c => ids.push(c.id));
+
+        let filteredProjects: IProject[] = [];
+        projects.forEach(project => {
+            if (!project.hasOwnProperty(type) || !project[type]) return;
+            let prop: ICharacteristic[] = project[type];
+            let add = true;
+            ids.some(id => {
+                let f = prop.filter(c => { return c.id === id; });
+                if (f.length > 0) return false;
+                add = false;
+                return true;
+            });
+            if (add) filteredProjects.push(project);
+        });
+
+        return filteredProjects;
+    }
+}
+
 /** Filter projects by looking for product or projects. */
 export class ProjectFilterProductValueConverter {
     toView(projects: IProject[], isProduct?: boolean, isProject?: boolean) {
