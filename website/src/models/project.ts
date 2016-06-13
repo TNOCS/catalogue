@@ -5,12 +5,17 @@ export interface IParticipant {
     country?: string;
 }
 
+export interface Reference {
+    title?: string;
+    url?:   string;
+}
+
 export interface IProject {
     id:             string;
     shortTitle?:    string;
     title?:         string;
     intendedUsers?: string;
-    references?:    string[];
+    references?:    Reference[];
     currentUse?:    string;
     tagline?:       string;
     description?:   string;

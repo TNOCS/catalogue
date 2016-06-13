@@ -32,7 +32,24 @@ export class DatabaseService {
         this.database = this.api.find('/db')
             .then(database => this.data = database);
 
-        this.parseData();
+        this.database
+            .then(() => this.convertReferencesFromStringToObject())
+            .then(() => this.parseData());        
+    }
+
+    private convertReferencesFromStringToObject() {
+        this.data.projects.forEach(p => {
+            if (!p.references) return;
+            let newRefs = [];
+            let updateRefs = false;
+            p.references.forEach(r => {
+                if (typeof r === 'string') {
+                    updateRefs = true;
+                    newRefs.push({ title: '', url: r });
+                }
+            });
+            if (updateRefs) p.references = newRefs;
+        });
     }
 
     /** When updating/saving a project, the relations are recomputed. Make sure that we begin with a clean slate. */
@@ -46,7 +63,8 @@ export class DatabaseService {
     }
 
     parseData() {
-        this.database.then(db => {
+        // this.database.then(db => {
+            let db = this.data;
             this.cleanProjects(db.ciSectors);
             this.cleanProjects(db.gaps);
             this.cleanProjects(db.incidents);
@@ -87,7 +105,7 @@ export class DatabaseService {
                     });
                 }
             });
-        });
+        // });
     }
 
     /** Link tasks to gaps and vice versa */

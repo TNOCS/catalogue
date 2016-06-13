@@ -57,9 +57,9 @@
             </div>
 
             <div class="form-group">
-                <label for="cis" class="col-sm-12 control-label">Critical Infrastructure</label><br>
-                <label class="col-sm-12" id="cis" repeat.for="ci of db.ciSectors" if.bind="ci.projects.length > 0">
-                    <input type="checkbox" model.bind="ci" checked.bind="config.ciSectors" change.delegate="cisChanged()" />
+                <label for="cis" class="col-sm-12 control-label">Critical Infrastructure</label>
+                <label class="col-sm-12" id="cis" repeat.for="ci of db.ciSectors" show.bind="ci.projects && ci.projects.length > 0" >
+                    <input type="checkbox" model.bind="ci" checked.bind="config.ciSectors" change.delegate="cisChanged()">
                     ${ci.title}
                 </label>
             </div>
@@ -86,7 +86,7 @@
                             <a class="btn btn-default" route-href="route: project; 
                                                                 params.bind: {id: project.id}">${project.shortTitle | trim: 50}</a>
                         </p>
-                        <div innerHTML.bind="project.title | trim: 20 | markdown"></div>
+                        <div innerHTML.bind="(project.title || '...') | trim: 20 | markdown"></div>
                     </div>
                 </div>
             </div>

@@ -125,7 +125,12 @@ export class ProjectEdit {
                 administration: {},
                 analysts:       []
             };
-            if (p.references) p.references.forEach(r => this.project.references.push(r));
+            if (p.references) p.references.forEach(r => {
+                let newRef = typeof r === 'string' 
+                    ? { title: '', url: r}
+                    : { title: r.title, url: r.url };
+                this.project.references.push(newRef);
+            });
             this.copyCharacteristics(p.incidents, this.incidents , this.project.incidents );
             this.copyCharacteristics(p.ciSectors, this.ciSectors , this.project.ciSectors );
 
@@ -220,12 +225,15 @@ export class ProjectEdit {
         if (i >= 0) this.project.references.splice(i, 1);
     }
     /** Update the reference: the regular binding does not work for string arrays */
-    updateReference(index: number, ev) {
-        this.project.references[index] = ev.target.value;
-    }
+    // updateReference(index: number, ev) {
+    //     this.project.references[index] = ev.target.value;
+    // }
     /** Add a new reference */
     addReference() {
-        this.project.references.push('');
+        this.project.references.push({
+            title: '',
+            url: ''
+        });
     }
 
     /** Delete an existing analyst */

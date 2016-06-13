@@ -74,7 +74,7 @@
             <div class="row" show.bind="showRefs">
                 <ul class="list-unstyled">
                     <li repeat.for="ref of project.references">
-                        <a href.bind="ref" target="_blank">${$index + 1}. ${ref}</a>
+                        <span>${$index + 1}. </span><a href.bind="ref.url" target="_blank">${ref.title || ref.url}</a>
                     </li>
                 </ul>
             </div>            
