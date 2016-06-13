@@ -1,4 +1,4 @@
-import {ICharacteristic} from '../models/characteristic';
+import {ICharacteristic} from './characteristic';
 
 export class ProjectFilterConfiguration {
     /** Search the short title, title, and description (and remarks) to contain each keyword */
