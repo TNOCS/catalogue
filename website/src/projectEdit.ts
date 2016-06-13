@@ -106,7 +106,10 @@ export class ProjectEdit {
                 shortTitle:     p.shortTitle,
                 title:          p.title,
                 maturityLevel:  this.db.maturityLevels[p.maturityLevel.id],
-                usabilityLevel: this.db.usabilityLevels[p.usabilityLevel.id],
+                usabilityLevel: {
+                    id: p.usabilityLevel.id,
+                    remarks: p.usabilityLevel.remarks
+                },
                 intendedUsers:  p.intendedUsers,
                 references:     [],
                 currentUse:     p.currentUse,

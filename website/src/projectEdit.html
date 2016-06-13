@@ -24,9 +24,14 @@
                 </div>
                 <div class="form-group">
                     <label for="name" class="col-sm-2 control-label">Usability level</label>
-                    <select value.bind="project.usabilityLevel" style="display: inline; width: 20%; margin-top: 10px;" class="form-control">
-                        <option repeat.for="v of data.usabilityLevels" model.bind="v">${v.title}</option>
+                    <select value.bind="project.usabilityLevel.id" style="display: inline; width: 20%; margin-top: 10px;" class="form-control">
+                        <option repeat.for="v of data.usabilityLevels" model.bind="v.id">${v.title}</option>
                     </select>
+                </div>
+                <div class="form-group">
+                    <label for="usremark" class="col-sm-2 control-label">Usability remarks</label><br>
+                    <textarea id="usremark" rows="6" class="col-sm-5" placeholder="Usability remarks" value.bind="project.usabilityLevel.remarks"></textarea>
+                    <div id="md" class="col-sm-4" style="height: 120px; overflow-y: auto; margin-left: 10px" placeholder="Remarks" innerHTML.bind="project.usabilityLevel.remarks | markdown"></div>
                 </div>
                 <div class="form-group">
                     <label for="prod" class="col-sm-2 control-label">Is product?</label>
@@ -37,10 +42,10 @@
                     <input id="proj" class="col-sm-1" style="height:24px;" type="checkbox" checked.bind="project.isProject" class="checkbox">
                 </div>
             </div>
-            <div class="form-group row">
+            <div class="form-group" style="margin-left: -14px;">
                 <div class="col-md-6">
                     <label for="logo">Logo</label><br>
-                    <input type="text" value.bind="project.logo" style="display: inline; width: 100%" class="form-control" id="logo" placeholder="http://imgur.com/???.png">
+                    <input type="text" value.bind="project.logo" class="form-control" id="logo" placeholder="http://imgur.com/???.png">
                 </div>
                 <div class="col-md-6">
                     <img src="${project.logo}" alt="Logo" height="60" style="display: inline-block; height: 60px; vertical-align: bottom">
