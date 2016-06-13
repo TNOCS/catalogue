@@ -13,7 +13,7 @@
                         ${subincident.title}
                         <span data-toggle="tooltip" data-placement="left" title="Number of projects addressing this incident type." if.bind="subincident.projects" class="badge pull-right">${subincident.projects.length}</span>
                         <ul class="list-unstyled" style="margin-left: 20px">
-                            <li repeat.for="project of subincident.projects">PROJECT: ${project.title}</li>
+                            <li repeat.for="project of subincident.projects">PROJECT ${project.shortTitle}: ${project.title}</li>
                         </ul>                          
                     </li>
                 </ul>      

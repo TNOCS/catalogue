@@ -35,12 +35,22 @@ export class DatabaseService {
         this.parseData();
     }
 
+    /** When updating/saving a project, the relations are recomputed. Make sure that we begin with a clean slate. */
+    private cleanProjects(characteristics: ICharacteristic[]) {
+        characteristics.forEach(c => {
+            c.projects = null;
+            if (c.children) {
+                c.children.forEach(child => child.projects = null);
+            }
+        });
+    }
+
     parseData() {
         this.database.then(db => {
-            db.ciSectors.forEach(m        => m.projects = null );
-            db.gaps.forEach(m        => m.projects = null );
-            db.incidents.forEach(m        => m.projects = null );
-            db.tasks.forEach(m        => m.projects = null );
+            this.cleanProjects(db.ciSectors);
+            this.cleanProjects(db.gaps);
+            this.cleanProjects(db.incidents);
+            this.cleanProjects(db.tasks);
 
             db.maturityLevels.forEach(m   => this.maturityLevels[m.id]   = m );
             db.usabilityLevels.forEach(m  => this.usabilityLevels[m.id]  = m );

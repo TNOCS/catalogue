@@ -12,7 +12,7 @@
                 <span data-toggle="tooltip" data-placement="left" title="Number of projects addressing this CI type." 
                 if.bind="ci.projects" class="badge pull-right">${ci.projects.length}</span>
                 <ul class="list-unstyled" style="margin-left: 20px">
-                    <li repeat.for="project of ci.projects">PROJECT: ${project.title}</li>
+                    <li repeat.for="project of ci.projects">PROJECT ${project.shortTitle}: ${project.title}</li>
                 </ul>                          
             </li>
         </ul>
@@ -26,7 +26,7 @@
             </li>
         </ul>
         
-        <scatter-plot gap.bind="selectedci"></scatter-plot>        
+        <scatter-plot gap.bind="selectedCi"></scatter-plot>        
     </div>
       
   </section>
