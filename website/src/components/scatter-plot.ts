@@ -18,10 +18,11 @@ export class ScatterPlotCustomElement {
     @bindable gap: ICharacteristic;
 
     private margin;
-    private width: number;
-    private height: number;
-    private didError: boolean;
-    private filename: string;
+    private width:        number;
+    private height:       number;
+    private legendWidth:  number = 125;
+    private didError:     boolean;
+    private filename:     string;
     private errorMessage: string;
 
     constructor() {
@@ -74,13 +75,13 @@ export class ScatterPlotCustomElement {
         var xValue = function (d: IDataFormat) { return d.solvability; }, // data -> value
             xScale = d3.scale.linear().range([0, this.width]), // value -> display
             xMap = function (d: IDataFormat) { return xScale(xValue(d)); }, // data -> display
-            xAxis = d3.svg.axis().scale(xScale).orient("bottom");
+            xAxis = d3.svg.axis().scale(xScale).orient("bottom").tickFormat(d3.format("d"));
 
         // setup y
         var yValue = function (d: IDataFormat) { return d.usability; }, // data -> value
             yScale = d3.scale.linear().range([this.height, 0]), // value -> display
             yMap = function (d: IDataFormat) { return yScale(yValue(d)); }, // data -> display
-            yAxis = d3.svg.axis().scale(yScale).orient("left");
+            yAxis = d3.svg.axis().scale(yScale).orient("left").tickFormat(d3.format("d"));
 
         // setup fill color
         var cValue = function (d: IDataFormat) { return d.project.shortTitle; },
@@ -89,7 +90,7 @@ export class ScatterPlotCustomElement {
         // add the graph canvas the webpage
         var svg = d3.select("#placeholder").append("svg")
             .attr("id", "the_SVG_ID")
-            .attr("width", this.width + this.margin.left + this.margin.right)
+            .attr("width", this.width + this.margin.left + this.margin.right + this.legendWidth)
             .attr("height", this.height + this.margin.top + this.margin.bottom)
             .append("g")
             .attr("transform", "translate(" + this.margin.left + "," + this.margin.top + ")");
@@ -147,10 +148,10 @@ export class ScatterPlotCustomElement {
                     .style("font-weight", "bold")
                     .style("padding", "10px")
                     .style("height", "65px")
-                    .style("left", `${(<any>d3.event).pageX + 35}px`)
+                    .style("left", `${(<any>d3.event).pageX + 15}px`)
                     .style("top", `${(<any>d3.event).pageY - 28}px`)
                     .style("opacity", .9);
-                tooltip.html(`PROJECT: ${d.project.shortTitle}<br/>- extent to which gaps are solved: ${d.solvability}<br/>- usability: ${d.usability}<br/>- maturity: ${d.maturity}`);
+                tooltip.html(`PROJECT: ${d.project.shortTitle}<br/>- gap solved (x): ${d.solvability}<br/>- usability (y): ${d.usability}<br/>- maturity (radius): ${d.maturity}`);
             })
             .on("mouseout", function (d) {
                 tooltip.transition()
@@ -163,7 +164,7 @@ export class ScatterPlotCustomElement {
             .data(color.domain())
             .enter().append("g")
             .attr("class", "legend")
-            .attr("transform", function (d, i) { return "translate(0," + i * 20 + ")"; });
+            .attr("transform", function (d, i) { return `translate(125, ${i * 20})`; });
 
         // draw legend colored rectangles
         legend.append("rect")
@@ -190,10 +191,10 @@ export class ScatterPlotCustomElement {
                     .style("font-weight", "bold")
                     .style("padding", "10px")
                     .style("height", "65px")
-                    .style("left", `${(<any>d3.event).pageX + 35}px`)
+                    .style("left", `${(<any>d3.event).pageX + 15}px`)
                     .style("top", `${(<any>d3.event).pageY - 28}px`)
                     .style("opacity", .9);
-                tooltip.html(`PROJECT: ${d.project.shortTitle}<br/>- extent to which gaps are solved: ${d.solvability}<br/>- usability: ${d.usability}<br/>- maturity: ${d.maturity}`);
+                tooltip.html(`PROJECT: ${d.project.shortTitle}<br/>- gap solved (x): ${d.solvability}<br/>- usability (y): ${d.usability}<br/>- maturity (radius): ${d.maturity}`);
             })
             .on("mouseout", function (d) {
                 tooltip.transition()
