@@ -1,24 +1,25 @@
 {
-  "name": "aurelia-skeleton-navigation-typescript",
-  "version": "1.0.0-beta.1.2.6",
-  "description": "A starter kit for building a standard navigation-style app with Aurelia and TypeScript.",
+  "name": "catalogue",
+  "version": "1.0.0-beta.0.0.1",
+  "description": "Online research project catalogue.",
   "keywords": [
+    "research",
+    "project",
+    "online",
     "aurelia",
-    "navigation",
-    "skeleton",
-    "typescript",
-    "vscode"
+    "catalog",
+    "catalogue"
   ],
-  "homepage": "http://aurelia.io",
+  "homepage": "http://github.com/TNOCS/catalogue",
   "bugs": {
-    "url": "https://github.com/aurelia/skeleton-navigation-typescript/issues"
+    "url": "http://github.com/TNOCS/catalogue/issues"
   },
-  "license": "CC0-1.0",
-  "author": "Mike Graham <mgraham@technicalmedia.com> (http://cmichaelgraham.io/)",
+  "license": "MIT",
+  "author": "Erik Vullings <erik.vullings@tno.nl>",
   "main": "dist/main.js",
   "repository": {
     "type": "git",
-    "url": "http://github.com/aurelia/skeleton-navigation-typescript"
+    "url": "http://github.com/TNOCS/catalogue"
   },
   "scripts": {
     "postinstall": "./node_modules/.bin/typings install",
