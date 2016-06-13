@@ -2,6 +2,7 @@
   <require from="blur-image"></require>
   <require from="./helpers/MarkdownValueConverter"></require>
   <require from="./helpers/TrimValueConverter"></require>
+  <require from="./helpers/sort"></require>
   <require from="./helpers/project-filter"></require>
 
     <!--<div if.bind="canEdit" style="margin: 20px">
@@ -59,11 +60,13 @@
       <div class="col-md-10" style="margin-top: 20px;">
         <div class="row au-stagger">
             <div class="col-sm-6 col-md-3 card-container au-animate" 
-                repeat.for="project of projects | projectFilterText: config.text 
+                repeat.for="project of projects
+                    | projectFilterText: config.text 
                     | projectFilterProduct: config.isProduct: config.isProject
                     | projectFilterCharacteristic: 'usability': config.usabilityLevel
                     | projectFilterCharacteristic: 'maturity': config.maturityLevel
-                    | projectFilterCharacteristic: 'validation': config.validationLevel ">
+                    | projectFilterCharacteristic: 'validation': config.validationLevel
+                    | sort: 'shortTitle': 'ascending' ">
                 <div class="card">
                     <canvas class="header-bg" width="250" height="70" blur-image.bind="image"></canvas>
                     <div class="avatar">
