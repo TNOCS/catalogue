@@ -204,9 +204,7 @@ export class ProjectEdit {
     }
 
     /** Delete an existing participant */
-    deleteParticipant(p: IParticipant) {
-        if (!p) return;
-        let i = this.project.administration.participants.indexOf(p);
+    deleteParticipant(i: number) {
         if (i >= 0) this.project.administration.participants.splice(i, 1);
     }
 
@@ -220,8 +218,6 @@ export class ProjectEdit {
 
     /** Delete an existing reference */
     deleteReference(i: number) {
-        if (typeof i === 'undefined') return;
-        // let i = this.project.references.indexOf(r);
         if (i >= 0) this.project.references.splice(i, 1);
     }
     /** Update the reference: the regular binding does not work for string arrays */

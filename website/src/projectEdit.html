@@ -66,9 +66,9 @@
                     <li repeat.for="r of project.references">
                         <input type="text" style="display: inline; width: 30%" value.bind="r.title" placeholder="Link text" class="form-control">
                         <input type="text" style="display: inline; width: 60%" value.bind="r.url"   placeholder="http://..." class="form-control">
-                        <button style="display: inline;"><a click.delegate="deleteReference($index)"><i class="fa fa-trash"></i></a></button>          
+                        <button click.delegate="deleteReference($index)" style="display: inline;"><i class="fa fa-trash"></i></button>          
                     </li>
-                    <li class="pull-right"><button><a click.delegate="addReference()"><i class="fa fa-plus"></i></a></button></li>
+                    <li class="pull-right"><button click.delegate="addReference()"><i class="fa fa-plus"></i></button></li>
                 </ul>
             </div>
             <div class="row">
@@ -174,7 +174,7 @@
                             <select value.bind="p.country" class="col-sm-3">
                                 <option repeat.for="c of countries" value.bind="c">${c}</option>
                             </select>
-                            <button style="display: inline;"><a click.delegate="deleteParticipant(p)"><i class="fa fa-trash"></i></a></button>          
+                            <button click.delegate="deleteParticipant($index)" style="display: inline;"><i class="fa fa-trash"></i></button>          
                         </li>
                         <li class="pull-right"><button click.delegate="addParticipant()" class="btn btn-default"><span class="fa fa-plus"> Participant</span></button></li>
                     </ul>
