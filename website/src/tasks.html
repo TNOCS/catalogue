@@ -34,15 +34,15 @@
           <div class="row">            
               <h3><a click.delegate="showInfo = !showInfo" 
                   data-toggle="tooltip" data-placement="top" title="Additional information about the selected task or gap"
-                  class="small fa ${showInfo ? 'fa-chevron-circle-down' : 'fa-chevron-circle-up'}"></a>&nbsp;Info about ${showGap ? selectedGap.title : selectedTask.title}</h3>
+                  class="small fa ${showInfo ? 'fa-chevron-circle-down' : 'fa-chevron-circle-up'}"></a>&nbsp;Additional info</h3>
           </div>
           <div class="row" show.bind="showInfo && showGap">
-              <div show.bind="selectedGap.description" innerHTML.bind="selectedGap.description | markdown"></div>
-              <p show.bind="!selectedGap.description">-</p>
+              <h4>GAP: ${selectedGap.title}</h4>
+              <div innerHTML.bind="selectedGap.description | markdown"></div>
           </div>
           <div class="row" show.bind="showInfo && !showGap">
-              <div show.bind="selectedTask.description" innerHTML.bind="selectedTask.description | markdown"></div>
-              <p show.bind="!selectedTask.description">-</p>
+              <h4>TASK: ${selectedTask.title}</h4>
+              <div innerHTML.bind="selectedTask.description | markdown"></div>
           </div>
 
           <div class="row">            
