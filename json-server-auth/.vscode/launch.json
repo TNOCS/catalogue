@@ -7,7 +7,7 @@
         "program": "${workspaceRoot}/src/server.ts",
         "stopOnEntry": false,
         "args": [],
-        "cwd": "${workspaceRoot}",
+        "cwd": "${workspaceRoot}/src",
         "preLaunchTask": null,
         "runtimeExecutable": null,
         "runtimeArgs": [
