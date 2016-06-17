@@ -3,78 +3,69 @@
     "signupUrl": "/auth/signup",
     "profileUrl": "/auth/me",
     "usersUrl": "/users",
+    "uploadUrl": "/uploads",
+    "uploadFolder": "../data/uploads",
     "port": 3000,
     "secret": "Dit is mijn geheim om JSON web tokens aan te maken",
     "oauth2secrets": {
         "google": "V55QHX7lPS_t0PiVLgPz8eCm"
     },
     "authorizations": {
-        "GET": [
-            {
-                "routes": [
-                    "/"
-                ]
-            }            
-        ],
-        "PUT": [
-            {
-                "routes": [
-                    "/projects"
-                ],
-                "roles": [
-                    "analyst",
-                    "admin"
-                ]
-            },
-            {
-                "routes": [
-                    "/app",
-                    "/gapLevels",
-                    "/usabilityLevels",
-                    "/maturityLevels",
-                    "/validationLevels",
-                    "/ciSectors",
-                    "/tasks",
-                    "/incidents",
-                    "/gaps",
-                    "/tasks2gaps"
-                ],
-                "roles": [
-                    "admin"
-                ]
-            },
-            {
-                "routes": [
-                    "/auth/me"
-                ]
-            }
-        ],
-        "POST": [
-            {
-                "routes": [
-                    "/projects"
-                ],
-                "roles": [
-                    "analyst",
-                    "admin"
-                ]
-            },
-            {
-                "routes": [
-                    "/auth/login"
-                ]
-            }
-        ],
-        "DELETE": [
-            {
-                "routes": [
-                    "/projects"
-                ],
-                "roles": [
-                    "analyst",
-                    "admin"
-                ]
-            }
-        ]
+        "GET": [{
+            "routes": [
+                "/"
+            ]
+        }],
+        "PUT": [{
+            "routes": [
+                "/projects"
+            ],
+            "roles": [
+                "analyst",
+                "admin"
+            ]
+        }, {
+            "routes": [
+                "/app",
+                "/gapLevels",
+                "/usabilityLevels",
+                "/maturityLevels",
+                "/validationLevels",
+                "/ciSectors",
+                "/tasks",
+                "/incidents",
+                "/gaps",
+                "/tasks2gaps"
+            ],
+            "roles": [
+                "admin"
+            ]
+        }, {
+            "routes": [
+                "/auth/me"
+            ]
+        }],
+        "POST": [{
+            "routes": [
+                "/projects"
+            ],
+            "roles": [
+                "analyst",
+                "admin"
+            ]
+        }, {
+            "routes": [
+                "/auth/login"
+            ]
+        }],
+        "DELETE": [{
+            "routes": [
+                "/projects"
+            ],
+            "roles": [
+                "analyst",
+                "admin"
+            ]
+        }]
     }
 }

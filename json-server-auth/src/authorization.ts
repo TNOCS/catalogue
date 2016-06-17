@@ -1,12 +1,14 @@
 import * as fs from 'fs';
 import * as path from 'path';
 import {Request, Response, Express, NextFunction} from 'express';
+import * as express from 'express';
 import * as bodyParser from 'body-parser';
 import * as jsonwebtoken from 'jsonwebtoken';
 import * as expressjwt from 'express-jwt';
 
 var config: IConfig = require('./config');
 var users: IUser[]  = require('./users');
+
 // Get the jwt middleware method by adding the secret to the express-jwt method.
 var jwt = expressjwt({ secret: config.secret });
 
@@ -19,14 +21,16 @@ export interface IUser {
 }
 
 export interface IConfig {
-    Url:        string;
-    signupUrl:  string;
-    profileUrl: string;
-    usersUrl:   string;
-    loginUrl:   string;
-    logoutUrl:  string;
-    port:       number;
-    secret:     string;
+    server?:        string;
+    signupUrl:      string;
+    profileUrl:     string;
+    usersUrl:       string;
+    loginUrl:       string;
+    logoutUrl:      string;
+    uploadUrl:      string;
+    uploadFolder:   string;
+    port:           number;
+    secret:         string;
     authorizations: {
         [httpMethod: string]: {
             routes: string[],
@@ -46,6 +50,13 @@ export interface IConfig {
  */
 export class AuthenticationService {
     static registerRoutes(server: Express) {
+        // Uploads
+        let uploadFolder = path.join(__dirname, config.uploadFolder);
+        if (!fs.existsSync(uploadFolder)) {
+            fs.mkdirSync(uploadFolder);
+        }
+        server.use(config.uploadUrl, express.static(uploadFolder));
+
         if (!config.authorizations) config.authorizations = {};
         // Authorize the users URL
         if (!config.authorizations.hasOwnProperty('GET')) config.authorizations['GET'] = [];
@@ -55,7 +66,7 @@ export class AuthenticationService {
         if (!config.authorizations.hasOwnProperty('PUT')) config.authorizations['PUT'] = [];
         config.authorizations['PUT'].push({ routes: [config.profileUrl, config.usersUrl] });
         if (!config.authorizations.hasOwnProperty('POST')) config.authorizations['POST'] = [];
-        config.authorizations['POST'].push({ routes: [config.loginUrl, config.signupUrl, config.usersUrl] });
+        config.authorizations['POST'].push({ routes: [config.loginUrl, config.signupUrl, config.usersUrl, config.uploadUrl] });
         if (!config.authorizations.hasOwnProperty('DELETE')) config.authorizations['DELETE'] = [];
         config.authorizations['DELETE'].push({ routes: [config.usersUrl] });
 
@@ -118,16 +129,6 @@ export class AuthenticationService {
         // signup
         server.post(config.signupUrl, jwt, function (req, res) {
             this.createUser(req, res);
-            // if (!body.email || !body.password || !body.role || !body.displayName) {
-            //     res.sendStatus(403); // equivalent to res.status(403).send('Forbidden')
-            // } else {
-            //     config.users[body.email] = {
-            //         displayName: body.displayName,
-            //         password: body.password,
-            //         role: body.role
-            //     };
-            //     AuthenticationService.saveConfig(res);
-            // }
         });
 
         // profile
@@ -154,7 +155,43 @@ export class AuthenticationService {
             if (body.displayName) user.displayName = body.displayName;
             AuthenticationService.saveUserConfig(res);
         });
+
+        /** Uploading files */
+        server.post(config.uploadUrl, (req, res) => {
+            if (req.body && req.body.hasOwnProperty('uploadedFile') && req.body.hasOwnProperty('filename')) {
+                let blob = AuthenticationService.dataURLtoBlob(req.body.uploadedFile);
+                let filename = AuthenticationService.getFilename(req.body.filename);
+                fs.writeFile(filename, blob, err => {
+                    if (err) return res.sendStatus(500);
+                    else return res.status(200).send({ 
+                        filename: req.body.filename, 
+                        url: `${config.server}${config.uploadUrl}/${path.basename(filename)}` 
+                    });
+                });
+                return;
+            }
+            res.sendStatus(500);
+        });
     }
+ 
+    /** Get a filename, so you don't overwrite the existing files */
+    private static getFilename(filename: string, i = 0) {
+        let ext = path.extname(filename);
+        let name = filename.replace(ext, '');
+        let tmpFilename = path.join(__dirname, config.uploadFolder, name) + (i > 0 ? ` (${i})` : '') + ext;
+        while (fs.existsSync(tmpFilename)) {
+            return AuthenticationService.getFilename(filename, ++i);
+        }
+        return tmpFilename;
+    }
+
+    private static dataURLtoBlob(dataurl) {
+        var arr = dataurl.split(',');
+        var mime = arr[0].match(/:(.*?);/)[1];
+        var buffer = new Buffer(arr[1], 'base64');
+        return buffer;
+    }
+
 
     /** Create a new user */
     private static createUser(req: Request, res: Response) {
