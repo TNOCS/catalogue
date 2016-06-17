@@ -1,8 +1,3 @@
-import 'bootstrap';
-import 'fetch';
-//import {AuthConfig} from './services/authConfig';
-import {Aurelia} from 'aurelia-framework';
-
 /** Basic authN configuration, from http://aurelia-authentication.spoonx.org/baseConfig.html */
 var baseConfig = {
     // If using aurelia-api:
@@ -100,7 +95,10 @@ var baseConfig = {
     // Determines the `window` property name upon which aurelia-authentication data is stored (Default: `window.localStorage`)
     storage: 'localStorage',
     // The key used for storing the authentication response locally
-    storageKey: 'aurelia_authentication'
+    storageKey: 'aurelia_authentication',
+
+    // List of value-converters to make global
+    // globalValueConverters: ['authFilterValueConverter']
 };
 
 var configForDevelopment = {
@@ -315,29 +313,5 @@ else {
     authConfig = Object.assign({}, baseConfig, configForProduction);
 }
 
-//export default config;
+export default authConfig;
 
-export function configure(aurelia: Aurelia) {
-  aurelia.use
-    .standardConfiguration()
-    .plugin('aurelia-dialog')
-    .developmentLogging();
-
-  aurelia.use
-    .plugin('aurelia-api', config => {
-      config
-        // .registerEndpoint('api', 'http://134.221.20.241:3000')
-        .registerEndpoint('api', 'http://localhost:3000')
-        .setDefaultEndpoint('api');
-    })
-    //Uncomment the line below to enable animation.
-    //.plugin('aurelia-animator-css')
-    .plugin('aurelia-authentication', baseConfig => {
-        baseConfig.configure(authConfig);
-    });    
-
-  //Anyone wanting to use HTMLImports to load views, will need to install the following plugin.
-  //aurelia.use.plugin('aurelia-html-import-template-loader')
-
-  aurelia.start().then(() => aurelia.setRoot());
-}

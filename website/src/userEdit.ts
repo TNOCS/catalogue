@@ -11,7 +11,7 @@ export class UserEdit {
         role: 'analyst'
     };
 
-    roles = ['user', 'analyst', 'admin'];
+    roles = ['analyst', 'admin'];
 
     constructor(private controller: DialogController) {}
 

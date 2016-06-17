@@ -155,8 +155,8 @@
         
         <div class="au-animate right">
             <div class="row">
-                <div show.bind="canEdit" style="margin: 10px;" class="btn btn-default pull-right" ><a href="#/editproject/${project.id}"><span class="fa fa-pencil">&nbsp;Edit</span></a></div>
-                <div show.bind="canEdit" style="margin: 10px;" class="btn btn-default pull-right" click.delegate="delete()" ><span class="fa fa-trash">&nbsp;Delete</span></div>
+                <div show.bind="canEdit" style="margin: 10px;" class="btn btn-default pull-right" ><a href="#/editproject/${project.id}"><span><i class="fa fa-pencil"></i> Edit</span></a></div>
+                <div show.bind="canEdit" style="margin: 10px;" class="btn btn-default pull-right" click.delegate="delete()" ><span><i class="fa fa-trash"></i> Delete</span></div>
                 <h3>Gaps</h3>
                 <characteristic repeat.for="gap of project.gaps" characteristic.bind="gap"></characteristic>
             </div>        

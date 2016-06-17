@@ -192,6 +192,50 @@ export class ProjectEdit {
         return isFound;
     }
 
+    private _uploadedFile: FileList;
+    get uploadedFile() {
+        return this._uploadedFile;
+    }
+    set uploadedFile(value: FileList) {
+        this._uploadedFile = value;
+        var reader = new FileReader();  
+        reader.onload = (e: any) => { 
+            var data = e.target.result;
+            this.api.create('/uploads', { "uploadedFile": data, "filename": this._uploadedFile.item(0).name })
+                .then((e: { filename: string, url: string }) => {
+                    console.log(e);
+                    this.project.references.push({
+                        title: e.filename,
+                        url: e.url
+                    })
+                })
+                .catch(err => {
+                    console.error(JSON.stringify(err));
+                });
+        };  
+        reader.readAsDataURL(value.item(0));
+    }
+
+    private _uploadedLogo: FileList;
+    get uploadedLogo() {
+        return this._uploadedFile;
+    }
+    set uploadedLogo(value: FileList) {
+        this._uploadedLogo = value;
+        var reader = new FileReader();  
+        reader.onload = (e: any) => { 
+            var data = e.target.result;
+            this.api.create('/uploads', { "uploadedFile": data, "filename": this._uploadedLogo.item(0).name })
+                .then((e: { filename: string, url: string }) => {
+                    this.project.logo = e.url;
+                })
+                .catch(err => {
+                    console.error(JSON.stringify(err));
+                });
+        };  
+        reader.readAsDataURL(value.item(0));
+    }
+
     selectTask(task: ICharacteristic) {
         // if (!task) return;
         // this.activeTask = task;
@@ -317,7 +361,7 @@ export class ProjectEdit {
             });
         });
 
-        this.api.create(`/projects`, p1)
+        this.api.create('/projects', p1)
             .then(() => {
                 this.db.parseData();
             })

@@ -1,10 +1,12 @@
 <template>
     <require from="./helpers/MarkdownValueConverter"></require>
+    <require from="./helpers/FileListToArray"></require>
+    <require from="./helpers/BlobToUrl"></require>
 
     <section style="margin-top: 10px;">
         <div class="col-sd-2 col-md-offsetcol-sd-offset-10" style="margin: 10px">
-            <button click.delegate="save()"   type="submit" class="btn btn-default pull-right" ><i class="fa fa-floppy-o"></i>&nbsp;Save</button>
-            <button click.delegate="cancel()" type="submit" class="btn btn-default pull-right" ><i class="fa fa-close"></i>&nbsp;Cancel</button>
+            <button click.delegate="save()"   type="submit" class="btn btn-success pull-right" style="margin: 0 5px" ><i class="fa fa-floppy-o"></i>&nbsp;Save</button>
+            <button click.delegate="cancel()" type="submit" class="btn btn-warning pull-right" ><i class="fa fa-close"></i>&nbsp;Cancel</button>
         </div>
         <form role="form" submit.delegate="save()" style="margin-top: 5px;">
             <div class="form-horizontal">
@@ -48,6 +50,10 @@
                     <input type="text" value.bind="project.logo" class="form-control" id="logo" placeholder="http://imgur.com/???.png">
                 </div>
                 <div class="col-md-6">
+                    <span class="btn btn-success fileinput-button" style="margin: 2px 25px 2px 5px;">
+                        <span><i class="fa fa-upload"></i> Upload logo</span>
+                        <input type="file" accept="image/*" files.bind="uploadedLogo">
+                    </span>   
                     <img src="${project.logo}" alt="Logo" height="60" style="display: inline-block; height: 60px; vertical-align: bottom">
                 </div>
             </div>
@@ -68,7 +74,11 @@
                         <input type="text" style="display: inline; width: 60%" value.bind="r.url"   placeholder="http://..." class="form-control">
                         <button click.delegate="deleteReference($index)" style="display: inline;"><i class="fa fa-trash"></i></button>          
                     </li>
-                    <li class="pull-right"><button click.delegate="addReference()"><i class="fa fa-plus"></i></button></li>
+                    <span class="pull-right btn btn-success fileinput-button" style="margin: 5px">
+                        <span><i class="fa fa-upload"></i> Upload reference</span>
+                        <input type="file" accept="image/*,.pdf,.doc,.docx,.xls,.xlxs,.ppt,.pptx" files.bind="uploadedFile">
+                    </span>   
+                    <li class="pull-right btn btn-success" style="margin: 5px" click.delegate="addReference()"><i class="fa fa-plus"></i> Add new reference</li>
                 </ul>
             </div>
             <div class="row">
@@ -160,7 +170,7 @@
                 <div class="form-group">
                     <label for="coor" class="col-sm-2 control-label">Coordinator</label>
                     <input type="text" class="col-sm-6" value.bind="project.administration.coordinator.title" class="form-control" id="org" placeholder="organization">                
-                    <select value.bind="project.administration.coordinator.country" class="col-sm-4">
+                    <select value.bind="project.administration.coordinator.country" class="col-sm-4" style="padding: 3px 5px;">
                         <option repeat.for="c of countries" value.bind="c">${c}</option>
                     </select>
                 </div>
@@ -171,12 +181,12 @@
                     <ul class="list-unstyled">
                         <li repeat.for="p of project.administration.participants">
                             <input type="text" class="col-sm-offset-2 col-sm-6" value.bind="p.title" placeholder="organization" class="form-control">
-                            <select value.bind="p.country" class="col-sm-3">
+                            <select value.bind="p.country" class="col-sm-3" style="padding: 3px 5px;">
                                 <option repeat.for="c of countries" value.bind="c">${c}</option>
                             </select>
                             <button click.delegate="deleteParticipant($index)" style="display: inline;"><i class="fa fa-trash"></i></button>          
                         </li>
-                        <li class="pull-right"><button click.delegate="addParticipant()" class="btn btn-default"><span class="fa fa-plus"> Participant</span></button></li>
+                        <li class="pull-right btn btn-success" style="margin: 5px" click.delegate="addParticipant()"><span><i class="fa fa-plus"></i> Participant</span></li>
                     </ul>
                 </div>
             </div>
@@ -188,7 +198,7 @@
                         <div class="form-group">
                             <label for="name" class="col-sm-2 control-label">Name</label>
                             <input type="text" value.bind="a.name" class="col-sm-6" id="name" placeholder="name">
-                            <button click.delegate="deleteAnalyst($index)" class="btn btn-default col-sm-offset-1"><span class="fa fa-trash"> Analyst</span></button>
+                            <button click.delegate="deleteAnalyst($index)" class="btn btn-warning col-sm-offset-1"><span><i class="fa fa-trash"></i> Analyst</span></button>
                         </div>
                         <div class="form-group">
                             <label for="organisation" class="col-sm-2 control-label">Organisation</label>
@@ -210,10 +220,10 @@
                             <div id="md" class="col-sm-4" style="height: 200px; overflow-y: auto; margin-left: 10px" placeholder="Remarks" innerHTML.bind="a.remarks | markdown"></div>
                         </div>
                     </li>
-                    <li class="pull-right"><button click.delegate="addAnalyst()" class="btn btn-default"><span class="fa fa-plus"> Analyst</span></button></li>
+                    <li class="pull-right btn btn-success" style="margin: 5px 0;" click.delegate="addAnalyst()"><span><i class="fa fa-plus"></i> Analyst</span></li>
                 </ul>
             </div>
-            <button type="submit" class="btn btn-default"><i class="fa fa-floppy-o"></i>&nbsp;&nbsp;Save</button>
+            <button type="submit" class="btn btn-success" style="margin: 5px 0;"><i class="fa fa-floppy-o"></i>&nbsp;&nbsp;Save</button>
         </form>
     </section>
 </template>
