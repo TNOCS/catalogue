@@ -48,6 +48,41 @@ export class ProjectFilterProductValueConverter {
     }
 }
 
+/** Filter projects by looking for product or projects. */
+export class ProjectFilterCountryValueConverter {
+    toView(projects: IProject[], country: string, isCoordinator = false) {
+        if (!country || !projects) return projects;
+
+        if (isCoordinator) {
+            return projects.filter(p => {
+                return p.administration && p.administration.coordinator && p.administration.coordinator.country === country;
+            });
+        } else {
+            return projects.filter(p => {
+                if (!p.administration || !p.administration.participants) return false;
+                let isFound = false;
+                p.administration.participants.some(pp => {
+                    if (pp.country !== country) return false;
+                    isFound = true;
+                    return true;
+                });
+                return isFound;
+            });
+        }
+        // let filteredProjects: IProject[] = [];
+        // projects.forEach(project => {
+        //     let add = true;
+        //     if (add && isProduct && !project.isProduct) {
+        //         add = false;
+        //     }
+        //     if (add && isProject && !project.isProject) {
+        //         add = false;
+        //     }
+        //     if (add) filteredProjects.push(project);
+        // });
+    }
+}
+
 /** Filter projects by looking for certain text. */
 export class ProjectFilterTextValueConverter {
     toView(projects: IProject[], keywords?: string) {
@@ -62,6 +97,8 @@ export class ProjectFilterTextValueConverter {
                     if (ProjectFilterTextValueConverter.containsWord(project.shortTitle, w) 
                         || ProjectFilterTextValueConverter.containsWord(project.title, w)
                         || ProjectFilterTextValueConverter.containsWord(project.description, w)
+                        || (project.usabilityLevel && ProjectFilterTextValueConverter.containsWord(project.usabilityLevel.remarks, w))
+                        || ProjectFilterTextValueConverter.characteristicContainsWord(project.gaps, w)
                     ) return false;
                     add = false;
                     return true;
@@ -71,6 +108,17 @@ export class ProjectFilterTextValueConverter {
         });
 
         return filteredProjects;
+    }
+
+    private static characteristicContainsWord(characteristics: ICharacteristic[], word: string) {
+        if (!characteristics) return false;
+        let isFound = false;
+        characteristics.some(c => {
+            if (!ProjectFilterTextValueConverter.containsWord(c.remarks, word)) return false;
+            isFound = true;
+            return true;
+        });
+        return isFound;
     }
 
     private static containsWord(str: string, word: string) {

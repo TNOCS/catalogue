@@ -229,7 +229,7 @@ div.au-stagger {
     }
 }
 
-ai-dialog-overlay.active {
+.ai-dialog-open ai-dialog-overlay.active {
     background-color: black;
     opacity: .5;
 }
@@ -599,6 +599,7 @@ input[type="radio"] .styled:checked + label::after {
     position: relative;
     overflow: hidden;
 }
+
 .fileinput-button input {
     position: absolute;
     top: 0;
@@ -609,4 +610,18 @@ input[type="radio"] .styled:checked + label::after {
     font-size: 200px;
     direction: ltr;
     cursor: pointer;
+}
+
+[href^="tel:"] {
+    background: #2196f3 url(../img/phone-icon.svg) 10px center / 20px auto no-repeat;
+    border-radius: 100px;
+    padding: .5em 1em .5em 2em;
+    color: white;
+}
+
+[href^="mailto:"] {
+    background: #2196f3 url(../img/email-icon.svg) 10px center / 20px auto no-repeat;
+    border-radius: 100px;
+    padding: .5em 1em .5em 2em;
+    color: white;
 }

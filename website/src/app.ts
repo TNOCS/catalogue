@@ -19,7 +19,7 @@ export class App {
 
     config.map([
       { route: 'tasks',              name: 'tasks',          moduleId: 'tasks',          nav: true,  title: 'Tasks & Gaps' },
-      { route: 'hazards',            name: 'hazards',        moduleId: 'incidents',      nav: true,  title: 'Hazards'},
+      { route: 'hazards',            name: 'hazards',        moduleId: 'incidents',      nav: true,  title: 'Hazards & Risks'},
       { route: 'ci',                 name: 'ci',             moduleId: 'ci',             nav: true,  title: 'Critical Infrastructures' },
       { route: 'projects',           name: 'projects',       moduleId: 'projects',       nav: true,  title: 'Projects & Products' },
       { route: ['', 'about'],        name: 'about',          moduleId: 'welcome',        nav: true,  title: 'About' },

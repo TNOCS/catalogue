@@ -11,10 +11,13 @@ import {ProjectFilterConfiguration} from './models/project-filter-configuration'
 
 @autoinject
 export class Projects {
-    heading = 'Projects & Products';
-    projects: IProject[] = [];
-    db:       IDatabase;
-    config:   ProjectFilterConfiguration;
+    heading             = 'Projects & Products';
+    db:                   IDatabase;
+    config:               ProjectFilterConfiguration;
+    projects:             IProject[] = [];
+    countries:            string[]   = [''];
+    coordinatorCountries: string[]   = [''];
+    organisations:        string[]   = [''];
 
     constructor(private router: Router, private databaseService: DatabaseService, private auth: AuthService) {
         this.config = databaseService.projectFilterConfig;
@@ -24,7 +27,39 @@ export class Projects {
         return this.databaseService.database.then(db => {
             this.db = db;
             this.projects = db.projects;
+            this.updateCountryAndOrganisationFilters();
         });
+    }
+
+    /** Update the possible values for the country and organisation filters */
+    updateCountryAndOrganisationFilters() {
+        this.countries = [''];
+        this.coordinatorCountries = [''];
+        this.organisations = [''];
+
+        this.db.projects.forEach(p => {
+            let admin = p.administration;
+            if (admin) {
+                if (admin.coordinator) {
+                    let country = admin.coordinator.country;
+                    if (this.countries.indexOf(country) < 0) this.countries.push(country);
+                    if (this.coordinatorCountries.indexOf(country) < 0) this.coordinatorCountries.push(country);
+                    let organisation = admin.coordinator.title;
+                    if (organisation && this.organisations.indexOf(organisation) < 0) this.organisations.push(organisation);
+                }
+                if (admin.participants) {
+                    admin.participants.forEach(pp => {
+                        let country = pp.country;
+                        if (this.countries.indexOf(country) < 0) this.countries.push(country);
+                        let organisation = pp.title;
+                        if (organisation && this.organisations.indexOf(organisation) < 0) this.organisations.push(organisation);
+                    });
+                }
+            }
+        });
+        this.countries.sort();
+        this.coordinatorCountries.sort();
+        this.organisations.sort();
     }
 
     /** Only admins and analysts can edit */
@@ -55,7 +90,7 @@ export class Projects {
             },
         };
         this.projects.push(project);
-        this.router.navigate(`#/editproject/${index}`);
+        this.router.navigate(`#/editproject/${id}`);
     }
 
     cisChanged() {

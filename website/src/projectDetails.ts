@@ -5,7 +5,7 @@ import {IProject}        from './models/project';
 import {IUser}           from './models/user';
 import {DatabaseService} from './services/DatabaseService';
 import {IDatabase}       from "./models/database";
-import {Prompt}          from './components/Prompt';
+import {PromptQuestion}  from './components/prompt-question';
 import {Rest, Config}    from 'aurelia-api';
 import {DialogService, DialogResult}  from 'aurelia-dialog';
 
@@ -41,8 +41,11 @@ export class ProjectDetails {
     }
 
     delete() {
-        if (!this.project.id) return;
-        this.dialogService.open({ viewModel: Prompt, model: `Do you really want to delete ${this.project.shortTitle}?` })
+        if (!this.project || !this.project.id) {
+            this.router.navigate('#/projects');
+            return;
+        }
+        this.dialogService.open({ viewModel: PromptQuestion, model: `Do you really want to delete ${this.project.shortTitle}?` })
             .then((response: DialogResult) => {
                 if (!response.wasCancelled) {
                     let yes = response.output;
@@ -59,10 +62,14 @@ export class ProjectDetails {
                 let i = this.db.projects.indexOf(this.project);
                 if (i >= 0) this.db.projects.splice(i, 1);
                 this.databaseService.parseData();
-                this.router.navigate(`#/projects`);
+                this.router.navigate('#/projects');
             })
-            .catch(err =>
-                console.log('Error deleting existing project:' + JSON.stringify(err))
-            );
+            .catch(err => {
+                console.log('Error deleting existing project in database: project probably doesn\'t exist yet');
+                let i = this.db.projects.indexOf(this.project);
+                if (i >= 0) this.db.projects.splice(i, 1);
+                this.databaseService.parseData();
+                this.router.navigate('#/projects');
+            });
     }
 }

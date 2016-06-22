@@ -5,7 +5,7 @@ import {DatabaseService} from './services/DatabaseService';
 
 @autoinject
 export class Incidents {
-    heading = 'Hazards';
+    heading = 'Hazards & Risks';
     incidents: ICharacteristic[] = [];
     selectedIncident: ICharacteristic;
     selectedProjects: IProject[] = [];

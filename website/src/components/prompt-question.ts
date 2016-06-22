@@ -3,7 +3,7 @@ import {DialogController}   from 'aurelia-dialog';
 import {IUser}              from '../models/user';
 
 @autoinject
-export class Prompt {
+export class PromptQuestion {
     question = '';
 
     constructor(private controller: DialogController) {}

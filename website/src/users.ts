@@ -4,7 +4,7 @@ import {Endpoint, Rest}               from 'aurelia-api';
 import {DialogService, DialogResult}  from 'aurelia-dialog';
 import {DatabaseService}              from './services/DatabaseService'
 import {UserEdit}                     from './userEdit';
-import {Prompt}                       from './components/Prompt';
+import {PromptQuestion}               from './components/prompt-question';
 import {IUser}                        from './models/user';
 import {Utils}                        from './helpers/Utils';
 
@@ -75,7 +75,7 @@ export class Users {
 
   delete(user: IUser) {
     if (!user || !user.email) return;
-    this.dialogService.open( { viewModel: Prompt, model: `Do you really want to delete ${user.displayName}?` } )
+    this.dialogService.open( { viewModel: PromptQuestion, model: `Do you really want to delete ${user.displayName}?` } )
       .then((response: DialogResult) => {
         if (!response.wasCancelled) {
           let yes = response.output;
