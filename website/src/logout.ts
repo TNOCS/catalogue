@@ -7,8 +7,8 @@ export class Logout {
     constructor(private auth: AuthService) { };
 
     activate() {
-        // When we get to the logout route, the logout 
-        // method on the auth service will be called  
+        // When we get to the logout route, the logout
+        // method on the auth service will be called
         // and we will be redirected to the login view
         this.auth.logout("#/login")
             .then(response => {

@@ -1710,7 +1710,7 @@
       ]
     },
     {
-      "id": "fb5c021b-2153-4a4b-6a6a-b2726ca2b8aa",
+      "id": "fa44a385-8830-4c68-d341-43a2af47df2c",
       "logo": "img/TNO120x120.png",
       "tasks": [],
       "gaps": [],
@@ -1730,26 +1730,23 @@
         }
       ],
       "maturityLevel": {
-        "id": "m2"
+        "id": "m3"
       },
       "usabilityLevel": {
-        "id": "u4"
+        "id": "u6",
+        "remarks": "Great"
       },
       "administration": {
         "duration": {},
         "coordinator": {
           "country": "Unknown"
         },
-        "participants": [
-          {
-            "country": "Unknown"
-          }
-        ]
+        "participants": []
       },
-      "shortTitle": "Test",
-      "title": "Me",
-      "references": [],
-      "isProduct": true
+      "shortTitle": "testje",
+      "title": "van erik",
+      "isProduct": true,
+      "references": []
     }
   ]
 }

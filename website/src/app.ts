@@ -8,11 +8,11 @@ export class App {
   title: string;
   router: Router;
   config: RouterConfiguration;
-  
+
   constructor(private databaseService: DatabaseService) {}
-  
+
   configureRouter(config: RouterConfiguration, router: Router) {
-    this.config = config;    
+    this.config = config;
     config.title = this.title || 'Catalogue';
 
     config.addPipelineStep('authorize', AuthenticateStep); // Add a route filter to the authorize extensibility point.
@@ -36,7 +36,7 @@ export class App {
 
     this.router = router;
   }
-  
+
   activate() {
     return this.databaseService.database.then(db => {
       this.title = db.app.title;

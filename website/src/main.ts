@@ -18,15 +18,15 @@ var baseConfig = {
     // ===================
 
     // The SPA url to which the user is redirected after a successful login
-    loginRedirect: '#/projects',
+    loginRedirect: '/projects',
     // The SPA url to which the user is redirected after a successful logout
-    logoutRedirect: '#/',
+    logoutRedirect: '/',
     // The SPA route used when an unauthenticated user tries to access an SPA page that requires authentication
     loginRoute: '/login',
     // Whether or not an authentication token is provided in the response to a successful signup
     loginOnSignup: true,
     // If loginOnSignup == false: The SPA url to which the user is redirected after a successful signup (else loginRedirect is used)
-    signupRedirect: '#/login',
+    signupRedirect: '/login',
 
 
     // API related options
@@ -326,7 +326,7 @@ export function configure(aurelia: Aurelia) {
   aurelia.use
     .plugin('aurelia-api', config => {
       config
-        .registerEndpoint('api', 'http://134.221.20.241:3000')
+        .registerEndpoint('api', 'http://cs.tno.nl/db/')
         // .registerEndpoint('api', 'http://localhost:3000')
         .setDefaultEndpoint('api');
     })
@@ -334,7 +334,7 @@ export function configure(aurelia: Aurelia) {
     //.plugin('aurelia-animator-css')
     .plugin('aurelia-authentication', baseConfig => {
         baseConfig.configure(authConfig);
-    });    
+    });
 
   //Anyone wanting to use HTMLImports to load views, will need to install the following plugin.
   //aurelia.use.plugin('aurelia-html-import-template-loader')
